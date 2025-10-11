@@ -1,0 +1,79 @@
+                                                                              JAVASCRIPT FUNCTIONS 
+
+
+What is a function?
+A function is like a small box that can do some work for you.
+Example 👇
+function add() {
+  console.log("I am adding numbers");
+}
+Here —
+the box name is add,
+and inside the box is the work: console.log("I am adding numbers").
+
+Step 2: How do we make the box work?
+We tell JavaScript:
+“Hey, open the box and do the work!”
+We do that like this 👇
+add();
+Now it prints:
+I am adding numbers
+
+Step 3: What if we want the box to open by itself?
+Let’s say you want the box to open immediately —
+the moment JavaScript sees it.
+You can do this 👇
+(function() {
+  console.log("Box opened automatically!");
+})();
+✅ Output:
+Box opened automatically!
+You didn’t say add(); anywhere.
+It just ran by itself! 😄
+
+
+
+🪄 Step 4: How does it work?
+
+Let’s break it slowly 👇
+
+(function()
+ {
+  console.log("Hello!");
+}
+)();
+
+🔹 Part 1: (function() 
+{ ... }
+)
+
+This makes a small box (function).
+
+🔹 Part 2: () at the end
+
+This tells JavaScript:
+
+“Now open the box and run it!”
+
+So —
+✅ You make the box
+✅ and open it immediately.
+
+Step 5: Why do people do this?
+Imagine your school bag. 🎒
+You put your pencils and erasers inside it.
+If you zip it closed — nobody can touch your pencils. ✏️
+That’s what this does.
+(function() 
+{
+  var pencil = "I am safe inside the bag";
+  console.log(pencil);
+}
+)();
+
+✅ Output:
+I am safe inside the bag
+If you try to look outside the bag 👇
+console.log(pencil); // ❌
+You’ll get an error —
+because the pencil is inside the bag, and you can’t see it outside.
