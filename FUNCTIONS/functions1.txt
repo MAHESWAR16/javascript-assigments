@@ -1,0 +1,68 @@
+// learn more about parseint and parsefloat  and number functions 
+
+parseInt() and parseFloat() are JavaScript functions used to convert strings into numbers, if the varibale is string.
+
+var p = 123.54
+console.log(parseInt(p)) // 123
+
+var b = "456praveen"
+console.log(parseInt(b)) //456
+
+it converts the string into number and it takes the number if it is only in the starting in a string.
+
+var b = "sdb456praveen"
+console.log(parseInt(b)) // nan
+
+var b = "456.756praveen"
+console.log(parseInt(b)) // output : 456
+
+//  parseFloat
+
+var p = 123.54
+console.log(parsefloat(p)) // 123.54
+
+var p = "123.54"
+console.log(parsefloat(p)) // 123.54
+
+
+var p = "123.54bsdfjkhsjf"
+console.log(parsefloat(p)) // 123.54
+
+var p = "hdsh123sad.sds54sad"
+console.log(parsefloat(p)) // nan
+ 
+
+ number 
+
+ var h = "1234"
+ var c = "4152"
+ console.log(h+c) //12344152 this is string
+ console.log(parseInt(h)+parseInt(c)) // number 5686
+ console.log(number(h)+number(c))
+
+
+differnce between parseint and number  function.
+var m = "1524"
+console.log(Number(m))
+here string is converted into number output is 1524
+
+var m = "1524hsabfdb"
+console.log(Number(m))
+in this case there is a string and we use number here number can not be convert the entire string into number 
+so output is nan
+
+var m = "1524hsasd323bfdb"
+console.log(parseInt(m))
+in this case there is a string and we use parseInt here it can  be convert the entire string into number 
+so output is 1524 [number]
+
+
+type conversions
+var b = "45"
+var g = "20"
+
+console.log(b+g) output : 4520[string]
+console.log(b-g) output :45-20 25[number][implicit type conversion]
+console.log(b*g) output :45*20 25[number][implicit type conversion]
+console.log(b/g) output :45*20 25[number][implicit type conversion]
+console.log(+b++g) output :45+20 75 [number][explicit type converison]
