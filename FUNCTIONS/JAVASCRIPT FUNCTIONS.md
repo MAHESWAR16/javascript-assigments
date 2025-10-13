@@ -199,4 +199,3 @@ Because your pencil is inside the bag — you zipped it closed. 🔒
 When we say “it hides the variable inside,”
 it means that variable lives only inside the function (or IIFE)
 and you can’t use it outside that function.
-
