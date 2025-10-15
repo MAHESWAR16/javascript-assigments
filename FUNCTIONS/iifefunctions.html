@@ -1,5 +1,5 @@
 <script>
-// these are also called as anoymus function.
+// here is anoumyous function is present inside iffe function.
 (function() {
   console.log("Runs immediately!");
 })();
@@ -11,6 +11,41 @@
 // The parentheses around the function make it an expression instead of a normal function declaration.
 
 // The second pair of parentheses () → immediately invokes (calls) that function.
+
+// below things do not do while learning.
+// (function mul(a,b)
+// {
+//   var result = a*b
+//   return result
+// })()
+// var b = mul(5,3)
+// console.log("b",b)
+// //That function’s name (mul) exists only inside itself
+
+// Inside that (function mul(a,b){...}), the name mul is private — only available inside that function’s body.
+
+// When you close the ), the function finishes and disappears.
+// That’s why when you later write:
+
+// so u should do like  this 
+
+
+// do like this u want to catch the return value fom iife function.
+// (function(a,b)
+// {
+// var result = a*b
+// console.log("b",result)
+
+// })
+// here iife function is in expression form.
+var result = (function mul(a,b)
+{
+ var z 
+ z= a*b
+ return z
+})(5,3)
+var f = result
+console.log("f",f)
 
 
 </script>

@@ -22,7 +22,7 @@ var p = 123.54
 console.log(parsefloat(p)) // 123.54
 
 var p = "123.54"
-console.log(parsefloat(p)) // 123.54
+console.log(parsefloat(p)) // 123.54[number]
 
 
 var p = "123.54bsdfjkhsjf"
@@ -38,7 +38,7 @@ console.log(parsefloat(p)) // nan
  var c = "4152"
  console.log(h+c) //12344152 this is string
  console.log(parseInt(h)+parseInt(c)) // number 5686
- console.log(number(h)+number(c))
+ console.log(number(h)+number(c)) number 5686
 
 
 differnce between parseint and number  function.
