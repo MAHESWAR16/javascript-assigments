@@ -15,6 +15,53 @@ console.log(add(2, 3));  // Output: 5
 
 2️⃣ FUNCTION EXPRESSION
 ------------------------
+What is a Function Expression?
+A function expression is when you store a function inside a variable.
+var greet = function sayHello() {
+  console.log("Hello!");
+};
+Here,
+sayHello → is the function’s name (inside function)
+greet → is the variable that holds the function
+greet  --->  function sayHello() { ... }
+Step 2: Which name can we use to call it?
+greet();   // Output: Hello!
+This does NOT work:
+sayHello();// ❌ Error: sayHello is not defined
+Step 3: WHY it doesn’t work
+Because when you do this:
+var greet = function sayHello() { ... }
+You are putting the function inside the variable greet.
+The name sayHello is only known inside the function, not outside it.
+Inside the function, you could do this:
+var greet = function sayHello() {
+  console.log(typeof sayHello); // this works INSIDE
+};
+But outside, JavaScript forgets that inner name —
+only the variable (greet) still remembers the function.
+That’s why you must call it using the variable nam
+Step 4: Easier Example (No Function Name)
+If you remove the function name, it still works fine:
+var greet = function() {
+  console.log("Hello!");
+};
+✅ You can call it like this:
+greet(); // Output: Hello!
+Because the variable name is the real name you use to call it.
+Summary (in one sentence)
+In a function expression, the variable name (not the function name) is used to call the function from outside.
+✅ Correct Example (works)
+var s = function divs(m, n) {
+  return m / n;
+};
+console.log(s(50, 2)); // ✅ works
+❌ Wrong Example (error)
+var s = function divs(m, n) {
+  return m / n;
+};
+console.log(divs(50, 2)); // ❌ Error: divs is not defined
+
+
 var add = function(a, b) {
   return a + b;
 }
