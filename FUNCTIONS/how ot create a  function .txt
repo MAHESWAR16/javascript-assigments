@@ -1,0 +1,152 @@
+------------------------------------------------------------
+🧠 FUNCTION DECLARATION VS FUNCTION EXPRESSION (JavaScript)
+------------------------------------------------------------
+
+1️⃣ FUNCTION DECLARATION
+------------------------
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3));  // Output: 5
+✅ Can be called anywhere in the code
+✅ Function name is globally available
+
+
+2️⃣ FUNCTION EXPRESSION
+------------------------
+var add = function(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3));  // Output: 5
+❌ Function name (if given) is not available outside
+✅ You must call it using the variable name
+
+
+3️⃣ WHY MY CODE GAVE ERROR
+--------------------------
+var s = function divs(m, n) {
+  var result = m / n;
+  return result;
+}
+
+var s1 = divs(50, 2);  // ❌ divs is not defined
+
+✅ Correct way:
+var s1 = s(50, 2);
+console.log('s1', s1);
+
+
+4️⃣ OR USE NORMAL FUNCTION
+--------------------------
+function divs(m, n) {
+  var result = m / n;
+  return result;
+}
+
+var s1 = divs(50, 2);
+console.log('s1', s1);
+
+
+5️⃣ SUMMARY TABLE
+-----------------
+| Type                  | Syntax                         | Can call before define? | Call Name  |
+|------------------------|--------------------------------|--------------------------|-------------|
+| Function Declaration   | function name() {}             | ✅ Yes                  | name()      |
+| Function Expression    | var name = function() {}       | ❌ No                   | variable()  |
+
+------------------------------------------------------------
+💡 Remember:
+- Function Declaration = normal function
+- Function Expression = function stored in a variable
+------------------------------------------------------------
+------------------------------------------------------------
+🧠 FUNCTION DECLARATION VS FUNCTION EXPRESSION (JavaScript)
+------------------------------------------------------------
+
+1️⃣ FUNCTION DECLARATION
+------------------------
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3));  // Output: 5
+
+✅ Can be called anywhere in the code
+✅ Function name is globally available
+
+
+2️⃣ FUNCTION EXPRESSION
+------------------------
+var add = function(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3));  // Output: 5
+
+❌ Function name (if given) is not available outside
+✅ You must call it using the variable name
+
+
+3️⃣ WHY MY CODE GAVE ERROR
+--------------------------
+var s = function divs(m, n) {
+  var result = m / n;
+  return result;
+}
+
+var s1 = divs(50, 2);  // ❌ ERROR → divs is not defined
+
+✅ Correct way:
+var s1 = s(50, 2);
+console.log('s1', s1);
+
+
+4️⃣ OR USE NORMAL FUNCTION
+--------------------------
+function divs(m, n) {
+  var result = m / n;
+  return result;
+}
+
+var s1 = divs(50, 2);
+console.log('s1', s1);
+
+
+5️⃣ SIMPLE VISUAL DIAGRAM
+--------------------------
+(Understanding Function Expression)
+
+          ┌──────────────────────────┐
+          │  function divs(m, n) {   │
+          │    return m / n;         │ 
+          │  }                       │
+          └────────────┬─────────────┘
+                       │
+                       │  (stored inside variable)
+                       ▼
+                ┌───────────────┐
+                │   var s =     │
+                │   function... │
+                └──────┬────────┘
+                       │
+                       ▼
+              You must call it like:
+              s(50, 2) ✅
+              divs(50, 2) ❌
+
+
+6️⃣ SUMMARY TABLE
+-----------------
+| Type                  | Syntax                         | Can call before define? | Call Name  |
+|------------------------|--------------------------------|--------------------------|-------------|
+| Function Declaration   | function name() {}             | ✅ Yes                  | name()      |
+| Function Expression    | var name = function() {}       | ❌ No                   | variable()  |
+
+
+------------------------------------------------------------
+💡 REMEMBER:
+- Function Declaration = normal function (name visible everywhere)
+- Function Expression = function stored in a variable (call using variable)
+------------------------------------------------------------
