@@ -1,5 +1,41 @@
 <script>
 // here is anoumyous function is present inside iffe function.
+// iffe function : A function that is created and executed (called) at the same time.
+
+(function() {
+  console.log("I run automatically!");
+})();
+
+
+// How It Works (Step-by-Step)
+// Let’s break the above example:
+// Step 1 – Function Creation
+// function() {
+//   console.log("I run automatically!");
+// }
+// This creates a function, but there’s a problem:
+// Afunction must have a name if written like this.
+// Otherwise, JavaScript will throw an error.
+// So to make it valid, we wrap it inside parentheses ( ).
+// Step 2 – Wrap in Parentheses
+// (function() {
+//   console.log("I run automatically!");
+// })
+// Now JavaScript understands:
+// “Okay, this is a function expression, not a function declaration.”
+// That means we can now call it like a normal expression.
+// Step 3 – Immediately Call It
+// After closing the parentheses, we add ()` at the end:
+// (function() {
+//   console.log("I run automatically!");
+// })();
+// This last () calls the function immediately after it’s created.
+// So the moment the browser reads it, it runs the code inside
+// Step	             Description
+// function() {}       	Creates a function
+// (function() {})    	Turns it into an expression
+// (function() {})()    	Runs the function immediately
+
 (function() {
   console.log("Runs immediately!");
 })();

@@ -1,7 +1,7 @@
 // learn more about parseint and parsefloat  and number functions 
 
 parseInt() and parseFloat() are JavaScript functions used to convert strings into numbers, if the varibale is string.
-
+  
 var p = 123.54
 console.log(parseInt(p)) // 123
 

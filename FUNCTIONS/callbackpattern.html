@@ -1,3 +1,5 @@
+
+
 <script>
 
     function mahesh()
@@ -6,34 +8,21 @@
     }
    mahesh()
 
-
-
-   
-
-
-var sub = function sub(a,b)
+// call back pattern :  
+function div(a,b,cf)
 {
-var d
-d = a-b
-console.log('d',d)
-return d
+   var z = a/b
+   cf(z)  // this is function call 
 }
-
-var res2 = sub(100,34)
-console.log("res2",res2)
-console.log("sub",sub)
+ div(10,3,function(x){console.log(x)})
 
 
-var s = function divs(m,n)
-{
-
-var result = m/n
-return result 
-}
-
-var s1 = divs(50,2)
-console.log('s1',s1)
-
+// a = 10 , b = 3 ,cf = function() 
+//                      {
+//                              alert()      
+//                             }
+          
+// how do ypu handle a result from call back function .
 
 
 </script>
