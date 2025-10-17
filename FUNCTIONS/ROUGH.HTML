@@ -20,7 +20,7 @@ console.log("x",x)
 
 //  function expression or function literal or function as data
 
-var sub = function(a,b)
+var sub = function m(a,b)
 {
   var result1
   result1 = a - b
@@ -28,6 +28,15 @@ var sub = function(a,b)
 }
 var v = sub(2,3)
 console.log("v value",v)
+
+// JavaScript sees var sub = ...
+// → So it creates a variable named sub.
+// Then it sees function m(a, b) { ... }
+// → This is a function expression, not a normal function declaration.
+// → The function has an inner name m, but that name m is only visible inside the function itself.
+// That function is stored inside the variable sub.
+//The function’s real "outside" name is sub.
+//The name m is only known inside that function (and we aren’t using it anywhere inside).
 
  
 function addThreeNum(a,b,c)

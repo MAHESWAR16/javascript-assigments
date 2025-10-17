@@ -39,12 +39,12 @@ var greet = function sayHello() {
 };
 But outside, JavaScript forgets that inner name —
 only the variable (greet) still remembers the function.
-That’s why you must call it using the variable nam
+That’s why you must call it using the variable name
 Step 4: Easier Example (No Function Name)
 If you remove the function name, it still works fine:
 var greet = function() {
   console.log("Hello!");
-};
+}; 
 ✅ You can call it like this:
 greet(); // Output: Hello!
 Because the variable name is the real name you use to call it.

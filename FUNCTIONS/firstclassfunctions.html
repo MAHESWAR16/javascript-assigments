@@ -1,5 +1,8 @@
 <!--functions which accept other functions as arguments those functions are called first call funtions.
-call back functions: functions which are passed as an argument are called as call back fucnutions. -->
+call back functions: those functions which are passed as an argument are called as call back fucnutions. 
+why we use call back functions 
+ a) too handle the errors in the right way
+ example functions ki wrong arguments ganak pass cheste ee callback find out chestayii that code we written in callback fucntion to throw the erros -->
 
 
 <!-- In JavaScript, functions are special —
@@ -16,33 +19,16 @@ const greet = function()
                  }
 greet()
 
-//Pass a function as an argument (to another function)
-// here we passed iife fucntion as argument
-function add(a,b,fc)
+//Pass a function as an argument (to another function).
+// here we passed anonmyous fucntion as function defination as an argument.
+function div(a,b,cf)
 {
-     fc()
-    var res = a+b
-    
-    return res
-  
+   var z = a/b
+   cf()  // this is function call 
+   return z
 }
+var r = div(10,3,function(){ alert(" hello first class functions")})
+console.log('r',r)
 
-
-var f = add(2,3,(function()
-                         {
-                    alert('hello first class function')
-}))
-console.log('f',f)
-// here add is first call function.
-// here iife fucntion is call back function.
-// function greet(name) {
-//   console.log("Hello " + name);
-// }
-
-// function callFunction(func) {
-//   func("Mahesh");
-// }
-
-// callFunction(greet);
 
 </script>
