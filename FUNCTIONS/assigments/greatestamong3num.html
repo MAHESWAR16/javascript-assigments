@@ -42,27 +42,25 @@
 function threeNumbers(a,b,c)
 { 
     var result
-    if(a===b && b===c && a===c)
+    if(a===b && b==c)
     return " all three numbers are equal"
-   else
-   {
-    if(a>=b)
-   {
-    return a
-   }
-   else
-   {
-    if(b>=c)
-   {
-    return b
-   }
-   else
-   {
-    return c
-   }
-   }
-   }
+    else
+{
+    if(a>=b && a>=c)
+{
+    result = a
+    return result
 }
-var e = threeNumbers(10,0,1000)
-console.log("final result among three numbers",e)
+if(b>=c && b>=a)
+{
+    result = b
+    return result
+}
+else
+return c
+}
+
+}
+var f = threeNumbers(10,100,100)
+console.log("f",f)
 </script>
