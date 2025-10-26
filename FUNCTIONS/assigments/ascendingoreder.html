@@ -1,0 +1,71 @@
+<script>
+    //Write a function which can print the given arguments in ascending order
+     function sortNums(a,b,c)
+     {
+                   var array = [a,b,c]
+                   var temp 
+        for(var i =0;i<array.length;i=i+1)
+        {
+            if(array[i]>array[i+1])
+        {
+            temp = array[i]
+            array[i] = array[i+1]
+            array[i+1] = temp
+        }
+        }         
+        return array
+
+
+     }
+var ascending = sortNums(45,107,68);
+console.log(ascending)             
+
+
+
+
+//  var array = [45,7,68]
+//  var temp 
+
+//      for(var i =0;i<array.length;i=i+1)
+//      {
+//          for(var j = i+1;j<array.length;j=j+1)
+//          {
+//             if(array[i] > array[j])
+//          {
+//             temp = array[i]
+//             array[i] = array[j]
+//             array[j] = temp 
+//          }
+//          }
+//      }
+// console.log("array",array)
+
+
+
+// var array = [45, 7, 68];
+
+// var emptyarray =[]
+
+// for(var i = 0;i<array.length;i=i+1)
+// {
+//   emptyarray[i] = array[i]
+ 
+//   for(var n = 0 ; n<emptyarray.length ;n=n+1)
+//   {
+//     for(b = n+1 ;b<emptyarray.length;b=b+1)
+//   {
+//         if(emptyarray[n] > emptyarray[b])
+//              {
+//                 var temp 
+//                 temp = emptyarray[n]
+//                 emptyarray[n] = emptyarray[b]
+//                 emptyarray[b] = temp
+//              }
+//   }
+
+//   }
+
+// }
+// console.log('emptyarray',emptyarray)
+
+</script>
