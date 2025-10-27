@@ -1,0 +1,23 @@
+<script>
+//Write a function to return the number of digits in the given number
+
+function numberofdigits(num)
+{
+   var count = 0
+    while (num>0)
+{
+   var last = num%10
+    count = count + 1  
+  num = Math.floor(num/10)
+
+}
+return count
+
+}
+
+ var final = numberofdigits(125443)
+ console.log("number of digits in the given number is",final)
+
+
+
+</script>

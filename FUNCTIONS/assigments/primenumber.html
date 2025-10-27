@@ -1,0 +1,74 @@
+<script>
+// 🔹 What is a Prime Number?
+
+// 👉 A prime number is a number that has only two factors:
+
+// 1
+// Itself and prime number begin with 2.
+
+// So,
+// 2, 3, 5, 7, 11, 13, 17, ... are prime numbers
+
+// Because they can be divided only by 1 and themselves.
+
+// 🔹 What is NOT a Prime Number?
+
+// A number that can be divided by other numbers too (besides 1 and itself) is not prime.
+// These are called composite numbers.
+
+// Example:
+// 4 → divisible by 1, 2, 4 → ❌ Not prime
+// 6 → divisible by 1, 2, 3, 6 → ❌ Not prime
+// 🔹 Simple Steps to Check If a Number Is Prime
+
+// Let’s say you have a number n.
+
+// Step 1️⃣ → Check if n <= 1
+// If yes → Not prime.
+// (Because prime numbers start from 2)
+
+// Step 2️⃣ → Check if n == 2
+// If yes → Prime.
+// (2 is the smallest and only even prime number)
+
+// Step 3️⃣ → Check divisibility
+// Try dividing n by all numbers between 2 and n-1.
+// If any number divides n completely (remainder 0) → ❌ Not prime
+// If no number divides n completely → ✅ Prime
+
+console.log(25/2) // 12.5 quoeffic
+console.log(25%2)// reaminder 1
+console.log(10/12)//0.8333
+console.log(10%12) //10[always numerator]
+
+
+function primenumber(a)
+{
+ var found = false
+ if(a<=1)
+ {
+    return "your number is not prime number"
+ }
+ // prime number starts from 2 
+ for( var i =2 ;i<a ;i=i+1)
+ {
+    if(a % i === 0)
+ {
+    found = true 
+    break
+ }
+ }
+
+ if(found === false)
+ {
+    return " your number is prime"
+ }
+ else
+ {
+    return " your number is not  prime"
+ }
+}
+
+var result = primenumber(5)
+console.log('result',result)
+</script>
