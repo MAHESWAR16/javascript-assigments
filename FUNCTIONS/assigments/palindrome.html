@@ -1,0 +1,31 @@
+<script>
+    //Write a function which can check a given number is palindrome or not
+    //A palindrome is a word, number, phrase, or sequence that reads the same forward and backward.
+    //144 revers is 441 so not palindorme
+    //121 reverse is same as 121 so it is palindorme 
+
+
+
+    function palindrome(a)
+    { 
+          var original = a
+          var reverse = 0
+          while (a>0)
+          {
+            var reaminder = a %10//4,4
+               reverse = reverse*10 + reaminder //40
+                a = Math.floor(a/10)//14
+
+          }
+        
+ if(original === reverse)
+ return " your number is palindorme"
+else
+return "your number is not palindorme"
+
+    }
+
+
+  var final = palindrome(144)
+  console.log("final",final)
+</script>

@@ -1,0 +1,21 @@
+<script>
+    //Write a function that prints all even numbers between 1 and 20.
+
+    function evennumbers(array)
+    {
+        var j = 0
+        for(var i = 2 ;i<=20 ;i=i+1)
+     {         
+          if(i %2 === 0)
+          {
+             array[j]= i
+             j=j+1
+          }
+         
+    }
+       return array
+    }
+
+    var store = evennumbers([])
+    console.log("store",store)
+</script>
