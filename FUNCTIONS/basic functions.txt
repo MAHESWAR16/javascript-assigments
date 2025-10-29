@@ -1,0 +1,33 @@
+In JavaScript, a function is also a value.so it can be stored in variable
+You can also pass a function to another function:
+
+function hello()
+ {
+  console.log("Hello");
+}
+function abc(fun)
+ {
+  fun(); // calling the function inside
+}
+abc(hello);
+What is abc(hello) doing?
+We are giving the function hello to the function abc.
+Inside abc, the parameter name is fun.
+So now:
+| Name | Value                    |
+| ---- | ------------------------ |
+| fun  | refers to hello function |
+fun();   // means hello();
+Hello
+
+
+
+function sayHello() {
+  console.log("Hello");
+}
+
+var x = sayHello;                   // storing function in variable
+console.log(x)                     //  output ƒ sayHello() {
+                                   //   console.log("Hello");
+                                    // }
+ x();                            // calling function → prints Hello
