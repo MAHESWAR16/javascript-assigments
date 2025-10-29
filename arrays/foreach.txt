@@ -1,0 +1,16 @@
+What is forEach()?
+forEach() is a method used only on arrays to loop through each element one by one.
+It runs a function for each element in the array.
+forEach says “Go to each element in this array one by one.”
+forEach always needs a function.
+Because forEach will call that function again and again for every item in the array.
+We are passing a function as an argument in forEach().
+How is that function working?
+Who is calling it?
+var numbers = [25, 12, 45, 32];
+| Loop Round | Item (a) | Index (i) |
+| ---------- | -------- | --------- |
+| 1          | 25       | 0         |
+| 2          | 12       | 1         |
+| 3          | 45       | 2         |
+| 4          | 32       | 3         |
