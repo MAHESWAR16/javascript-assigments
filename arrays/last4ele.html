@@ -1,0 +1,19 @@
+<script>
+  //Print only the last 4 elements of an array. Expected output: 54 0 4 7  
+  var array =[23,34,54,0,4,7]
+  var newarray = []
+  var length = array.length-1
+  var c = 0
+  array.forEach(function(value,index)
+{
+   if(index>=2)
+   {
+       newarray[c]=array[index]
+    c = c+1
+   }
+   
+}
+
+)
+console.log("newarray",newarray)
+</script>

@@ -1,0 +1,19 @@
+<script>
+   //Print all the numbers from last index to first index except the last element Expected output: 7 4 0 54 34
+
+
+    var array = [23,34,54,0,4,7] 
+    var emptyarray =[]
+    var length = array.length-1//5
+    var b = 0
+    array.forEach(function(value,index)
+{
+ console.log(array[length-index])
+ if(b!==5)
+ emptyarray[b] = array[length-index]
+b = b+1 
+}
+
+)
+console.log("emptyarray",emptyarray)
+</script>
