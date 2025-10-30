@@ -1,0 +1,19 @@
+<script>
+    //For the Given array: [23,34,54,10,4,7] print values that are greater than the given number. Given number: 20, Expected output: 23,34,54
+   var array = [23,34,54,10,4,7]
+   var number = + prompt('enter a number')
+   console.log(" you have entered number",number)
+   var result = []
+   var k = 0
+   array.forEach(
+    function(element)
+    {
+            if(element >= number)
+            {
+                result[k] = element
+                k=k+1
+            }
+    }
+   )
+ console.log("result",result)
+</script>
