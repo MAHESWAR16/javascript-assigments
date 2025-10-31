@@ -1,18 +1,30 @@
 <script>
     //For the Given array: [23,34,54,10,34,7,23,10,34] eliminate duplicates in a given array Expected output: 23,34,54,10,7
-    var array = [23,34,54,10,34,7,23,10,34]
-    var emptyarray = []
+    var array = [23,34,54,10,34,7,23,10,34];
+    var emptyarray = [10,5,23] 
+    var found = false    // 3
     var j = 0
     array.forEach(
-    function(element,index)
-{
+        function(element,value)
+        {
+            console.log(element)
+                 found = false
+            for(var k =0;k<=emptyarray.length-1;k=k+1)
+        {
+             if(element === emptyarray[k])
+             {
+                 found = true 
+                 break
+             }
+              
+        }
+        if(found === false)
+        {
+             emptyarray[j] = element
+              j = j+1
+         }
 
-if(element !== emptyarray[j])
-{
-    
-}
-
-}
-)
-    
+        }
+    )
+console.log("emptyarray",emptyarray)
 </script>
