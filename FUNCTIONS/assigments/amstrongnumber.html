@@ -7,4 +7,40 @@ console.log(123/10)          //12.3
 console.log(123%10)          //3
 console.log(Math.floor(123/10)) // 12
 
+function number(a) //a = 123
+{ 
+    var compare = a
+    var org_number = a
+    var duplicate_number = a
+  var count = 0
+  while (duplicate_number > 0)
+  {
+
+    count = count + 1
+     duplicate_number = Math.floor(duplicate_number/10)
+  }
+  console.log('count',count)
+ console.log("org_number",org_number) //123
+ console.log("duplicate_number",duplicate_number) //0
+ var ls_digit = 0
+ while (org_number>0)
+ {
+    ls_digit = ls_digit + Math.pow(org_number%10,count)
+     org_number = Math.floor(org_number/10)
+ }
+ console.log("ls_digit",ls_digit)
+if(compare === ls_digit)
+ {
+    return " number is amstrong number"
+ }
+else
+{
+    return " number is not amstrong number"
+}
+
+
+}
+ 
+var outcome = number (121)
+console.log('otcome',outcome)
 </script>
