@@ -3,4 +3,4 @@ greatest among thre numbers use functions.
 Write a function which can print the given arguments in ascending order.
 prime number
 palindrome
-amstrong number
+amstrong   
