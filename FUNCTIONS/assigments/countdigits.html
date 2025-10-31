@@ -1,0 +1,26 @@
+<script>
+    //Write a function to display the number of digits in the given number
+ console.log(1234/10)//123.4
+ console.log(1234%10)//4
+ console.log(Math.floor(1234/10))//123
+
+
+  function count_number_of_digits(a)
+  {
+   var count = 0
+
+    while (a>0)
+  {
+
+    a = Math.floor(a/10)
+     count = count + 1
+    
+  }
+   return "number of sigits in number"+count
+  }
+
+
+
+
+ console.log(count_number_of_digits(1234))
+</script>
