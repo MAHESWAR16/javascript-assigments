@@ -1,0 +1,25 @@
+<script>
+//For the Given array: [23,34,54,10,34,7,23,10,34] print the total number of times an element found in the array. Given number: 23, Expected output: 2 Given number: 34, Expected output: 3 Given number: 10, Expected output: 2 Given number: 54, Expected output: 1
+var array = [23,34,54,10,34,7,23,10,34]
+var count = 0
+var found = false
+var number = + prompt("enter a number")
+array.forEach(
+    function(element,value)
+    {
+        if(number === element)
+    {
+        count = count + 1
+        found = true
+    }
+  
+    }
+)
+  if(found)
+console.log("given number",number,count)
+else
+{
+    console.log("your number is not in the array",number)
+}
+
+</script>
