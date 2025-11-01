@@ -1,0 +1,19 @@
+<script>
+    //Store only even numbers of a given array in another array
+    var array = [23,34,54,10,4,7]
+    var newarray = []
+    var j = 0
+    array.forEach(
+        function(element,index)
+        {
+              
+            if(element % 2 === 0)
+        {
+             newarray[j] = element
+              j=j+1
+        }
+           
+        }  
+    )
+    console.log("newarray",newarray)
+</script>
