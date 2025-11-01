@@ -1,0 +1,14 @@
+<script>
+    //Reduce the each element of the array by 25% and store in a separate array.
+    var array = [23,34,54,10,4,7]
+    var newarray = []
+    var j =0
+    array.forEach(
+        function(element,index)
+    { 
+              newarray[j] =   element - (element*25/100)
+              j=j+1
+    }
+)
+console.log("newarray",newarray)
+</script>

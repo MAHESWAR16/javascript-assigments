@@ -1,0 +1,33 @@
+<script>
+    //var array = [23,34,54,10,34,7,23,1 10,34] remove duplicates from the array.
+    // general method  a
+    var array = [23,34,54,10,34,7,23,10,34];
+    var newArray = [];
+    var j = 0
+    array.forEach(
+         function(element,index)
+         {
+            var found = false
+
+          newArray.forEach
+          (
+            function(innerelement,innerindex)
+            {
+              if(element === innerelement)
+              {
+                found = true 
+              }
+             
+            }
+         )
+                if(found === false)
+              {
+                newArray[j] = element
+                j =j+1
+              }
+         }
+
+    )
+
+  console.log("newarray",newArray)
+</script>
