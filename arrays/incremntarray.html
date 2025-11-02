@@ -1,0 +1,18 @@
+<script>
+    //Increment 5% for all the salaries in a given array
+    var salaries = [45000,30000,25000]
+    var newsalary = []
+    var j = 0
+    var result = 0
+    salaries.forEach(
+        function(element,index)
+        {
+              result = element * 5 / 100
+              result = result + element
+              newsalary[j] = result
+              j=j+1
+        }
+        
+    )
+    console.log("newsalary",newsalary)
+</script>
