@@ -1,0 +1,17 @@
+<script>
+    //Print only multiples of 2 AND 3 from an array
+    var array = [2,3,20,16,17,55,46,32]
+    var newarray = []
+    var j = 0
+    array.forEach(
+         function(element)
+         {
+            if(element %2 ===0 || element % 3 === 0)
+         {
+            newarray[j] = element
+            j = j+1
+         }
+         }
+    )
+    console.log("newarray",newarray)
+</script>

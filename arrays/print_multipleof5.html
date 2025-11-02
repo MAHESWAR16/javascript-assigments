@@ -1,0 +1,17 @@
+<script>
+    //Print only multiples of 5 from an array
+    var array = [25,10,3,9,100,50,16,18]
+    var newarray = []
+    var j = 0
+    array.forEach(
+        function(element)
+        {
+            if(element % 5 === 0)
+        {
+            newarray[j] = element
+            j = j+1
+        }
+        }
+    )
+    console.log("newarray",newarray)
+</script>

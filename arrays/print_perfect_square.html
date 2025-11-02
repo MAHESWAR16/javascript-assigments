@@ -1,0 +1,26 @@
+<script>
+    //print only the perfect squares in an array
+    var array =[25,144,36,18,15]
+    var perfectsquare = []
+    var j =0
+    var found 
+    array.forEach(
+        function(element,index)
+        {
+              found = false
+          for(var i =1;i<element;i=i+1)
+          {
+            if(i*i === element)
+            found = true
+              
+          }
+         if(found === true)
+          {
+            perfectsquare[j] = element
+            j = j+1
+          }
+        }
+         
+    )
+    console.log("perfectsqaure",perfectsquare)
+</script>
