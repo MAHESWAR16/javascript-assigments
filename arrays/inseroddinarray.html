@@ -1,0 +1,21 @@
+<script>
+    //Insert first 10 odd numbers in an empty array(for and while)
+    var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    var first10odd = []
+    var j = 0
+    var count 
+    numbers.forEach(
+        function(element,index)
+        {   
+            count = 0
+            if(element % 2 !==0 && count <=10)
+        {
+            first10odd[j] =element
+        
+            j=j+1
+                count = count + 1
+        }
+    }
+    )
+    console.log("first10odd",first10odd)
+</script>
