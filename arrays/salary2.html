@@ -1,0 +1,28 @@
+<script>
+    //For every salary, deduct 10% tax for salaries less than 50000 and deduct 12% tax for salaries more than 50000
+ var salaries = [25000, 30000, 15000, 10000];
+var finalSalaries = []; // new array to store final salary
+var j = 0;              // index for new array
+
+salaries.forEach(function(basic){
+    
+    var HRA = basic * 40 / 100;
+    var DA = basic * 92 / 100;
+    var Tax;
+
+    if(basic <= 50000){
+        Tax = basic * 10 / 100;   // 10%
+    } 
+    else {
+        Tax = basic * 12 / 100;   // 12%
+    }
+
+    var finalSalary = basic + HRA + DA - Tax;
+
+    finalSalaries[j] = finalSalary;  // store value manually
+    j = j + 1;                       // move to next position
+});
+
+console.log("Final Salaries Array:", finalSalaries);
+
+</script>

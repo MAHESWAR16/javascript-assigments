@@ -19,63 +19,47 @@
 //   | **Function Scope**             | Inside Bedroom               | Only inside the function     |
 //  | **Block Scope (let / const)**  | Inside the Bedroom Cupboard   | Only inside `{ }` block      |
 
-//     var x = 10
-//     console.log("x",x)
+// global variable  declarations
+let asd = 25
 
-//     if("5"==="5")
-// {
-//     console.log("x",x)
-// }
+console.log("asd",asd) // 25
 
-// function xyz()
-// {
-//     console.log("x",x)
+let sun = 25.3
+sun = 3.6
+console.log("sun",sun) // 3.6
 
-// }
-// xyz()
+// let bv =22
+// let bv = 36
+// console.log("bv",bv) // outpur error
 
-// function abc()
-// {
-//     if(true)
-// {
-//      console.log("x",x)
-// }
-// }
-// abc()
-  
-var x = 10
+const q = 3.25
+console.log("q",q)
 
-console.log('x',x)
+// const w = 666
+// w =36.98
+// console.log('w',w) // out put error 
 
-if(true)
-{ 
- var x = 255
-    console.log('x',x)
-}
+// const pr = 3.666
+// const pr = 1.2
+// console.log("pr",pr) // output error pr has been declared.
 
-function abc()
-{ 
-   var x = " worldof"
-   if(true)
-   {
-     
-         console.log("x",x)
-   }
-   console.log('x',x)
-}
-abc()
-console.log("x",x)
 
-function s()
-{
-    x =23
-    console.log("x",x)
-}
-s()
+//var is function-scoped, not block-scoped.
+// This means:
+// var variables ignore { } blocks like if, for, while, etc.
+// But if declared inside a function, var stays inside that function and is not accessible outside.
+var x2 = 1
+console.log("x2",x2)
 
-function xyz()
-{
-    console.log("x",x)
-}
-xyz()
+var x3 = 24
+x3 =1.4
+console.log("x3",x3)
+
+var x4 = 5.2
+var x4  =6.3
+console.log('x4',x4)
+
+
+
+
   </script>
