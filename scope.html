@@ -1,21 +1,81 @@
 <script>
-  //scope
 
+// Imagine Your House
+// Your House Has:
+// Hall
+// Bedroom
+// Kitchen
+// Outside Playground
+
+// Now think like this:
+// Place                	Who can play there?
+// Playground (outside)   	Everyone can play (Public place)
+// Bedroom	                Only your family members (Private place)
+
+// This is the same idea in JavaScript
+//      Scope Type                     Works Like                   Who Can Use the Variable? 
+//   | -----------------------------   | ---------------------------  | ---------------------------- |
+//   | **Global Scope**               | Playground                    | Anyone, anywhere in the code 
+//   | **Function Scope**             | Inside Bedroom               | Only inside the function     |
+//  | **Block Scope (let / const)**  | Inside the Bedroom Cupboard   | Only inside `{ }` block      |
+
+//     var x = 10
+//     console.log("x",x)
+
+//     if("5"==="5")
+// {
+//     console.log("x",x)
+// }
+
+// function xyz()
+// {
+//     console.log("x",x)
+
+// }
+// xyz()
+
+// function abc()
+// {
+//     if(true)
+// {
+//      console.log("x",x)
+// }
+// }
+// abc()
+  
 var x = 10
 
+console.log('x',x)
+
+if(true)
+{ 
+ var x = 255
+    console.log('x',x)
+}
+
 function abc()
-{
-    var x = 25
-    console.log(x)
+{ 
+   var x = " worldof"
+   if(true)
+   {
+     
+         console.log("x",x)
+   }
+   console.log('x',x)
 }
 abc()
-console.log(x)
+console.log("x",x)
 
-// if(true)
-// {
-//      console.log(x)
-//  var  x = 2.3
-//     console.log(x)
-// }
-// console.log(x)
+function s()
+{
+    x =23
+    console.log("x",x)
+}
+s()
+
+function xyz()
+{
+    console.log("x",x)
+}
+xyz()
   </script>
