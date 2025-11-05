@@ -10,6 +10,7 @@ function abc(fun)
   fun(); // calling the function inside
 }
 abc(hello);
+
 What is abc(hello) doing?
 We are giving the function hello to the function abc.
 Inside abc, the parameter name is fun.

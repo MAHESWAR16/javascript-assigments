@@ -4,3 +4,5 @@ Write a function which can print the given arguments in ascending order.
 prime number
 palindrome
 amstrong   
+ //Check whether a number is prime, Armstrong or perfect number using functions.
+    //amstrongnumber
