@@ -1,0 +1,40 @@
+<script>
+    //Print the greatest of all 2-digit numbers present in an array.
+    var array = [23,5,14,63,325,1000]
+    var newarray = []
+    var j =0
+    var twodigit
+    var count 
+    var max = 0
+    array.forEach(
+        function(element,index)
+        {
+          // check number is 2 digit number or not 
+           var number = element 
+            count  = 0
+           while(number>0)
+           {
+               number = Math.floor(number/10)
+            count = count + 1
+           }
+           if(count === 2)
+           {
+            newarray[j] = element
+            j = j+1
+           }
+          // now find max number in newarray [23,14,63]
+          newarray.forEach(
+            function(ele)
+          {
+            if(ele>max)
+          {
+             max = ele 
+          }
+          }
+        )
+        }
+    )
+  console.log("newarray",newarray)
+  console.log("maxnumber",max)
+    console.log(Math.floor(25/10))
+</script>
