@@ -1,0 +1,18 @@
+<script>
+    //Print the elements present in the second half of the array.
+    var array = [1,2,3,4,5,6,7]
+    var newarray = []
+    var j =0
+    array.forEach(
+        function(element,index)
+        {
+            if(index>=array.length/2)
+        {
+            newarray[j] = element
+            j =j+1
+        }
+
+        }
+    )
+    console.log('newarray',newarray)
+</script>
