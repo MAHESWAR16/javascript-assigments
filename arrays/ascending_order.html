@@ -1,16 +1,49 @@
 <script>
+    //  var array = [23,34,54,10,4,7]
+    
+    //   array[2] = array[4]  
+    //   console.log(array)          //23,34,4,10,4,7
+    //   array[4] = array[2]  //23,34,54,10,
+    //  console.log('array',array)  // [23,34,4,10,4,7]
+
+
+    //  var array = [23,34,54,10,4,7]
+    //  array[2] = 123
+    // console.log('array',array)  // [23,34,123,10,4,7]
+
     //Sort an array in ascending order. Given array: [23,34,54,10,4,7] Expected output: 4,7,10,23,34,54
+
+
+
+//     Very Easy Fix
+
+// Do not use element for comparison.
+
+// Use array[index] directly in the if condition
     var array = [23,34,54,10,4,7]
-    var ascending_order = [21,5]
-    var  j = 0
+
+
+    var orginal = array
+    console.log('original',orginal)
+
+
     array.forEach(
-        function(element,index)
-        {
+          function(element,index)
+          {
+          
+            for(var i = index+1 ; i<=array.length-1 ; i=i+1)
+          {
 
-
-            
-        }
-
+                 if(array[index]>=array[i])
+                 { 
+                     var temp = array[index];
+            array[index] = array[i];
+            array[i] = temp;
+        
+                    
+                 }
+          }
+          }
     )
     console.log('array',array)
 </script>
