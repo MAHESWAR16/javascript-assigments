@@ -1,3 +1,14 @@
+basic array :
+   var array = [23,34,54,10,4,7]
+    
+     array[2] = array[4]
+    console.log('array',array)  // [23,34,4,10,4,7]
+
+
+     var array = [23,34,54,10,4,7]
+     array[2] = 123
+    console.log('array',array)  // [23,34,123,10,4,7]
+
 What is forEach()?
 forEach() is a method used only on arrays to loop through each element one by one.
 It runs a function for each element in the array.
