@@ -1,0 +1,52 @@
+<script>
+    //Write a program to sort the array based on the number of occurrences of elements Ex: original array: [1,2,5,6,2,1,6,1,2,6,2,1,2]; After the logic: [5,6,6,6,1,1,1,1,2,2,2,2,2]; //5 occurred one time,6 three times,1 occurred 4 times, 2 occurred 5 times
+    var array = [2,4,2,2,3,4]
+
+    var output = []
+    var found = false
+    var count = 0
+  array.forEach(
+    function(element,index)
+    {
+
+      found = false
+      count = 0
+     count = count + 1
+      
+
+     for( var i = index+1 ; i<=array.length-1 ; i=i+1)
+     {
+    
+          if(array[i] === element)
+          {
+             count = count + 1
+            found = true 
+          }
+
+          
+     }
+
+     if(!found)
+     {
+        console.log('element',element,count)
+     }
+     else
+     {
+        console.log("element",element,count)
+     }
+
+
+
+
+
+
+
+
+
+
+
+    }  
+  )    
+    
+  
+</script>
