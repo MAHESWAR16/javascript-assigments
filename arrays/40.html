@@ -3,50 +3,41 @@
     var array = [2,4,2,2,3,4]
 
     var output = []
-    var found = false
-    var count = 0
-  array.forEach(
-    function(element,index)
-    {
+    var count 
+    var repeated 
+    var j =0
 
-      found = false
-      count = 0
-     count = count + 1
-      
+    array.forEach
+    (
+        function(element,index)
+        {
+          count = 1  
+          repeated = false
+          for(var i = index+1 ; i<=array.length-1 ; i=i+1)
+        {   
+            if(element === array[i])
+            {
+              count = count + 1   
+            }
+        }
+          console.log("index",index,"element",element,"count",count)
+          //backward
 
-     for( var i = index+1 ; i<=array.length-1 ; i=i+1)
-     {
-    
-          if(array[i] === element)
-          {
-             count = count + 1
-            found = true 
-          }
+          for(var b = index ; b>0 ; b=b-1)
+        {
+          if(element === array[b-1])
+        {
+          repeated = true 
+          break
+        }
 
-          
-     }
+        }
+      }
 
-     if(!found)
-     {
-        console.log('element',element,count)
-     }
-     else
-     {
-        console.log("element",element,count)
-     }
-
-
-
-
-
-
-
-
-
-
-
-    }  
-  )    
-    
+    )
+         
+     console.log("output",output)
   
+
+
 </script>
