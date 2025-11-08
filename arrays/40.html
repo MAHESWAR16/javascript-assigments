@@ -3,41 +3,98 @@
     var array = [2,4,2,2,3,4]
 
     var output = []
-    var count 
-    var repeated 
-    var j =0
+    
+    var unique = []
+    console.log(unique.length)
 
-    array.forEach
-    (
-        function(element,index)
-        {
-          count = 1  
-          repeated = false
-          for(var i = index+1 ; i<=array.length-1 ; i=i+1)
-        {   
-            if(element === array[i])
-            {
-              count = count + 1   
-            }
-        }
-          console.log("index",index,"element",element,"count",count)
-          //backward
+    var counts = []   // will store frequency of each unique number
 
-          for(var b = index ; b>0 ; b=b-1)
-        {
-          if(element === array[b-1])
-        {
-          repeated = true 
-          break
-        }
+  //  array.forEach(
+  //   function()
+  //   {
 
+  //   }
+  //  )
+// not understanding  this   unique[unique.length] = value
+   //| Step | unique.length before adding | value added | unique array after adding |
+// | ----   | --------------------------- | ----------- | ------------------------- |
+// | 1      | 0                           | 2           | [2]                       |
+// | 2     | 1                           | 4           | [2,4]                     |
+// | 3     | 2                           | 3           | [2,4,3]                   |
+
+   array.forEach
+   (
+    function(value)
+    {
+     console.log("value",value)
+
+      var already = false 
+      
+      unique.forEach(
+        function(u)
+        {
+         if(u === value)
+         {
+          already = true
+         }
         }
+      )
+     
+      if(!already)
+      {
+        unique[unique.length] = value
+        console.log("unique",unique)
       }
+// final 
+console.log("unique",unique)//[2,4,3]
 
-    )
-         
-     console.log("output",output)
-  
+  unique.forEach
+  (
+    function(u)
+    {
+     var freq = 0
+
+       console.log("u",u)
+
+     array.forEach
+     (
+     function(num)    //[2,4,2,2,3,4]
+
+     {
+        if(num == u)
+        {
+          console.log("num",num)
+          freq = freq + 1
+          console.log("freq",freq)
+        }
+     }
+     )
+    counts[counts.length] = freq //[3,2,1]
+    }
+   
+  )
+   console.log("count",counts)
+
+//        i have unique = [2,4,3]  output   should be   unique = [3, 4, 2]
+//       i have  freq = [3,2,1]    output  should be    freq   = [1, 2, 3]
 
 
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+   )
+     
 </script>
