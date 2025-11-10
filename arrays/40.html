@@ -1,100 +1,79 @@
 <script>
     //Write a program to sort the array based on the number of occurrences of elements Ex: original array: [1,2,5,6,2,1,6,1,2,6,2,1,2]; After the logic: [5,6,6,6,1,1,1,1,2,2,2,2,2]; //5 occurred one time,6 three times,1 occurred 4 times, 2 occurred 5 times
-    var array = [2,4,2,2,3,4]
+   var array = [2,4,2,2,3,4]
 
-    var output = []
-    
-    var unique = []
-    console.log(unique.length)
+var unique = []    // to store unique numbers
+var counts = []    // to store frequency of each unique number
 
-    var counts = []   // will store frequency of each unique number
+// Step 1: Find unique elements
+array.forEach(function(value){
+  
+  var already = false
+  
+  unique.forEach(function(u){
+    if(u === value){
+      already = true
+    }
+  })
+  
+  if(!already){
+    unique[unique.length] = value
+  }
 
-  //  array.forEach(
-  //   function()
-  //   {
+})
 
-  //   }
-  //  )
-// not understanding  this   unique[unique.length] = value
-   //| Step | unique.length before adding | value added | unique array after adding |
-// | ----   | --------------------------- | ----------- | ------------------------- |
-// | 1      | 0                           | 2           | [2]                       |
-// | 2     | 1                           | 4           | [2,4]                     |
-// | 3     | 2                           | 3           | [2,4,3]                   |
+console.log("Unique:", unique)   // [2,4,3]
 
-   array.forEach
-   (
-    function(value)
-    {
-     console.log("value",value)
+// Step 2: Count occurrences of each unique number
+unique.forEach(function(u){
 
-      var already = false 
+  var freq = 0
+
+  array.forEach(function(num){
+    if(num === u){
+      freq = freq + 1
+    }
+  })
+
+  counts[counts.length] = freq
+})
+
+console.log("Counts:", counts)   // [3,2,1]
+
+// Step 3: Sort unique & counts based on frequency (ascending)
+// unique = [2,4,3]
+// counts = [3,2,1]
+for(var i=0; i<counts.length; i++){
+  for(var j=i+1; j<counts.length; j++){
       
-      unique.forEach(
-        function(u)
-        {
-         if(u === value)
-         {
-          already = true
-         }
-        }
-      )
-     
-      if(!already)
-      {
-        unique[unique.length] = value
-        console.log("unique",unique)
-      }
-// final 
-console.log("unique",unique)//[2,4,3]
+    if(counts[i] > counts[j]){
+      var temp = counts[i]
+      counts[i] = counts[j]
+      counts[j] = temp
 
-  unique.forEach
-  (
-    function(u)
-    {
-     var freq = 0
-
-       console.log("u",u)
-
-     array.forEach
-     (
-     function(num)    //[2,4,2,2,3,4]
-
-     {
-        if(num == u)
-        {
-          console.log("num",num)
-          freq = freq + 1
-          console.log("freq",freq)
-        }
-     }
-     )
-    counts[counts.length] = freq //[3,2,1]
-    }
-   
-  )
-   console.log("count",counts)
-
-//        i have unique = [2,4,3]  output   should be   unique = [3, 4, 2]
-//       i have  freq = [3,2,1]    output  should be    freq   = [1, 2, 3]
-
-
-
-
-
+      temp = unique[i]
+      unique[i] = unique[j]
+      unique[j] = temp
     }
 
+  }
+}
 
+console.log("Sorted Unique:", unique)  //[1,2,3]
+console.log("Sorted Counts:", counts)  //[3,4,2]
 
+// Step 4: Build final output array
+var output = []
+var k = 0
 
+unique.forEach(function(val,index){
+  for(var r=0; r<counts[index]; r++){
+    output[k] = val
+    k = k + 1
+  }
+})
 
+console.log("Final Output:", output)
 
-
-
-
-
-
-
-   )
      
 </script>
