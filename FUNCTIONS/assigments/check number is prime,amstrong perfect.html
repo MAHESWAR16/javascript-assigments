@@ -36,17 +36,18 @@
 
  function number(a)
  {
+   var compare = a
     var orginalnumber = a
     var count = 0
     var lastdigit = 0
     var result = 0
-    while(a>0)
- {
-    
-    count = count + 1
-    a = Math.floor(a/10)  
 
+    while(compare >0)
+ {
+    count = count + 1
+    compare = Math.floor(compare/10)  
  }
+
  console.log('count',count)
 
  while(orginalnumber > 0)
@@ -55,7 +56,62 @@
    result = result + Math.pow(lastdigit,count)
    orginalnumber = Math.floor(orginalnumber/10) 
  }
-  console.log("result",result)
+   console.log("result",result)
+   console.log('orginal number',orginalnumber)
+   console.log('a',a)
+   console.log('compare',compare)
+
+  if(a === result)
+  {
+   console.log("your number is amstrong number which is ",a)
+  }
+  else
+  {
+   console.log("your number is not amstrong number which is  ",a)
+  }
+
+  // perfectnumber 
+  var perfectnumber = a
+  var count1 = 0
+  for(var i=perfectnumber-1;i>=1;i=i-1)
+  {
+    if(perfectnumber % i ===0)
+    { 
+          count1= count1+i
+    }
+  }
+  if(count1 === perfectnumber)
+  {
+   console.log("yournumber is perfectnumber which is",perfectnumber)
+  }
+  else
+  {
+   console.log("your number is not perfect number which is ",perfectnumber)
+  }
+
+  // prime number 
+  
+  var checknumber = a
+  var found = false 
+   for(var g = checknumber-1;g>=2;g=g-1)
+  {
+          if(checknumber % g ===0)
+          {
+            found = true 
+          }
+
+  }
+  if(!found)
+  {
+   console.log(" your number is prime number which is ",checknumber)
+  }
+  else
+  {
+   console.log(" your number is not prime number which is",checknumber)
+  }
+
+
+
 
 
 
