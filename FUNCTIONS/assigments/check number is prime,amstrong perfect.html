@@ -33,67 +33,34 @@
 // 1, 3, 9
 // Has more than two divisors → Not Prime ❌
    // Function to check Prime Number
-function isPrime(num) {
-    if(num < 2){
-        return false;
-    }
 
-    for(var i = 2; i < num; i++){
-        if(num % i === 0){
-            return false; // Not prime
-        }
-    }
-    return true; // Prime
-}
+ function number(a)
+ {
+    var orginalnumber = a
+    var count = 0
+    var lastdigit = 0
+    var result = 0
+    while(a>0)
+ {
+    
+    count = count + 1
+    a = Math.floor(a/10)  
 
-// Function to check Armstrong Number
-function isArmstrong(num) {
-    var original = num;
-    var sum = 0;
-    var digits = num.toString().length;
+ }
+ console.log('count',count)
 
-    while(num > 0){
-        var digit = num % 10;
-        sum = sum + (digit ** digits);
-        num = Math.floor(num / 10);
-    }
+ while(orginalnumber > 0)
+ {
+   lastdigit = orginalnumber % 10
+   result = result + Math.pow(lastdigit,count)
+   orginalnumber = Math.floor(orginalnumber/10) 
+ }
+  console.log("result",result)
 
-    return sum === original;
-}
 
-// Function to check Perfect Number
-function isPerfect(num) {
-    var sum = 0;
 
-    for(var i = 1; i < num; i++){
-        if(num % i === 0){
-            sum = sum + i;
-        }
-    }
-
-    return sum === num;
-}
-
-// ------------------ MAIN PROGRAM ------------------
-
-var number = 153; // Change this number and test
-
-if(isPrime(number)){
-    console.log(number, "is a Prime Number");
-} else {
-    console.log(number, "is NOT a Prime Number");
-}
-
-if(isArmstrong(number)){
-    console.log(number, "is an Armstrong Number");
-} else {
-    console.log(number, "is NOT an Armstrong Number");
-}
-
-if(isPerfect(number)){
-    console.log(number, "is a Perfect Number");
-} else {
-    console.log(number, "is NOT a Perfect Number");
-}
+ }
+   number(123)
+ 
 
 </script>
