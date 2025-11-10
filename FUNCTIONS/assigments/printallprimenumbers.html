@@ -1,0 +1,46 @@
+<script>
+//Find all prime numbers between the given interval using functions
+
+function primenumbers(a)
+{
+
+    console.log("a",a)
+    var array = []
+    var found 
+
+ for(var i  = a -1 ; i>=2; i=i-1)
+{
+
+    console.log("i",i)
+
+    found = false 
+
+for( var b = i-1 ;b>=2 ; b=b-1)
+
+{
+    console.log("b",b)
+    if( i % b === 0)
+{
+    found = true 
+}
+
+
+}
+
+
+if (!found)
+{
+    array[array.length] = i
+   
+}
+
+
+}
+
+ console.log('array',array)
+}   
+
+primenumbers(12)
+
+
+</script>
