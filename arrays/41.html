@@ -1,0 +1,43 @@
+<script>
+//                              var ar = [19,12,23,4,15];
+//                             var br = [26,37,18,79,10];
+//                             a)Write script to merge array as the values of ar in the first and values of br next
+//                                 Expected output: [19,12,23,4,15,26,37,18,79,10];
+//                             b)Write script to merge array as the values of ar in the first and values of br next
+//                                 Expected output: [26,37,18,79,10,19,12,23,4,15];
+
+                           var ar = [19,12,23,4,15];
+                           var br = [26,37,18,79,10];
+ console.log('ar',ar)
+ var j = ar.length
+
+  br.forEach (
+    function(val,index)
+  {
+   
+    ar[j] = val
+    j = j+1 
+
+  }
+  )
+console.log("ar",ar)
+console.log("br",br)
+
+var k = br.length
+console.log("k",k)
+ar.forEach(
+    function(val,index)
+    {
+        while(index >=4)
+    {
+
+      br[k] = val
+      k = k+1
+      break 
+    }
+
+    }
+)
+console.log("br",br)
+
+ </script>

@@ -1,0 +1,74 @@
+<script>
+    //A Strong Number is a number in which the sum of the factorials of each digit is equal to the number itself.
+
+// 🔢 Definition
+
+// If
+
+// Sum of factorial of digits =  Original Number
+// Sum of factorial of digits=Original Number
+// then the number is a Strong Number.
+
+// Example: 145
+// Break into digits:
+// 1, 4, 5
+// Now find factorial of each:
+// Digit	Factorial
+// 1	1! = 1
+// 4	4! = 24
+// 5	5! = 120
+// Now add them:
+// 1
+// +
+// 24
+// +
+// 120
+// =
+// 145
+// 1+24+120=145
+
+// Since the sum (145) equals the number (145) → ✅
+// 145 is a Strong Number
+ // Print all  strong numbers between the given interval using functions.
+function strongNumber(a)
+{
+    var orginalnumber = a
+    var number = a
+    var result = 1
+    var lastdigit 
+    var finalresult = 0 
+    var array = []
+    while(number > 0)
+{
+  lastdigit = number % 10
+
+ console.log("lastdigt",lastdigit)
+           result = 1
+  for(var t = lastdigit ; t>=1 ;t = t-1)
+  {
+    result = result *  t 
+  }
+
+  console.log("result",result)
+  
+  finalresult = finalresult + result 
+  console.log("finalresult",finalresult)
+  number = Math.floor(number / 10)
+
+  console.log("number",number)
+}
+
+if(finalresult === orginalnumber)
+{
+    console.log(a,"is strong number")
+    array[array.length] = a
+}
+else
+{
+    console.log(a,"is not strong number")
+}
+
+
+}
+strongNumber(145)
+</script>
