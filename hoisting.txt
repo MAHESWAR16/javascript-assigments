@@ -1,0 +1,198 @@
+<script>
+// REMEMBER   JavaScript Rule  to call a function is   denoted as ()
+// remener 
+ variable decalaration  :
+ var x 
+ variable assigment :
+ var x 
+ x = 10
+ variable intilization : at the time of declaration when we intialize a value to a variable that is called  variable  intilixation.
+ var x = 10
+
+what is hoisitng 
+when javascrit runs the code there  are two phase 
+1 loading time or compile time . memory creation phase
+2  run time or execution  time . javascript runs the code LINE BY LINE , happerns after loading is finsihed . 
+
+In loading time hositing takes place hoisitng means javascript reads the code before execution  and identify varibale declarations and function declarations and allocate a memory for them and kept in the top place , javascript does not ececute .in loading time .
+
+what happens step by step in loading time and run time for the below code 
+
+function foo1()
+{
+    console.log("hi, this is declaritve function")
+}
+
+var foo2 = function ()
+           {
+            console.log('edupoly')
+           }
+foo1()
+foo2()
+
+LOADING TIME (Before Running)
+JavaScript looks at your code and prepares memory:
+
+      Code	                       What Happens During Loading Time	                      Stored Value
+function foo1(){...}	Function Declaration → Stores full function	             foo1 = function(){ console.log(..) }
+var foo2 = function(){...}      	Variable declared → No value assigned yet	           foo2 = undefined
+
+So memory after loading:
+foo1 → function(){ console.log("hi, this is declaritive function") }
+foo2 → undefined
+
+⚠️ Important:
+foo1 is ready to use.
+foo2 is not ready yet (because assignment has not happened).
+
+RUN TIME (Now Code Executes)
+step1
+Now JavaScript starts executing line-by-line:
+foo1()
+foo1 already contains function → Runs it
+Output:
+hi, this is declaritive function
+
+step2 
+var foo2 = function(){ console.log('edupoly') }
+his line assigns the function to foo2.
+Now memory becomes:
+foo2 → function(){ console.log('edupoly') }
+
+Step 3:
+foo2()
+Now foo2 finally has the function → Runs it
+Output:
+edupoly
+
+final ouput 
+hi, this is declaritive function
+edupoly
+____________________________________________________________________________________________________________________
+what will happens in this code like loading time and run time 
+foo1()
+foo2()
+
+function foo1()
+{
+    console.log("hi, this is declaritve function")
+}
+
+var foo2 = function ()
+           {
+            console.log('edupoly')
+           }
+
+
+First Stage → Loading Time (Hoisting)
+JavaScript scans and prepares memory before running the code.
+Code	                       What JavaScript Does During Loading Time	                      Stored Value
+function foo1(){...}	  Full function is stored in memory	                    foo1 = function(){ console.log(..) }
+var foo2 = function(){...}	Only variable declared, function NOT assigned yet       	foo2 = undefined
+
+Memory after Hoisting:
+foo1 → function(){ console.log("hi, this is declaritive function") }
+foo2 → undefined
+
+Second Stage → Run Time (Execution)
+
+Now JavaScript executes line by line.
+Step 1:
+foo1()
+foo1 already has the function → so it runs it ✅
+Output:
+hi, this is declaritve function
+
+Step 2:
+foo2()
+But foo2 = undefined at this moment (because assignment comes later).
+So we are trying to do:
+undefined()
+This causes an Error ❌
+Output/Error:
+TypeError: foo2 is not a function
+
+Final Output of Your Code
+hi, this is declaritve function
+TypeError: foo2 is not a function
+
+how js is telling foo2 is not funciton above case
+
+How JS knows foo2 is not a function
+During Loading Time (Hoisting):
+var foo2 = function() { console.log('edupoly') }
+Only the variable declaration happens, not the assignment.
+So JavaScript stores:
+foo2 → undefined
+Now at Run Time, when JS executes:
+foo2()
+What actually happens is:
+undefined()
+Which means we are trying to call undefined like a function.
+
+
+JavaScript Rule
+Only functions can be called with ().
+But here:
+foo2 is undefined  → not a function
+So JavaScript throws the error:
+TypeError: foo2 is not a function
+
+
+
+console.log(a);
+var a = 5;
+console.log(a);
+
+Explain what happens during loading time and during runtime.
+Step-by-step explanation:
+
+🔹 Loading (Creation) Phase:
+The JavaScript engine scans the code before execution.
+It hoists variable declarations (not assignments) to the top of their scope.
+So, internally, JS treats it like this:
+var a; // declared but not assigned
+console.log(a);
+a = 5;
+console.log(a);
+
+🔹 Runtime (Execution) Phase:
+First console.log(a) → a exists but has no value yet → undefined
+Then a = 5; → the value 5 is assigned to a.
+Second console.log(a) → now prints 5
+
+output 
+undefined
+5
+
+_______________________________________________________________________________________________________________________
+foo1()
+foo2()
+
+function foo1()
+{
+    console.log("hi, this is declaritve function")
+}
+
+var foo2 = function ()
+           {
+            console.log('edupoly')
+           }
+
+
+
+
+function foo1()
+{
+    console.log("hi, this is declaritve function")
+}
+
+var foo2 = function ()
+           {
+            console.log('edupoly')
+           }
+foo1()
+foo2()
+
+
+</script>
