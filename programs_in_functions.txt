@@ -6,3 +6,4 @@ palindrome
 amstrong   
  //Check whether a number is prime, Armstrong or perfect number using functions.
     //amstrongnumber
+ Print all  strong numbers between the given interval using functions.    
