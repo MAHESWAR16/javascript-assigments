@@ -1,0 +1,56 @@
+<script>
+    //Print all perfect numbers between the given interval using functions.
+ //⚙️ Example 2: 28
+
+// Divisors of 28 (excluding 28):
+// 1, 2, 4, 7, 14
+// Now add them up:
+// 👉 1 + 2 + 4 + 7 + 14 = 28
+// ✅ So, 28 is also a Perfect Number.
+
+// ⚙️ Example 3: 12
+// Divisors of 12 (excluding 12):
+// 1, 2, 3, 4, 6
+// Sum = 1 + 2 + 3 + 4 + 6 = 16
+// ❌ 16 ≠ 12, so 12 is NOT a Perfect Number.
+
+
+
+function numbers(start,end)
+{
+
+ var array  = []
+ var result  
+ var found 
+
+for(var i = start ; i<= end ; i = i+1)
+
+result = 0
+console.log("i",i)
+ found = false 
+
+{
+
+    for(var j = 1 ; j<i ; j = j+1)
+{
+    if(i % j ===0)
+{
+    result = result + j 
+}
+
+}
+
+if( result === i)
+{
+    
+    array.[array.length] = i 
+}
+ console.log("Perfect numbers between " + start + " and " + end + " are:", array);
+}
+
+}
+
+
+numbers(23,123)
+
+</script>
