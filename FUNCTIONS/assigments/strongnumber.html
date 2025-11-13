@@ -29,46 +29,65 @@
 
 // Since the sum (145) equals the number (145) → ✅
 // 145 is a Strong Number
- // Print all  strong numbers between the given interval using functions.
-function strongNumber(a)
+ //  question : Print all  strong numbers between the given interval using functions.
+
+
+
+console.log(23/10)   //2.3
+console.log(23%10)   //2
+
+console.log(5%10)
+console.log(5/10)
+
+function number(a,b)
 {
-    var orginalnumber = a
-    var number = a
-    var result = 1
-    var lastdigit 
-    var finalresult = 0 
-    var array = []
-    while(number > 0)
+
+      var array = []
+     for(var f = a ; f<=b ; f=f+1)
 {
-  lastdigit = number % 10
+        var store = f
+        var result = 0
+             
+     while( store > 0)
+     {
+          var lastdigit = store % 10
 
- console.log("lastdigt",lastdigit)
-           result = 1
-  for(var t = lastdigit ; t>=1 ;t = t-1)
-  {
-    result = result *  t 
-  }
+            console.log("lastdigit",lastdigit)
 
-  console.log("result",result)
-  
-  finalresult = finalresult + result 
-  console.log("finalresult",finalresult)
-  number = Math.floor(number / 10)
+       /// facto 
+         var facto =1 
 
-  console.log("number",number)
+       for( var i = lastdigit ; i>=1; i =i-1)
+       {
+
+           facto = facto * i 
+          
+       }
+ 
+        result = result + facto  
+
+      console.log("result",result)
+
+          store = Math.floor(store / 10)
+
+
+          console.log("store", store)
+     }
+
+   
+
+}
+  if(result === f)
+     {
+          console.log(" given number is strong number")
+          array[array.length] =f
+     }
+    
+console.log("array",array)
 }
 
-if(finalresult === orginalnumber)
-{
-    console.log(a,"is strong number")
-    array[array.length] = a
-}
-else
-{
-    console.log(a,"is not strong number")
-}
+
+number(20,147)
 
 
-}
-strongNumber(145)
 </script>
