@@ -1,0 +1,140 @@
+MOST IMPORTANT CONCEPT
+❗ A function can do TWO things:
+✔ 1. Print something
+(using console.log())
+
+✔ 2. Return something
+(using return)
+These two are NOT the same.
+
+Two important things happen when a function ends:
+1️⃣ The function RETURNS a value (default = undefined)
+2️⃣ The program GOES BACK to where the function was called
+
+These two things happen at the same time.
+
+function test() {
+   console.log("inside test");
+   // no return
+}
+
+console.log(test());
+Output:
+inside test
+undefined
+explanation:
+test() prints "inside test"
+Function ends → returns undefined
+Exection returns back to console.log(test())
+console.log prints the returned value → undefined
+So returning undefined and going back are both happening.
+
+
+
+
+____________________________________________
+✅ return
+Where it is used?
+➡️ Inside a function
+What it does?
+➡️ Stops the entire function
+➡️ Sends a value back (optional)
+➡️ No further code in that function will run
+
+return  does TWO things:
+Stops the function immediately (no more code runs after return)
+Sends a value OUT of the function
+
+When return runs, the function STOPS immediately.
+
+Example:
+
+function test() {
+    console.log("A");
+    return 10;
+    console.log("B"); // this will NOT run
+}
+
+test();
+
+
+Output:
+A
+Because:
+"A" prints
+return 10 runs → function stops
+"B" does NOT run
+______________________________________________________________________________________________________________________________
+function abc() {
+    console.log("Hi");
+    console.log("Bye");
+}
+When abc() runs:
+
+It prints Hi
+It prints Bye
+No more lines left
+👉 So the function automatically ends
+👉 And it returns undefined
+
+There is NO NEED to write return to stop the function.
+
+So remember:
+✔ When function reaches the last line → it stops itself
+✔ When you use return → it stops early
+✔ When no return → JS automatically returns undefined
+__________________________________________________________________
+✅ break
+Where it is used?
+➡️ Inside loops (for, while)
+What it does?
+➡️ Stops the loop only.
+➡️ Code after the loop will still run.
+____________________________________________________
+
+function abc() {
+    console.log("hello")
+    return "nibaa"
+}
+
+abc()
+_____________________________________________________
+Let me explain in the simplest way
+
+🔹 Step 1 — JavaScript sees your function definition
+It sees:
+There is a function named abc
+Inside that function:
+Print "hello"
+Then give back "nibaa"
+But nothing runs yet.
+
+Step 2 — You call the function
+You write:
+abc()
+This makes JS run the function.
+
+Step 3 — What happens when the function runs?
+Inside the function:
+1️⃣ It prints "hello"
+So output:
+hello
+2️⃣ Then it hits:
+return "nibaa"
+This gives a value back (but you are not storing it anywhere).
+So if you do:
+console.log(abc())
+output:
+hello
+nibaa
+Because:
+"hello" is printed by the function
+"nibaa" is printed by console.log
+___________________________________________________
+
+function abc(i)
+{
+    console.log("hello)
+     
+}
+abc(1)
