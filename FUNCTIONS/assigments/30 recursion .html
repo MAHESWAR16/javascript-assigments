@@ -1,6 +1,49 @@
 <script>
     //Find the power of any number using recursion
     
+
+
+
+
+
+function power(a, b)
+ {
+  console.log("ENTER: power(a=" + a + ", b=" + b + ")");
+
+
+  if (b === 1)
+    {
+    console.log("  BASE CASE: b === 1 -> return " + a);
+    return a;
+    }
+
+  var partial = power(a, b - 1);
+
+  console.log("partial",partial)
+  
+  var result = a * partial;
+
+  console.log("result",result)
+
+  console.log("  AFTER RETURN: a=" + a + ", b=" + b + " -> " + a + " * " + partial + " = " + result);
+
+  return result;
+
+}
+
+console.log("FINAL RESULT:", power(2, 3));
+
+
+
+
+
+
+
+
+
+
+
+
     
 // function abc()
 // {
@@ -30,26 +73,40 @@
 
 
 
+// function abc(i)
+//  {
+//   console.log("i =", i);
+
+//   if (i >= 3)
+//   {
+//           return;
+
+//   } 
+//   abc(i + 1);
+//   console.log("after call", i);  // <-- This runs when function RETURNS
+// }
+
+// abc(1);
 
 
 
 
 
-function abc(i)
-{
+// function abc(i)
+// {
     
  
     
-    while(i<=5)
-{
-       console.log("i",i)
-     i = i+1
-   abc(i)
-   return
+//     while(i<=5)
+// {
+//        console.log("i",i)
+//      i = i+1
+//    abc(i)
+//    return
     
-}
+// }
       
-}
- console.log(abc(1))
+// }
+//  console.log(abc(1))
 
  </script>
