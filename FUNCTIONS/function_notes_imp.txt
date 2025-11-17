@@ -84,6 +84,22 @@ So remember:
 ✔ When you use return → it stops early
 ✔ When no return → JS automatically returns undefined
 __________________________________________________________________
+function abc(i)
+ {
+  console.log("i =", i);
+
+  if (i >= 3)
+  {
+          return;
+
+  } 
+  abc(i + 1);
+  console.log("after call", i);  // <-- This runs when function RETURNS
+}
+
+abc(1);
+______________________________________________________________________________________________________________________________
+
 ✅ break
 Where it is used?
 ➡️ Inside loops (for, while)
