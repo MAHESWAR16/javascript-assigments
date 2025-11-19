@@ -2,27 +2,26 @@
     //Find the power of any number using recursion
     
    
-   var b 
+
 
    function abc(b)
-
-   { 
-   //2 3 4 5 6
-
-   while(b<=5)
-
    {
-    console.log('b',b) 
-
-    b= b+1 //b = 2 3 4 5 6
-
-    abc(b) //abc(2) abc(3) abc(4) abc(5)
-   
-   
-   }
-     
-   console.log("hello world")
   
+
+    console.log(b)  // 1 2 3 4 5 6
+    
+     while (b <= 5)
+     {
+        b = b+1
+        
+        abc(b)  //23456
+        
+        return 
+     }
+     
+
+     console.log('hello world',b) 
+      
    }
 
 console.log(abc(1))

@@ -24,9 +24,11 @@ greet()
 function div(a,b,cf)
 {
    var z = a/b
-   cf()  // this is function call 
+     // this is function call 
+     cf()
    return z
 }
+
 var r = div(10,3,function(){ alert(" hello first class functions")})
 console.log('r',r)
 

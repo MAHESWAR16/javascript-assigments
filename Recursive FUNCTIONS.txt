@@ -1,0 +1,405 @@
+FUNCTION DEFINATION : 
+
+🧠 ⭐ RULE: When a function is called, JavaScript must return to where it was called from.
+
+🧠 WHY does it return?
+Because JS function calls work like:
+Call
+Execute
+Return back to caller
+This is automatic — you don’t write return, JS does it internally.
+When a function returns, the program MUST go back to the function that called it.
+When a function ends, it returns to the place where it was called and continues the remaining lines.
+When a function ends (no return inside), JavaScript automatically returns undefined and goes back to the place that called it.
+Ending a function  MEANS returning BACK TO THE CALLER . 
+
+✔ WHY DOES IT “GO BACK”?
+Because every function call must finish and return control to whoever called it.
+Even if it returns undefined.
+
+Returning undefined is still a “return”.
+✔ If you DO NOT use return
+Function stops at the end and gives undefined.
+✔ If you DO use return value
+Function stops immediately and gives that value to the caller.
+
+
+THE ONE RULE YOU MUST REMEMBER
+👉 Whenever you call a function, JavaScript MUST return back to where the call happened.
+If JavaScript does NOT return back:
+your program would break
+it wouldn’t be able to continue
+
+EXAMPLE1:
+function abc(a)
+ {
+    console.log("hello");
+}
+
+abc(2);
+EXPLANATION :
+
+You call the function
+abc(2)
+This means:
+✔️ Call function abc
+✔️ Pass value 2 into parameter a
+So now inside the function:
+a = 2
+Function executes its code
+Inside abc() the code is:
+console.log("hello")
+So It prints:
+hello
+Function ends
+There is no return, so the function returns undefined automatically.
+
+HOW TO SEE UNDEFINED IN THE CONSOLE :  there are TWO WAYS
+1) CONSOLE.LOG(abc(1))
+2) var c = abc(1)
+console.log("c",c)
+
+WHAT IS RETURNING :
+
+Let’s see a simple example:
+console.log("A");
+hello();
+console.log("C");
+
+function hello()
+ {
+    console.log("B");
+}
+
+OUTPUT:
+A
+B
+C
+
+Why?
+Because:
+hello() is called
+Javascript jumps inside hello()
+Runs code
+Comes back to the next line after hello()
+This is called returning.
+
+EXAMPLE 2 :
+1 function two() 
+2 {
+3    console.log("Inside two");
+4 }
+5
+6 function one() 
+7 {
+8    console.log("Inside one");
+9    two();
+10    console.log("Back to one");
+11 }
+
+one();
+ OUTPUT :
+ 9 inside one .
+ 2 inside two .
+ 10 back to one .
+
+EXPLNATION :
+one() starts
+It calls two() → goes inside
+two() finishes
+JavaScript returns back
+Now "Back to one" prints
+👉 Function calls do NOT erase the old function. They pause it, execute the new one, then return back to continue.
+There is no return, so the function returns undefined automatically TO THE CALLER AND IT ENDS.
+When function reaches the last line → it stops itself
+✔ When you use return → it stops early
+✔ When no return → JS automatically returns undefined
+
+HOW DOES A FUNCTION ENDS 
+✔ A function ends in 2 ways:
+1️⃣ Naturally (no more lines to run)
+→ returns undefined
+2️⃣ Forcefully (using return)
+→ returns what you wrote
+
+WHAT HAPPENS WHEN A FUNCTION ENDS 
+✅ Two important things happen when a function ends:
+1️⃣ The function RETURNS a value (default = undefined)
+2️⃣ The program GOES BACK to where the function was called
+These two things happen at the same time.
+When a function finishes:
+✔ It returns a value (undefined if no return)
+AND
+✔ It goes back to the place that called it
+These are NOT separate.
+Both happen automatically.
+
+EXAMPLE 3:
+
+function abc() 
+{
+    console.log("hello")
+    return "nibaa"
+}
+
+abc()
+EXPLANATION :
+🔹 Step 1 — JavaScript sees your function definition
+It sees:
+There is a function named abc
+Inside that function:
+Print "hello"
+Then give back "nibaa"
+This gives a value back (but you are not storing it anywhere).
+So if you do:
+console.log(abc())
+You will get:
+hello
+nibaa
+Because:
+"hello" is printed by the function
+"nibaa" is printed by console.log
+
+🔥 MOST IMPORTANT CONCEPT
+❗ A function can do TWO things:
+✔ 1. Print something
+(using console.log())
+
+✔ 2. Return something
+(using return)
+These two are NOT the same.
+
+_________________________________________________________________________________________________________________________________
+                                           RECURSIVE FUNCTION 
+
+RECURSIVE FUNCTION DEFINATION : recursive means calling  the same function again.
+👉 Function calls do NOT erase the old function. They pause it, execute the new one, then return back to continue.
+⭐ Rule of Recursion (VERY IMPORTANT)
+Every recursive function needs two things:
+1️⃣ Base condition (stop condition)
+→ Stops recursion
+2️⃣ Recursive call
+→ Calls the function again
+
+✅ Program: Print "hello" 2 times using recursion
+function printHello(count) 
+{
+
+    // 1. STOP when count becomes 0
+    if (count === 0)
+     {
+        return;
+    }
+
+    // 2. Print
+    console.log("hello");
+
+    // 3. Call function again (reduce count)
+    printHello(count - 1);
+}
+
+printHello(2);
+
+✅ return
+Where it is used?
+➡️ Inside a function
+What it does?
+➡️ Stops the entire function
+➡️ Sends a value back (optional)
+➡️ No further code in that function will run
+Keyword	   -        Stops What?
+break      -	  Stops only the loop
+return      -    	Stops the whole function
+
+recursion without return :
+
+function abc(i) {
+    console.log("i", i);
+
+    while (i <= 5) {
+        i = i + 1;
+        abc(i);
+    }
+}
+
+abc(1);
+
+EXPLANATION :
+abc(1) starts calling the function , so 1 goes to  i 
+i is 1 so 1 will be print 
+check while consiton , so 1<=5 is true 
+
+
+
+
+
+function abc(n)
+ {
+  console.log("start", n);
+   abc(n + 1);  // calling again NO RETURN
+  console.log("end", n);
+}
+
+abc(1);
+
+output :12345678910111212131417.. function wont stop 
+infinte loop .
+
+without return recursion never stops, so the end line never runs .
+
+
+recursion with return :
+
+Returning means:
+Recursion WITH return
+
+Function stops when condition is met
+Starts coming back
+Line after recursive call runs
+This prints values in reverse order
+Safe and controlled
+____________________________________________________________________________________________________________________
+⚡ A function call PAUSES the current function.
+⚡ When the called function finishes, the paused function continues from the next line.
+
+That’s what “going back” means.
+🚦 Let’s show it step-by-step with a simple diagram
+Your code:
+
+function abc(i) {
+  console.log("i =", i);
+
+  if (i >= 3) {
+    return;
+  }
+
+  abc(i + 1);
+  console.log("after call", i);
+}
+
+abc(1);
+
+🔥 VISUAL EXPLANATION (THIS WILL MAKE 100% SENSE)
+Imagine each function call is a page in a notebook.
+
+➤ STEP 1: abc(1) starts
+i = 1
+Then it sees:
+abc(2)
+
+📌 abc(1) stops HERE and waits.
+It creates a new page for abc(2).
+
+➤ STEP 2: abc(2) starts
+i = 2
+Then it sees:
+abc(3)
+
+📌 abc(2) stops HERE and waits.
+It creates another new page for abc(3).
+
+➤ STEP 3: abc(3) starts
+i = 3
+Now:
+if (i >= 3) return;
+
+✔ abc(3) returns
+✔ abc(3) page is finished
+
+📌 Now the program returns to the previous paused page → abc(2)
+⭐ THIS IS THE “GO BACK” MOMENT
+📍 You paused abc(2) at:
+abc(3);   // <-- paused here
+
+
+When abc(3) finishes, abc(2) continues from the next line:
+console.log("after call 2");
+And then abc(2) finishes.
+
+⭐ Now it “goes back” to abc(1)
+Because abc(1) was paused at:
+abc(2);   // paused here
+Now abc(2) has finished.
+So abc(1) continues:
+console.log("after call 1");
+
+
+Then abc(1) finishes.
+🎉 THAT'S ALL
+To summarize:
+
+abc(1) calls abc(2)  → abc(1) pauses
+abc(2) calls abc(3)  → abc(2) pauses
+abc(3) returns       → go back to abc(2)
+abc(2) returns       → go back to abc(1)
+abc(1) returns       → program ends
+
+🔥 SUPER EASY EXAMPLE (TO MAKE IT PERFECTLY CLEAR)
+
+Imagine this:
+You are writing notes.
+You stop and call your brother.
+Your brother stops and calls his friend.
+Friend finishes talking → comes back to your brother.
+Your brother continues talking → comes back to you.
+You continue your work.
+
+This is exactly how recursion works.
+
+
+____________________________________________________________________________________________________________________________
+
+PRINT 1 TO 5 NUMBERS USING RECURSION 
+
+
+function abc(i)
+{
+    console.log("i", i)
+
+    while (i <= 5)
+    {
+        i = i + 1
+        abc(i)
+    }
+}
+abc(1)
+
+explanation :
+Start: abc(1)
+i = 1 → print "i 1"
+while(1 <= 5) → TRUE
+  i = 2
+  abc(2)
+
+▶ Next: abc(2)
+i = 2 → print "i 2"
+while(2 <= 5) → TRUE
+  i = 3
+  abc(3)
+
+▶ Next: abc(3)
+i = 3 → print "i 3"
+while(3 <= 5) → TRUE
+  i = 4
+  abc(4)
+
+▶ Next: abc(4)
+i = 4 → print "i 4"
+while(4 <= 5) → TRUE
+  i = 5
+  abc(5)
+
+⭐⭐ Now important part — abc(5) ⭐⭐
+i = 5 → print "i 5"
+while(5 <= 5) → TRUE
+  i = 6
+  abc(6)
+
+▶ Next: abc(6)
+i = 6 → print "i 6"
+while(6 <= 5) → FALSE
+(loop ends)
+function ends
+
+What happens after abc(6)?
+
