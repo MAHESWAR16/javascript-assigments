@@ -1,0 +1,159 @@
+<script>
+// print 1 to 2 numbers using recursion  with out using return and with using return 
+
+// function v(c)
+// {
+//     console.log("c",c)
+//      return 
+//     console.log("helo")
+// }
+
+// v(2)
+
+// function abc(l)
+// {
+//     console.log("start",l)
+ 
+//   if(l>=3)
+//   {
+//     return
+//   }
+
+//   abc(l+1)
+
+// console.log('end',l)
+
+// }
+
+// abc(1)
+
+// //OUTPUT:
+// start 1
+// start 2
+// start 3
+// end 2
+// end 1
+
+// ⭐ HOW IT WORKS (SUPER SIMPLE WAY)
+
+// Imagine recursion like stacked plates.
+
+// When you call a function again:
+
+// ✔ It keeps the current function
+// ✔ Goes inside the new one
+// ✔ After finishing the new one → it returns back to the old one
+
+// So:
+
+// abc(1)
+//    abc(2)
+//       abc(3)
+//          return
+//       print "end 2"
+//    print "end 1"
+
+
+// That’s it.
+
+// ⭐ STEP 2 → NOW LEARN HOW RETURN WORKS
+
+// Return simply means:
+
+// "Stop here and go back where I came from."
+
+// That’s all.
+// It is NOT complicated.
+
+// ⭐ STEP 3 → NOW WE ADD BACK THE WHILE LOOP
+
+// NOW let’s take your code again:
+
+// function abc(l) {
+//     console.log("l", l);
+ 
+//     while (l <= 2) {
+//         l = l + 1;
+//         abc(l);
+//     }
+ 
+//     console.log('hello world');
+// }
+
+// WHY YOU ARE CONFUSED?
+
+// Because you think:
+
+// 1 → 2 → 3 → return → hello → hello → hello
+
+
+// But that is NOT how while-loop works.
+
+// ⭐ NOW LISTEN CAREFULLY
+
+// When abc(1) runs:
+
+// 1️⃣ It calls abc(2) (first loop)
+// 2️⃣ abc(1) does NOT continue. It PAUSES.
+// 3️⃣ It waits until abc(2) finishes.
+// 4️⃣ abc(2) calls abc(3)
+// 5️⃣ abc(2) waits again
+// 6️⃣ abc(3) prints helloworld and returns
+// 7️⃣ abc(2) prints helloworld and returns
+// 8️⃣ NOW abc(1) continues again
+// 9️⃣ and DECIDES TO RUN WHILE AGAIN
+
+// Yes… abc(1)’s loop runs TWICE.
+// This is the part beginners always fail to notice.
+
+// ⭐ WHY WHILE RUNS AGAIN?
+
+// Because after abc(1) returns from abc(2), the value of l is still:
+
+// l = 2
+
+
+// So:
+
+// 2 <= 2 → true
+
+
+// That means the loop runs again.
+
+// ⭐ SUPER SIMPLE EXPLANATION OF YOUR CONFUSION
+// YOU EXPECTED:
+// 1 → 2 → 3 → back → back → done
+
+// BUT ACTUALLY:
+// 1
+// ↳ 2
+//    ↳ 3
+//       hello
+//    hello
+// ↳ 3
+//    hello
+// hello
+
+// ⭐ LET ME FIX YOUR BRAIN CONFUSION
+
+// You know why you are confused?
+
+// 👉 Because you are thinking recursion like a straight forward jump.
+
+// But recursion is like this:
+
+// A call gets suspended
+// Another call runs
+// Then it comes back
+// Then loop runs again
+// Then it calls again
+// Then again it comes back
+// Then it prints 
+// Then finally ends
+
+
+// Recursion ≠ Linear
+// Recursion = Go inside → inside → inside → return step by step.
+
+</script>
+
