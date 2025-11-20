@@ -1,31 +1,202 @@
 <script>
     //Find the power of any number using recursion
 
-function numbers(first,second)
-{
+// function numbers(first,second)
+// {
  
-    console.log("firstnumber",first)
+//     // console.log("firstnumber",first)
 
-    console.log('second number',second)
+//     // console.log('second number',second)
 
-    var result = 1
+//     var result = 1
+ 
+//    while(second >=1)
+//    {
+//     result = result * first
+   
+//     second = second - 1
+    
+//      numbers(first,second)
+//    }
 
-    while(second>=1)
+   
+
+//    return  result
+
+
+// }
+
+
+
+//    console.log( numbers(6,3))
+
+// cube any number using recursion 
+// Your question:
+// **“5,3 → I get 5 * power(5,2).
+
+// So does it RETURN to power(5,3)?
+// Explain EXACTLY what happens.”**
+
+// Okay. I’ll explain line by line with NO magic, NO shortcuts, and NO jumps.
+
+// I’ll show exactly where the return goes.
+
+// ⭐ First, the code:
+// function power(f, s) {
+//     if (s === 0) {
+//         return 1;
+//     }
+
+//     return f * power(f, s - 1);
+// }
+
+// console.log(power(5,3));
+
+// ⭐ NOW EXACT TRACE (step-by-step, EXACTLY as computer does)
+
+// We start:
+
+// power(5,3)
+
+// Step 1:
+// return 5 * power(5,2)
+
+
+// 🚨 STOP HERE — this is where your confusion is.
+
+// ⭐ IMPORTANT:
+// **When power(5,3) calls power(5,2), IT DOES NOT CONTINUE.
+
+// It PAUSES.**
+
+// Like this:
+
+// power(5,3)
+//    |
+//    |--- waiting for result of power(5,2)
+
+
+// It cannot multiply yet because it does NOT know the answer of power(5,2).
+
+// ⭐ Now power(5,2) starts:
+// power(5,2)
+// → return 5 * power(5,1)
+
+
+// Again:
+
+// power(5,2)
+//    |
+//    |--- waiting for result of power(5,1)
+
+// ⭐ Now power(5,1):
+// power(5,1)
+// → return 5 * power(5,0)
+
+
+// Again:
+
+// power(5,1)
+//    |
+//    |--- waiting for result of power(5,0)
+
+// ⭐ Now power(5,0):
+// power(5,0)
+// → return 1
+
+
+// This function RETURNS immediately.
+
+// ⭐ NOW THE “GO BACK” PART (YOUR CONFUSION)
+// power(5,0) RETURNED 1
+
+// So now we go back UP one level to the place that called it:
+
+// Back to:
+// power(5,1) → return 5 * 1
+
+
+// So:
+
+// power(5,1) returns 5
+
+// ⭐ Next level up:
+
+// We go back to:
+
+// power(5,2) → return 5 * (result of power(5,1))
+// power(5,2) → return 5 * 5 = 25
+
+
+// So:
+
+// power(5,2) returns 25
+
+// ⭐ Final level up:
+
+// We go back to:
+
+// power(5,3) → return 5 * (result of power(5,2))
+// power(5,3) → return 5 * 25 = 125
+
+
+// So:
+
+// power(5,3) returns 125
+
+// ⭐ THE WHOLE CALL STACK (CLEAR VERSION)
+// power(5,3)
+//    waits for power(5,2)
+
+//      power(5,2)
+//         waits for power(5,1)
+
+//           power(5,1)
+//              waits for power(5,0)
+
+//                power(5,0) = 1  ← base case
+
+//           power(5,1) = 5 * 1 = 5
+//      power(5,2) = 5 * 5 = 25
+// power(5,3) = 5 * 25 = 125
+
+// ⭐ WHY DOES IT "RETURN BACK"?
+
+// Because EACH function call stores its place and WAITs for the next call to finish.
+
+// Just like opening 4 tabs:
+
+// You open tab 1 → inside it, you open tab 2
+
+// Inside tab 2 → open tab 3
+
+// Inside tab 3 → open tab 4
+
+// Tab 4 finishes → return to tab 3
+
+// Tab 3 finishes → return to tab 2
+
+// Tab 2 finishes → return to tab 1
+
+// Tab 1 finishes
+
+// This is recursion.
+
+
+// 1 st methos 
+function numbers(f,s)
 {
-    result = result * first 
-
-    second = second - 1
-
+    if(s ===0 )
+    {
+        return 1
+        
+    }
+var result 
+result = f*numbers(f,s-1)
+return result
+    
+   
+    
 }
-
-console.log("result",result)
-  return result 
-
-
-
-}
-
-
-
-    numbers(5,3)
+console.log(numbers(5,3))
 </script>
