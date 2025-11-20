@@ -8,3 +8,4 @@ amstrong
     //amstrongnumber
  Print all  strong numbers between the given interval using functions.    
  /Find the power of any number using recursion
+ print odd and even numbers from givenrange using recursion 
