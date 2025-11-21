@@ -1,0 +1,80 @@
+🎯 What is array[array.length] ?
+
+👉 It is a way to add a new element at the END of an array manually.
+
+📌 First, understand: What is array.length?
+
+array.length means:
+
+How many items are inside the array.
+
+Example:
+
+var arr = [10, 20, 30];
+
+
+Here,
+
+arr.length is 3
+(because the array has 3 items)
+
+🎯 Now understand: What is array[array.length]?
+
+Since array.length is 3…
+
+array[array.length] becomes:
+
+array[3]
+
+
+Look:
+
+index:   0     1     2
+value:  10    20    30
+
+
+There is no element at index 3 yet.
+
+So assigning:
+
+arr[arr.length] = 40;
+
+
+becomes:
+
+arr[3] = 40;
+
+
+Now the array becomes:
+
+[10, 20, 30, 40]
+
+❤️ SIMPLE EXPLANATION
+array[array.length] = newValue
+
+means
+
+👉 Put the new value at the next empty place in the array.
+
+⭐ Example
+var colors = ["red", "green"];
+
+colors[colors.length] = "blue";
+
+
+Here:
+
+colors.length is 2
+
+So it does colors[2] = "blue"
+
+Result:
+
+["red", "green", "blue"]
+
+🎉 Final line to remember
+array.length points to the first empty position.
+
+So:
+
+✔ array[array.length] = x = add x to end of the array
