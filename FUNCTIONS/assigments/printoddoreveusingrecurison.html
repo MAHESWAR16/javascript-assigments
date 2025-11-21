@@ -1,20 +1,26 @@
 <script>
     //Print all even or odd numbers in a given range using recursion.
-function numbers(f, s, even = [], odd = []) {
-
-    if (f > s) {
+    
+function numbers(f, s, even = [], odd = [])
+ {
+   
+    if (f > s) 
+    {
         console.log("even", even);
         console.log("odd", odd);
         return;
     }
 
-    if (f % 2 === 0) {
+    if (f % 2 === 0) 
+    {
         even[even.length] = f;
-    } else {
+    } else 
+    {
         odd[odd.length] = f;
     }
 
     numbers(f + 1, s, even, odd);
+
 }
 
 numbers(1, 50);
