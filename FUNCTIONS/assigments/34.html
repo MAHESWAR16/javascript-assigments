@@ -1,0 +1,46 @@
+<script>
+    //ind the sum of all even or odd numbers in a given range using recursion.
+var evensum = 0
+var oddsum = 0
+ function range(f, s , even=[], odd=[])
+
+{
+
+
+       if( f>s)
+     {
+        console.log('even',even)
+        console.log("odd",odd)
+        console.log("evensum",evensum)
+        console.log("oddsum",oddsum)
+       return 
+     }
+
+   if(f %2 === 0)
+   {
+    even[even.length] = f
+    evensum = evensum + f
+   }
+   else
+   {
+    odd[odd.length] = f
+    oddsum = oddsum + f
+   }
+  
+     range(f+1,s,even, odd)
+ 
+  
+  
+ 
+
+
+}
+
+
+
+
+
+
+  var c =  range(1,50)
+  console.log("c",c)
+</script>
