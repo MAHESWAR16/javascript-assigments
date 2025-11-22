@@ -1,0 +1,41 @@
+<script>
+    //Remove Duplicates Items In An Array
+    var array = [2,3,5,5,6,2,7,8,2]
+    var new_array = []
+    var found
+
+    array.forEach
+    (
+    function(element , index)
+    {
+        found = false  
+
+         new_array.forEach
+
+         (
+            
+          function(e)
+
+          {
+
+                if(element === e)
+                {
+                  found = true 
+                  
+                }
+
+          }
+
+         )
+
+
+         if( found === false )
+         {
+            new_array[new_array.length] = element 
+         }
+
+    }
+            
+    )
+  console.log("newarray",new_array)
+</script>
