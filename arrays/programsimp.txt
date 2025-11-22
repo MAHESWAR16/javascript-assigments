@@ -6,3 +6,4 @@ For every salary, deduct 10% tax for salaries less than 50000 and deduct 12% tax
    //Write a program to remove elements from an array which are not in the ascending order Ex: Original array: [12,34,11,56,37,98,23,67,109,45] Output : [12,34,56,98,109]
      //Write a program to  print all element is ascending order and descending order: Original array: [12,34,11,56,37,98,23,67,109,45] 
      Write a program to sort the array based on the number of occurrences of elements Ex: original array: [1,2,5,6,2,1,6,1,2,6,2,1,2]; After the logic: [5,6,6,6,1,1,1,1,2,2,2,2,2]; //5 occurred one time,6 three times,1 occurred 4 times, 2 occurred 5 times     [ saved file name as 40.html  with answers]
+         //Remove Duplicates Items In An Array using forEach
