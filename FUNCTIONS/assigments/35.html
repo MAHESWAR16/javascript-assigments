@@ -1,0 +1,46 @@
+<script>
+    //Find reverse of any number using recursion.
+      
+
+    // console.log(2%10)
+
+    // console.log(Math.floor(2.3))
+
+     var result  = 0
+
+     var last_digit  = 0
+
+    
+
+   function reverse(a)
+             
+   {
+    console.log('a',a)
+    
+    if(a === 0)
+   {
+    return result 
+   }
+    
+    
+
+
+    last_digit = a % 10
+
+    console.log("lastdigit" ,last_digit)
+
+    result  = result*10 + last_digit
+
+    console.log("result",result)
+
+    a = Math.floor(a/10)
+
+    console.log('a',a)
+
+     return reverse(a)
+
+ 
+   }
+   var b =  reverse(23)
+   console.log("b",b)
+</script>
