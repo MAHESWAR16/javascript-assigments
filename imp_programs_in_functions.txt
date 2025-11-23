@@ -11,3 +11,5 @@ amstrong
  print odd and even numbers from givenrange using recursion 
  Find reverse of any number using recursion.
  using recursion find a number is amstrong number or not 
+
+ Find the sum of digits of a given number using recursion.[imp]

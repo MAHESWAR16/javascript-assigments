@@ -1,0 +1,200 @@
+<script>
+    //Find the sum of digits of a given number using recursion.
+
+    var last_digit = 0
+    var result  = 0
+function sumofdigits(a)
+{
+    if(a === 0)
+{
+    console.log(" inside if a functions",a )
+    console.log('result',result)
+    return  result
+}
+   
+    console.log('a ',a )
+
+    last_digit = a % 10
+
+    console.log("last digit",last_digit)
+
+    result = result + last_digit
+  
+    console.log("result",result)
+
+    a = Math.floor(a/10)
+
+    console.log('a =' ,a)
+ 
+    // nuvuuvu return ani ichina ivakapoyina  23rd line is last end sp js automaticaly stop the function exection and retun undefined automatically although you have not emntioned return.
+
+   return  sumofdigits(a)
+
+
+}
+
+
+   var c  = sumofdigits(123)
+   console.log("c",c)
+
+
+ // the below example explanation is what happens when we just write  with return and with out retun in 31 line 
+
+
+
+//   Let’s explain this slowly, clearly, step-by-step, with ZERO shortcuts, so you finally understand what happens when you don’t return the recursive result.
+
+// ⭐ Your Function (Important Part)
+// function sumofdigits(a)
+// {
+//     if(a === 0)
+//     {
+//         return result   // returns FIVE, but only inside this call
+//     }
+
+//     last_digit = a % 10
+//     result = result + last_digit
+//     a = Math.floor(a/10)
+
+//     sumofdigits(a)   // ❌ NO RETURN HERE
+// }
+
+// ⭐ MAIN DOUBT
+
+// “I am giving back 6 to sumofdigits(1), so what happens?”
+
+// Perfect question.
+// Let’s go inside the recursion line by line, and you will see EXACTLY why it becomes undefined.
+
+// ⭐ CALL STACK EXECUTION — VERY SLOW EXPLANATION
+
+// We are calling:
+
+// sumofdigits(123)
+
+
+// Let’s break it:
+
+// ✔ Call 1 — sumofdigits(123)
+
+// a = 123 → not 0
+
+// last_digit = 3
+
+// result = 3
+
+// calls → sumofdigits(12)
+
+// ❌ DOES NOT RETURN ANYTHING HERE → RETURN VALUE = undefined
+
+// ✔ Call 2 — sumofdigits(12)
+
+// a = 12 → not 0
+
+// last_digit = 2
+
+// result = 5
+
+// calls → sumofdigits(1)
+
+// ❌ DOES NOT RETURN ANYTHING HERE → RETURN VALUE = undefined
+
+// ✔ Call 3 — sumofdigits(1)
+
+// a = 1 → not 0
+
+// last_digit = 1
+
+// result = 6
+
+// calls → sumofdigits(0)
+
+// ❌ DOES NOT RETURN ANYTHING HERE → RETURN VALUE = undefined
+
+// ✔ Call 4 — sumofdigits(0)
+
+// a = 0 → return result
+
+// result = 6
+
+// so → returns 6
+
+// ⭐ NOW THE IMPORTANT PART YOU MISUNDERSTAND
+
+// When call 4 returns 6…
+
+// sumofdigits(0) → returns 6
+
+
+// But look at Call 3:
+
+// sumofdigits(1) {
+//     sumofdigits(a)  // ◀ NO RETURN
+// }
+
+
+// So Call 3 ignores the returned 6.
+
+// JavaScript does this:
+
+// sumofdigits(0) returned 6 → OK  
+// but sumofdigits(1) did not return it → becomes undefined
+
+
+// This continues upward:
+
+// sumofdigits(1) → undefined
+// sumofdigits(12) → undefined
+// sumofdigits(123) → undefined
+
+
+// So final output is:
+
+// undefined
+
+// ⭐ WHY UNDEFINED? (Final Truth)
+
+// Because your function has no return statement in the recursive call.
+
+// So JavaScript automatically returns:
+
+// undefined
+
+
+// This is EXACT behavior:
+
+// sumofdigits(a)  // no return keyword → undefined
+
+// ⭐ CORRECT VERSION
+
+// To FIX it:
+
+// return sumofdigits(a)
+
+// ⭐ TRY TO REMEMBER THIS RULE
+// 🔥 RULE OF RECURSION
+
+// Every recursive call must return its result to the caller.
+// If one function in the chain does not return, the entire chain breaks, and final result becomes undefined.
+
+// ⭐ EASY COMPARISON
+// ❌ WRONG
+// sumofdigits(123)
+//  └ sumofdigits(12)
+//     └ sumofdigits(1)
+//        └ sumofdigits(0) → returns 6  
+// but no one returns it → chain breaks → undefined
+
+// ✔ RIGHT
+// return sumofdigits(a)
+
+
+// So the result travels back like this:
+
+// sumofdigits(0) → 6
+// sumofdigits(1) → return 6
+// sumofdigits(12) → return 6
+// sumofdigits(123) → return 6
+
+
+</script>
