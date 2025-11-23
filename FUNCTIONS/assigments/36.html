@@ -1,0 +1,67 @@
+<script>
+    //Check whether a number is a palindrome or not using recursion
+
+    var result1 = 0
+
+   var last_digit = 0
+
+ function result(a)
+ {
+    if(a === 0)
+ {
+    return result1
+ }
+    console.log('a = ',a)
+
+    last_digit = a%10
+ 
+    console.log('lastdigit',last_digit)
+
+
+
+    result1 = result1 * 10 + last_digit
+
+    console.log("result =" ,result1)
+
+   a = Math.floor( a /10 )
+
+    console.log("a =" ,a)
+
+   return   result(a)
+ }
+
+
+
+
+
+function number( a )
+
+{
+    
+ console.log('a =' ,a)
+
+                 
+ var reverse = result(a) // a is 121
+
+ console.log("reverse",reverse)
+
+if(a === reverse)
+{
+    console.log("your number ",a,"is amstrong number")
+}
+else
+{
+    console.log("your number ", a ,"is not amstrong number")
+}
+ 
+
+
+}
+
+
+
+
+
+
+    number(121)
+</script>
