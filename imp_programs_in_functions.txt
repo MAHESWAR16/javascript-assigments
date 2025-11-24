@@ -14,3 +14,5 @@ amstrong
 
  Find the sum of digits of a given number using recursion.[imp]
  find fibnoacire term for 6 using recursion 
+ /Display all array elements using recursion.
+ Find the sum of elements of the array using recursion.

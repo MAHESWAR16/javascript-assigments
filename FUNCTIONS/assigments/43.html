@@ -1,0 +1,32 @@
+<script>
+    //Find the sum of elements of the array using recursion.
+
+     function array(b,a =0,sum= 0)
+     {
+        
+        if(a === 5)
+     {
+        return  sum 
+     }
+
+      
+
+        console.log(b[a])
+
+      sum = sum + b[a]
+       
+     
+        
+     return array(b , a=a+1 , sum ) 
+
+
+     }
+
+
+
+
+
+
+  var sumofnumbersinarray =  array([1,2,3,4,5])
+  console.log("sumofnumbersinarray",sumofnumbersinarray)
+</script>
