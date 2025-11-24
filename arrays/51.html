@@ -1,0 +1,24 @@
+<script>
+    //Find a maximum and minimum element in an array.
+    var array =[5,2,4,1,98]
+    var max = array[0]
+    var min = array[0]
+
+
+    array.forEach(
+        function(element,index)
+        {
+                  if(element < min)
+                  {
+                    min = element
+                  }
+                  else
+                  {
+                    max = element
+                  }
+             console.log("max",max,"min",min,"element",element)       
+        }
+    )
+
+    console.log("max",max,"min",min)
+</script>

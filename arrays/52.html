@@ -1,0 +1,121 @@
+<script>
+    //Get the second largest element in an array.
+
+
+//     ✅ Understanding why we do:
+// if (element > largest) {
+//     second_largest = largest;
+//     largest = element;
+// }
+
+// 👉 Think logically — what happens when you find a new largest number?
+
+// Imagine your array:
+
+// [24, 5, 35, 6, 1]
+
+
+// We track two things:
+
+// largest
+
+// second_largest
+
+// Start:
+// largest = 0
+// second_largest = 0
+
+// 🧠 Case 1: You find a number bigger than the current largest
+
+// Example:
+
+// current element = 24
+
+// current largest = 0
+
+// Now 24 is bigger than 0 → so 24 is the new largest.
+
+// But wait…
+
+// 🤔 What happens to the old largest?
+
+// The old largest (which was 0) should now become the second largest.
+
+// So:
+
+// Move old largest → second largest
+
+// Update new largest
+
+// That’s why:
+
+// second_largest = largest   // store old largest
+// largest = element          // store new largest
+
+// 🎯 Final logic:
+// When you find a new largest:
+// second_largest = largest   // push down old largest
+// largest = element          // update largest
+
+// 🧠 Visual Example
+// Step 1:
+
+// element = 24
+// largest = 0 → 24
+// second_largest = 0
+
+// Step 2:
+
+// element = 5
+// 5 is NOT > 24 → nothing happens.
+
+// Step 3:
+
+// element = 35
+// 35 > 24 → new largest found
+// So:
+
+// second_largest = 24
+// largest = 35
+
+// ⭐ WHY NOT DO THIS?
+
+// You originally wrote:
+
+// if (element > largest) {
+//     largest = element;
+// }
+// else if (element > second_largest && element !== largest) {
+//     second_largest = element;
+// }
+
+
+// ❌ This FAILS because after you update largest,
+// you LOSE the old value — and you never push it into second_largest.
+
+// So you miss one possible second-largest number.
+
+    var array = [24,5,35,6,1]
+
+    var second_largest = 0
+       
+    var largest = 0
+
+    array.forEach
+    (
+        function(element ,index)
+        { 
+            if(element > largest)
+        {
+            largest = element
+        }
+           else if(element >  second_largest && element !== largest)
+           {
+            second_largest = element
+           }
+    }
+
+    )
+    console.log('largest',largest)
+    console.log("secondlarhg",second_largest)
+</script>
