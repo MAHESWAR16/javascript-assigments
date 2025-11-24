@@ -1,0 +1,205 @@
+<script>
+    //Generate nth Fibonacci term using recursion.
+
+    // 0 1 2 3 4 5 6
+    //0 1 1 2 3 5 8
+
+
+    //✅ Step 1: Understand What the Problem Wants
+
+// For Fibonacci:
+
+// Generate the nth Fibonacci term using recursion
+
+// This means:
+
+// If you ask for 1st term → 0
+
+// If you ask for 2nd term → 1
+
+// If you ask for 3rd term → 1
+
+// If you ask for 4th term → 2
+
+// If you ask for 5th term → 3
+
+// If you ask for 6th term → 5
+// … etc.
+
+// So basically:
+
+// fib(n) = fib(n-1) + fib(n-2)
+
+
+// 📌 Understanding this pattern is step 1.
+
+// ✅ Step 2: Find the Base Case
+
+// Every recursion must STOP somewhere, otherwise infinite loop.
+
+// Think like this:
+
+// ❓ What is the SMALLEST input where I already know the answer?
+
+// For Fibonacci:
+
+// fib(1) = 0
+
+// fib(2) = 1
+
+// These are known facts → no need to calculate further
+
+// These become your base cases.
+
+// ✅ Step 3: Divide the Problem Into Smaller Problems
+
+// Think like this:
+
+// ❓ If I don’t know fib(n), can I ask someone to calculate smaller ones?
+
+// Yes:
+
+// fib(n) = fib(n-1) + fib(n-2)
+
+
+// So you break the big problem into small versions of itself.
+
+// ✅ Step 4: Combine the Smaller Answers
+
+// After smaller problems return values, you combine them.
+
+// For example:
+
+// If n = 5:
+
+// fib(5) = fib(4) + fib(3)
+
+
+// But fib(4) and fib(3) are also calculated by asking even smaller problems.
+
+// This is how recursion naturally works.
+
+// 🔥 Complete Logical Breakdown Example (fib(5))
+
+// Think like this:
+
+// You ask:
+
+// 👉 “What is fib(5)?”
+
+// Recursion replies:
+// ➡ “I don’t know, but I’ll find fib(4) and fib(3)”
+
+// For fib(4):
+
+// It again says —
+// ➡ “I don’t know, let me find fib(3) and fib(2)”
+
+// This continues until base cases (1 and 2)
+
+// When recursion reaches:
+
+// fib(1) → 0
+// fib(2) → 1
+
+
+// These return values start going upward like a chain.
+
+// 🔁 FULL RECURSION TREE (simple view)
+// fib(5)
+//  ├─ fib(4)
+//  │   ├─ fib(3)
+//  │   │   ├─ fib(2) → 1
+//  │   │   └─ fib(1) → 0
+//  │   └─ fib(2) → 1
+//  └─ fib(3)
+//      ├─ fib(2) → 1
+//      └─ fib(1) → 0
+
+
+// Then combine values:
+
+// fib(3) = 1+0 = 1
+// fib(4) = 1+1 = 2
+// fib(5) = 2+1 = 3
+
+// 🔥 FINAL CODE (super simple)
+// function fib(n) {
+//     if(n === 1) return 0; 
+//     if(n === 2) return 1;
+
+//     return fib(n-1) + fib(n-2);
+// }
+
+// console.log(fib(5)); // 3
+
+// 🧠 HOW TO THINK (THE REAL PROCEDURE)
+
+// Here is the thinking pattern you must follow for ANY recursion problem:
+
+// ⭐ 1. Understand what output you want
+
+// Ask yourself:
+
+// What is the problem asking?
+
+// What is the pattern?
+
+// ⭐ 2. Identify the base case
+
+// Ask:
+
+// For which smallest input is the answer known?
+
+// Example:
+
+// Sum of digits → stop at 0
+
+// Factorial → stop at 1
+
+// Reverse number → stop at 0
+
+// Fibonacci → stop at 1 & 2
+
+// ⭐ 3. Break the problem into smaller parts
+
+// Ask:
+
+// Can I solve it by solving smaller versions of the same problem?
+
+// ⭐ 4. Combine the results
+
+// Ask:
+
+// How do I combine the smaller results to get the final result?
+
+// ⭐ 5. Do NOT think about full recursion
+
+// You NEVER think about the entire tree.
+// Just think:
+
+// What should this function return for the current input?
+
+
+// Recursion automatically handles the rest.
+ 
+    function fibterm(a)
+    {
+       if(a === 0)
+       {
+        return 0
+       }
+       if(a === 1)
+       {
+        return 1
+       }
+       
+
+
+       return fibterm(a-1) + fibterm(a-2)
+    }
+
+
+ var t =   fibterm(6)
+ console.log(" fibterm of 6 is =", t)
+</script>
