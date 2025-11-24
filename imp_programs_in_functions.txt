@@ -13,3 +13,4 @@ amstrong
  using recursion find a number is amstrong number or not 
 
  Find the sum of digits of a given number using recursion.[imp]
+ find fibnoacire term for 6 using recursion 
