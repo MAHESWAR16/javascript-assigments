@@ -1,0 +1,31 @@
+<script>
+    //Count the total number of even and odd elements in an array.
+    var array = [25,3,6,4,8,28]
+     var count = 0
+     var count1 = 0
+     
+
+    array.forEach(
+        function(element,index)
+        { 
+           
+            if(element % 2 === 0)
+        {
+            count = count + 1
+        }
+        else
+        {
+            count1 = count1 + 1
+
+        }
+
+        
+
+        if(index  === 5)
+        {
+             console.log("even count = ",count,"odd count = ",count1)
+        }
+      
+        }
+    )
+</script>
