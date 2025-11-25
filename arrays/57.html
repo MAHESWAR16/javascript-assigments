@@ -1,0 +1,26 @@
+<script>
+    //Delete an element from an array at the specified position
+    var array = [2,3,'mahesh',5,12]
+   
+    var newarray = []
+     var found 
+    var position = 2
+    array.forEach(
+        function(element,index)
+        {
+             found = false 
+            if(index === position )
+        {
+           found = true 
+        }
+        
+        if(!found)
+        {
+            newarray[newarray.length] = element
+        }
+
+        }
+    )
+    console.log("array",array)
+    console.log("newarray",newarray)
+</script>
