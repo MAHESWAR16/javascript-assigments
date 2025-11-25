@@ -1,0 +1,66 @@
+<script>
+    // count the frequency of each elemnt in an array
+var array = [2, 3, 2, 5, 3, 2];
+
+var values = [];   // stores unique numbers
+var counts = [];   // stores counts of those numbers
+
+array.forEach
+(
+    function(element,index)
+    {
+         found = false
+       values.forEach(
+         function(val,ind)
+         {
+            if(element === val)
+            found = true 
+         }
+
+
+       )
+   
+
+       if(!found)
+       {
+        values[values.length] = element
+       }
+    
+
+
+
+
+    }
+)
+console.log("valeus = " , values)
+
+
+
+
+values.forEach(
+
+function(value,index)
+{
+   found = false
+   count  = 0
+    array.forEach
+    (
+        function(element,index)
+        {
+            if(value  === element)
+        {
+            count = count + 1
+            found = true
+        }
+        }
+    )
+if(found === true)
+{
+ counts[counts.length] = count 
+}
+ 
+
+}
+)
+console.log("counts =" ,counts)
+</script>
