@@ -1,0 +1,20 @@
+<script>
+    //Put even and odd elements of an array in two separate arrays.
+    var array = [2,5,4,2,3,9]
+    var even = []
+    var odd = []
+    array.forEach(
+        function(element,index)
+        {
+            if(element % 2 === 0)
+        {
+            even[even.length] = element
+        }
+        else
+        {
+            odd[odd.length] = element
+        }
+        }
+    )
+    console.log("even =",even,"odd =",odd)
+</script>
