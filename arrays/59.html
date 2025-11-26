@@ -1,0 +1,33 @@
+<script>
+    //Print all unique elements in the array.
+    var array = [1,2,1,50,3,"mahesh",5,2]
+    var newarray = []
+
+    array.forEach
+
+    (
+
+    function(element,index)
+    {
+           found = false
+       newarray.forEach
+       (
+        function(val,inde)
+        {
+            if(element === val)
+        {
+            found = true
+        }
+        }
+       )
+          
+       if(!found)
+       {
+        newarray[newarray.length] = element
+       }
+
+
+    }
+    )
+    console.log("newarray =",newarray)
+</script>
