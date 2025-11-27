@@ -1,0 +1,31 @@
+<script>
+    //Delete all duplicate elements from an array.
+    var array = [2,5,2,4,2,4,2,"mahesh"]
+    var afterdelete =[]
+    var found 
+    array.forEach
+    (
+        function(element,index)
+        {
+            found = false 
+            afterdelete.forEach(
+                function(ele,i)
+                {
+
+
+                    if(element === ele)
+                {
+                    found = true 
+                }
+                }
+            )
+
+         if(!found)
+         {
+            afterdelete[afterdelete.length] = element
+         }
+
+        }
+    )
+    console.log("afterdelete",afterdelete)
+</script>
