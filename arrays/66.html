@@ -40,85 +40,53 @@
 // }
 // );
 
- 
-  var array = [5, 9, 6, 4, 7];  
- var ascending = [];
- 
- array.forEach(
-      function(element)
-      {
-        console.log("picking =",element)
-     
+ var array = [5, 9, 6, 4, 7];  
+var ascending = [];
 
-      //Add rule: if shelf empty → just place
+array.forEach(function(element) {
+    console.log("Picking =", element);
 
-      if (ascending.length === 0)
-      {
-             ascending[0] = element
-             console.log('shelf is empty place directly',ascending)
-             return
-      }
-      
+    var inserted = false; // always declare first
 
-      //TEP 3 — Add rule: check each place on shelf
-// We compare the new number with existing numbers.
- 
-   var  inserted = false
+    // If shelf is empty → place directly
+    if (ascending.length === 0) {
+        ascending[0] = element;
+        console.log('Shelf is empty → place directly:', ascending);
+    } else {
 
-// Look at each number on the shelf
+        // Compare with each number on the shelf
+        ascending.forEach(function(a, i) {
 
-ascending.forEach(
- function(a,i)
- {
-    if(!inserted && element < a)
- {
-    console.log(element,"should be before ",a)
+            if (!inserted && element < a) {
+                console.log(element, "should be before", a);
 
-    var j = ascending.length //3
+                // SHIFT elements to the right
+                var j = ascending.length;
+                while (j > i) {
+                    ascending[j] = ascending[j - 1];
+                    j--;
+                }
 
-    while(j>i)
- {
+                // Insert element
+                ascending[i] = element;
 
-    ascending[j] = ascending[j-1]
-    j = j-1
- }
- 
- ascending[i] = element
+                inserted = true;
+            }
 
+        });
 
+        // If element is bigger than all → put at end
+        if (!inserted) {
+            ascending[ascending.length] = element;
+        }
 
+    }
 
+    console.log("Current ascending array:", ascending);
+});
 
+console.log("\nFinal sorted ascending array:", ascending);
 
-
-    inserted = true 
-
- }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   if(!inserted)
- {
-    ascending[ascending.length] = element
- }
-
- }
-)
- }
- )
-       
-        console.log("ascd00",ascending)            
               
 
     </script>
