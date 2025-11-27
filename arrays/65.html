@@ -1,0 +1,24 @@
+<script>
+    //Search an element in an array.
+  var array = [2, 5, 3, 5, 6];
+var elements = [];
+
+var enter = +prompt("Enter a number:");
+var found = false;
+
+array.forEach(function(element) {
+    if (enter === element) {
+        found = true;
+        elements[elements.length] = element;
+    }
+});
+
+if (found) {
+    console.log("Element found:", elements);
+} else {
+    console.log("Your number is not found in array:", enter);
+}
+
+
+                   
+</script>

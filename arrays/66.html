@@ -1,0 +1,124 @@
+<script>
+ // var c = []
+// console.log("c =",c.length)   
+    //Sort array elements in ascending or descending order.
+// Original:
+// [5, 9, 6, 4, 7]
+// We create a NEW array:
+// ascending = []
+// We take each element one by one and put it in the correct place.
+//🌟 SECOND: What is the RULE?
+// Take one number from array…
+// Find the correct place in ascending…
+// Put it there.
+// If ascending is empty → put the number
+// If element is bigger than all → put at end
+// If element is smaller than someone → put before them
+
+
+
+// var array = [5, 9, 6, 4, 7];
+// var ascending = [];
+
+// array.forEach(
+//     function(element) 
+// {
+//     console.log("Outer element =", element);
+
+//     ascending.forEach
+//     (
+//         function(a) 
+//     {
+//         console.log("   comparing", element, "with", a);
+//     }
+// );
+
+//     // No sorting yet
+//     ascending[ascending.length] = element;
+    
+//     console.log("ascending =", ascending);
+// }
+// );
+
+ 
+  var array = [5, 9, 6, 4, 7];  
+ var ascending = [];
+ 
+ array.forEach(
+      function(element)
+      {
+        console.log("picking =",element)
+     
+
+      //Add rule: if shelf empty → just place
+
+      if (ascending.length === 0)
+      {
+             ascending[0] = element
+             console.log('shelf is empty place directly',ascending)
+             return
+      }
+      
+
+      //TEP 3 — Add rule: check each place on shelf
+// We compare the new number with existing numbers.
+ 
+   var  inserted = false
+
+// Look at each number on the shelf
+
+ascending.forEach(
+ function(a,i)
+ {
+    if(!inserted && element < a)
+ {
+    console.log(element,"should be before ",a)
+
+    var j = ascending.length //3
+
+    while(j>i)
+ {
+
+    ascending[j] = ascending[j-1]
+    j = j-1
+ }
+ 
+ ascending[i] = element
+
+
+
+
+
+
+
+    inserted = true 
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   if(!inserted)
+ {
+    ascending[ascending.length] = element
+ }
+
+ }
+)
+ }
+ )
+       
+        console.log("ascd00",ascending)            
+              
+
+    </script>
