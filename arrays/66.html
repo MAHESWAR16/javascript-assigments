@@ -40,52 +40,40 @@
 // }
 // );
 
- var array = [5, 9, 6, 4, 7];  
+var array = [5, 9, 6, 4, 7];
 var ascending = [];
+var temp;
 
 array.forEach(function(element) {
-    console.log("Picking =", element);
 
-    var inserted = false; // always declare first
+    var inserted = false;
 
-    // If shelf is empty → place directly
-    if (ascending.length === 0) {
-        ascending[0] = element;
-        console.log('Shelf is empty → place directly:', ascending);
-    } else {
+    // Compare with each number already in ascending
+    for (var i = 0; i < ascending.length; i++) {
+        if (element < ascending[i]) {
 
-        // Compare with each number on the shelf
-        ascending.forEach(function(a, i) {
-
-            if (!inserted && element < a) {
-                console.log(element, "should be before", a);
-
-                // SHIFT elements to the right
-                var j = ascending.length;
-                while (j > i) {
-                    ascending[j] = ascending[j - 1];
-                    j--;
-                }
-
-                // Insert element
-                ascending[i] = element;
-
-                inserted = true;
+            // Shift elements to the right
+            var j = ascending.length;
+            while (j > i) {
+                ascending[j] = ascending[j - 1];
+                j--;
             }
 
-        });
-
-        // If element is bigger than all → put at end
-        if (!inserted) {
-            ascending[ascending.length] = element;
+            // Insert element in correct place
+            ascending[i] = element;
+            inserted = true;
+            break; // stop checking after insertion
         }
-
     }
 
-    console.log("Current ascending array:", ascending);
+    // If element is biggest, add at the end
+    if (!inserted) {
+        ascending[ascending.length] = element;
+    }
+
 });
 
-console.log("\nFinal sorted ascending array:", ascending);
+console.log("Ascending order:", ascending);
 
               
 
