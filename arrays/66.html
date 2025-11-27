@@ -40,85 +40,41 @@
 // }
 // );
 
- 
-  var array = [5, 9, 6, 4, 7];  
- var ascending = [];
- 
- array.forEach(
-      function(element)
-      {
-        console.log("picking =",element)
-     
+var array = [5, 9, 6, 4, 7];
+var ascending = [];
+var temp;
 
-      //Add rule: if shelf empty → just place
+array.forEach(function(element) {
 
-      if (ascending.length === 0)
-      {
-             ascending[0] = element
-             console.log('shelf is empty place directly',ascending)
-             return
-      }
-      
+    var inserted = false;
 
-      //TEP 3 — Add rule: check each place on shelf
-// We compare the new number with existing numbers.
- 
-   var  inserted = false
+    // Compare with each number already in ascending
+    for (var i = 0; i < ascending.length; i++) {
+        if (element < ascending[i]) {
 
-// Look at each number on the shelf
+            // Shift elements to the right
+            var j = ascending.length;
+            while (j > i) {
+                ascending[j] = ascending[j - 1];
+                j--;
+            }
 
-ascending.forEach(
- function(a,i)
- {
-    if(!inserted && element < a)
- {
-    console.log(element,"should be before ",a)
+            // Insert element in correct place
+            ascending[i] = element;
+            inserted = true;
+            break; // stop checking after insertion
+        }
+    }
 
-    var j = ascending.length //3
+    // If element is biggest, add at the end
+    if (!inserted) {
+        ascending[ascending.length] = element;
+    }
 
-    while(j>i)
- {
+});
 
-    ascending[j] = ascending[j-1]
-    j = j-1
- }
- 
- ascending[i] = element
+console.log("Ascending order:", ascending);
 
-
-
-
-
-
-
-    inserted = true 
-
- }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   if(!inserted)
- {
-    ascending[ascending.length] = element
- }
-
- }
-)
- }
- )
-       
-        console.log("ascd00",ascending)            
               
 
     </script>
