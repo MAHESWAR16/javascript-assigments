@@ -11,3 +11,5 @@ For every salary, deduct 10% tax for salaries less than 50000 and deduct 12% tax
              //Check String Is Palindrome Or Not Using For Loop
              Get the second largest element in an array.
              count the frequency of each elemnt in an array
+             using array.forEACH FIND ASCENDING ORDER AND DESCENDING ORDER
+             using forEach right rotate an array 
