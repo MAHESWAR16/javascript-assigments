@@ -30,7 +30,8 @@ var foo2 = function ()
 foo1()
 foo2()
 
-LOADING TIME (Before Running)
+LOADING TIME : (Before Running)
+
 JavaScript looks at your code and prepares memory:
 
       Code	                       What Happens During Loading Time	                      Stored Value
@@ -45,7 +46,7 @@ foo2 → undefined
 foo1 is ready to use.
 foo2 is not ready yet (because assignment has not happened).
 
-RUN TIME (Now Code Executes)
+RUN TIME : (Now Code Executes)
 step1
 Now JavaScript starts executing line-by-line:
 foo1()
@@ -127,7 +128,7 @@ foo2 → undefined
 Now at Run Time, when JS executes:
 foo2()
 What actually happens is:
-undefined()
+undefined()    // function call means abc() 
 Which means we are trying to call undefined like a function.
 
 
