@@ -40,40 +40,45 @@
 // }
 // );
 
-var array = [5, 9, 6, 4, 7];
-var ascending = [];
-var temp;
 
-array.forEach(function(element) {
+var array = [5, 3, 4];
+var result = [];
+
+array.forEach(
+    function(element) //3
+ {
 
     var inserted = false;
 
-    // Compare with each number already in ascending
-    for (var i = 0; i < ascending.length; i++) {
-        if (element < ascending[i]) {
+    // use normal for-loop inside forEach
+    for (var i = 0; i < result.length; i++)
+     {
 
-            // Shift elements to the right
-            var j = ascending.length;
-            while (j > i) {
-                ascending[j] = ascending[j - 1];
-                j--;
+        if (element < result[i])
+         {
+
+            // shift elements to the right
+            for (var j = result.length; j > i; j--)
+             {
+                result[j] = result[j - 1];
             }
 
-            // Insert element in correct place
-            ascending[i] = element;
+            // insert the element
+            result[i] = element;
+
             inserted = true;
-            break; // stop checking after insertion
+            break; // stop after inserting
         }
     }
 
-    // If element is biggest, add at the end
+    // if not inserted, push at end
     if (!inserted) {
-        ascending[ascending.length] = element;
+        result[result.length] = element; //5
     }
 
 });
 
-console.log("Ascending order:", ascending);
+console.log("Ascending:", result);
 
               
 

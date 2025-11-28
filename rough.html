@@ -1,0 +1,44 @@
+<script>
+     
+     //ascending order
+
+var array = [5, 3, 4];
+var result = [];
+
+array.forEach(
+    function(element) //3
+ {
+
+    var inserted = false;
+
+    // use normal for-loop inside forEach
+    for (var i = 0; i < result.length; i++)
+     {
+
+        if (element < result[i])
+         {
+
+            // shift elements to the right
+            for (var j = result.length; j > i; j--)
+             {
+                result[j] = result[j - 1];
+            }
+
+            // insert the element
+            result[i] = element;
+
+            inserted = true;
+            break; // stop after inserting
+        }
+    }
+
+    // if not inserted, push at end
+    if (!inserted) {
+        result[result.length] = element; //5
+    }
+
+});
+
+console.log("Ascending:", result);
+
+</script>
