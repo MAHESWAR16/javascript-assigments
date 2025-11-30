@@ -1,40 +1,47 @@
 <script>
     //Search all occurrences of a character in a given string.
 var word = "msdamimksa";
+var count 
+var found 
 
-
-for(var i = 0 ;i<word.length ; i=i+1)
+for(var i = 0 ; i<word.length ;i=i+1)
 {
-    var alreadyfound = false
- 
-    for(var e = 0;e<i ;e=e+1)
-{
-    if(word[i] === word[e])
-{
-    alreadyfound = true
-    
-}
-}
+    found = false
+     count = 1
+              for(h = 0;h<i ;h=h+1)
+                  {
+                       if(word[i] === word[h])
+                       {
+                        found = true
+                       }
+                  }
+         if(found)
+         {
+            continue
+         }
 
-
-if(alreadyfound)
-{
-    continue
-}
-
-
-
-
-var count = 1
-    for(var k =i+1 ;k<word.length;k=k+1)
-{
-    if(word[i] === word[k])
-{
-        count = count + 1
-}
-}
+ for(var n = i+1 ; n<=word.length-1 ;n=n+1)
+ {
+    if(word[i] === word[n])
+ {
+    count = count + 1
+    found = true 
+ }
+ }
+   if(found === true)
+   {
+   console.log(word[i],count)
+   }
+   else
+   {
      console.log(word[i],count)
+   }
 }
+ 
+
+
+
+
 
 
 
