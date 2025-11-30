@@ -1,0 +1,36 @@
+<script>
+    //Find the last occurrence of a character in a given string.
+
+//   var word = "maheshwar"
+//   var result = []
+//   console.log("word length =",word.length)
+ 
+//   for(var i = 0;i<word.length ;i=i+1)
+//   {
+//       if(i === word.lastIndexOf('h'))
+//       {
+//         result[result.length] = i
+//         break
+//       }
+//   }
+//   console.log("result = ",result)
+
+
+// var word = "maheshwar"
+// var f = word.lastIndexOf("a")
+// console.log("f =",f)
+
+var word = "maheshwar"
+
+var result = []
+
+for(var i = word.length-1;i>=0;i=i-1)
+{
+    if(word[i] === "a")
+{
+    result[result.length] = i
+    break
+}
+}
+console.log('result = ',result)
+</script>
