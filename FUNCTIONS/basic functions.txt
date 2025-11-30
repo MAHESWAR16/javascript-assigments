@@ -32,3 +32,11 @@ console.log(x)                     //  output ƒ sayHello() {
                                    //   console.log("Hello");
                                     // }
  x();                            // calling function → prints Hello
+
+
+
+
+ var f = + prompt(" enter a number")
+console.log('return value of f',f)
+
+console.log("f =",Math.sqrt(f))
