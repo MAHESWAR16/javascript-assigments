@@ -40,3 +40,6 @@ console.log(x)                     //  output ƒ sayHello() {
 console.log('return value of f',f)
 
 console.log("f =",Math.sqrt(f))
+
+var x = confirm("hello")
+console.log('return value x = ',x)
