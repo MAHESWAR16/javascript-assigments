@@ -3,6 +3,38 @@
 var word = "msdamimksa";
 
 
+for(var i = 0 ;i<word.length ; i=i+1)
+{
+    var alreadyfound = false
+ 
+    for(var e = 0;e<i ;e=e+1)
+{
+    if(word[i] === word[e])
+{
+    alreadyfound = true
+    
+}
+}
+
+
+if(alreadyfound)
+{
+    continue
+}
+
+
+
+
+var count = 1
+    for(var k =i+1 ;k<word.length;k=k+1)
+{
+    if(word[i] === word[k])
+{
+        count = count + 1
+}
+}
+     console.log(word[i],count)
+}
 
 
 
