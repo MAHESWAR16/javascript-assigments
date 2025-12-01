@@ -23,57 +23,6 @@
 //     },200)
 
 
-var string = "mdsfsmkm"
-
-var count 
-var found 
-
-for(var  i = 0 ; i<string.length ;i=i+1)
-{ 
-    //console.log(string[i])
-           count = 1
-           found = false
-         for(var c = 0 ;c<i;c=c+1)
-         {
-            if(string[i] === string[c])
-         {
-            found = true
-         }
-         }
-        
-         if(found === true)
-         {
-            continue
-         }
-
-
-
-        
-    for(var j = i+1 ; j<string.length ;j=j+1)
-       {
-           if(string[i] === string[j])
-           {
-            found = true
-            count = count + 1     
-           } 
-       }
-
-if(!found)
-{
-    console.log(string[i],count)
-}
-else
-{
-    console.log(string[i],count)
-}
-
-
-}
-
-
-
-
-
 
 
 </script>

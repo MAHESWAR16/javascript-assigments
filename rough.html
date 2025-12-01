@@ -1,17 +1,110 @@
 <script>
      
-foo1()
-foo2()
+// foo1()
+// foo2()
 
-function foo1()
+// function foo1()
+// {
+//     console.log("hi, this is declaritve function")
+// }
+
+// var foo2 = function ()
+//            {
+//             console.log('edupoly')
+//            }
+
+
+var string = "mdsfsmkm"
+
+var count 
+var found 
+
+for(var  i = 0 ; i<string.length ;i=i+1)
+{ 
+    //console.log(string[i])
+           count = 1
+           found = false
+         for(var c = 0 ;c<i;c=c+1)
+         {
+            if(string[i] === string[c])
+         {
+            found = true
+         }
+         }
+        
+         if(found === true)
+         {
+            continue
+         }
+
+
+
+        
+    for(var j = i+1 ; j<string.length ;j=j+1)
+       {
+           if(string[i] === string[j])
+           {
+            found = true
+            count = count + 1     
+           } 
+       }
+
+if(!found)
 {
-    console.log("hi, this is declaritve function")
+    console.log(string[i],count)
+}
+else
+{
+    console.log(string[i],count)
 }
 
-var foo2 = function ()
-           {
-            console.log('edupoly')
-           }
 
+}
+
+var array = [5,4,3,6]
+var newarray = []
+
+array.forEach
+(
+    function(element)
+    {  
+          inserted = false
+
+        for(var i = 0 ; i<newarray.length ; i=i+1)
+            {
+               if (element < newarray[i])
+               {
+                
+                   for(var t = newarray.length ; t > i ; t = t-1)
+                      {
+                        newarray[t] = newarray[t-1] 
+                      }
+                         
+                          inserted = true 
+                          newarray[i] = element
+                          break
+
+               }
+            }
+
+
+
+        if(!inserted)
+        {
+                 newarray[newarray.length] = element
+        }
+        
+    }
+)
+      console.log("newarray =",newarray)
+       
+
+   
+
+            
+       
+   
+      
+  
 
 </script>
