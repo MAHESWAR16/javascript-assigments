@@ -9,72 +9,70 @@
 
 //    )
 
-// var string = "EDUPOLY"
+// var string = "Mahesh"
 // var  i =0
 // var f = setInterval(
 //      function()
 //     {
-//         document.write(string[i],i)
+//         document.write(string[i])
 //         i++
-//         if(i >6)
+//         if(i >=6)
 //     {
 //             clearInterval(f)
 //     }
-//     },2000)
+//     },200)
 
 
-var array = [4, 2, 3, 5];
-var newarray = [];
+var string = "mdsfsmkm"
 
-array.forEach(function(element) {
+var count 
+var found 
 
-    var found = false;
-
-    for (var i = 0; i < newarray.length; i++) {
-
-        if (element < newarray[i]) {
-
-            for (var b = newarray.length; b > i; b--) {
-                newarray[b] = newarray[b - 1];
-            }
-
-            newarray[i] = element;
-            found = true;
-            break;
-        }
-    }
-
-    if (!found) {
-        newarray[newarray.length] = element;
-    }
-});
-
-console.log("newarray =", newarray);
+for(var  i = 0 ; i<string.length ;i=i+1)
+{ 
+    //console.log(string[i])
+           count = 1
+           found = false
+         for(var c = 0 ;c<i;c=c+1)
+         {
+            if(string[i] === string[c])
+         {
+            found = true
+         }
+         }
+        
+         if(found === true)
+         {
+            continue
+         }
 
 
 
+        
+    for(var j = i+1 ; j<string.length ;j=j+1)
+       {
+           if(string[i] === string[j])
+           {
+            found = true
+            count = count + 1     
+           } 
+       }
 
-var array1 = [1,2,3,4,5]
-var result  = []
+if(!found)
+{
+    console.log(string[i],count)
+}
+else
+{
+    console.log(string[i],count)
+}
 
-var last = array1[array1.length-1]
-result [result.length] = last
-console.log("result =",result)
 
-array1.forEach
-(
- function(element,index)
- {
-    console.log('element =',element)
+}
 
-    if(array1[array1.length-1] !== element)
- {
-    
-    result[result.length] = element
- }
- }
-)
-console.log('result =',result)
+
+
+
 
 
 
