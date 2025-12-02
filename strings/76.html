@@ -1,7 +1,36 @@
 <script>
     //Search all occurrences of a character in a given string.
-// var word = "msdamimksa";
+var str = "msdamimksa";
 
+for (var i = 0; i < str.length; i++) //i=0
+ {
+
+    var ch = str[i]; //ch =m
+
+    // prevent printing same character again
+    if (str.indexOf(ch) < i)
+     {
+        continue;
+     }
+
+    var count = 0;               //count = 0
+    var pos = str.indexOf(ch);  //pos = 0
+
+    while (pos !== -1)
+     {
+        count++;
+        pos = str.indexOf(ch, pos + 1);
+    }
+
+    console.log(ch + " - " + count);
+}
+
+
+
+
+
+
+// var word = "msdamimksa";
 // var count 
 // var found 
 
@@ -78,6 +107,9 @@
 
 //     console.log(word[i], count);
 // }
+
+
+
 
 
 
