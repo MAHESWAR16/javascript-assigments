@@ -13,100 +13,108 @@
 //             console.log('edupoly')
 //            }
 
-
 var string = "mdsfsmkm"
 
-var count 
-var found 
+for(var i = 0 ;i<string.length ;i=i+1) //5
+ {
+           var char = string[i] //m
+           var count = 0
 
-for(var  i = 0 ; i<string.length ;i=i+1)
-{ 
-    //console.log(string[i])
-           count = 1
-           found = false
-         for(var c = 0 ;c<i;c=c+1)
-         {
-            if(string[i] === string[c])
-         {
-            found = true
-         }
-         }
-        
-         if(found === true)
-         {
-            continue
-         }
+    var position_of_char = string.indexOf(char) //0
 
 
+  
+    while(position_of_char !== -1)
+ {
+    count = count + 1
 
-        
-    for(var j = i+1 ; j<string.length ;j=j+1)
-       {
-           if(string[i] === string[j])
-           {
-            found = true
-            count = count + 1     
-           } 
-       }
-
-if(!found)
-{
-    console.log(string[i],count)
-}
-else
-{
-    console.log(string[i],count)
-}
+    position_of_char = string.indexOf(char,position_of_char+1)
+ }
 
 
-}
+    console.log(char,count)
+ }
 
-var array = [5,4,3,6]
-var newarray = []
 
-array.forEach
-(
-    function(element ,index)
-    {
-         console.log("taking element",element)
+// var string = "mdsfsmkm"
+
+// for(var i = 0 ;i<string.length ;i=i+1)
+// {
+//      var count = 1   
+//                 var found = false
+//            for(var f=0 ;f<i ;f=f+1)
+//               {
+//                    if(string[i] === string[f])
+//                      {
+//                         found = true 
+//                         break
+//                      }
+
+//               }
+//             if(found)
+//             {
+//                 continue
+//             }
+
+
+//         for(var f= i+1 ;f<string.length ;f=f+1)
+//            {
+//               if(string[i] === string[f])
+//                {
+//                      count = count + 1
+                   
+//                }
+//            }
+            
+//               console.log(string[i],count)
+// }
+
+// var array = [5,4,3,6]
+// var newarray = []
+
+// array.forEach
+// (
+//     function(element ,index)
+//     {
+//          console.log("taking element",element)
            
-         var inserted = false
-         for(var i = 0 ; i<newarray.length ; i=i+1)
-             {
+//          var inserted = false
+//          for(var i = 0 ; i<newarray.length ; i=i+1)
+//              {
                         
 
-                 if( element < newarray[i])
-                     {
+//                  if( element < newarray[i])
+//                      {
                      
-                        for(var j = newarray.length ; j>i ;j=j-1)
-                            {
-                                newarray[j] = newarray[j-1]
+//                         for(var j = newarray.length ; j>i ;j=j-1)
+//                             {
+//                                 newarray[j] = newarray[j-1]
                                 
-                            }
+//                             }
 
                       
-                       newarray[i] = element 
-                        inserted = true 
-                       break
+//                        newarray[i] = element 
+//                         inserted = true 
+//                        break
 
-                     }
+//                      }
 
 
-             }
+//              }
             
        
      
 
-             if(!inserted)
-             {
-                      newarray[newarray.length] = element
-             }
+//              if(!inserted)
+//              {
+//                       newarray[newarray.length] = element
+//              }
               
-              console.log("newarray =",newarray)
+//               console.log("newarray =",newarray)
         
-    }
-)
-      console.log("newarray =",newarray)   
+//     }
+// )
+//       console.log("newarray =",newarray)   
        
 
    
