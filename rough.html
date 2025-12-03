@@ -66,40 +66,57 @@ var newarray = []
 
 array.forEach
 (
-    function(element)
-    {  
-          inserted = false
+    function(element ,index)
+    {
+         console.log("taking element",element)
+           
+         var inserted = false
+         for(var i = 0 ; i<newarray.length ; i=i+1)
+             {
+                        
 
-        for(var i = 0 ; i<newarray.length ; i=i+1)
-            {
-               if (element < newarray[i])
-               {
-                
-                   for(var t = newarray.length ; t > i ; t = t-1)
-                      {
-                        newarray[t] = newarray[t-1] 
-                      }
-                         
-                          inserted = true 
-                          newarray[i] = element
-                          break
+                 if( element < newarray[i])
+                     {
+                     
+                        for(var j = newarray.length ; j>i ;j=j-1)
+                            {
+                                newarray[j] = newarray[j-1]
+                                
+                            }
 
-               }
-            }
+                      
+                       newarray[i] = element 
+                        inserted = true 
+                       break
 
+                     }
 
 
-        if(!inserted)
-        {
-                 newarray[newarray.length] = element
-        }
+             }
+            
+       
+     
+
+             if(!inserted)
+             {
+                      newarray[newarray.length] = element
+             }
+              
+              console.log("newarray =",newarray)
         
     }
 )
-      console.log("newarray =",newarray)
+      console.log("newarray =",newarray)   
        
 
    
+
+
+
+
+
+
+  
 
             
        
