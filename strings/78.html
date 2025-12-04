@@ -1,6 +1,6 @@
 <script>
     //Find the highest frequency character in a string.
-    var string = "memrrsr"
+    var string = "memrmmmrsr"
      var found 
     var i =0
     var max  = -1
@@ -45,24 +45,25 @@ if(found)
         f=f+1
      }
 
+      if(max < count )
+     {
+        max = count 
+        var store = char 
+     }
 
      if(found)
      {
-        console.log(string[i],count)
+      console.log(string[i],count)
      }
      else
      {
-        console.log(string[i],count)
+       console.log(string[i],count)
      }
      
 
-     if(count > max)
-     {
-        max = count 
-       
-     }
+    
 
     i=i+1
 }
- 
+ console.log("highest frequency character",max,store)
 </script>
