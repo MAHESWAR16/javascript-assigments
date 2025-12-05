@@ -120,6 +120,8 @@ var string = "msdamimksa"
 console.log(string.indexOf("g",5)) // output is -1
 var i = 0
 var count  
+var max = -1
+var highestfrequency = ""
 while (i < string.length)
 {
       var character = string[i]
@@ -140,9 +142,15 @@ while (i < string.length)
    
          position = string.indexOf(character , position+1)       
          }
+
+         if(count > max)
+         {
+            max= count 
+            highestfrequency = character
+         }
         
          console.log(character,count)
     i=i+1
 }
-
+console.log("highestfrequency chacter =",highestfrequency,max)
 </script>
