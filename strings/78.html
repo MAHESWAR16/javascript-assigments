@@ -1,69 +1,148 @@
 <script>
     //Find the highest frequency character in a string.
-    var string = "memrmmmrsr"
-     var found 
-    var i =0
-    var max  = -1
+//     var string = "memrmmmrsr"
+//      var found 
+//     var i =0
+//     var max  = -1
     
-    while(i<string.length) //i= 2
-{
-    var char = string[i] //m
-    var count = 1
-     found = false 
-    var b = 0
-    while(b<i)
-{
-   if(char === string[b])
-   {
-     found = true 
-     break
-   }
+//     while(i<string.length) //i= 2
+// {
+//     var char = string[i] //m
+//     var count = 1
+//      found = false 
+//     var b = 0
+//     while(b<i)
+// {
+//    if(char === string[b])
+//    {
+//      found = true 
+//      break
+//    }
 
-    b=b+1
-}
+//     b=b+1
+// }
 
-if(found)
-{
-    i =i+1
-    continue
-}
-
-
+// if(found)
+// {
+//     i =i+1
+//     continue
+// }
 
 
 
-    var found = false 
-    var f =i+1     //f =1
 
-     while(f<string.length)
-     { 
-        if(char === string[f])
-     {
-           count = count + 1
-           found = true 
-     }
-        f=f+1
-     }
 
-      if(max < count )
-     {
-        max = count 
-        var store = char 
-     }
+//     var found = false 
+//     var f =i+1     //f =1
 
-     if(found)
-     {
-      console.log(string[i],count)
-     }
-     else
-     {
-       console.log(string[i],count)
-     }
+//      while(f<string.length)
+//      { 
+//         if(char === string[f])
+//      {
+//            count = count + 1
+//            found = true 
+//      }
+//         f=f+1
+//      }
+
+//       if(max < count )
+//      {
+//         max = count 
+//         var store = char 
+//      }
+
+//      if(found)
+//      {
+//       console.log(string[i],count)
+//      }
+//      else
+//      {
+//        console.log(string[i],count)
+//      }
      
 
     
 
+//     i=i+1
+// }
+//  console.log("highest frequency character",max,store)
+
+// var string = "memrrsr"
+// var count 
+// var found 
+// var max  = 0
+
+// for(var i =0 ;i<string.length ;i=i+1)
+// {
+//   var taking_character = string[i]
+//      count = 1
+//      found = false
+   
+//     for(var f = 0 ;f<i;f=f+1)
+//        {
+
+//          if(taking_character === string[f])
+//          {
+//             found = true 
+             
+//          }
+
+//        }
+
+//        if(found)
+//        {
+//         continue
+//        }
+//   for(var f = i+1 ;f<string.length ;f=f+1)
+//      {
+      
+//         if(taking_character === string[f])
+//           {
+//              count = count + 1
+//              found = true 
+//           }
+    
+//      }
+//      if(!found)
+//      { 
+        
+//         console.log(taking_character,count)
+//      }
+//      else
+//      {
+//         console.log(taking_character,count )
+//      }
+// }
+//using string methods 
+
+var string = "msdamimksa"
+
+console.log(string.indexOf("g",5)) // output is -1
+var i = 0
+var count  
+while (i < string.length)
+{
+      var character = string[i]
+      var count = 0
+
+      if(string.indexOf(character) < i)
+      {
+        i=i+1
+        continue
+      }
+
+      var position = string.indexOf(character)
+       
+      while(position !== -1)
+         {
+
+         count = count + 1
+   
+         position = string.indexOf(character , position+1)       
+         }
+        
+         console.log(character,count)
     i=i+1
 }
- console.log("highest frequency character",max,store)
+
 </script>
