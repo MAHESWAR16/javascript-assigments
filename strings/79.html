@@ -2,7 +2,7 @@
     //Find the lowest frequency character in a string.
     var string = "nmjmnd"
     var min = string.length
-    var lowestfrequency = ""
+    var lowestfrequency = []
     
     for(var i = 0 ;i<string.length ;i = i+1)//i=3,4
 {
@@ -25,10 +25,21 @@
 
         position = string.indexOf(chacter,position+1)
         }
-     
 
-    console.log(chacter,count)    
+    console.log(chacter,count)   
+    
+   if(count < min)
+         {
+            min = count
+            lowestfrequency = []
+            lowestfrequency[lowestfrequency.length] = chacter
+         }
+         else if(count === min)
+         {
+            lowestfrequency[lowestfrequency.length] = chacter
+         }
+     
 }
 
-
+console.log("lowestfrequency =",lowestfrequency)
 </script>
