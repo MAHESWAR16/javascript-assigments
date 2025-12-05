@@ -4,13 +4,30 @@
     var min = string.length
     var lowestfrequency = ""
     
-    for(var i = 0 ;i<string.length ;i = i+1)
+    for(var i = 0 ;i<string.length ;i = i+1)//i=3,4
 {
-    var chacter = string[i]
+    var chacter = string[i] //m,n
+     
+     var count = 0 //count = 0,count  = 0
+
+     if(string.indexOf(chacter) < i) // 1<3 ,0<4
+     {
+        console.log("string.indexOf(chacter) is",string.indexOf(chacter))
+        continue
+     }
+
+    
+     var position = string.indexOf(chacter)
+
+     while (position !== -1)
+        {
+            count = count + 1
+
+        position = string.indexOf(chacter,position+1)
+        }
      
 
-
-    var postion = string.in
+    console.log(chacter,count)    
 }
 
 
