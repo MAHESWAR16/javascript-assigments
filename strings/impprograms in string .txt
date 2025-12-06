@@ -1,1 +1,2 @@
 //Search all occurrences of a character in a given string.[do without using strings and using strings] [76.html]
+// highest and lowest frequency charachetr in string
