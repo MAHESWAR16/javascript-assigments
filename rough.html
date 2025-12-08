@@ -15,36 +15,26 @@
 
 var string = "mdsfsmkm"
 
-for(var i =0;i<string.length;i=i+1)
-{
+for(var i=0;i<string.length;i=i+1)
+ {
 
-   var taken_char = string[i]
-   var count = 1
-   var found = false
-   for(var k=0;k<i;k=k+1)
-     {
-      if(taken_char === string[k])
-        {
-          found = true
-        }
-     }
-    if(found )
+   var take_char = string[i]
+   var count = 0
+   
+  if(string.indexOf(take_char) < i)
     {
       continue
     }
+    
 
-   
-   for(var j =i+1 ;j<string.length;j=j+1)
+   var position = string.indexOf(take_char)
+    while(position !== -1)
      {
-      if(taken_char === string[j])
-     {
-       count = count + 1
+      count = count + 1
+      position = string.indexOf(take_char,position+1)
      }
-
-     }
-
- console.log(taken_char,count)
-}
+   console.log(take_char,count)
+ }
 
 
 // var string = "mdsfsmkm"
