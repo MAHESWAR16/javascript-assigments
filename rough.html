@@ -146,16 +146,59 @@ for(var i=0;i<string.length;i=i+1)
    
 
 
+// var array = [5,4,3,6] //  [4,5,3,6]
+
+// // 1) take one element and comapre with other element 
 
 
-
-
+//   var i = 0
   
+//   while(i < array.length)  //i=0 ,i=1i=3
+//   {
+   
+
+//        for(var h = i+1 ;h<array.length ;h=h+1) //[5,4,3,6]
+//              {
+//               if(array[i] > array[h])
+//                  {
+//                      var temp = array[i] //5 
+//                       array[i] = array[h] //4
+//                         array[h] = temp      
+//                             //[4,5,3,6] 
+//                   }
+               
+//               }
+//    console.log('array =',array)
+
+//    i=i+1                  //i=1
+//   }
 
             
        
-   
+//    console.log("array=",array)
       
-  
+var arrays = [7,8,9,10]
+arrays[2] = arrays[3]
+arrays[3] = arrays[2]
+console.log(arrays)
 
+  var array = [5,3,4,6]
+
+  for(var i = 0 ;i<array.length ;i=i+1)
+  {
+     var current_element = array[i]
+
+        for(var j = i+1 ;j<array.length ;j=j+1)
+           {
+             if(current_element > array[j])
+                {
+                 var temp = current_element
+                 array[i] = array[j]
+                 array[j] = temp
+                 break 
+                }
+           }
+  }
+ console.log("array",array)
+ 
 </script>
