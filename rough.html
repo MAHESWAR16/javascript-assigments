@@ -176,29 +176,38 @@ for(var i=0;i<string.length;i=i+1)
             
        
 //    console.log("array=",array)
-      
-var arrays = [7,8,9,10]
-arrays[2] = arrays[3]
-arrays[3] = arrays[2]
-console.log(arrays)
 
-  var array = [5,3,4,6]
+var string = "msdmhgm"
 
-  for(var i = 0 ;i<array.length ;i=i+1)
-  {
-     var current_element = array[i]
+for(var i = 0 ;i<string.length;i=i+1)
+{
+  var currentchar = string[i]
+  var count = 1
+    var found = false
+ for(var j =0 ;j<i;j=j+1)
+{
+   
+   if(currentchar === string[j])
+     {
+      var found = true 
+     }
+}
 
-        for(var j = i+1 ;j<array.length ;j=j+1)
-           {
-             if(current_element > array[j])
-                {
-                 var temp = current_element
-                 array[i] = array[j]
-                 array[j] = temp
-                 break 
-                }
-           }
-  }
- console.log("array",array)
- 
+ if( found )
+ {
+   continue
+ }
+
+
+   for(var j =i+1 ;j<string.length ;j=j+1)
+{
+   if(currentchar === string[j])
+       {
+         count = count + 1
+       }
+
+}
+
+   console.log("i=",string[i],count)
+}
 </script>
