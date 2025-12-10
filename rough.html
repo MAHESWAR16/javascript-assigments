@@ -13,28 +13,28 @@
 //             console.log('edupoly')
 //            }
 
-var string = "mdsfsmkm"
+// var string = "mdsfsmkm"
 
-for(var i=0;i<string.length;i=i+1)
- {
+// for(var i=0;i<string.length;i=i+1)
+//  {
 
-   var take_char = string[i]
-   var count = 0
+//    var take_char = string[i]
+//    var count = 0
    
-  if(string.indexOf(take_char) < i)
-    {
-      continue
-    }
+//   if(string.indexOf(take_char) < i)
+//     {
+//       continue
+//     }
     
 
-   var position = string.indexOf(take_char)
-    while(position !== -1)
-     {
-      count = count + 1
-      position = string.indexOf(take_char,position+1)
-     }
-   console.log(take_char,count)
- }
+//    var position = string.indexOf(take_char)
+//     while(position !== -1)
+//      {
+//       count = count + 1
+//       position = string.indexOf(take_char,position+1)
+//      }
+//    console.log(take_char,count)
+//  }
 
 
 // var string = "mdsfsmkm"
@@ -177,37 +177,25 @@ for(var i=0;i<string.length;i=i+1)
        
 //    console.log("array=",array)
 
-var string = "msdmhgm"
+var string = "msdmhmhgm"
 
-for(var i = 0 ;i<string.length;i=i+1)
-{
-  var currentchar = string[i]
-  var count = 1
-    var found = false
- for(var j =0 ;j<i;j=j+1)
-{
-   
-   if(currentchar === string[j])
-     {
-      var found = true 
-     }
-}
-
- if( found )
+for(var i = 0 ;i<string.length; i=i+1) //i=3
  {
-   continue
+   var currentchar = string[i] //m
+   var count = 0    //0
+   var found = false 
+   if(string.indexOf(currentchar) < i)
+ {
+    continue
  }
+  
 
-
-   for(var j =i+1 ;j<string.length ;j=j+1)
-{
-   if(currentchar === string[j])
-       {
-         count = count + 1
-       }
-
-}
-
-   console.log("i=",string[i],count)
-}
+   var position = string.indexOf(currentchar)
+   while(position !== -1)
+    {
+      count = count + 1
+      position = string.indexOf(currentchar,position+1)
+    }
+   console.log(currentchar,count)
+ }
 </script>
