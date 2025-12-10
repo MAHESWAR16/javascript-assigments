@@ -177,25 +177,53 @@
        
 //    console.log("array=",array)
 
-var string = "msdmhmhgm"
-
-for(var i = 0 ;i<string.length; i=i+1) //i=3
- {
-   var currentchar = string[i] //m
-   var count = 0    //0
+// var array = [5,4,6,3]
+// array.forEach(
+//    function(_,i)
+//    {
+//       for(var j = i+1 ;j<array.length;j=j+1)
+//         {
+//          if(array[i] >array[j])
+//           {
+//             var temp = array[i]
+//             array[i] = array[j]
+//             array[j] = temp
+            
+//           }
+           
+//         }
+//    }
+// )
+// console.log('array',array)
+var array = [5,4,3,6]
+var newarray = []
+for(var i =0 ; i<array.length ; i=i+1)
+{
    var found = false 
-   if(string.indexOf(currentchar) < i)
- {
-    continue
- }
-  
-
-   var position = string.indexOf(currentchar)
-   while(position !== -1)
+   for(var j = 0 ; j<newarray.length ;j=j+1)
     {
-      count = count + 1
-      position = string.indexOf(currentchar,position+1)
+         if(array[i] < newarray[j])
+           {
+              found = true 
+
+            for(var h = newarray.length ; h>j ; h = h-1)
+                {
+                   newarray[h] = newarray[h-1]
+                } 
+              
+                 newarray[j] = array[i]
+                break
+
+           }
     }
-   console.log(currentchar,count)
- }
+   
+   
+    if(!found)
+{
+        newarray[newarray.length] = array[i]
+}
+  
+}
+console.log("newarray",newarray)
+
 </script>
