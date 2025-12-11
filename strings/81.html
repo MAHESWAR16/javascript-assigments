@@ -4,6 +4,8 @@
  // ✅ position-based logic (first occurrence)
 // 
 // ❌ NOT frequency logic
+// this is wrong answer  do not do like below do based on frequency based  logic . 
+
     // var string = "mahesha"
     // var newstring = ""
     
@@ -34,5 +36,16 @@
 
     //   }
     //   console.log(string)
-    //   console.log(newstring)  
+    //   console.log(newstring)   
+    
+
+    var string = "mahesha" 
+    var newstring = ""
+
+    var position = string.indexOf("h")
+    if( position !== -1)
+      {
+        newstring = string.slice(0,2)  + string.slice(3)
+      }
+    console.log(newstring)
 </script>
