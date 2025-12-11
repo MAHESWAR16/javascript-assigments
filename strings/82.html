@@ -1,0 +1,27 @@
+<script>
+    //Remove the last occurrence of a character from a string.
+    var string = "maheshaa"
+    // var remove = string.lastIndexOf("h")
+    //  var newstring = ""
+    // for(var  i=0 ;i<string.length ; i=i+1)
+    //    {
+    //        if(i === remove)
+    //         {
+    //             continue
+    //         }
+    //       newstring = newstring + string[i]
+    //    }
+
+    // console.log(newstring)
+
+
+    var string = "maheshaa"
+    
+var last = string.lastIndexOf("h")
+console.log("last = ",last)
+
+var result = string.slice(0, last) + string.slice(last + 1)
+
+console.log(result)
+
+</script>
