@@ -227,37 +227,30 @@
 // console.log("newarray",newarray)
 
 
-var string = "mdsfsmkm"
-console.log(' ourstring',string)
-for(var i = 0 ;i<string.length;i=i+1)
-  {
-   var taken = string[i]
-   var count = 1
-   var found = false 
+// var string = "mdsfssmkm"
+// console.log(' ourstring',string)
+// console.log(string.indexOf("s"))
+// console.log(string.lastIndexOf("s",3))
 
-   for(var j = 0 ; j<i ;j=j+1)
-    {
-      if(taken === string[j])
-        {
-            found = true
-            break
-        }
-    }
-    if(found)
-    {
-      continue
-    }
 
-    for(var k =i+1 ;k<string.length;k=k+1)
-       {  
-               if(taken === string[k])
-                 {
-                  count = count + 1
-                 }
-       }
+// for(var i = 0 ;i<string.length;i=i+1)
+//   {
+//     var index = string.indexOf(string[i])
+//     var count = 0
+//     var found = false
+//     if(string.indexOf(string[i]) < i)
+//     {
+//        continue
+//     }
+    
+//    while(index !== -1)
+//     {
+//       count = count + 1
+//       index= string.indexOf(string[i],index+1)
+//     }
    
-       console.log("taken =",taken,"repeated =",count)
-  }
+//     console.log(string[i],count)
+//   }
 
 
 </script>
