@@ -195,35 +195,69 @@
 //    }
 // )
 // console.log('array',array)
-var array = [5,4,3,6]
-var newarray = []
-for(var i =0 ; i<array.length ; i=i+1)
-{
-   var found = false 
-   for(var j = 0 ; j<newarray.length ;j=j+1)
-    {
-         if(array[i] < newarray[j])
-           {
-              found = true 
+// var array = [5,4,3,6]
+// var newarray = []
+// for(var i =0 ; i<array.length ; i=i+1)
+// {
+//    var found = false 
+//    for(var j = 0 ; j<newarray.length ;j=j+1)
+//     {
+//          if(array[i] < newarray[j])
+//            {
+//               found = true 
 
-            for(var h = newarray.length ; h>j ; h = h-1)
-                {
-                   newarray[h] = newarray[h-1]
-                } 
+//             for(var h = newarray.length ; h>j ; h = h-1)
+//                 {
+//                    newarray[h] = newarray[h-1]
+//                 } 
               
-                 newarray[j] = array[i]
-                break
+//                  newarray[j] = array[i]
+//                 break
 
-           }
-    }
+//            }
+//     }
    
    
-    if(!found)
-{
-        newarray[newarray.length] = array[i]
-}
+//     if(!found)
+// {
+//         newarray[newarray.length] = array[i]
+// }
   
-}
-console.log("newarray",newarray)
+// }
+// console.log("newarray",newarray)
+
+
+var string = "mdsfsmkm"
+console.log(' ourstring',string)
+for(var i = 0 ;i<string.length;i=i+1)
+  {
+   var taken = string[i]
+   var count = 1
+   var found = false 
+
+   for(var j = 0 ; j<i ;j=j+1)
+    {
+      if(taken === string[j])
+        {
+            found = true
+            break
+        }
+    }
+    if(found)
+    {
+      continue
+    }
+
+    for(var k =i+1 ;k<string.length;k=k+1)
+       {  
+               if(taken === string[k])
+                 {
+                  count = count + 1
+                 }
+       }
+   
+       console.log("taken =",taken,"repeated =",count)
+  }
+
 
 </script>
