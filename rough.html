@@ -279,39 +279,36 @@ for(var m = 0 ; m<newarray.length;m=m+1)//m=0
 console.log("newarray",newarray)
 
 var string = "maheshmaa"
-var count =  1
-
-for(var i =0 ;i<string.length;i=i+1)
- {
-         count = 1
-         var found = false
- 
-   for(var m = 0 ; m<i ; m=m+1)
-      {
-         if(string[i] === string[m])
-           {
-              found = true
-           }
-      }
-   
-    if( found) 
-      {
-         continue
-      }
-
-
-   for(var j = i+1;j<string.length;j=j+1)
-       {
-
-         if(string[i] === string[j])
-          {
-              count = count + 1
-          }
-       }
-
+var count  = 0
+for(var i = 0 ;i<string.length;i=i+1)
+ { 
+  count = 1
+  var found = false 
+  for(var d = 0 ;d<i;d=d+1)
+     {
+      if(string[i] === string[d])
+        {
+             found = true 
+        }
+     }
+     if(found)
+     {
+      continue
+     }
+  for(var g = i+1 ;g<string.length;g=g+1)
+    {
+      if(string[i] === string[g])
+        {
+          count = count + 1
+        }
+    }
   console.log(string[i],count)
-
  }
+
+
+  
+
+
 
 </script>
 
