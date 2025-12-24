@@ -1,0 +1,18 @@
+insertion = Shift ALL elements first, then insert
+You must shift backwards, not forward
+var array = [4,6,8]
+ // insert 5 at 1st index
+ var position = 1
+ var insert  = 5
+
+ for(var i = array.length ;i>position;i=i-1)
+   {
+    console.log("i =", i)
+      
+    array[i] = array[i-1]
+
+    console.log("array =",array)
+  
+   }
+   array[position] = insert
+  console.log("array",array)

@@ -1,0 +1,19 @@
+Strings are immutable
+❌ You cannot change them
+✅ You can only create new ones
+
+🔁 Compare with arrays (to remove confusion)
+var arr = [1,2,3]
+arr[0] = 9
+console.log(arr) // [9,2,3]
+
+
+👉 Arrays change
+👉 Strings do NOT
+
+
+var string = "mahehhhshaa"
+
+string[2] ="*"
+
+console.log(string) // "mahehhhshaa"
