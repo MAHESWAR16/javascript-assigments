@@ -252,64 +252,42 @@
 //     console.log(string[i],count)
 //   }
 
-var array = [5,4,3,6]
-var newarray =[6]
-for(var i = 0 ;i<array.length;i=i+1) //i =01
-{
- var taken = array[i]               
-console.log("taken =",taken)       //4
-   
-for(var m = 0 ; m<newarray.length;m=m+1)//m=0
-  {
-   if(taken < newarray[m])//4<5
-     {
+
+// var array = [2,4,5,8,3]
+// var output = []
+
+// for(var i = 0 ; i<array.length;i=i+1) //i= 0,1,2,3,4
+//  {
+//      var found = false 
+//   for(var k =0 ;k<output.length;k=k+1)
+//      {
       
-      for(var n = newarray.length ; n>m; n=n-1) //n= 1
-     {
-      newarray[n] = newarray[n-1]
-     }
-   
-      newarray[m] = taken 
-      break
-     }
-  }
-
-  
-}
-console.log("newarray",newarray)
-
-var string = "maheshmaa"
-var count  = 0
-for(var i = 0 ;i<string.length;i=i+1)
- { 
-  count = 1
-  var found = false 
-  for(var d = 0 ;d<i;d=d+1)
-     {
-      if(string[i] === string[d])
-        {
-             found = true 
-        }
-     }
-     if(found)
-     {
-      continue
-     }
-  for(var g = i+1 ;g<string.length;g=g+1)
-    {
-      if(string[i] === string[g])
-        {
-          count = count + 1
-        }
-    }
-  console.log(string[i],count)
- }
-
-
-  
+//            if(array[i] < array[k])
+//              {
+//                found = true 
+//               for(var m = output.length ; m >k ;m=m-1)
+//                  {
+//                      output[m] = output[m-1]
+//                  }
+              
+//               output[m] = array[i]
+//               console.log("k=",k)
+//               break
+//              }
 
 
 
+
+//      }
+
+
+//   if(found === false)
+//    {
+//           output[output.length] = array[i] //[2],[2,4],[2,4,5],[2,4,5,8]
+//    }
+ 
+//  }
+// console.log("output =",output)
 </script>
 
 
