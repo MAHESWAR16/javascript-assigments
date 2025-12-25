@@ -1,19 +1,38 @@
 <script>
     //Delete all occurrences of a character from a string.
-   var string = "mahehhhshaa"
-   var seperate = string.split("")
-  console.log(seperate)
+    var string = "mahehhhshaa"
+    var result = ""
+    var seperate = string.split("")
+    console.log(seperate)
  
   for(var i=0;i<seperate.length;i=i+1)
      {
         console.log(seperate.indexOf(seperate[i]),seperate[i])
+
+        var position = string.indexOf(string[i])
+            
+        var count = 0
+
+          while (position !== -1)
+            {
+
+                 count = count + 1
+                 
+                 position = string.indexOf(string[i], position+1)
+            }
+        
+            if(count === 1)
+            {
+                result = result + string[i]
+            }
+             
       
 
 
        
      }
 
-
+   console.log("result =",result)
 
 
 
