@@ -1,0 +1,33 @@
+<script>
+    //Replace the last occurrence of a character with another in a string.
+    // var string = "maheshaalk"
+    // var result = ""
+    // var index = string.lastIndexOf("a")
+
+    //   for(var i = 0 ;i<string.length ;i=i+1)
+    //    {
+
+    
+
+    //    if(index === i)
+    //    {
+    //     result = result + "9"
+    //    }
+      
+    //    else
+    //    {
+    //     result = result + string[i]
+    //    }
+
+
+    //   }
+   
+    //   console.log('result =',result)
+     
+
+     var string = "maheshaalk"
+     var index = string.lastIndexOf("a")
+     var result = string.slice(0,index) +"9"+string.slice(index+1)
+
+     console.log(result)
+</script>
