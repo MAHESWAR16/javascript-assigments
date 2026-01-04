@@ -1,0 +1,36 @@
+<script>
+    //Find the first occurrence of a word in a given string.
+    var string = "I apps like apples and apples"
+
+    console.log(string.length)
+
+    var target = "apples"
+    console.log(target.length)
+     
+    
+     
+   for(var i= 0 ; i<string.length-target.length;i=i+1)
+      {
+
+        for(var m = 0 ;m<target.length;m=m+1)
+      {
+            var found = true
+
+          if(string[i+m] !== target[m])
+             {
+                   found = false
+                   break
+             }
+
+      }
+
+      if(found)
+       {
+          console.log("index found is ", i )
+
+          
+       }
+     }
+
+
+</script>
