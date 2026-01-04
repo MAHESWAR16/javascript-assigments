@@ -1,0 +1,75 @@
+<script>
+    //Search all occurrences of a word in a given string.
+
+
+    // for(var n = 5 ;n>1;n=n-1)
+    // {
+
+   
+    //     for(var m=1 ;m<3;m=m+1)
+    //       {
+    //         if(m ==2)
+    //       {
+    //         console.log("hello")
+    //         break
+    //       }
+    //       console.log("m=",m)
+    //       }
+    //    console.log("n=",n)
+    //        }
+
+    // var sentence  = "app I apples like apples and apples"
+
+    // var search = "apples"
+   
+     
+    // var found 
+    
+    // var store =[]
+    
+    //  for(var i = 0 ;i<sentence.length ;i =i+1)
+    //     {
+
+    //         console.log(sentence[i]," i is ",i)
+    //         found = true
+               
+    //     for(var j= 0 ;j<search.length;j=j+1)
+    //           {
+                     
+    //            if(sentence[i+j] !== search[j])
+    //              {   
+    //                 found = false
+    //                 break   // break breaks the innerloop not the outer loop .
+    //              }
+
+    //           }
+ 
+    //         if(found)
+    //           {
+    //             store[store.length] = i 
+    //           }
+
+    //     }
+      
+    //     console.log('store=',store)
+
+ // using string method . 
+      var sentence  = "app I apples like apples and apples"
+
+    var search = "apples"
+ 
+     var store = []
+
+     var index = sentence.indexOf(search)
+    
+     while(index !== -1)
+
+     {
+        store[store.length] = index
+
+        index = sentence.indexOf(search ,index+ 1)
+     }
+
+     console.log("store =",store)
+    
+</script>
