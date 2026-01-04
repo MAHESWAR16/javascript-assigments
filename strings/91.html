@@ -1,0 +1,58 @@
+<script>
+    //Count occurrences of a word in a given string.
+        // var sentence  = "app I apples like apples and apples"
+
+        // var find = "apples"
+            
+        // var count = 0
+        
+        // var found 
+          
+        // for(var i=0;i<sentence.length;i=i+1)
+        //    {
+            
+        //     console.log(sentence[i])
+
+        //         found = true 
+
+        //     for(var t = 0 ;t<find.length;t=t+1)
+        //        {
+        //             if(sentence[i+t] !== find[t])
+        //               {
+                                       
+        //                    found = false
+        //                    break 
+
+        //               }
+                      
+        //        }
+
+
+        //        if(found)
+        //        {
+        //         count = count + 1
+        //        }
+        //    }
+
+        //    console.log("count",count)
+
+
+
+        var sentence  = "app I apples like apples and apples"
+
+        var find = "apples"
+            
+        var count = 0
+        
+        var index = sentence.indexOf(find)
+        console.log(index)
+
+
+        while(index != -1)
+        {
+            count = count + 1
+
+            index = sentence.indexOf(find,index+1)
+        }
+        console.log("count =",count)
+</script>
