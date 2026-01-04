@@ -1,0 +1,42 @@
+<script>
+    //Find the last occurrence of a word in a given string.
+
+    var string = "I like apples and apples"
+       console.log(string.length)
+    var target = 'apples'
+         console.log(target.length)
+    var index =-1
+
+    for(var i=0 ;i<string.length-target.length;i=i+1)
+       {
+
+         var found = true 
+          
+         console.log(string[i],i)
+
+              for(var j = 0 ; j<target.length ;j=j+1)
+                 {
+
+
+                    if(string[i+j] !== target[j])
+                     {
+                        
+                        found = false 
+
+                        break
+
+                     }
+                 }
+                
+
+
+                 if(found)
+                   {
+                    index = i
+                   }
+       }
+
+       console.log("last",i)
+
+       console.log(string.lastIndexOf("apples"))
+</script>
