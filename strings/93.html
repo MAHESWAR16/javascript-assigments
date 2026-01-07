@@ -1,0 +1,89 @@
+<script>
+    //Remove the last occurrence of a word in a given string.
+  
+
+//to remove the last occurrence, we must:
+
+// Find where the last apples starts
+
+// While building result:
+
+// skip only that one
+
+// So the problem breaks into TWO PARTS:
+ 
+
+//     var sentence = "app I like apples and apples america "
+
+    
+
+//     var last = "apples"
+
+   
+//     var result = ""
+
+//   var lastindex = -1 
+
+//     for(var i=0 ; i<sentence.length-last.length ;i=i+1)
+//        {
+              
+        
+
+//        var match = true 
+
+//         for(var m = 0 ;m<last.length;m=m+1)
+//             {
+               
+//                 if(sentence[i+m] !== last[m])
+//                   {
+//                     match = false 
+                 
+//                     break 
+//                   }
+
+//             }
+
+//             if(match === true)
+//              {
+//                 lastindex = i
+
+               
+//              }
+
+//        }
+
+//   console.log("lastindex = ",lastindex)
+
+// for(var i = 0 ;i<sentence.length;i=i+1)
+//  {
+//     if(i === lastindex)
+//       {
+//         i = i+ last.length
+//       }
+//       else
+//       {
+//         result = result + sentence[i]
+//       }
+//  }
+//  console.log("result = ",result)
+
+
+var sentence = "app I like apples and apples america "
+var word = "apples"
+
+var result = ""
+
+var index = sentence.lastIndexOf(word)
+
+console.log("index =", index)
+
+if (index !== -1) {
+    var before = sentence.slice(0, index)
+    var after = sentence.slice(index + word.length)
+    result = before + after
+}
+
+console.log("result =", result)
+
+
+</script>
