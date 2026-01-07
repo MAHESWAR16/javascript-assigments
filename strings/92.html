@@ -11,57 +11,82 @@
 
     var result = ""
     
-    var match 
-    
-    var removed = false
 
-   for(var i= 0 ;i<sentence.length;i=i+1)
+    var index = sentence.indexOf(word)
+
+
+    if(index !== -1)
       {
-        console.log("i = ",i,sentence[i])
-          // assume match as true
 
-        match = true          
- 
-
-        for(var m = 0 ;m<word.length;m=m+1)
-           {
-             
-              if(sentence[i + m] !== word[m])
-              {
-
-                match = false 
-              }
-
-           }
-          
-           console.log(" at i ",i ,"match becomes =",match )
-             
-
-           // assume removed as false because i have not removed yet .
-           
-          
-           if(match === true && removed === false)
-           {
-            i = i + word.length
-
-            // make removed as true because second apples should come to string .
-
-            removed = true 
-           }
-
-
-
-          else  
-             {
-                result = result + sentence[i]
-             }
-
-             console.log('result =',result )
+       var before = sentence.slice(0,index)
+       var after = sentence.slice(index +  word.length)
+       var result = before + after
 
       }
 
+      console.log("result =",result)
 
-             console.log("final result =",result )   
+ 
+
+
+
+
+
+
+
+// without using string methods 
+
+//     var match 
+    
+//     var removed = false
+
+//    for(var i= 0 ;i<sentence.length;i=i+1)
+//       {
+//         console.log("i = ",i,sentence[i])
+//           // assume match as true
+
+//         match = true          
+ 
+
+//         for(var m = 0 ;m<word.length;m=m+1)
+//            {
+             
+//               if(sentence[i + m] !== word[m])
+//               {
+
+//                 match = false 
+//               }
+
+//            }
+          
+//            console.log(" at i ",i ,"match becomes =",match )
+             
+
+//            // assume removed as false because i have not removed yet .
+           
+          
+//            if(match === true && removed === false)
+//            {
+//             i = i + word.length
+
+//             // make removed as true because second apples should come to string .
+
+//             removed = true 
+//            }
+
+
+
+//           else  
+//              {
+//                 result = result + sentence[i]
+//              }
+
+//              console.log('result =',result )
+
+//       }
+
+
+//              console.log("final result =",result )   
 
           
 
