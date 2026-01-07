@@ -3,60 +3,65 @@
 
     var sentence = "app I like apples and apples"
 
-    console.log('sentence =',sentence.length)
+    console.log('sentence length =',sentence.length)
    
     var word = "apples"
    
-    console.log("word ",word.length)
+    console.log("word length = ",word.length)
 
     var result = ""
- 
-    var match  
-
-    var removed = false // let asssume that i have not removed apples yet .  
-
-for(var i = 0 ;i<sentence.length;i=i+1)
-  
-{
-     
-    console.log("i = ",i,sentence[i])
-
-     match = true // let assume match is true 
-     
-    for(var m = 0 ; m<word.length;m=m+1)
-      {
-
-        if(word[m] !== sentence[i+m])
-         {
-
-             match = false 
-             
-         }
-
-      }
-      
-      if(match === true && removed === false)
-      {
-        i = i + word.length-1
-        removed= true 
-      }
-
-
-     else
-      {
-        result = result + sentence[i]
-      }
     
-   console.log('result = ',result)
+    var match 
+    
+    var removed = false
 
-  }
+   for(var i= 0 ;i<sentence.length;i=i+1)
+      {
+        console.log("i = ",i,sentence[i])
+          // assume match as true
 
-  console.log('result  = ',result )
+        match = true          
+ 
+
+        for(var m = 0 ;m<word.length;m=m+1)
+           {
+             
+              if(sentence[i + m] !== word[m])
+              {
+
+                match = false 
+              }
+
+           }
+          
+           console.log(" at i ",i ,"match becomes =",match )
+             
+
+           // assume removed as false because i have not removed yet .
+           
+          
+           if(match === true && removed === false)
+           {
+            i = i + word.length
+
+            // make removed as true because second apples should come to string .
+
+            removed = true 
+           }
 
 
 
+          else  
+             {
+                result = result + sentence[i]
+             }
 
-                
+             console.log('result =',result )
+
+      }
+
+
+             console.log("final result =",result )   
 
           
 
