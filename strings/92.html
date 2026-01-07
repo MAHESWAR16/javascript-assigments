@@ -1,0 +1,67 @@
+<script>
+    //Remove the first occurrence of a word from the string.
+
+    var sentence = "app I like apples and apples"
+
+    console.log('sentence =',sentence.length)
+   
+    var word = "apples"
+   
+    console.log("word ",word.length)
+
+    var result = ""
+ 
+    var match  
+
+    var removed = false // let asssume that i have not removed apples yet .  
+
+for(var i = 0 ;i<sentence.length;i=i+1)
+  
+{
+     
+    console.log("i = ",i,sentence[i])
+
+     match = true // let assume match is true 
+     
+    for(var m = 0 ; m<word.length;m=m+1)
+      {
+
+        if(word[m] !== sentence[i+m])
+         {
+
+             match = false 
+             
+         }
+
+      }
+      
+      if(match === true && removed === false)
+      {
+        i = i + word.length-1
+        removed= true 
+      }
+
+
+     else
+      {
+        result = result + sentence[i]
+      }
+    
+   console.log('result = ',result)
+
+  }
+
+  console.log('result  = ',result )
+
+
+
+
+                
+
+          
+
+            
+
+
+             
+</script>
