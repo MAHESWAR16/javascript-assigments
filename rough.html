@@ -289,54 +289,39 @@
 //  }
 // console.log("output =",output)
 
-var string = 'maheshaa'
+var string = "mdsfssmkm"
+console.log(string.indexOf("s"))
+
+var count = 0
+
+for(var i = 0 ;i<string.length;i=i+1)
+  {
 
 
-var count 
+   
+   
+   count = 0
 
-var found
-
-    for(var i = 0 ; i<string.length;i=i+1)
-{
-      
-   count = 1
- 
-     found = false
-
-   for(var k =0 ;k<i;k=k+1)
-      {
-
-         if(string[i] === string[k])
-
-          {
-
-            found = true 
-          }
-           
-      }
-      
-      if(found)
-       {
-         break 
-       }
+  var index = string.indexOf(string[i])
 
 
+  if(string.indexOf(string[i]) < i)
+    {
+      continue
+    }
 
-   for(var g = i+ 1 ;g<string.length;g=g+1)
-      {
+    while (index !== - 1)
+    {
+      count  = count + 1
 
-         if(string[i]===string[g])
-           {
-          
-              count = count + 1
+      index = string.indexOf(string[i],index+ 1)
+    }
 
-           }
-      }
 
-  console.log(string[i],count )
+ console.log("count =",string[i],count)
+  }
 
-}
-       
+
 </script>
 
 
