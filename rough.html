@@ -290,44 +290,53 @@
 // console.log("output =",output)
 
 var string = 'maheshaa'
-var count = 0
 
-for(var i = 0 ;i<string.length;i=i+1)
- {
-  count = 1 
-  var found = false 
-  for(var n = 0 ;n<i ;n=n+1)
-     {
+
+var count 
+
+var found
+
+    for(var i = 0 ; i<string.length;i=i+1)
+{
       
-     if (string[i] === string[n])
-        {
-          found = true 
+   count = 1
+ 
+     found = false
+
+   for(var k =0 ;k<i;k=k+1)
+      {
+
+         if(string[i] === string[k])
+
+          {
+
+            found = true 
+          }
            
-          
-        }
-     }
-   
-     if(found)
-     {
-      continue 
-     }
-
-  for(var j = i+1 ;j<string.length ;j=j+1)
-     {
-
-     if(string[i] === string[j])
+      }
+      
+      if(found)
        {
-        count = count + 1
+         break 
        }
 
-     }
 
 
-  console.log(string[i],count)
+   for(var g = i+ 1 ;g<string.length;g=g+1)
+      {
 
-  
+         if(string[i]===string[g])
+           {
+          
+              count = count + 1
 
- }
+           }
+      }
+
+  console.log(string[i],count )
+
+}
+       
 </script>
 
 
