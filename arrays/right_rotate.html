@@ -1,0 +1,53 @@
+<script>
+     var array = [ 10,5,6,8,12]
+
+
+    var last = array [array.length - 1]   //12
+
+
+    for(var i = array.length - 1; i>0 ; i= i-1 )
+
+       {
+
+         array[i] = array [i-1]
+
+         console.log("i =" , i,"array = ",array )
+ 
+      }
+   
+      array[0] = last 
+
+      console.log("final array = ", array)
+      
+
+
+    // right rotate an array two time 
+
+
+    var array1 = [8,5,2,34,7]
+
+
+    var h = 1
+
+    while ( h <= 2)
+    {
+     
+        var last = array1[array1.length-1]
+
+
+        for(var m = array1.length-1 ; m>0;m=m-1)
+          {
+
+            array1[m] = array1[m-1]
+          }
+        
+          array1[0] = last 
+ 
+          h = h+ 1
+    }
+
+
+console.log("array1 = ",array1)
+
+
+</script>
