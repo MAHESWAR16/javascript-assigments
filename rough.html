@@ -315,7 +315,52 @@
 
 
 
-??
+var string = "app I like apples and apples "
+
+
+var word ="apples"
+
+var found 
+
+var index = -1
+
+for(var i = 0 ;i<string.length ;i = i+1)
+  {
+
+
+      console.log(' i = ' , i )
+
+            found = true
+     
+
+    for(var m =  0  ; m<word.length ;m=m+1)
+       {
+
+        if(string[i+m] !== word[m])
+          {
+                found = false
+
+                break 
+          }
+
+       }
+
+       if(found === true )
+        {
+            index = i 
+
+            console.log( " i = " , index )
+
+            break
+        }
+
+
+
+
+  }
+
+
+  
 
 </script>
 
