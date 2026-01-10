@@ -315,52 +315,53 @@
 
 
 
-var string = "app I like apples and apples "
+var string = "mashesmhaama"
 
+var count 
 
-var word ="apples"
-
-var found 
-
-var index = -1
-
-for(var i = 0 ;i<string.length ;i = i+1)
+for(var i = 0 ; i<string.length ; i=i+1)
   {
-
-
-      console.log(' i = ' , i )
-
-            found = true
-     
-
-    for(var m =  0  ; m<word.length ;m=m+1)
+   
+    var matching = false 
+    
+    for(var n = 0 ; n<i ; n=n+1)
        {
-
-        if(string[i+m] !== word[m])
-          {
-                found = false
-
-                break 
-          }
+            
+        if(string[i]=== string[n])
+           {
+            matching = true 
+           }
+    
 
        }
+  
 
-       if(found === true )
+       if(matching === true )
+       {
+        break 
+       }
+   
+
+
+
+     count =  1
+      
+
+
+     for(var m = i+ 1 ; m<string.length;m=m+1)
         {
-            index = i 
+            if(string[i] === string[m])
+              {
+                count = count + 1
+              }
 
-            console.log( " i = " , index )
-
-            break
         }
 
-
-
-
-  }
-
+      console.log(string[i],count)
 
   
+
+  }
 
 </script>
 
