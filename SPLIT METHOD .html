@@ -1,0 +1,62 @@
+<script>
+    //
+    
+    
+    var string = "hello";
+
+console.log(string.split("l", 1));
+
+
+// what does it means and how it works 
+
+// first step 
+// split("l",1) : Cut the string wherever you see the letter l”
+
+//So "hello" looks like this:
+
+// he | l | | l | o
+// After splitting at each l, we get 3 pieces:
+// "he"
+// "" (empty, because nothing between the two l's)
+// "o"
+// So:
+// "hello".split("l")  →  ["he", "", "o"]
+
+// Step 2 — What does ,1 mean?
+
+//split("l", 1) means:
+
+// “Give me only 1 piece after splitting.”
+// So we take only the first part:
+// ["he"]
+// ❓ So why "o" is not shown?
+// Because limit = 1 means:
+// ❌ do not give second piece
+// ❌ do not give third piece
+// Only give first result.
+// ✔ Very simple analogy
+// Imagine you cut a pizza into 3 slices:
+// Slice 1: he
+// Slice 2: (empty)
+// Slice 3: o
+// If I say:
+// “Give me 1 slice only”
+// Then you will give only Slice 1 = "he"
+// other slices are NOT shown.
+
+// //Without limit:
+// console.log("hello".split("l"));
+
+
+// Output:
+
+// ["he", "", "o"]
+
+// ➤ With limit = 1:
+// console.log("hello".split("l", 1));
+
+
+// Output:
+
+// ["he"]
+</script>
