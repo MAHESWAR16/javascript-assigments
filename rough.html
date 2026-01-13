@@ -408,47 +408,35 @@
 
 
 
-var string = "I like apples and apples "
-console.log(string.length)
+var string = "app I app like apples and apples";
+var word = "apples";
 
-var word = "apples"
+var found;
+var lastIndex = -1;  // store last index here
 
-console.log(word.length)
+for (var i = 0; i < string.length; i = i + 1) {
 
-var found 
+    found = true;
 
-for(var i = 0  ; i<string.length-word.length ;i=i+1)
-   {
+    for (var k = 0; k < word.length; k = k + 1) {
 
+        if (string[i + k] !== word[k]) {
+            found = false;
+            break;
+        }
+    }
 
-    console.log("at i = " , i, string[i])
-
-    found = true       
-
-
-    for(var t = 0 ; t<word.length;t=t+1)
-       {
-           
-         if(string[i+t] !== word[t])
-           {
-                    
-             found = false
-
-           }
-
-       }
+    if (found === true) {
+        lastIndex = i; // update last index 
+        // DO NOT break here because we want last
        
+    }
+}
+ console.log("Last Index =", lastIndex);
 
-       if( found === true )
-       {
+//  using string methods .
 
-        console.log(" inedx is i ", i )
+console.log(string.lastIndexOf(word))
 
-        break 
-
-       }
-
-
-   }
 </script>
 
