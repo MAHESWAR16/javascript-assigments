@@ -407,36 +407,82 @@
 //    }
 
 
+// var string = "apples app I app like apples and apples" 
 
-var string = "app I app like apples and apples";
-var word = "apples";
+// var word = 'apples'
 
-var found;
-var lastIndex = -1;  // store last index here
+// var index = string.lastIndexOf(word)
 
-for (var i = 0; i < string.length; i = i + 1) {
+// var result = ""
 
-    found = true;
+// if(index !== -1)
+// {
+//   result = result + string.slice(0,index)
+// }
 
-    for (var k = 0; k < word.length; k = k + 1) {
+// console.log("result = ",result )
 
-        if (string[i + k] !== word[k]) {
-            found = false;
-            break;
-        }
-    }
+// var string    = "app I app like apples and apples";
 
-    if (found === true) {
-        lastIndex = i; // update last index 
-        // DO NOT break here because we want last
-       
-    }
-}
- console.log("Last Index =", lastIndex);
+// var word      = "apples"
 
-//  using string methods .
 
-console.log(string.lastIndexOf(word))
 
+// var index = string.indexOf(word)
+
+// if(index !== -1)
+// {
+
+//  var result 
+//  result = string.slice(0,index)+ string.slice(index+word.length)
+
+// }
+
+// console.log("result = ",result )
+
+
+
+// var string    = "app I app like apples and apples";
+// var found 
+// var removed  = false 
+
+// for(var i = 0 ;i<string.length;i=i+1)
+// {
+         
+//    console.log(" at  i  = ",i, string[i])
+
+//           found = true
+          
+          
+
+//    for(var m=0 ; m<word.length; m =m+1)
+//      {    
+//       if(string[i+m] !== word[m])
+//         {
+         
+//           found = false 
+
+//         }
+//      }
+        
+   
+//      if( found === true && removed === false)
+//        {
+//          i = i+ word.length
+//           removed = true 
+//        }
+//        else
+//        {
+//             newstring = newstring + string[i]
+//        }
+// }
+// console.log("newstring = ",newstring)
+
+//  var string    = "app I app like apples and apples";
+  
+//  var result = string.replaceAll("apples","")
+// console.log(result )
+
+// console.log(string)
 </script>
 
