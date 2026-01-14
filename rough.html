@@ -16,41 +16,41 @@
 
 // count each character of string using string methods . 
 
-var string = "mdsfsmkm"
+// var string = "mdsfsmkm"
 
-var count 
+// var count 
 
-for(var i = 0 ; i<string.length ; i = i +1)
+// for(var i = 0 ; i<string.length ; i = i +1)
 
-{
-          count = 0 
-        var index = string.indexOf(string[i])
+// {
+//           count = 0 
+//         var index = string.indexOf(string[i])
 
-        console.log(" starting at i = ", i , "index value is =", index)
+//         console.log(" starting at i = ", i , "index value is =", index)
 
-             if( i > index)
-             {
-              break 
-             }
-
-
+//              if( i > index)
+//              {
+//               break 
+//              }
 
 
-      while (index !== -1)
-          {
+
+
+//       while (index !== -1)
+//           {
               
-            count = count +1 
+//             count = count +1 
 
-            index = string.indexOf(string[i],index+1)
+//             index = string.indexOf(string[i],index+1)
 
 
-          }
+//           }
     
 
-     console.log('after',i,"th iteration index =", index, " here",string[i],"repeated =", count)     
+//      console.log('after',i,"th iteration index =", index, " here",string[i],"repeated =", count)     
 
  
-}
+// }
 
 
 // count each character of a string without using string method . 
@@ -84,11 +84,6 @@ for(var i = 0 ; i<string.length ; i = i +1)
 //         break 
 //        }
     
-    
-
- 
-
-
 //      for(var m = i+1 ; m<string.length ; m = m+1)
 //         {
 
@@ -232,36 +227,118 @@ for(var i = 0 ; i<string.length ; i = i +1)
 //    }
 // )
 // console.log('array',array)
-// var array = [5,4,3,6]
-// var newarray = []
-// for(var i =0 ; i<array.length ; i=i+1)
-// {
-//    var found = false 
-//    for(var j = 0 ; j<newarray.length ;j=j+1)
-//     {
-//          if(array[i] < newarray[j])
+
+// var array = [4,12,5,7]
+
+//  var newarray = []
+
+// var inserted 
+
+//  for(var i = 0 ; i< array.length ; i = i+1)
+//    {
+
+//         console.log(" at i = ", i , array[i])
+
+//         inserted = false
+
+//         for(var m = 0  ; m < newarray.length ; m=m+1)
 //            {
-//               found = true 
+               
 
-//             for(var h = newarray.length ; h>j ; h = h-1)
-//                 {
-//                    newarray[h] = newarray[h-1]
-//                 } 
-              
-//                  newarray[j] = array[i]
-//                 break
+//             if(array[i] < newarray[m])
+//            {
 
+//                   for(var j = newarray.length; j > m ; j=j-1)
+//                   {
+
+//                     newarray[j] = newarray[j-1]
+
+//                   }
+//                       newarray[m] = array[i]
+
+//              inserted = true 
+//              break
 //            }
-//     }
-   
-   
-//     if(!found)
-// {
-//         newarray[newarray.length] = array[i]
-// }
+          
+            
+//           }
+
+//              if(inserted === false)
+//              {
+//               newarray[newarray.length] = array[i]
+//              }
+             
+
+
+//             }
+
+//    console.log("newarray = ", newarray )
+
+
+// var array  = [4,12,5,7]
+
+// array.forEach(
+
+//   function(value,i)
+//    {
+
+
+//   console.log(array[i])
+
   
-// }
-// console.log("newarray",newarray)
+//        if(array[i] > array[i+ 1])
+//          {
+//           var temp 
+
+
+//           temp = array[i]
+//           array[i] = array[i+1]
+//           array[i+1] = temp 
+//          }
+
+//     console.log(" array is =",array)
+
+//    }    
+
+//    )
+// console.log('array = ',array)
+
+
+
+
+
+
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+     
+  
+ 
+ 
+
+
+  
+
+
+ 
+  
+
 
 
 // var string = "mdsfssmkm"
