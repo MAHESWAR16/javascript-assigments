@@ -228,51 +228,80 @@
 // )
 // console.log('array',array)
 
-var array = [4,12,5,7]
+// var array = [4,12,5,7]
 
- var newarray = []
+//  var newarray = []
 
-var inserted 
+// var inserted 
 
- for(var i = 0 ; i< array.length ; i = i+1)
-   {
+//  for(var i = 0 ; i< array.length ; i = i+1)
+//    {
 
-        console.log(" at i = ", i , array[i])
+//         console.log(" at i = ", i , array[i])
 
-        inserted = false
+//         inserted = false
 
-        for(var m = 0  ; m < newarray.length ; m=m+1)
-           {
+//         for(var m = 0  ; m < newarray.length ; m=m+1)
+//            {
                
 
-            if(array[i] < newarray[m])
-           {
+//             if(array[i] < newarray[m])
+//            {
 
-                  for(var j = newarray.length; j > m ; j=j-1)
-                  {
+//                   for(var j = newarray.length; j > m ; j=j-1)
+//                   {
 
-                    newarray[j] = newarray[j-1]
+//                     newarray[j] = newarray[j-1]
 
-                  }
-                      newarray[m] = array[i]
+//                   }
+//                       newarray[m] = array[i]
 
-             inserted = true 
-             break
-           }
+//              inserted = true 
+//              break
+//            }
           
             
-          }
+//           }
 
-             if(inserted === false)
-             {
-              newarray[newarray.length] = array[i]
-             }
+//              if(inserted === false)
+//              {
+//               newarray[newarray.length] = array[i]
+//              }
              
 
 
-            }
+//             }
 
-   console.log("newarray = ", newarray )
+//    console.log("newarray = ", newarray )
+
+
+// var array  = [4,12,5,7]
+
+// array.forEach(
+
+//   function(value,i)
+//    {
+
+
+//   console.log(array[i])
+
+  
+//        if(array[i] > array[i+ 1])
+//          {
+//           var temp 
+
+
+//           temp = array[i]
+//           array[i] = array[i+1]
+//           array[i+1] = temp 
+//          }
+
+//     console.log(" array is =",array)
+
+//    }    
+
+//    )
+// console.log('array = ',array)
 
 
 
