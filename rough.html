@@ -13,82 +13,99 @@
 //             console.log('edupoly')
 //            }
 
-// var string = "mdsfsmkm"
 
-// for(var i=0;i<string.length;i=i+1)
-//  {
-
-//    var take_char = string[i]
-//    var count = 0
-   
-//   if(string.indexOf(take_char) < i)
-//     {
-//       continue
-//     }
-    
-
-//    var position = string.indexOf(take_char)
-//     while(position !== -1)
-//      {
-//       count = count + 1
-//       position = string.indexOf(take_char,position+1)
-//      }
-//    console.log(take_char,count)
-//  }
-
+// count each character of string using string methods . 
 
 var string = "mdsfsmkm"
+
 var count 
-var found 
 
-for(var i = 0 ; i<string.length ; i=i+1)
-   { 
+for(var i = 0 ; i<string.length ; i = i +1)
 
-      count =  1
-      
-    console.log(" count value is ", count )
-       
-        found = false 
-    for(var n = 0 ; n<i ;n=n+1)
-       {
-                
-          if(string[i] === string[n])
+{
+          count = 0 
+        var index = string.indexOf(string[i])
+
+        console.log(" starting at i = ", i , "index value is =", index)
+
+             if( i > index)
+             {
+              break 
+             }
+
+
+
+
+      while (index !== -1)
           {
+              
+            count = count +1 
 
-            found = true 
+            index = string.indexOf(string[i],index+1)
+
 
           }
+    
+
+     console.log('after',i,"th iteration index =", index, " here",string[i],"repeated =", count)     
+
+ 
+}
+
+
+// count each character of a string without using string method . 
+// var string = "mdsfsmkm"
+// var count 
+// var found 
+
+// for(var i = 0 ; i<string.length ; i=i+1)
+//    { 
+
+//       count =  1
+
+//     console.log(" count value is ", count )
+       
+//         found = false 
+//     for(var n = 0 ; n<i ;n=n+1)
+//        {
+                
+//           if(string[i] === string[n])
+//           {
+
+//             found = true 
+
+//           }
           
 
-       }
+//        }
       
-       if(found)
-       {
-        break 
-       }
+//        if(found)
+//        {
+//         break 
+//        }
     
     
 
  
 
 
-     for(var m = i+1 ; m<string.length ; m = m+1)
-        {
+//      for(var m = i+1 ; m<string.length ; m = m+1)
+//         {
 
-             if(string[i] === string[m])
-               {
+//              if(string[i] === string[m])
+//                {
                    
-                count = count + 1
+//                 count = count + 1
 
-               }
+//                }
 
-        }
+//         }
        
      
 
-       console.log(" at  i  = ", i ,"taken =",string[i],"=",count)
+//        console.log(" at  i  = ", i ,"taken =",string[i],"=",count)
      
-   }
+//    }
 
 // var array = [5,4,3,6]
 // var newarray = []
