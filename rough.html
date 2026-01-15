@@ -16,91 +16,100 @@
 
 // count each character of string using string methods . 
 
-// var string = "mdsfsmkm"
+//  var string = "mdsfsmkm"
 
-// var count 
+//  var index 
 
-// for(var i = 0 ; i<string.length ; i = i +1)
+//  var count
 
-// {
+
+//  for(var i = 0 ; i<string.length; i = i+1)
+//     {
+//           index = string.indexOf(string[i])
+
 //           count = 0 
-//         var index = string.indexOf(string[i])
 
-//         console.log(" starting at i = ", i , "index value is =", index)
-
-//              if( i > index)
-//              {
-//               break 
-//              }
+//            console.log(" before loop index = ", index )
 
 
+//               if(index < i )
+//                 {
+//                   break
+//                 }
 
 
-//       while (index !== -1)
-//           {
-              
-//             count = count +1 
 
-//             index = string.indexOf(string[i],index+1)
+//           while (index !== -1)
+//             {
+
+//               count = count + 1
 
 
-//           }
-    
+//               index = string.indexOf( string[i],index + 1)
+//             }
 
-//      console.log('after',i,"th iteration index =", index, " here",string[i],"repeated =", count)     
-
+//            console.log ( "i =", i ,"char = ", string[i] , "repeated = ", count ," index = " , index)
  
-// }
+
+//     }
+
 
 
 // count each character of a string without using string method . 
-// var string = "mdsfsmkm"
-// var count 
-// var found 
+//  var string = "mdsfsmkm"
 
-// for(var i = 0 ; i<string.length ; i=i+1)
-//    { 
+//  var count 
+ 
+//  var character_found 
 
-//       count =  1
+//  for(var i = 0 ;i<string.length ; i = i+1)
+//     {         
+            
+//               character_found = false
 
-//     console.log(" count value is ", count )
-       
-//         found = false 
-//     for(var n = 0 ; n<i ;n=n+1)
-//        {
-                
-//           if(string[i] === string[n])
-//           {
-
-//             found = true 
-
-//           }
+//          count = 1 
           
+//           // to stop already counted characters .
 
-//        }
-      
-//        if(found)
-//        {
-//         break 
-//        }
-    
-//      for(var m = i+1 ; m<string.length ; m = m+1)
-//         {
+//           for(var n = 0 ; n< i ; n=n+ 1)
+//              {
+//                    if(string[i] === string[n])
+//                      {
+                              
+//                       character_found = true 
+                    
+//                      }
 
-//              if(string[i] === string[m])
-//                {
-                   
-//                 count = count + 1
+//              }
 
-//                }
+//           if(character_found)
+//             {
+//               break 
+//             }
 
-//         }
-       
-     
+           
 
-//        console.log(" at  i  = ", i ,"taken =",string[i],"=",count)
-     
-//    }
+//          // comparing with other characters 
+
+//           for(var m = i+1 ; m<string.length;m=m+1)
+//              { 
+
+//               if(string[i] === string[m])
+//                  {
+                  
+//                   count = count + 1
+
+//                  }
+
+
+                 
+//              }
+
+
+//            console.log(" i = ", string[i], count )  
+
+//     }
+
 
 // var array = [5,4,3,6]
 // var newarray = []
@@ -228,84 +237,107 @@
 // )
 // console.log('array',array)
 
-// var array = [4,12,5,7]
+
+// without array methods ascending order .
+//  var array = [4,12,5,7]
 
 //  var newarray = []
 
-// var inserted 
 
-//  for(var i = 0 ; i< array.length ; i = i+1)
-//    {
+//  for(var i=0 ;i<array.length ;i=i+1)
 
-//         console.log(" at i = ", i , array[i])
+//      {
+//          console.log(" i value = " , i)
 
-//         inserted = false
+//          inserted = false 
+   
+//          for(var m= 0 ; m<newarray.length ; m=m+1)
 
-//         for(var m = 0  ; m < newarray.length ; m=m+1)
-//            {
-               
+//             {    
+            
 
-//             if(array[i] < newarray[m])
-//            {
-
-//                   for(var j = newarray.length; j > m ; j=j-1)
+//                 if(array[i] < newarray[m])
 //                   {
+//                            console.log( " m value is =",m)
 
-//                     newarray[j] = newarray[j-1]
+//                     for(var n = newarray.length ; n>m; n = n-1)
+//                        {
+//                             console.log(" n value = " , n)
+
+//                               newarray[n] = newarray[n-1]
+
+//                               console.log(" newarray = ", newarray , " n is ",n)
+//                        }
+                    
+//                     newarray[m] = array[i]
+//                     inserted = true 
+//                     console.log(" after m value is inserted newarray is =",newarray)
+//                     break  
 
 //                   }
-//                       newarray[m] = array[i]
-
-//              inserted = true 
-//              break
-//            }
-          
-            
-//           }
-
-//              if(inserted === false)
-//              {
-//               newarray[newarray.length] = array[i]
-//              }
-             
-
-
+                     
+                
 //             }
+               
+       
+//        if (inserted === false)
+//         {
+//             newarray[newarray.length] = array[i]
+//             console.log(" newarray = " , newarray )
+//         }
+    
+//     }
+//  console.log("newarray =" , newarray )
 
-//    console.log("newarray = ", newarray )
 
+// ascending order using array methods forEACH 
 
 // var array  = [4,12,5,7]
 
 // array.forEach(
+//   function(value, index)
+//    {  
 
-//   function(value,i)
-//    {
-
-
-//   console.log(array[i])
-
-  
-//        if(array[i] > array[i+ 1])
-//          {
+//     console.log(array[index], index , " orginal array ", array)
+      
+//       if(array[index] > array[index+1])
+//         {
 //           var temp 
 
+//           temp = array[index]
 
-//           temp = array[i]
-//           array[i] = array[i+1]
-//           array[i+1] = temp 
-//          }
+//           array[index] = array[index+1]
 
-//     console.log(" array is =",array)
+//           array[index+1] = temp 
 
-//    }    
+//           console.log(" after modification array is ", array)
 
-//    )
-// console.log('array = ',array)
+//         }
+        
+        
+//    }
+// )
+ 
 
 
 
+// right rotate an array 
 
+// var array = [1,7,3,5,4]
+
+// var insert = array[0]
+
+
+// console.log(" insert  = " , insert)
+
+// for(var i = 0  ; i<array.length ;i = i+1)
+// {
+//   array[i] = array[i+1]
+
+// }
+// array[array.length-1] = insert
+
+// console.log(array )
 
 
 
