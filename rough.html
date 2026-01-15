@@ -54,53 +54,60 @@
 
 
 // count each character of a string without using string method . 
-// var string = "mdsfsmkm"
-// var count 
-// var found 
+ var string = "mdsfsmkm"
 
-// for(var i = 0 ; i<string.length ; i=i+1)
-//    { 
+ var count 
+ 
+ var character_found 
 
-//       count =  1
+ for(var i = 0 ;i<string.length ; i = i+1)
+    {         
+            
+              character_found = false
 
-//     console.log(" count value is ", count )
-       
-//         found = false 
-//     for(var n = 0 ; n<i ;n=n+1)
-//        {
-                
-//           if(string[i] === string[n])
-//           {
-
-//             found = true 
-
-//           }
+         count = 1 
           
+          // to stop already counted characters .
 
-//        }
-      
-//        if(found)
-//        {
-//         break 
-//        }
-    
-//      for(var m = i+1 ; m<string.length ; m = m+1)
-//         {
+          for(var n = 0 ; n< i ; n=n+ 1)
+             {
+                   if(string[i] === string[n])
+                     {
+                              
+                      character_found = true 
+                    
+                     }
 
-//              if(string[i] === string[m])
-//                {
-                   
-//                 count = count + 1
+             }
 
-//                }
+          if(character_found)
+            {
+              break 
+            }
 
-//         }
-       
-     
+           
 
-//        console.log(" at  i  = ", i ,"taken =",string[i],"=",count)
-     
-//    }
+         // comparing with other characters 
+
+          for(var m = i+1 ; m<string.length;m=m+1)
+             { 
+
+              if(string[i] === string[m])
+                 {
+                  
+                  count = count + 1
+
+                 }
+
+
+                 
+             }
+
+
+           console.log(" i = ", string[i], count )  
+
+    }
+
 
 // var array = [5,4,3,6]
 // var newarray = []
