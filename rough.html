@@ -16,97 +16,99 @@
 
 // count each character of string using string methods . 
 
-// var string = "mdsfsmkm"
+ var string = "mdsfsmkm"
 
-// var count 
+ var index 
 
-// for(var i = 0 ; i<string.length ; i = i +1)
-
-// {
-//           count = 0 
-//         var index = string.indexOf(string[i])
-
-//         console.log(" starting at i = ", i , "index value is =", index)
-
-//              if( i > index)
-//              {
-//               break 
-//              }
+ var count
 
 
+ for(var i = 0 ; i<string.length; i = i+1)
+    {
+          index = string.indexOf(string[i])
+
+          count = 0 
+
+           console.log(" before loop index = ", index )
 
 
-//       while (index !== -1)
-//           {
-              
-//             count = count +1 
-
-//             index = string.indexOf(string[i],index+1)
+              if(index < i )
+                {
+                  break
+                }
 
 
-//           }
-    
 
-//      console.log('after',i,"th iteration index =", index, " here",string[i],"repeated =", count)     
+          while (index !== -1)
+            {
 
+              count = count + 1
+
+
+              index = string.indexOf( string[i],index + 1)
+            }
+
+           console.log ( "i =", i ,"char = ", string[i] , "repeated = ", count ," index = " , index)
  
-// }
+
+    }
+
 
 
 // count each character of a string without using string method . 
- var string = "mdsfsmkm"
+//  var string = "mdsfsmkm"
 
- var count 
+//  var count 
  
- var character_found 
+//  var character_found 
 
- for(var i = 0 ;i<string.length ; i = i+1)
-    {         
+//  for(var i = 0 ;i<string.length ; i = i+1)
+//     {         
             
-              character_found = false
+//               character_found = false
 
-         count = 1 
+//          count = 1 
           
-          // to stop already counted characters .
+//           // to stop already counted characters .
 
-          for(var n = 0 ; n< i ; n=n+ 1)
-             {
-                   if(string[i] === string[n])
-                     {
+//           for(var n = 0 ; n< i ; n=n+ 1)
+//              {
+//                    if(string[i] === string[n])
+//                      {
                               
-                      character_found = true 
+//                       character_found = true 
                     
-                     }
+//                      }
 
-             }
+//              }
 
-          if(character_found)
-            {
-              break 
-            }
+//           if(character_found)
+//             {
+//               break 
+//             }
 
            
 
-         // comparing with other characters 
+//          // comparing with other characters 
 
-          for(var m = i+1 ; m<string.length;m=m+1)
-             { 
+//           for(var m = i+1 ; m<string.length;m=m+1)
+//              { 
 
-              if(string[i] === string[m])
-                 {
+//               if(string[i] === string[m])
+//                  {
                   
-                  count = count + 1
+//                   count = count + 1
 
-                 }
+//                  }
 
 
                  
-             }
+//              }
 
 
-           console.log(" i = ", string[i], count )  
+//            console.log(" i = ", string[i], count )  
 
-    }
+//     }
 
 
 // var array = [5,4,3,6]
