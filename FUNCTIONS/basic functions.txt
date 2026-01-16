@@ -1,10 +1,12 @@
 In JavaScript, a function is also a value.so it can be stored in variable
+
 You can also pass a function to another function:
 
 function hello()
  {
   console.log("Hello");
 }
+
 function abc(fun)
  {
   fun(); // calling the function inside
