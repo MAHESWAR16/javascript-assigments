@@ -9,6 +9,9 @@ function hello()
 
 function abc(fun)
  {
+
+  console.log( " fun  = " , fun)
+  
   fun(); // calling the function inside
 }
 abc(hello);
