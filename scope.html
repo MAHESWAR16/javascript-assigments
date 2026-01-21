@@ -1,5 +1,58 @@
 <script>
 
+//scope : where a variable can be visible and can be used . 
+ 
+// think of variables like people inside rooms .
+// a person inside a room can only be seen inside that room unless allowed outside .
+
+// there are 3 main types of scope in javascript . 
+
+//global scope : 
+// if a varibale is created outside of any function or block , it is called as global scope .
+// means we can use it anywhere in the file . 
+// example :
+
+// var x  = 10 
+// console.log(x)   works x = 10
+
+// function test()
+  //  {
+  //   console.log(x)   works , x= 10
+  //  }
+// test()
+
+// here x is visible everywhere . 
+
+
+
+// function scope :
+//if a varibale is created inside a function you can use it only inside that function . 
+
+// function test()
+//  {
+//   var y = 20           // function scope 
+//   console.log(y)       // works y is 20
+//  }
+ 
+//  test()
+
+//  console.log(y) // output error : y is not visible here . y is unefined / 
+
+// y exists only inside test()
+
+
+
+// block scope :
+// if we use {}  with if , for , while .
+
+
+
+
+
+
+
+
+
 // Imagine Your House
 // Your House Has:
 // Hall
@@ -13,11 +66,11 @@
 // Bedroom	                Only your family members (Private place)
 
 // This is the same idea in JavaScript
-//      Scope Type                     Works Like                   Who Can Use the Variable? 
-//   | -----------------------------   | ---------------------------  | ---------------------------- |
-//   | **Global Scope**               | Playground                    | Anyone, anywhere in the code 
-//   | **Function Scope**             | Inside Bedroom               | Only inside the function     |
-//  | **Block Scope (let / const)**  | Inside the Bedroom Cupboard   | Only inside `{ }` block      |
+//      Scope Type                     Works Like                      Who Can Use the Variable? 
+// | -----------------------------   | ---------------------------  | ---------------------------- |
+//   | **Global Scope**               | Playground                  | Anyone, anywhere in the code .
+//   | **Function Scope**             | Inside Bedroom              | Only inside the function     |
+//  | **Block Scope (let / const)**  | Inside the Bedroom Cupboard   | Only inside `{ }`block      |
 
 // global variable  declarations
 let asd = 25
