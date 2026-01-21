@@ -103,11 +103,11 @@ ________________________________________________________________________________
 ✅ break
 Where it is used?
 ➡️ Inside loops (for, while)
-What it does?
+What it does?n 
 ➡️ Stops the loop only.
 ➡️ Code after the loop will still run.
 ____________________________________________________
-
+   
 function abc() {
     console.log("hello")
     return "nibaa"
