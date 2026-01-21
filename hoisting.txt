@@ -1,15 +1,18 @@
 <script>
 // REMEMBER   JavaScript Rule  to call a function is   denoted as ()
 // remener 
+
  variable decalaration  :
- var x 
+ var x .
+
  variable assigment :
  var x 
  x = 10
- variable intilization : at the time of declaration when we intialize a value to a variable that is called  variable  intilixation.
- var x = 10
 
-what is hoisitng 
+ variable intilization : at the time of declaration when we intialize a value to a variable that is called  variable  intilixation.
+ var x = 10 . 
+
+what is hoisitng ??
 when javascrit runs the code there  are two phase 
 1 loading time or compile time . memory creation phase
 2  run time or execution  time . javascript runs the code LINE BY LINE , happerns after loading is finsihed . 
@@ -56,7 +59,7 @@ hi, this is declaritive function
 
 step2 
 var foo2 = function(){ console.log('edupoly') }
-his line assigns the function to foo2.
+this line assigns the function to foo2.
 Now memory becomes:
 foo2 → function(){ console.log('edupoly') }
 
