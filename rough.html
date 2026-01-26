@@ -670,30 +670,56 @@
 // console.log(string)
 
 
-const x = 25
+var string = "mahmeshaa"
 
-if(true)
-{
-   
+var count 
 
+var found 
+
+for(var i =0 ; i<string.length;i=i+1)
+ { 
+
+      
+     count = 1 
     
-    console.log(x)
-}
+     found = false
+
+     for(var g = 0 ; g<i ; g=g+1)
+     {
+        if(string[i] === string[g])
+           {
+              found = true
+           }
+     }
+
+    if(found === true)
+    {
+        
+    continue
+    }
+
+
+      
+     for(var m = i+1 ; m<string.length;m=m+1)
+        {
+           if(string[i] === string[m])
+           {
+            count = count + 1
+           }
+
+        }
+
+
+    console.log(string[i], count)
+
+
+
+ }
 
 
 
 
 
-
-
-abc()
-
-function abc()
-{
-    console.log(x *x)
-}
-           
-  
 
 
 
