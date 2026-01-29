@@ -676,46 +676,45 @@ var count
 
 var found 
 
-for(var i =0 ; i<string.length;i=i+1)
- { 
 
-      
-     count = 1 
+for(var t = 0 ; t<string.length;t=t+1)
+  {
     
-     found = false
+    count = 1 
 
-     for(var g = 0 ; g<i ; g=g+1)
-     {
-        if(string[i] === string[g])
-           {
-              found = true
-           }
-     }
-
-    if(found === true)
-    {
-        
-    continue
-    }
+          found = false
 
 
+          for(b = t+1 ; b<string.length; b=b+1)
+            {
+               if(string[t] === string[b])
+                {
+
+                  found = true
+                }
+            }
+     
+            if(found === true)
+              {
+               continue
+              }
       
-     for(var m = i+1 ; m<string.length;m=m+1)
-        {
-           if(string[i] === string[m])
-           {
-            count = count + 1
-           }
+    for(var n = 0 ; n<t ; n=n+1)
+      {
 
-        }
+          if(string[t] === string[n])
+          {
+            count = count +1
+          }
+
+      }
+
+   console.log(string[t],count)
 
 
-    console.log(string[i], count)
 
 
-
- }
-
+  }
 
 
 
