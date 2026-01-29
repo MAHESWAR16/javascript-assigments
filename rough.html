@@ -16,42 +16,35 @@
 
 // count each character of string using string methods . 
 
-//  var string = "mdsfsmkm"
+var string = "mdsfsmkm"
 
-//  var index 
+ var index 
 
-//  var count
+ var count
+ var char
 
+ for(var i = 0 ;i<string.length;i=i+1)
+{
+          count = 0
+          index = string.indexOf(string[i])
+          console.log(" index is ", index)
 
-//  for(var i = 0 ; i<string.length; i = i+1)
-//     {
-//           index = string.indexOf(string[i])
-
-//           count = 0 
-
-//            console.log(" before loop index = ", index )
-
-
-//               if(index < i )
-//                 {
-//                   break
-//                 }
+    if(index < i)
+    {
+      continue
+    }
 
 
+  while(index !== -1)
+    {
+   count = count + 1
+   index = string.indexOf(string[i], index+1)
+    }
 
-//           while (index !== -1)
-//             {
+ console.log(string[i],count)
 
-//               count = count + 1
+}
 
-
-//               index = string.indexOf( string[i],index + 1)
-//             }
-
-//            console.log ( "i =", i ,"char = ", string[i] , "repeated = ", count ," index = " , index)
- 
-
-//     }
 
 
 
@@ -670,51 +663,6 @@
 // console.log(string)
 
 
-var string = "mahmeshaa"
-
-var count 
-
-var found 
-
-
-for(var t = 0 ; t<string.length;t=t+1)
-  {
-    
-    count = 1 
-
-          found = false
-
-
-          for(b = t+1 ; b<string.length; b=b+1)
-            {
-               if(string[t] === string[b])
-                {
-
-                  found = true
-                }
-            }
-     
-            if(found === true)
-              {
-               continue
-              }
-      
-    for(var n = 0 ; n<t ; n=n+1)
-      {
-
-          if(string[t] === string[n])
-          {
-            count = count +1
-          }
-
-      }
-
-   console.log(string[t],count)
-
-
-
-
-  }
 
 
 
