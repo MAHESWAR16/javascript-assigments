@@ -651,53 +651,51 @@
 // console.log(string)
 
 
-var array = [5,4,3,2]
+// var array = [5,4,3,2]
 
-var newarray =[19]
+// var newarray =[19,1]
 
-var inserted 
 
-for(var t=0 ; t<array.length; t=t+1)
-  {
 
-   
-      inserted = false 
+// for(var t=0 ; t<array.length; t=t+1)
+//   {
+//    console.log(" taking = " , array[t])
+
+//    inserted = false 
+
+//    for(var g = 0 ; g<newarray.length; g=g+1)
+//       {
+       
+//          console.log( " comparing", array[t]," with", "newarray",newarray[g], newarray)
+
+//          if(array[t] < newarray[g])
+
+//           {
+
+//             for(var n = newarray.length ; n>g;n= n-1)
+//               {
+
+//                newarray[n] = newarray[n-1]
+//                console.log(" new array = " , newarray)
+//               }
+              
+//               newarray[g] = array[t]
+              
+//               inserted = true 
+//               console.log(" after inserting new array =", newarray)
+//               break
+//           }
+
+//       }
+
+//       if(inserted === false)
+//         {
+//          newarray[newarray.length] = array[t]
+//         }
           
-       for(var m = 0 ;  m < newarray.length ;  m=m+1)
-          {
+//   }
 
-                if(array[t] <  newarray[m])
-                   {
-                       
-                     for(var n = newarray.length ; n > m ; n = n - 1)
-                        {
-
-                           newarray[n] = newarray[n-1]
-
-                        }
-
-
-                        newarray[m] = array[t]
-
-                         inserted = true 
-
-                         break 
-                   }
-
-          }
- 
-          if(inserted === false )
-           {
-               newarray[newarray.length] = array[t]
-
-           }
-          
-  }
-
-
-
-
-console.log("newarray = ", newarray)
+// console.log("newarray = ", newarray)
 
 
 </script>
