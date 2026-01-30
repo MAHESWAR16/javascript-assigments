@@ -16,34 +16,34 @@
 
 // count each character of string using string methods . 
 
-var string = "mdsfsmkm"
+// var string = "mdsfsmkm"
 
- var index 
+//  var index 
 
- var count
- var char
+//  var count
+//  var char
 
- for(var i = 0 ;i<string.length;i=i+1)
-{
-          count = 0
-          index = string.indexOf(string[i])
-          console.log(" index is ", index)
+//  for(var i = 0 ;i<string.length;i=i+1)
+// {
+//           count = 0
+//           index = string.indexOf(string[i])
+//           console.log(" index is ", index)
 
-    if(index < i)
-    {
-      continue
-    }
+//     if(index < i)
+//     {
+//       continue
+//     }
 
 
-  while(index !== -1)
-    {
-   count = count + 1
-   index = string.indexOf(string[i], index+1)
-    }
+//   while(index !== -1)
+//     {
+//    count = count + 1
+//    index = string.indexOf(string[i], index+1)
+//     }
 
- console.log(string[i],count)
+//  console.log(string[i],count)
 
-}
+// }
 
 
 
@@ -138,18 +138,6 @@ var string = "mdsfsmkm"
 //              }
             
        
-     
-
-//              if(!inserted)
-//              {
-//                       newarray[newarray.length] = element
-//              }
-              
-//               console.log("newarray =",newarray)
-        
-//     }
-// )
-//       console.log("newarray =",newarray)   
        
 // var array =[5,3,4,6]
 
@@ -663,13 +651,53 @@ var string = "mdsfsmkm"
 // console.log(string)
 
 
+var array = [5,4,3,2]
+
+var newarray =[19]
+
+var inserted 
+
+for(var t=0 ; t<array.length; t=t+1)
+  {
+
+   
+      inserted = false 
+          
+       for(var m = 0 ;  m < newarray.length ;  m=m+1)
+          {
+
+                if(array[t] <  newarray[m])
+                   {
+                       
+                     for(var n = newarray.length ; n > m ; n = n - 1)
+                        {
+
+                           newarray[n] = newarray[n-1]
+
+                        }
+
+
+                        newarray[m] = array[t]
+
+                         inserted = true 
+
+                         break 
+                   }
+
+          }
+ 
+          if(inserted === false )
+           {
+               newarray[newarray.length] = array[t]
+
+           }
+          
+  }
 
 
 
 
-
-
-
+console.log("newarray = ", newarray)
 
 
 </script>
