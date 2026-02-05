@@ -1,0 +1,34 @@
+<script>
+    //Search for a given number in an array
+   
+    var enter_a_number = +prompt(" enter a number ")
+
+    var array = [10,15,4,6]
+
+    var found 
+
+    for(var n = 0 ; n<array.length; n=n+1)
+     {
+
+        found = false 
+
+       if(array[n] === enter_a_number)
+       {
+        found = true
+        break 
+       }
+       
+          
+     }
+   
+     if(found)
+     {
+        console.log(" your number is in the array",enter_a_number,array)
+     }
+     else
+     {
+        console.log(" your number is not in the array",enter_a_number,array)
+     }
+
+
+</script>

@@ -1,0 +1,26 @@
+<script>
+    //Write a program to take a string and print only the numeric characters using. Example: Input->‘Q1STR5684AK’; Output->‘15684’
+
+
+
+    var string = "Q1STR5684AK"
+    var output = ""
+
+
+    for(var i = 0  ; i<string.length; i=i+1)
+     {
+
+        var char = string[i]
+
+        if(char >=0 && char <= 9)
+
+         {
+               
+            output = output + char 
+
+         }
+     }
+
+     console.log(output)
+
+</script>
