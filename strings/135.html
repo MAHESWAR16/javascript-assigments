@@ -1,4 +1,44 @@
 <script>
     // //Eliminate Duplicate characters in given string
     //     Example: ‘praveengubbala’ => ‘pravengubl’
+
+    var string = "praveengubbala"
+    var output = ''
+     
+
+    // for(var i = 0 ; i<string.length;i=i+1)
+    //    {
+        
+    //       var  found = false
+    //       var inserted = false 
+    //     for(var m = 0 ; m<i;m=m+1)
+    //    {
+    //     if(string[i] === string[m])
+    //    {
+    //        found = true
+    //    }
+    //    }
+
+    //    if(found)
+    //    {
+    //     continue
+    //    }
+     
+    //     output = output + string[i]
+
+    //     console.log("i = ", i, output)
+    //    }
+
+
+    // using string methods
+
+    for(var i = 0 ; i<string.length ; i=i+1)
+{
+    if(!output.includes[string[i]])
+{
+       output = output + string[i]
+}
+}
+
+console.log(" output ", output)
 </script>
