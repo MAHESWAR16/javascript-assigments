@@ -1,0 +1,17 @@
+<script>
+    //Search a given string in a sentence(both uppercase and lowercase)
+
+var enter_a_word = prompt("enter a word");
+
+var sentence = "i am learning javascript";
+
+if(sentence.toLocaleLowerCase().includes(enter_a_word.toLowerCase()))
+{
+    console.log("found = ", enter_a_word, sentence)
+}
+
+else
+{
+    console.log(" not found = ", enter_a_word, sentence)
+}
+</script>

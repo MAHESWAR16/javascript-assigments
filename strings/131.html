@@ -1,0 +1,23 @@
+<script>
+    //Check whether a given number is a valid phone number.
+        // Example:Input-> '7654893274'; Output-> 'valid'
+        // Input-> '785487438754'; Output-> 'invalid'.........(must be 10 digits)
+        // Input-> '7854s54839'; Output-> 'invalid'.............(must NOT contain letters)
+
+
+        var string = "765489h274"
+
+
+        if(string.length !== 10)
+          {
+            console.log("invalid number", string)
+          }
+          else if(string.replace(/[0-9]/g ,"").length !==0)
+          {
+            console.log("invalid",string)
+          }
+          else
+          {
+            console.log("valid =" ,string)
+          }
+</script>

@@ -1,0 +1,9 @@
+<script>
+    //Write a program to hide the middle six digits of a phone number. Example: Input-> '9876543210'; Output-> '98XXXXXX10'
+
+    var string = "9876543210"
+
+    var output = string.slice(0,2)+string.slice(2,8).replace(/[0-9]/g,"x")+string.slice(8)
+    
+    console.log(output)
+</script>

@@ -1,0 +1,8 @@
+<script>
+    //Write a program to take a 16-digit credit card number and replace the first 12 characters with ‘X’. Example:Input->‘9765143265387960’; Output->‘XXXXXXXXXXXX7960’
+
+
+    var string = "9765143265387960"
+
+    console.log(string.slice(0,12).replace(/[0-9]/g,"X") + string.slice(12))
+</script>
