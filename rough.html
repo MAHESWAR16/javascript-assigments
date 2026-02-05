@@ -16,42 +16,35 @@
 
 // count each character of string using string methods . 
 
-//  var string = "mdsfsmkm"
+// var string = "mdsfsmkm"
 
 //  var index 
 
 //  var count
+//  var char
 
-
-//  for(var i = 0 ; i<string.length; i = i+1)
-//     {
+//  for(var i = 0 ;i<string.length;i=i+1)
+// {
+//           count = 0
 //           index = string.indexOf(string[i])
+//           console.log(" index is ", index)
 
-//           count = 0 
-
-//            console.log(" before loop index = ", index )
-
-
-//               if(index < i )
-//                 {
-//                   break
-//                 }
-
-
-
-//           while (index !== -1)
-//             {
-
-//               count = count + 1
-
-
-//               index = string.indexOf( string[i],index + 1)
-//             }
-
-//            console.log ( "i =", i ,"char = ", string[i] , "repeated = ", count ," index = " , index)
- 
-
+//     if(index < i)
+//     {
+//       continue
 //     }
+
+
+//   while(index !== -1)
+//     {
+//    count = count + 1
+//    index = string.indexOf(string[i], index+1)
+//     }
+
+//  console.log(string[i],count)
+
+// }
+
 
 
 
@@ -145,18 +138,6 @@
 //              }
             
        
-     
-
-//              if(!inserted)
-//              {
-//                       newarray[newarray.length] = element
-//              }
-              
-//               console.log("newarray =",newarray)
-        
-//     }
-// )
-//       console.log("newarray =",newarray)   
        
 // var array =[5,3,4,6]
 
@@ -670,57 +651,51 @@
 // console.log(string)
 
 
-var string = "mahmeshaa"
+// var array = [5,4,3,2]
 
-var count 
-
-var found 
-
-for(var i =0 ; i<string.length;i=i+1)
- { 
-
-      
-     count = 1 
-    
-     found = false
-
-     for(var g = 0 ; g<i ; g=g+1)
-     {
-        if(string[i] === string[g])
-           {
-              found = true
-           }
-     }
-
-    if(found === true)
-    {
-        
-    continue
-    }
-
-
-      
-     for(var m = i+1 ; m<string.length;m=m+1)
-        {
-           if(string[i] === string[m])
-           {
-            count = count + 1
-           }
-
-        }
-
-
-    console.log(string[i], count)
+// var newarray =[19,1]
 
 
 
- }
+// for(var t=0 ; t<array.length; t=t+1)
+//   {
+//    console.log(" taking = " , array[t])
 
+//    inserted = false 
 
+//    for(var g = 0 ; g<newarray.length; g=g+1)
+//       {
+       
+//          console.log( " comparing", array[t]," with", "newarray",newarray[g], newarray)
 
+//          if(array[t] < newarray[g])
 
+//           {
 
+//             for(var n = newarray.length ; n>g;n= n-1)
+//               {
 
+//                newarray[n] = newarray[n-1]
+//                console.log(" new array = " , newarray)
+//               }
+              
+//               newarray[g] = array[t]
+              
+//               inserted = true 
+//               console.log(" after inserting new array =", newarray)
+//               break
+//           }
+
+//       }
+
+//       if(inserted === false)
+//         {
+//          newarray[newarray.length] = array[t]
+//         }
+          
+//   }
+
+// console.log("newarray = ", newarray)
 
 
 

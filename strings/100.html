@@ -19,7 +19,30 @@
 
 var word1 = "mahesh"
 
+
+
 var word2 = "mnhesa"
+if(word1.length === word2.length)
+{
+   
+    let w1 = word1.split("").sort().join("")
+    console.log(w1)
+    let w2 = word2.split("").sort().join("")
+    console.log(w2)
+    if(w1 === w2)
+    {
+        console.log(" two strings are anagram ")
+    }
+    else
+    {
+        console.log(" two strings are not anagram")
+    }
+
+}
+else
+{
+    console.log(word1 ," two strings is not anagram", word2)
+}
 
 
 
