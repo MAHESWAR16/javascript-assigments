@@ -1,0 +1,22 @@
+<script>
+    //Check whether a given number is a valid credit card number. Example:
+        // Example:
+        // Input-> '7463836483647454'; Output-> 'valid'
+        // Input-> '74638364836474548'; Output-> 'invalid'...(must be 16 digits)
+        // Input-> '7463836w4836o745'; Output-> 'invalid'...(must contain only numbers)
+    
+   var input = "7468U336483647454"
+
+   if(input.length !== 16)
+   {
+    console.log("invalid",input)
+   }
+   else if(input.replace(/[0-9]/g,"").length !== 0)
+   {
+    console.log("invalid =",input)
+   }
+   else
+   {
+    console.log("valid =",input)
+   }
+</script>
