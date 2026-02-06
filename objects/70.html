@@ -1,0 +1,69 @@
+<script>
+//     For the given marks object solve the following
+//                             var marks = {
+//                                 "maths" : 34,
+//                                 "english" : 56,
+//                                 "science": 32,
+//                                 "hindi" : 75,
+//                                 "social science": 65
+//                             };
+                        
+// Print the marks of all the subjects.
+// Print the names of all the subjects from the given object.
+// Count the number of subjects from the given object.
+// Print the percentage of the marks of the student.
+// Print only those subjects where the student scored more than 35.
+// Print the pass/fail status of the subjects provided 35 is the pass mark.
+// Print only the passed subjects.
+// Count the number of passed subjects.
+// Print only the failed subjects.
+// Count the number of failed subjects.
+// Print the least scored subject.
+// Print the highest scored subject.
+// Check whether the student has passed in all the subjects or not.
+// Take the subject name from the student through prompt box and print the subject marks and pass/fail status.
+
+
+ var marks = {
+                                "maths" : 34,
+                                "english" : 56,
+                                "science": 32,
+                                "hindi" : 75,
+                                "social science": 65
+                            };
+var total_marks = 0
+var total_subjects = 0
+var number_of_passed = 0
+var number_of_failed = 0
+var percentage 
+var least_scored_subject = 0
+var highest_scored_subject = 0 
+for(var n in  marks)
+{
+    total_marks = total_marks + marks[n]
+
+    total_subjects = total_subjects + 1
+
+    console.log(n)
+
+    if(marks[n] > 35)
+{
+    console.log(n,marks[n],"pass")
+      number_of_passed = number_of_passed + 1
+   
+}
+else
+{
+    console.log(n,marks[n],"fail")
+    number_of_failed = number_of_failed + 1
+}
+
+}
+   percentage = total_marks/500 * 100
+console.log("total_marks",total_marks)
+console.log('total subjects',total_subjects)
+console.log("total percentage ", percentage)
+
+console.log(" number of passed subjects",number_of_passed)
+console.log("number of failed subjects", number_of_failed)
+</script>
