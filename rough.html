@@ -699,41 +699,65 @@
 
 
 
-var string = "maheasmeh"
 
-console.log(string.indexOf("h",2))
 
-var count
 
-for(var i = 0 ; i<string.length ;i=i+1)
+  
+// var array = [4, 2, 1, 8, 7];
 
- {
-         
+// for (var i = 0; i < array.length; i = i + 1)
+// {
 
-    count = 0
-    if(string.indexOf(string[i]) < i)
- {
-    continue 
- }
+//     console.log(" i =" , i)
+
+//     for (var t = 0; t < array.length ; t = t + 1)
+//     {
+
+//         console.log(" t =" , t)
+
+//         if (array[t] > array[t + 1])
+//         {
+//             var temp = array[t];
+//             array[t] = array[t + 1];
+//             array[t + 1] = temp;
+//         }
+
+//          console.log(" array is = ", array)
+//     }
    
+// }
 
-  var index = string.indexOf(string[i])
+// console.log(array);
 
-  console.log("Characrer" ,index,string[i])
- 
- while(index !== -1)
- {
-    count = count +1 
+var array = [4, 2, 6, 1, 8, 7];
+var result = [];
 
-    index = string.indexOf(string[i],index+1)
+for (var i = 0; i < array.length; i = i + 1)
+{
+    var inserted = false;
 
- }
+    for (var m = 0; m < result.length; m = m + 1)
+    {
+        if (array[i] < result[m])
+        {
+            for (var k = result.length; k > m; k = k - 1)
+            {
+                result[k] = result[k - 1];
+            }
 
+            result[m] = array[i];
+            inserted = true;
+            break;
+        }
+    }
 
- console.log(string[i], count )
+    if (!inserted)
+    {
+        result[result.length] = array[i];
+    }
+}
 
-
- }
+console.log(result);
 
 </script>
 
