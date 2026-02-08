@@ -1,0 +1,83 @@
+<script>
+ 
+//    Write a program to check a number is factor of 96 or not.
+// and if the given number is more Than 96 program should say ‘not a valid input’
+
+
+   console.log("facto",facto)
+
+   var facto = function (a)
+              {
+                   if( a > 96)
+                   {
+                    return " your number is not valid input"
+                   }
+
+                     else if(96 % a === 0)
+                     {
+                        return " your number is factor of 96"
+                     }
+                     else
+                     {
+                        return " your number is not factor of 96"
+                     }
+
+              }
+     console.log("facto", facto)
+
+    var result = facto(780)
+    console.log("finalresult ", 780,result)
+   
+
+    //Function name and result variable should never be the same
+
+    // what happens if u do like this 
+
+    //var facto = function facto(a)
+    //  { 
+    // if(96 % a === 0) 
+    // {
+    //  return " your number is factor of 96"
+    // }
+    //  else
+    //  {
+    // return " your number is not factor of 96"
+   //  } 
+    // }
+    //  var facto = facto(32) 
+    // console.log("final", 32,facto)
+
+
+   // explantion why the above code  is wrong explantion 
+//    At this moment 👇
+
+// facto is a FUNCTION
+
+// It lives in memory like a machine 🧠
+
+// Think like this:
+// facto  →  FUNCTION
+// STEP 2: What does this do?
+// facto(32)
+
+// This means:
+
+// Go to the function
+// Put a = 32
+// Run the code
+// Return a STRING
+// Returned value is:
+// "your number is factor of 96"
+// STEP 3: Now the BIG mistake
+// var facto = facto(32)
+// This line means:
+// Call the function facto(32)
+// Get the returned string
+// STORE THAT STRING BACK INTO facto
+// So now 👇
+// facto  →  "your number is factor of 96"
+
+// 🚨 The function is GONE
+// 🚨 facto is NO LONGER a function
+// now facto becomes completely a string . 
+</script>
