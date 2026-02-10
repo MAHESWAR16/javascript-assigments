@@ -2,5 +2,19 @@
     //Write a program to check a number is having 4 at units place (984)
 
 
- 
+    function check(num)
+{
+    var unitplace = num % 10;
+
+    return {
+        unit: unitplace,
+        message: unitplace === 4? "number has 4 in unit place": "number does not have 4 in unit place"
+            
+            
+    };
+}
+
+var result = check(24);
+console.log(result.unit);
+console.log(result.message);
 </script>
