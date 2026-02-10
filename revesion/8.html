@@ -1,0 +1,39 @@
+<script>
+    //Write a program to check a number is 3 digited number or not.
+
+  var number = 123
+  var result = number % 10
+  console.log(result)
+   
+  console.log(parseInt(123/10))
+
+    function check(a)
+    {
+     var count = 0  
+     var last = 0 
+
+      while (a !== 0)
+       {
+         
+        count = count + 1
+
+        a = parseInt(a/10)
+          
+       }
+   
+       return count 
+
+    }
+
+   var result = check(784)
+ 
+ 
+   if(result <3)
+   {
+    console.log( " your number is not three digit number")
+   }
+   else
+   {
+    console.log(" your number is 3 digit number")
+   }
+</script>

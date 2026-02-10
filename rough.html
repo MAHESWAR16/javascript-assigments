@@ -729,35 +729,36 @@
 
 // console.log(array);
 
-var array = [4, 2, 6, 1, 8, 7];
-var result = [];
 
-for (var i = 0; i < array.length; i = i + 1)
-{
-    var inserted = false;
 
-    for (var m = 0; m < result.length; m = m + 1)
-    {
-        if (array[i] < result[m])
-        {
-            for (var k = result.length; k > m; k = k - 1)
-            {
-                result[k] = result[k - 1];
-            }
 
-            result[m] = array[i];
-            inserted = true;
-            break;
+        var array = [8,4,5,2,1]
+
+        var k = 1
+
+
+        for(var m  = 0 ; m < k ; m=m+1)
+         {
+
+         var insert = array[array.length - 1]
+
+        for(var i = array.length-1 ; i>0 ; i = i-1)
+           {
+
+              array[i] = array[ i - 1]
+
+              console.log(i ," ,", array)
+           }
+  
+
+           console.log( " i" , i)
+
+           
+       array[i] = insert
+            
+
         }
-    }
-
-    if (!inserted)
-    {
-        result[result.length] = array[i];
-    }
-}
-
-console.log(result);
-
+        console.log("array" , array)
+        
 </script>
 

@@ -1,0 +1,41 @@
+<script>
+
+    //Write a program to print the given two numbers in ascending order
+
+
+   var take = function (t)
+               {
+                   
+                
+                var array  = t 
+
+                for(var i = 0 ; i <array.length ; i=i+1)
+                  {
+                         if(array[i] > array[i+1])
+                         {
+                            
+                            var temp = array [i]
+
+                            array[i] = array[i+1]
+
+                            array[i+1] = temp 
+
+                            break 
+
+
+                            
+                         }
+
+                  }
+                  
+                  return array 
+
+               }
+
+
+var result = take([5,4])
+
+console.log('result' , result )
+
+
+</script>

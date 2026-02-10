@@ -1,0 +1,36 @@
+<script>
+
+    //Write a program to print the given two numbers in descending order
+
+
+    var ref = function (a)
+         
+
+    {
+             var array = a
+ 
+             
+             for(var i =0 ; i<array.length ; i=i+1)
+              {
+
+                if(array[i] < array[i+1])
+                  {
+                       
+                    var temp = array[i]
+
+                    array[i] = array[i+1]
+
+                    array[i+1] = temp
+
+                    break 
+                    
+                  } 
+              }
+
+              return array
+      
+    }
+
+    var result = ref([7,8])
+    console.log(result)
+</script>
