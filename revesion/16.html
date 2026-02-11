@@ -1,0 +1,70 @@
+<script>
+    //Write a program to print the given three numbers in ascending order
+               
+
+
+
+           function ascending(a)
+             {
+               
+                var array  = a 
+
+                var newarray = []
+
+                var inserted 
+
+                    for(var i = 0  ; i<array.length;i=i+1)
+                     {
+                       
+                         inserted = false    
+                      
+
+
+                         for(var m = 0 ; m<newarray.length; m=m+1)
+                            {
+                                 if(array[i] < newarray[m])
+                                 {
+
+                                    for(var d = newarray.length ; d > m ; d=d-1)
+                                     {
+                                        newarray[d] = newarray[d-1]
+                                     }
+
+
+
+                                      newarray[m] = array[i]
+
+                                 inserted = true 
+
+                                 break
+
+                                 }
+
+                                 
+
+                            }
+                                
+                       
+
+                        if(!inserted)
+                     {
+                         newarray[newarray.length] = array[i]
+                     }
+                      
+
+                     }
+
+               
+                     return newarray
+             }
+
+
+
+
+
+
+
+
+               var result = ascending([8,2,5,7])
+               console.log("result", result)
+</script>

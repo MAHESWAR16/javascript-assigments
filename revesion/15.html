@@ -1,0 +1,35 @@
+<script>
+    //Write a program to print the least number in given three numbers
+
+
+    function least(a)
+    {
+
+
+        var array = a
+
+        var store = 100
+
+        for(var i  = 0 ; i<array.length;i=i+1)
+          { 
+
+            if(array[i] < store)
+              {
+
+                store = array[i]
+              }
+
+              console.log(" i = ", i , "store", store)
+          }
+
+          return store
+    }
+     
+
+
+
+
+     var result = least([8,2,5,1])
+
+     console.log("least", result)
+</script>
