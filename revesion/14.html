@@ -1,0 +1,32 @@
+<script>
+    //Write a program to print the greatest number in given three numbers
+
+
+    var greatest = function (a)
+                   {
+                      
+                    var array = a 
+                     
+                    var store = 0
+
+                    for(var i  = 0 ; i<array.length ; i=i+1)
+                      {
+                              
+                        if(array[i] > store)
+                          {
+                            store = array[i]
+                          }
+                           
+
+
+                      }
+
+                     
+                       return store 
+                   }
+
+
+                var result = greatest([5,11,3])
+
+                console.log('greatest ', result)
+</script>
