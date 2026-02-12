@@ -760,34 +760,22 @@
     //     }
     //     console.log("array" , array)
  
- 
-
- var array  = [ 12, 45, 32,42,62,18,4,8,16]
 
 
- var x = array.find(function(a,b)
+   function printnumbers(n)
+{
+    if(n <= 0)
+    {
 
- {
-        
- 
- 
-   if(a === 1000)
- 
-     {
-
-        
-
-          return true 
-     }
-     else
-     {
-        return false
-     }
-
- 
+      console.log(" hello ")
+        return
     }
- )
 
- console.log(x)
+    printnumbers(n - 1)
+    console.log(n)
+}
+
+printnumbers(5)
+
 </script>
 

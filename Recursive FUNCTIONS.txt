@@ -8,6 +8,7 @@ Call
 Execute
 Return back to caller
 This is automatic — you don’t write return, JS does it internally.
+
 When a function returns, the program MUST go back to the function that called it.
 When a function ends, it returns to the place where it was called and continues the remaining lines.
 When a function ends (no return inside), JavaScript automatically returns undefined and goes back to the place that called it.
@@ -98,9 +99,10 @@ EXAMPLE 2 :
 11 }
 
 one();
+
  OUTPUT :
- 9 inside one .
- 2 inside two .
+ 8. inside one .
+ 3. inside two .
  10 back to one .
 
 EXPLNATION :
