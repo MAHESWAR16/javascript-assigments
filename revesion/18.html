@@ -1,0 +1,41 @@
+<script>
+
+    //Write a program to take marks of three subjects and print the grade of student .
+
+ 
+    function grad_of_student()
+    {
+            for(var i = 0 ; i<=2 ; i=i+1)
+            {
+                var scoredmarks = + prompt(" enter a number")
+            }
+ 
+        var totalmarks = 300
+
+        var percentage = scoredmarks / totalmarks * 100
+
+
+        if(percentage >90 && percentage <=100)
+        {
+            return "A"
+        }
+        else if(percentage>=50 && percentgae <=90)
+        {
+            return"B"
+        }
+        else
+          {
+            return "C"
+          }    
+
+
+    }
+ 
+ 
+ 
+
+
+
+   var result =  grad_of_student()
+   console.log("grade",result)
+</script>

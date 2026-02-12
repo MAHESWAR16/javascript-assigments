@@ -1,0 +1,70 @@
+<script>
+
+    // Write a program to print the given three numbers in descending order
+ 
+    function descending(a)
+    {
+            
+        var input = a 
+
+        var empty = []
+         
+        var inserted 
+
+        for(var i = 0 ; i<input.length ; i=i+1)
+          {
+             
+
+            inserted = false
+
+                  
+             for(var f = 0 ;f<empty.length;f=f+1)
+               {
+
+                        if(input[i] > empty[f])
+
+                        {
+
+                          
+                            for(var b = empty.length;b>f; b=b-1)
+                              {
+                                empty[b] = empty[b-1]
+                              }
+  
+                                empty[f] = input[i]
+
+                                inserted = true
+
+                                break 
+
+                        }
+
+               }
+
+
+ 
+
+            if(!inserted)
+          {
+            empty[empty.length] = input[i]
+          }
+
+           
+
+          }
+
+
+           return empty 
+
+    }
+  
+
+
+
+
+     var result  =  descending([8,4,7])
+
+   console.log("empty",result)
+
+
+</script>
