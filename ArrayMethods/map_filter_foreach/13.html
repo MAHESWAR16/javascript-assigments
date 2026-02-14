@@ -1,0 +1,19 @@
+<script>
+   // For the Given array: [23,34,54,10,4,7] print values that are greater than the given number. Given number: 20, Expected output: 23,34,54
+
+    var array = [23,34,54,10,4,7]
+
+
+    var output = array.filter(
+                function(e, i)
+                { 
+                       
+                     if(e > 20)
+                     {
+                        return true
+                     }
+                }
+    )
+
+    console.log(output)
+</script>
