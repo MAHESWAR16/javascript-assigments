@@ -90,8 +90,11 @@ var foo2 = function ()
 
 
 First Stage → Loading Time (Hoisting)
+
 JavaScript scans and prepares memory before running the code.
+_______________________________________________________________________________________________________________________________
 Code	                       What JavaScript Does During Loading Time	                      Stored Value
+___________________________________________________________________________________________________________________________________
 function foo1(){...}	  Full function is stored in memory	                    foo1 = function(){ console.log(..) }
 var foo2 = function(){...}	Only variable declared, function NOT assigned yet       	foo2 = undefined
 
