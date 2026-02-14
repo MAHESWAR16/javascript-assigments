@@ -1,0 +1,20 @@
+<script>
+
+    //print all numbers in an array except the first element. Expected output: 34 54 0 4 7
+
+    var array = [23,34,54,0,4,7]
+
+  var output =  array.filter(
+
+      function(e,i)
+       {
+
+          if(i>0)
+          {
+            return true 
+          }
+
+       }
+    )
+    console.log(output)
+</script>
