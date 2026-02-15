@@ -1,0 +1,19 @@
+<script>
+    //Print only those odd numbers in a given array which are divisible by 3.
+
+     var array = [3,8,5,9,12,14,18]
+
+     var output = array.filter(function(e,i)
+             {
+
+                      if(e % 2 !== 0 && e % 3 === 0)
+                      {
+                        return true
+                      }
+
+             }
+    
+     )
+
+     console.log(output)
+</script>
