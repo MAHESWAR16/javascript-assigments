@@ -1,0 +1,34 @@
+<script>
+    //For every salary, deduct 10% tax for salaries less than 50000 and deduct 12% tax for salaries more than 50000
+    var array = [52000,42000,10000,5000]
+
+    var output = array.map( 
+
+                    function(e,i)
+                    {
+                            var tax 
+                        if(e<50000)
+                    {
+                           tax = 10/100 * e
+
+                         e = e - tax
+                         
+
+                         return e
+                    }
+
+                    else
+                         
+                      {
+                           tax = 12/100 * e
+                        
+                            e = e - tax
+                            
+                            return e
+                      }
+
+                    }
+    )
+
+    console.log(output)
+</script>
