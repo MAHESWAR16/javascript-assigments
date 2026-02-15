@@ -1,0 +1,20 @@
+<script>
+    //Print only multiples of 2 AND 3 from an array
+    var array = [8,25,4,78,9,1]
+
+    var output = array.filter( 
+
+                     function(e,i)
+                       {
+
+                                  if( e % 2 === 0  || e % 3 === 0)
+                                  {
+
+                                    return true
+                                  }
+
+                       }
+    )
+
+    console.log(output)
+</script>
