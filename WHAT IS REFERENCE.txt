@@ -1,0 +1,56 @@
+A reference means:
+
+Two variables pointing to the same memory location.
+They are not copies.
+They share the same data.
+
+var ar = [10, 20, 30]
+var br = ar   // reference copy
+
+br.push(40)
+
+console.log(ar)  // [10, 20, 30, 40]
+console.log(br)  // [10, 20, 30, 40]
+
+
+Why did ar change?
+
+Because:
+br is NOT a new array
+br is pointing to the SAME array as ar
+
+Memory looks like this:
+
+ar  ----\
+          → [10, 20, 30, 40]
+br  ----/
+
+Both point to same object.
+
+Reference = sharing the same memory
+👉 Copy = creating new memory
+
+   var a  =  5
+
+var b = a 
+
+a = 10 
+
+console.log(a)  //10
+
+console.log(b) // 5
+
+// duplicate an array 23,34,54,10,4,7
+
+  var array = [23,34,54,10,4,7]
+   
+
+   var output = array.slice()
+      
+   output.push(777)
+   console.log(output)
+
+   console.log(array)
+
+
+

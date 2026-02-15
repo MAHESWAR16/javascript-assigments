@@ -1,0 +1,26 @@
+<script>
+    //print only the perfect squares in an array
+      var array = [23,34,54,10,4,7,25]
+         
+
+      
+
+      var perfectSquares = array.filter(
+                      function(e,i)
+                       {
+
+                          for(var m =  1; m<e ; m= m+1)
+                          {
+                              
+                            if(m*m === e)
+                          {
+                            return true
+                          }
+                             
+                          }
+
+                       }
+      )
+
+      console.log(perfectSquares)
+</script>
