@@ -1,0 +1,32 @@
+<script>
+    //Print only the 2 digit numbers from an array
+       var array = [54,111,2,78,96,1]
+          
+
+       console.log(Math.floor(123/10))
+ 
+       var two_digitNumbers = array.filter( 
+                    function(e,i)
+                    {
+
+                       var count  = 0 
+
+                       while (e !== 0)
+                       {
+                            e = Math.floor(e/10)
+                            console.log(e)
+                            count = count +1 
+
+                       }
+
+                       if(count === 2)
+                       {
+                        return true
+                       }
+
+
+                    }
+       )
+
+       console.log(two_digitNumbers)
+</script>
