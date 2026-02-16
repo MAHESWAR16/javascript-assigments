@@ -1,0 +1,45 @@
+<script>
+//Print the greatest of all 2-digit numbers present in an array.
+var array = [3,85,98,1,888,45,25]
+
+
+
+var output = array.filter(
+                     
+
+function(e,i)
+  {
+        
+         var count = 0 
+
+    while (e > 0)
+  {
+
+    count = count +1 
+    e = Math.floor(e/10)
+
+    
+  }
+              
+  return count === 2
+  }
+
+)
+
+console.log(output)
+
+var max =1
+
+output.forEach(
+    function(e,i)
+    {
+
+        if( e > max)
+    {
+        max = e
+    }
+
+    console.log("max",max)
+    }
+)
+</script>
