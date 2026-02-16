@@ -1,6 +1,35 @@
 <script>
- //Insert first 10 odd numbers in an empty array(for and while).
+ //Insert first 10 odd numbers in an empty array
+   
 
+ var array = [8,9,12,7,5,79,53,44,26,15,32,31,17,19,23,37,59,73]
+ var count = 0
+ var output = array.filter( 
+
+                     function(e,i)
+
+                     {
+
+                        
+
+                        
+
+                                if(e % 2 !==0  && count <10 )
+                                {
+
+                                    count = count + 1
+
+                                    console.log(count,e)
+                                    return true
+                                }
+
+                         
+                     }
+                       
+ )
  
+ console.log(count)
+ console.log(output)
+
 
 </script>
