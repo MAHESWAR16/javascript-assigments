@@ -1,0 +1,30 @@
+<script>
+//   Put even and odd elements of an array in two separate arrays.
+
+var array = [89,4,5,2,147,3,52]
+
+var  even = array.filter(
+                    function(e,i)
+                     {
+                           if(e % 2 === 0)
+                           {
+                            return true 
+                           }
+
+                     }
+)
+
+console.log(even)
+
+var odd = array.filter(
+                   function(e, i)
+                    {
+                        if(e % 2 !== 0)
+                         {
+                            return true 
+                         }
+                    }
+)
+
+console.log(odd)
+</script>
