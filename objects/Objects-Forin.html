@@ -1,0 +1,63 @@
+<script>
+    var obj = {
+        MobileName : "Redmi Note 8 Pro",
+        Storage :"64gb",
+        Ram : "6gb",
+        Processor : "Snadragon",
+        Purchased : 'FilpKart',
+        Price :13500
+   }
+
+   for(a in obj)
+   {
+   
+   
+    console.log(obj[a], ": ",a)
+   }
+
+   var person = 
+    {
+        basic :13000,
+        hra : 12000 , 
+        da :34000,
+        ta :23000
+    }
+  
+ var result  = 0
+    for(var n in person)
+    {
+            
+        result = result + person[n]
+    
+    }
+    console.log(result)
+
+
+    var array = [
+              {
+                company : 'TCS',
+                exp : 1 
+              },
+              {
+                company : "wipro",
+                exp : 2
+              } ,
+              {
+                company : "infosts",
+                exp : 4
+              },
+              {
+                comapny : "labs",
+                exp : 5
+              }
+
+    ]
+
+    var total_exp = 0
+        for(var i in array)
+    {
+     total_exp = total_exp + array[i].exp
+    }
+
+    console.log(total_exp)
+</script>
