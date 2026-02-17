@@ -1,20 +1,20 @@
 <script>
     //Uppercase, Lowercase, Special Character, or Digit
 
+                    
 
-            var array = [1,2,3,4,5]
+    var array = [250000,39000,450000]
 
-            var br = array.map(
-                       function(e,t,m)
-                       {
+    var br = array.reduce(
+                     function(a,b)
+                     {
+                        var result 
 
-                        if( e > 2)
-                       {
-                        return e 
-                       }
-                       }
-             
-            )
+                        result = a + b 
 
-            console.log(" br", br)
+                        return result
+                     }
+   ,0 )
+            
+            console.log(br)
 </script>
