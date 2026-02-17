@@ -18,7 +18,7 @@ when javascrit runs the code there  are two phase  will happen .
 1 loading time or compile time . memory creation phase
 2  run time or execution  time . javascript runs the code LINE BY LINE , happerns after loading is finsihed . 
 
-In loading time hositing takes place hoisitng means javascript reads the code before execution  and identify varibale declarations and function declarations and allocate a memory for them and kept in the top place , javascript does not ececute .in loading time .
+In loading time hositing takes place hoisitng means javascript reads the code before execution  and identify varibale declarations and function declarations and allocate a memory for them and kept in the top place , javascript does not execute the code in loading time .
 
 what happens step by step in loading time and run time for the below code 
 
