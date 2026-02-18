@@ -1,0 +1,53 @@
+<script>
+//     Write a program to merge two objects using the following methods:
+
+// Object.assign()
+// for...in loop
+// Destructuring(after learning ES6)
+// Example:
+
+//                                 var obj1 = {
+//                                     "name": "Edupoly",
+//                                     "location": "Hyderabad"
+//                                 }
+//                                 var obj2 = {
+//                                     "employees": 10,
+//                                     "type": "Training Institute"
+//                                 }
+//                                 Expected output:
+//                                 var org = {
+//                                     "name": "Edupoly",
+//                                     "location": "Hyderabad",
+//                                     "employees": 10,
+//                                     "type": "Training Institute"
+//                                 }
+
+
+var obj1 = {
+                  name: "Edupoly",
+                  location: "Hyderabad"
+             }
+    var obj2 = {
+             employees: 10,
+            type: "Training Institute"
+              }
+
+
+var org  ={}
+
+for(var c in obj1)
+{
+
+
+    org[c] = obj1[c]
+}
+console.log(org)
+
+
+for(var f in obj2)
+{
+    org[f] = obj2[f]
+}
+
+console.log(org)
+// </script>
