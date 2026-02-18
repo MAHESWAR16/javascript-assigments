@@ -31,34 +31,99 @@
                                 "hindi" : 75,
                                 "social science": 65
                             };
+
+
+             
+    var enter =   prompt("enter a subject name")
+    
+    var found = false
+
+    for(var m in marks)
+    {
+
+       if(enter.toLowerCase() === m)
+         {
+                 found = true      
+            
+                 if(marks[m] >= 35)
+                 {
+                    console.log("entered subject " ,enter ,"subject marks ", marks[m], "pass")
+                 } 
+                 else
+                 {
+                    console.log("entered subject", enter ,"subject marks",marks[m],"fail")
+                 }
+
+                 break 
+         }
+         
+
+      
+
+    }
+      
+    if(!found)
+    {
+        console.log(" your subject is not found ")
+    }
+
 var total_marks = 0
 var total_subjects = 0
 var number_of_passed = 0
 var number_of_failed = 0
 var percentage 
-var least_scored_subject = 0
+
+var count  = 0 
+var least_scored_subject = 500
 var highest_scored_subject = 0 
+
+var allpass = true
+
+
 for(var n in  marks)
 {
+      
+    
+    
     total_marks = total_marks + marks[n]
 
     total_subjects = total_subjects + 1
 
     console.log(n)
 
-    if(marks[n] > 35)
+   if(marks[n] < least_scored_subject)
+   {
+    least_scored_subject = marks[n]
+   }
+   if(marks[n] > highest_scored_subject)
+   {
+    highest_scored_subject = marks[n]
+   }
+
+
+
+ 
+
+    if(marks[n] >= 35)
 {
     console.log(n,marks[n],"pass")
       number_of_passed = number_of_passed + 1
+
+
    
 }
 else
 {
+
+    allpass = false
+    count = count + 1
     console.log(n,marks[n],"fail")
     number_of_failed = number_of_failed + 1
 }
 
 
+
+ 
 
 }
    percentage = total_marks/500 * 100
@@ -66,7 +131,20 @@ console.log("total_marks",total_marks)
 console.log('total subjects',total_subjects)
 console.log("total percentage ", percentage)
 
-console.log(" number of passed subjects",number_of_passed)
-console.log("number of failed subjects", number_of_failed)
 
+console.log(" number of passed subjects",number_of_passed)
+console.log("number of failed subjects", number_of_failed,count)
+
+console.log("least scored subject",least_scored_subject)
+console.log(" highest scored subject",highest_scored_subject)
+ 
+
+ if(allpass)
+ {
+    console.log(" all subjects are passed")
+ }
+ else
+ {
+    console.log('all subjects are not passed')
+ }
 </script>
