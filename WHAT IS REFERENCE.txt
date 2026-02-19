@@ -53,7 +53,36 @@ console.log(a.value);
 Will print:
 
 50
+example 3 ; 
 
+var a = { x: 10 };
+var b = a;
+
+b = { x: 100 };
+
+console.log(a.x);
+Your answer: 100 ❌
+
+Correct answer: 10
+
+Why?
+Step by step:
+
+a → { x: 10 }
+b → same object
+Then:
+
+b = { x: 100 }
+Now b points to a NEW object.
+
+So:
+
+a → { x: 10 }
+b → { x: 100 }
+They are different now.
+
+So a.x is still 10.
+____________________________________________________________________________________________________________
 var arr1 = [1,2,3];
 var arr2 = arr1;
 
