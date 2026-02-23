@@ -1,6 +1,7 @@
  Copy means new separate value. Reference means two variables point to the same memory.
 
  Imagine This Real Example
+ 
 🟢 Case 1: Number (Copy)
 
 You write the number 10 on a paper.
