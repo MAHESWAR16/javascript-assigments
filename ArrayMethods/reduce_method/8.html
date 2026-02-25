@@ -1,0 +1,31 @@
+<script>
+
+
+    //For the Given array: [23,34,54,10,4,7] search if the given number is there in an array or not. Given number: 34, Expected output: true Given number: 26, Expected output: false
+
+
+    var array = [23,34,54,10,4,7]
+      
+     var t = 10
+    var result = array.reduce(
+                   function(a,b)
+                   {
+                      
+                     if(t === b)
+                     {
+                        return true 
+
+                        
+                     }
+                     
+                   
+                     console.log("b = " , b)        //  // console.log does NOT run here because function already returned.
+                    
+                     
+                     return a
+                   }
+    ,false)
+
+
+    console.log("result =" , result)
+</script>
