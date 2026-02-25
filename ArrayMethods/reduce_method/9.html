@@ -1,0 +1,35 @@
+<script>
+    //For the Given array: [23,34,54,10,34,7,23,10,34] print the total number of times an element found in the array. Given number: 23, Expected output: 2 Given number: 34, Expected output: 3 Given number: 10, Expected output: 2 Given number: 54, Expected output: 1
+
+    var array = [23,34,54,10,34,7,23,10,34]
+
+    
+
+    var t = 54
+     
+    
+
+
+    var result  = array.reduce(
+                  function(a,b)
+                  {
+                       
+           
+
+                      if( t === b)
+                      {
+                             a = a+ 1
+
+                             return a
+                      }
+            
+                     return  a
+                  }
+     ,0)
+     
+     if(result)
+     console.log(" elemets found in the array" ,t, result ,'time' ,array)
+    else{
+        console.log(" elements not found in the array" , t)
+    }
+</script>
