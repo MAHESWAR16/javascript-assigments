@@ -1,0 +1,19 @@
+<script>
+    //For the Given array: [23,34,54,10,4,7] Average of all the numbers in an Array. Expected output: 22
+
+//    var array = [23,34,54,10,4,7]
+    
+//    var t = array.push(25)-4
+
+//    console.log(t)
+
+var array = [23,34,54,10,4,7]
+
+var result = array.reduce(
+    function(a,b)
+    {
+       return a+b
+    }
+,0)/array.length
+console.log(result)
+</script>
