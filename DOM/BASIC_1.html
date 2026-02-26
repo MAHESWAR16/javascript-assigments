@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      #d1
+      {
+        color:red;
+      }
+      
+
+    </style>
+</head>
+<body>
+
+    
+       <h1 id = "d1">  this is mahesh </h1>  
+       
+
+       <button onclick="abc()"> Click the Button to Change The Color of Mahesh </button>
+
+
+    <script>
+        
+         
+              function abc()
+              {
+               var x = document.getElementById("d1")
+               
+               console.log(x) //element in  html code form 
+              console.dir(x) // element in object form 
+               x.style.color = "green ";
+              
+              }
+
+
+    </script>
+</body>
+</html>
