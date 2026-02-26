@@ -1,6 +1,26 @@
 <script>
     // check a character is Uppercase, Lowercase, Special Character, or Digit
+ 
+       function checkCharacter()
+{
+    var t = prompt("please enter a character")
 
-                    
-
+    if(t >= "a" && t <= "z")
+    {
+        console.log("character is lowercase", t)
+    } 
+    else if(t >= "A" && t <= "Z")
+    {
+        console.log("character is uppercase", t)
+    }
+    else if(t >= "0" && t <= "9")
+    {
+        console.log("you have entered digit", t)
+    }
+    else
+    {
+        console.log("you have entered special character", t)
+    }
+}
+   console.log(checkCharacter())
 </script>
