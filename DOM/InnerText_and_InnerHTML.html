@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="d1"> HELLO <i> Maheswar </i> WORLD </h1>
+
+    <button onclick="abc()"> click here to change content</button>
+ 
+  <!--
+    Inside this <h1> we have:
+
+Normal text → HELLO
+
+HTML tag → <i>
+
+Text inside <i> → Maheswar
+
+Normal text → WORLD-->
+
+
+  
+  
+    <script>
+
+       
+
+      
+
+ 
+            function abc()
+            {
+               
+               var x =  document.getElementById("d1")
+
+
+               x.innerText= "kick"
+
+                  console.log(x)
+
+         console.dir(x)
+
+
+         console.log(x.innerText)
+         console.log(x.innerHTML)
+
+            }
+
+    </script>
+
+    
+</body>
+</html>
