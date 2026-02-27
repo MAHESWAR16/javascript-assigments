@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  <ul>
+    <li>apple</li>
+    <li>banana</li>
+    <li>grapes</li>
+    <li>watermelon</li>
+    <li>mango</li>
+    <li>promogrante</li>
+    <li>kiwi</li>
+  </ul>
+ 
+  <ol id = "d1">
+
+  </ol>
+  
+     
+
+  <div id ="d2">
+
+  </div>
+  
+ 
+
+  <script>
+           
+
+         var array = ["mahesh", "kiran","sravan","prasanth","karthi","manish","apple","oranges"]
+
+       array.forEach(
+         function(e)
+         {
+          var newli =  document.createElement("li")
+          console.log('newli =',newli)
+          newli.innerHTML =   e 
+         console.log("newli=",newli)
+         document.getElementById("d1").appendChild(newli)
+
+
+        }
+       )
+
+  
+       
+       array.forEach(
+        function(el)
+        {
+           var heading_elements = document.createElement("h1")
+            
+           console.log(heading_elements)
+
+           heading_elements.innerHTML = el 
+
+           console.log(heading_elements)
+
+           document.getElementById("d2").appendChild(heading_elements) // use document.body instead of document.getElementById('d2')
+
+        }
+       )
+ 
+
+  </script>
+
+
+
+</body>
+</html>

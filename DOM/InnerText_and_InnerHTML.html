@@ -19,7 +19,67 @@ HTML tag → <i>
 
 Text inside <i> → Maheswar
 
-Normal text → WORLD-->
+Normal text → WORLD
+
+innerText
+
+👉 innerText gives only the visible text
+
+If you write:
+
+var x = document.getElementById("d1");
+console.log(x.innerText);
+✅ Output:
+HELLO Maheswar WORLD
+
+✔ No <i> tag
+✔ Only text
+✔ Exactly what you see on screen
+
+
+innerHTML
+
+👉 innerHTML gives text + HTML tags inside the element
+
+If you write:
+
+var x = document.getElementById("d1");
+console.log(x.innerHTML);
+✅ Output:
+HELLO <i> Maheswar </i> WORLD
+
+✔ Includes <i> tag
+✔ Shows HTML structure
+
+HELLO <i> Maheswar </i> WORLD
+Property	What it returns
+innerText	HELLO Maheswar WORLD
+innerHTML	HELLO <i> Maheswar </i> WORLD
+
+
+example: 
+
+<h1 id="d1"> HELLO <i> Mahesh </i> WORLD </h1>
+
+🔵 1️⃣ innerText (Only Visible Text)
+
+var x = document.getElementById("d1")
+console.log(x.innerText)
+output 
+HELLO Mahesh WORLD
+
+2️⃣ innerHTML (Text + Tags)
+console.log(x.innerHTML)
+output:
+HELLO <i> Mahesh </i> WORLD
+
+
+
+
+
+
+
+-->
 
 
   
