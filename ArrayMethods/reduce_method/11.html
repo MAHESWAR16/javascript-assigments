@@ -1,0 +1,24 @@
+<script>
+
+    // a program to store an array into another array var ar = [23,34,54,10,4,7] var br = [ ] Expected output: br = [23,34,54,10,4,7]
+
+
+    var array = [23,34,54,10,4,7]
+
+    var br = array.reduce(
+
+        function(a,b)
+        {
+          
+             a.push(b)
+ 
+
+             return a 
+        }
+
+        
+                     
+    ,[])
+
+    console.log("br" , br)
+</script>
