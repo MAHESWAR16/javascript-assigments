@@ -1,0 +1,57 @@
+<script>
+    //Print the greatest of all 2-digit numbers present in an array.
+ 
+      var c = 253
+       
+
+
+      console.log(c /10 )
+  console.log(Math.floor(c/10))
+
+     
+    var array  = [23,98,37,85,95,2,256,96,452]
+
+   
+
+    var result = array.reduce(
+
+                         function(a,b)
+                         {
+                            
+                            var c = b
+                            
+                             var count = 0 
+
+                            while ( c !== 0)
+                         {
+                         
+
+                             c = Math.floor(c/10)
+
+                                 count = count + 1
+                             
+                         }
+
+                      
+
+                            if( count === 2)
+                         {
+                             
+                                if(a < b)
+                         {
+                            a = b
+                         } 
+                               
+                            
+
+                         }
+                        
+
+                         return a 
+                           
+
+                         }
+    ,-1)
+
+    console.log("greatest = " , result)
+</script>

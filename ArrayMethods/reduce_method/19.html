@@ -1,0 +1,21 @@
+<script>
+    //Print only multiples of 2 AND 3 from an array
+
+    var array = [4,8,3,12,27,25,98,152,26]
+
+    var result = array.reduce(
+                     function(a,b)
+                     {
+                        
+                      if( b% 2 === 0 && b % 3 === 0)
+
+                      {
+                        a.push(b)
+                      }
+ 
+                      return a
+                     }
+    ,[])
+
+    console.log(result)
+</script>

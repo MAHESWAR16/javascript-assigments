@@ -1,0 +1,21 @@
+<script>
+    //Increment 5% for all the salaries in a given array
+
+    var ar = [23,34,54,10,4,7] 
+
+
+    var result = ar.reduce(
+               function(a,b)
+               {
+                  var result = b * 105 /100
+
+                  a.push(result)
+
+
+                  return a 
+               }
+   ,[] )
+
+
+   console.log(result)
+</script>
