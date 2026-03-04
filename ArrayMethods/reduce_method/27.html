@@ -1,0 +1,33 @@
+<script>
+    //Print the elements present in the second half of the array.
+
+
+    var array = [2,5,3,6,8,9,10]
+        
+    console.log(array.length/2)
+
+
+     var c  = 0 
+
+    var result = array.reduce(
+           function(a,b)
+           {
+                
+        
+
+       
+
+             c = c + 1
+         
+            if(c  > array.length/2)
+           {
+                 a.push(b)
+           }
+             
+
+           return a
+           }
+    ,[])
+
+    console.log(result)
+</script>

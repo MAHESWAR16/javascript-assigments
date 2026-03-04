@@ -1,0 +1,22 @@
+<script>
+    //Print only multiples of 5 from an array
+
+
+    var array = [23,54,25,78,30,6,15]
+
+    var result = array.reduce(
+        function(a,b)
+{
+
+              if( b % 5 === 0)
+              {
+                a.push(b)
+              }      
+              
+              
+              return a
+ 
+},[])
+
+console.log(result)
+</script>

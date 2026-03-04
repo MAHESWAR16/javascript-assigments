@@ -1,0 +1,24 @@
+<script>
+    //Store only even numbers of a given array in another array.
+
+
+    var array = [23,34,54,10,7]
+
+    var result = array.reduce(
+
+                function(a,b)
+                {
+                 
+
+                    if(b % 2 == 0)
+                {
+                    a.push(b)
+                }
+
+
+                 return a
+                }
+   ,[])
+
+   console.log(result)
+</script>

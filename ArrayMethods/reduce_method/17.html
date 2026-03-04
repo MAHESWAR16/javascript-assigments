@@ -1,0 +1,46 @@
+<script>
+    //Print only the 2 digit numbers from an array
+           
+  
+
+     console.log(23 % 10)
+     console.log(23/10)
+   
+    console.log(Math.floor(2/10))
+
+      
+
+           var array = [23,54,256,1,28,92,6,857,75]
+
+
+           var result = array.reduce(
+                        function(a,b)
+                        {
+                             
+                            var count = 0 
+
+                            var t = b
+
+                              while (t !== 0)
+                              {
+                                t = Math.floor(t/10)
+
+                                count = count + 1
+
+                              }
+
+                            if(count === 2)
+                        {
+                            a.push(b)
+                        }
+                         
+
+                         return a 
+
+                        }
+                       
+           ,[])
+
+
+           console.log(result)
+</script>
