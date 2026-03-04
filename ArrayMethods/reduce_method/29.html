@@ -1,0 +1,32 @@
+<script>
+    //Write a program to remove elements from an array which are not in the ascending order Ex: Original array: [12,34,11,56,37,98,23,67,109,45] Output : [12,34,56,98,109]
+
+
+    var array  = [12,34,11,56,37,98,23,67,109,45]
+      
+ 
+     var output = array.reduce(
+             
+     function(a,b)
+     {
+
+           if(a.length === 0 || b > a[a.length-1])
+
+           {
+
+            a.push(b)
+           }
+         
+        
+           return a 
+
+     }
+
+         
+    ,[])
+
+
+    console.log(output)
+     
+    
+</script>
