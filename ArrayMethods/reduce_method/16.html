@@ -1,0 +1,27 @@
+<script>
+    //print only the perfect squares in an array
+
+ console.log(Math.sqrt(9))
+
+  var array = [4, 7, 9, 16, 25, 30]
+
+  var result = array.reduce(
+               function(a,b)
+               {
+                 
+
+//Number.isInteger(5)  true
+// Number.isInteger(2.7)    false
+
+            if(Number.isInteger(Math.sqrt(b)))
+            {
+                a.push(b)
+            }
+                 
+                  return a 
+               }
+  ,[])
+
+
+  console.log(result)
+ </script>

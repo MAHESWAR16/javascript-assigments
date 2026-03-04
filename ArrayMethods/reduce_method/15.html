@@ -1,0 +1,32 @@
+<script>
+    //Eliminate duplicates from a array
+
+    var array = [23,41,52,23,7,54,41,52]
+
+
+    var result = array.reduce(
+        function(a,b)
+        {
+
+            //“Search value b inside array a and return its index.”
+
+// 🎯 Now your specific question:
+// [].indexOf(23)
+// What is happening here?
+// [] → empty array
+// .indexOf(23) → search for 23 inside empty array
+// There is nothing inside.
+// So it returns:
+// -1
+            if(a.indexOf(b) === -1)
+        {
+            a.push(b)
+        }
+          
+
+         
+        return a 
+
+        }
+    ,[])
+</script>
