@@ -1,57 +1,42 @@
 <script>
-    //Write a program to sort the array based on the number of occurrences of elements Ex: original array: [1,2,5,6,2,1,6,1,2,6,2,1,2]; After the logic: [5,6,6,6,1,1,1,1,2,2,2,2,2]; //5 occurred one time,6 three times,1 occurred 4 times, 2 occurred 5 times
+    //  var ar = [19,12,23,4,15];
+    //                         var br = [26,37,18,79,10];
+    //                         a)Write script to merge array as the values of ar in the first and values of br next
+    //                             Expected output: [19,12,23,4,15,26,37,18,79,10];
+    //                         b)Write script to merge array as the values of ar in the first and values of br next
+    //                             Expected output: [26,37,18,79,10,19,12,23,4,15];
+           
 
-    var array = [1,2,5,6,2,1,6,1,2,6,2,1,2]
-var output = []
+      var ar  = [19,12,23,4,15]
 
-// Step 1: Get unique values
-var unique = array.reduce(function(a,b)
-{
-    if(a.indexOf(b) === -1)
-    {
+      var br  = [26,37,18,79,10]
+
+      var result = ar.reduce(
+                            function(a,b)
+                            {
+
+                                   a.push(b)
+
+
+                                   return a
+
+                            }
+      ,[])
+
+      br.reduce(
+
+
+       function(a,b)
+       {
+       
         a.push(b)
-    }
-    return a
-}, [])
+        
+          
+        return result
+       }
+
+      ,result)
 
 
-console.log(unique)
-
-// Step 2: Loop until unique becomes empty
-while(unique.length > 0)
-{
-    var minCount = array.length + 1
-    var minValue = null
-
-    // Find element with smallest frequency
-    for(var i = 0; i < unique.length; i++)
-    {
-        var count = 0
-
-        for(var j = 0; j < array.length; j++)
-        {
-            if(array[j] === unique[i])
-            {
-                count++
-            }
-        }
-
-        if(count < minCount)
-        {
-            minCount = count
-            minValue = unique[i]
-        }
-    }
-
-    // Add that element to output
-    for(var k = 0; k < minCount; k++)
-    {
-        output.push(minValue)
-    }
-
-    // Remove that value from unique
-    unique.splice(unique.indexOf(minValue),1)
-}
-
-console.log(output)
+console.log(result)
 </script>
