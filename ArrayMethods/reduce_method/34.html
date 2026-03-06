@@ -1,0 +1,28 @@
+<script>
+    //Remove Duplicates Items In An Array
+
+
+           var array  = [45,24,56,32,56,89,12,45,13,24]
+
+            console.log(   array.indexOf(56)  )
+
+           var output = array.reduce(
+            function(a,b)
+            {
+                
+
+               if( a.indexOf(b) == -1)
+
+               {
+                    a.push(b)
+               }
+               
+
+
+
+                return a 
+            }
+           ,[])
+
+           console.log(output)
+</script>
