@@ -1,0 +1,27 @@
+<script>
+    //Check String Is Palindrome
+ var string = "ricem"
+
+    var array = string.split("")
+
+    console.log(array)
+
+    var result = array.reduce(
+        function(a,b)
+        {
+                
+            result = b+ a
+             return result
+        }
+    ,"")
+
+    if(result === string)
+    {
+        consol,e.log(string," is palindrome")
+    }
+
+    else
+    {
+        console.log(string," is not palindrome")
+    }
+</script>

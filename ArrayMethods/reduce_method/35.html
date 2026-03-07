@@ -1,0 +1,32 @@
+<script>
+    //Delete Element From Array At Desired Or Specific Position
+
+    var array = [45,2,13,55,66,85]
+       
+
+   
+    var result = array.reduce(
+        function(a,b,i)
+        {
+             
+            if(i === 4)
+        {
+            a.pop(b)
+        }
+            
+        
+          a.push(b)
+        
+       
+          
+
+
+        console.log(" i= " , i,"b=",b,"a=",a)
+
+        return a
+        }
+    ,[])
+
+
+    console.log(result)
+</script>
