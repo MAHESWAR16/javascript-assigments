@@ -1,0 +1,17 @@
+<script>
+    //Convert All Input String Simultaneously Into Asterisk ( * )
+    var string = "mahesh"
+
+    var output = string.split("").reduce(
+                      function(a,b,i)
+                      {
+                         
+
+                        b = "*"
+
+                        return a+b
+                      }
+    ,"")
+
+    console.log(output)
+</script>
