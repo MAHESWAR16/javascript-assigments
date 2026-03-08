@@ -1,0 +1,28 @@
+<script>
+    //Search an element in an array.
+
+    
+    var x = +prompt(" enter a  number")
+    var array  = [23,35,65,24,84,98]
+ 
+
+    var result = array.reduce(
+        function(a,b)
+        {
+
+           if(x === b)
+           {
+
+            return true
+           }
+             
+             console.log("b=",b)
+           return a
+
+           
+        }
+    ,false)
+
+
+    console.log(result)
+</script>
