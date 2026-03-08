@@ -1,0 +1,22 @@
+<script>
+    //Find the reverse of an array.
+
+
+    var array = [12,32,52,45,65]
+
+    var result = array.reduce(
+
+
+     function(a,b)
+     {
+           a.unshift(b)
+
+
+
+           return a
+     }
+
+    ,[])
+
+    console.log(result)
+</script>

@@ -1,0 +1,24 @@
+<script>
+    //Print all negative elements in an array.
+
+                    var array = [23,54,-5,-78,25,-36]
+
+
+
+                    var result = array.reduce(
+                        function(a,b)
+                        {
+
+                            if(b<0)
+                            {
+                                a.push(b)
+                            }  
+                                  
+
+                            return a
+                        }
+                    ,[])
+
+
+                    console.log(result)
+</script>
