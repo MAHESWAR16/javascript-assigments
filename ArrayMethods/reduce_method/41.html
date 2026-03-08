@@ -1,0 +1,20 @@
+<script>
+    //Copy all elements from an array to another array.
+
+    var array  = [23,45,68,98,12,42]
+
+    var result = array.reduce(
+
+                    function(a,b)
+                    {
+
+                        a.push(b)
+
+
+                        return a
+                    }
+   ,[] )
+
+
+    console.log(result)
+</script>

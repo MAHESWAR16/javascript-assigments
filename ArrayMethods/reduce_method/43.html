@@ -1,0 +1,27 @@
+<script>
+    //Delete all duplicate elements from an array.
+
+    var array = [23,45,23,54,45,65]
+
+
+    var result = array.reduce(
+        function(a,b)
+        {
+           
+            
+            if(! a.includes(b) )
+
+            {
+                a.push(b)
+            }
+         
+
+
+            return a
+
+
+        }
+    ,[])
+
+    console.log(result)
+</script>

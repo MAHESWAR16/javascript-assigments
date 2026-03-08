@@ -1,0 +1,27 @@
+<script>
+    //Count the total number of duplicate elements in an array.
+
+    var array = [23,45,23,75,45,68,98,23,98]
+       
+
+    var count = 0
+    var result = array.reduce(
+          function(a,b,i)
+          {
+           
+
+
+            if(array.indexOf(b) < i)
+
+            {
+
+                count = count + 1
+            }
+
+
+            return  count 
+          }
+    ,0)
+
+    console.log(result)
+</script>

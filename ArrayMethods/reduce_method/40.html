@@ -1,0 +1,32 @@
+<script>
+    // coutn the number of negative lements in an array 
+
+    
+    var array = [23,-45,-85,46,-98,-42]
+ 
+
+ 
+
+
+    var result = array.reduce(
+                    
+
+             function(a,b)
+             {
+                   if(b<0)
+                   {
+                    
+                    a.push(b)
+                   }     
+
+             
+                    return a
+             }
+
+
+    ,[])
+
+
+
+    console.log(result )
+</script>
