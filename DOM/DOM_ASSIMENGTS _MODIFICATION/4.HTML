@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+            .hg{
+                border: 2px solid;
+                width: 850px;
+                height: 580px;
+            }
+            .kj
+            {
+            
+            }
+    </style>
+</head>
+<body>
+    
+
+
+    <div id ="d1">
+
+
+    </div>
+
+    
+
+    <button id ="d2" onclick="abc()"> </button>
+
+
+    <script>
+         
+         var f  = document.getElementById('d1')
+         f.className = "hg"
+         
+
+       var n =   document.getElementById("d2")
+         n.className = 'kj'
+         n.innerHTML = "TOGGLE"
+        
+        
+         var reset = 1
+
+         function abc()
+         {
+            if(reset)
+         {
+               f.style.backgroundColor = "yellow"
+
+               reset = 0
+         }
+
+         else
+         {
+                 f.style.backgroundColor = "red"
+                 reset = 1
+         }
+            
+           
+
+        
+      
+         }
+
+    </script>
+</body>
+</html>
