@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #d1
+        {
+            border:2px solid ;
+            width: 450px;
+            height:500px;
+             
+        
+        }
+         
+      .ty
+      {
+        background-color:white;
+      }
+
+    </style>
+</head>
+<body>
+
+    <div id ="d1">
+
+
+    </div>
+
+    <br>
+
+    <button onclick="abc()"   id ="ff"> ON </button>
+
+
+    <button onclick="bc()" id = "pp"> OFF </button>
+
+
+
+
+
+    <script>
+            var g =  document.getElementById("ff")
+         
+            function abc()
+            {
+                     
+
+           console.log(" g = " , g)
+                 
+
+           g.style.backgroundColor = "red"
+           
+           document.getElementById("d1").style.backgroundColor = "yellow"     
+
+               t.style.backgroundColor = ""
+            
+            } 
+            
+            
+                var t  =  document.getElementById("pp") 
+
+            function bc()
+            {
+                   g.style.backgroundColor = ""
+              
+
+
+                t.style.backgroundColor = "red"
+
+              document.getElementById("d1").style.backgroundColor = ""
+
+            
+            } 
+          
+                
+                   
+
+            
+
+
+                
+          
+            
+    </script>
+</body>
+</html>

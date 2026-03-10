@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    b
+    {
+
+         border: 2px solid;
+         
+         border-radius: 5px;
+   
+         padding: 5px;
+         margin: 89px;
+
+    }        
+</style>
+
+<body>
+    <b id="d1" onclick="abc()">Toogle</b>
+
+
+
+     
+    <script>
+     
+
+       var f =   document.createElement("h4")
+      
+     f.innerText = "false"
+
+     document.body . appendChild(f)
+
+     function abc()
+     {
+        
+      if(f.innerText === "false")    
+      {
+       
+         
+        f.innerText = 'true'
+ 
+               //"false" === "false"
+             // So this block runs:
+            // f.innerText = "true"
+           // Now the element becomes:
+          // <h4>true</h4>
+         // Browser updates the screen immediately.
+        // Page now shows: true
+
+
+        
+      }      
+      
+
+      else
+      {
+    
+
+        f.innerText = "false"
+      }
+      
+     }
+ 
+
+
+
+
+    </script>
+
+     
+</body>
+</html>
