@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,8 @@
     
 
     <h1 id = "d1"> this is header 1</h1>
+
+    <button onclick="abc()"> Click here to change text  of header 1</button>
 
     <p> 
         Many Freshers are transformed to employable resources from our Bootcamp Training. Industry level problem statements, design patterns and bestpractices are inducted in freshes with minimalistic approach is our approach. We Provide Industry Ready Corporate Training for freshers and upskilling professionals. Blend on complete foundation and realtime usecases is our promise to corporates and we provided with conviction. We Provide Industry Ready Corporate Training for freshers and upskilling professionals. Blend on complete foundation and realtime usecases is our promise to corporates and we provided with conviction. We Provide Industry Ready Corporate Training for freshers and upskilling professionals. Blend on complete foundation and realtime usecases is our promise to corporates and we provided with conviction.
@@ -32,43 +34,42 @@
 <h6 class="01"> this is h6</h6>
         <script>
 
+
+   // method 1 : to change content in html element
             var x = document.getElementById("d1")
+         //  x.innerHTML =" changed from h1 to this sentence"
 
-            console.log("x =" ,x)
+// method 2 : to change contenct in html element .
+         function abc()
+         {
+        var e =  document.getElementById("d1")
 
-            console.dir(x)              // retrun type is object .
+           e.innerText = "changed from h1 to this sentence "
+         }
+              
  
             var y = document.getElementsByTagName("p")
 
-            console.log("y =", y)
-
-            console.dir(y)                  // return type is html collection
+                     
 
 
 
             var r = document.querySelectorAll("p")
 
-            console.log('r =' ,r)
-
-            console.dir(r)        //  return type is node list ,   
+        
             
 
              var q = document.querySelectorAll("#d1")
 
-             console.log("q =",q)
-             console.dir(q)
+          
 
              var d = document.querySelector("#d1")
 
-             console.log('d =' , d)
-
-             console.dir(d)
 
 
 
              var n = document.getElementsByClassName("1")
-             console.log("n=", n)
-             console.dir(n)
+           
         </script>
 </body>
 </html>

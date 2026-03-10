@@ -159,5 +159,3 @@ x
 ONE-LINE SUMMARY (MEMORIZE THIS)
 
 return false tells find() “this is not the element, move on”.
-
-S
