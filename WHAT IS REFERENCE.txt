@@ -1,7 +1,21 @@
+ varibale declaration :
+ var a 
+
+ variable intilization : 
+ var a = 10 
+
+variable assigment :
+var a 
+a=10
+ 
+ variable reassigment :
+ var a = 10 
+ a = 20 
+ 
  Copy means new separate value. Reference means two variables point to the same memory.
 
  Imagine This Real Example
- 
+
 🟢 Case 1: Number (Copy)
 
 You write the number 10 on a paper.
@@ -16,9 +30,10 @@ Your friend’s copy is still 10.
 
 Because it was a COPY.
 
-That is how numbers and strings work.
+That is how numbers and strings , null , undefined , boolean  works.
+copy concept apply to these data types  numbers , boolean , strings , null , undefined  1
 
-
+Reference CONCEPT APLLY TO THESE DATA TYPES  LIKE FUNCTION , OBJECTS , ARRAY OF OBJECTS , ARRAY.
 Case 2: Object (Reference)
 
 Now imagine:
@@ -49,11 +64,9 @@ var b = a;
 b.value = 50;
 
 console.log(a.value);
-
-
 Will print:
-
 50
+
 example 3 ; 
 
 var a = { x: 10 };
