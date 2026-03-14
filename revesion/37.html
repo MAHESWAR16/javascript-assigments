@@ -1,0 +1,25 @@
+<script>
+    //Write a program to print 1 to 10 even numbers using a for loop
+
+    var even = function (a)
+    {
+        var array = []
+        
+        var m = 1
+
+        while ( m <= a)
+    {
+        if(m % 2 === 0)
+    {
+        array.push(m)
+    }
+     
+       m = m+1
+    }
+         return array
+    }
+
+    var result = even(20)
+
+    console.log("result = " , result)
+</script>
