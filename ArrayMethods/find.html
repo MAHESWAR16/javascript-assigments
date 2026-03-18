@@ -1,0 +1,45 @@
+<script>
+    var array = [23,45,89,63,12,45,7,8]
+
+    var result = array.find(
+        function(a,b)
+        {
+
+            console.log("a = " ,a , "b =" , b)
+            
+            if(a === 63)
+        {
+            return true 
+        }
+        else
+        {
+            return false
+        }
+ 
+        }
+    )
+
+    console.log("result", result)
+
+
+    // searching the number which is not in the array . 
+     var result1 = array.find(
+        function(a,b)
+        {
+
+            console.log("a = " ,a , "b =" , b)
+            
+            if(a === 6.3)
+        {
+            return true 
+        }
+        else
+        {
+            return false
+        }
+ 
+        }
+    )
+
+    console.log("result", result1)
+</script>
