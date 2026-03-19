@@ -1,0 +1,46 @@
+<script>
+    var array = [23,25,6,9,45,28,45]
+
+    var result = array.filter(
+
+             function(a,b)
+             {
+               
+                if(a <30)
+             {
+                return true
+             }
+
+             else
+             {
+                return false 
+             }
+
+             }
+    )
+
+    console.log("result = " , result)
+
+    // what happens if condition fails 
+
+
+      var result1 = array.filter(
+
+             function(a,b)
+             {
+               
+                if(a === 30)
+             {
+                return true
+             }
+
+             else
+             {
+                return false 
+             }
+
+             }
+    )
+
+    console.log("result = " , result1)
+</script>
