@@ -1,3 +1,16 @@
+seperate memory : copy
+number .
+boolean .
+string .
+null  .
+undefined .
+
+same memory : reference 
+arrays .
+objects .
+functions.
+
+
  varibale declaration :
  var a 
 
