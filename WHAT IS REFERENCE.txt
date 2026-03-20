@@ -1,11 +1,11 @@
-seperate memory :
+seperate memory : copy
 number .
 boolean .
 string .
 null  .
 undefined .
 
-same memory : 
+same memory : reference 
 arrays .
 objects .
 functions.
