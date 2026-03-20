@@ -1,3 +1,16 @@
+seperate memory :
+number .
+boolean .
+string .
+null  .
+undefined .
+
+same memory : 
+arrays .
+objects .
+functions.
+
+
  varibale declaration :
  var a 
 
