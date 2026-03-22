@@ -1,4 +1,199 @@
+<body>
+
+JavaScript Memory Concepts (Simple Notes)
+🔹 1. Primitive Data Types
+
+👉 Examples:
+
+number
+
+string
+
+boolean
+
+null
+
+undefined
+
+✅ Rule:
+
+👉 Value is copied (taking value)
+👉 Each variable has separate box
+
+📌 Example:
+var a = 10;
+var b = a;
+
+b = 25;
+a = 585;
+🧠 Memory View:
+a → 📦 585
+b → 📦 25
+🎯 Key Points:
+
+b = a → copy value once
+
+After that → no connection
+
+Changing a does NOT affect b
+
+🔹 2. Non-Primitive Data Types
+
+👉 Examples:
+
+Array
+
+Object
+
+Function
+
+✅ Rule:
+
+👉 Reference is shared (same box)
+
+📌 Example:
+var a = [10];
+var b = a;
+
+a[0] = 585;
+🧠 Memory View:
+a ──┐
+    ├──→ 📦 [585]
+b ──┘
+🎯 Key Points:
+
+b = a → both point to same box
+
+Changing inside → affects both
+
+🔥 3. MOST IMPORTANT CONFUSION
+📌 Case 1 (Modify inside)
+var a = [10];
+var b = a;
+
+a[0] = 585;
+
+👉 Result:
+
+a → [585]
+b → [585]
+
+✔️ Same box → both affected
+
+📌 Case 2 (Reassign)
+var a = [10];
+var b = a;
+
+a = [585];
+
+👉 Result:
+
+a → [585]
+b → [10]
+🧠 Memory View:
+a → 📦 [585]   (new box)
+b → 📦 [10]    (old box)
+🎯 Key Difference:
+Operation	Meaning
+a[0] = 585	change inside same box
+a = [585]	create new box
+🔑 4. FINAL RULES (VERY IMPORTANT)
+✅ Primitive:
+
+Copy happens
+
+Separate memory
+
+No connection
+
+✅ Non-Primitive:
+
+Reference shared
+
+Same memory
+
+Connection exists
+
+⚠️ Golden Rule:
+
+👉 Change inside → affects both
+👉 Reassign → breaks connection
+
+🧠 Easy Memory Trick
+
+Primitive → 📦📦 (two boxes)
+
+Array/Object → 📦👬 (shared box)
+
+🚀 One-Line Summary
+
+👉 Primitive = copy (separate)
+👉 Non-Primitive = reference (shared)
+
+Question 1 (Primitive)
+var a = 10;
+var b = a;
+
+a = 20;
+
+console.log(a);
+console.log(b);
+
+👉 What is the output?
+
+🧠 Question 2 (Primitive)
+var a = 5;
+var b = a;
+
+b = 15;
+
+console.log(a);
+console.log(b);
+
+👉 What is the output?
+
+🧠 Question 3 (Array - Same Memory)
+var a = [1, 2];
+var b = a;
+
+a[0] = 100;
+
+console.log(a);
+console.log(b);
+
+👉 What is the output?
+
+🧠 Question 4 (Confusion Case)
+var a = [1, 2];
+var b = a;
+
+a = [100, 200];
+
+console.log(a);
+console.log(b);
+
+👉 What is the output?
+
+🧠 Question 5 (Mixed Thinking)
+var a = [10];
+var b = a;
+
+b[0] = 50;
+
+a = [100];
+
+console.log(a);
+console.log(b);
+
+👉 What is the output?
+
+
+
+
+
 <script>
+
+  
   // primitive data types 
 var a = 10 
 
@@ -34,4 +229,27 @@ br = [11,22,33,44,55]
 console.log("br =" , br)
 
 console.log("array =" , array )
+
+// //var a = [10];
+// var b = a;
+
+// a = [585];
+
+// console.log(a); // [585]
+// console.log(b);
+
+
+
+
+var p = [585]
+var f = p
+p[0] = 10000
+console.log("p=",p)
+console.log("f =" , f)
+
+
+
+
 </script>
+
+</body>
