@@ -102,8 +102,63 @@ function(a)
 
 console.log("duracell",duracell)
 // Print the product names in ascending order of their prices.
+
+
+var ascending = products.sort(
+             function(a,b)
+             {
+                if(a.price<b.price)
+             {
+                return 1
+             }
+             else
+             {
+                return -1
+             }
+             }
+)
+console.log("ascending " , ascending)
 // Print only those products whose price is more than 14.99.
+
+
+var filter = products.filter(
+    function(a)
+    {
+        if(a.price >= 14.99)
+    {
+        return a
+    }
+    }
+)
+console.log("filter =" , filter)
 // Print only those products whose price is less than 9.99.
+
+var filter1 = products.filter(
+    function(a)
+    {
+            if(a.price <= 9.99)
+            {
+                return a
+            }
+
+    }
+)
+
+console.log("filter1", filter1)
 // Print the total price of all the hardgoods.
+
+
+var total_price = products.reduce(
+    function(a,b)
+    {
+          
+
+       a = a + b.price 
+
+       return a 
+    }
+,0)
+
+console.log("totalprice", total_price)
 // Print the average price of the softwares.
 </script>
