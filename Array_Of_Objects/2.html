@@ -140,11 +140,66 @@ people.forEach(
 
 // Print the total salary of all the people.
 
+var totalsalary = people.reduce(
+                  function(a,b)
+                  {
+                       
+                    return a + b.salary
 
+                   }
+,0)
+console.log("totalsalary",totalsalary)
 // Print all the female names.
+
+var femaleNames = people.filter(
+                function(a)
+                {
+                    if(a.gender === "female")
+                {
+                    return a
+                }
+                }
+)
+
+console.log("femaleNames",femaleNames)
 // Print all the firstnames whose salary is more than 25000.
+ people.filter(
+    function(a)
+    {
+        if(a.salary >=25000)
+    {
+        return a
+    }
+    }
+ ).forEach(
+    function(a)
+    {  
+        console.log(a.firstname)
+    }
+ )
+
 // Using prompt, print all names whose city is "hyd".
+var entercitynamehyd = prompt("enter hyd name")
+people.filter(
+    function(a)
+    {
+        if(a.city === "hyd")
+    {
+        return a
+    }
+    }
+).forEach(function(a)
+{
+    console.log("name with hyderabad cityname", a.firstname+a.lastname)
+})
 // Print all the fullnames in the alphabetical order.
+
+people.sort(
+    function(a)
+    {
+        
+    }
+)
 // Print all the fullnames in the increasing order of their age.
 // Print all the fullnames in the reverse alphabetical order.
 // Print all the fullnames in the decreasing order of their salaries.
