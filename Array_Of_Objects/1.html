@@ -45,9 +45,6 @@
                         ];
 
 // Print all the product names.
-
-
-
 products.forEach(
     function(a)
     {
@@ -60,7 +57,7 @@ var result = products.filter(
                 {
                     if(a.type === "HardGood")
                      {
-                        return a.name
+                        return a
                      }
                  
                 }
@@ -68,10 +65,42 @@ var result = products.filter(
 
 console.log('result = ' , result)
 // Print all the softwares.
-
+var software = products.filter(
+                   function(a)
+                   {
+                    if(a.type === "Software")
+                   {
+                    return a
+                   }
+                   }
+)
+console.log("software",software)
 
 // Print all the categories.
+
+products.forEach(
+
+function(a)
+{
+    console.log("categories",":",a.category)
+}
+)
 // Print only the products manufactured by Duracell.
+var duracell = []
+products.forEach(
+
+function(a)
+{
+    if(a.manufacturer === "Duracell")
+{
+    console.log("a =" ,a)
+    duracell.push(a)
+
+}
+}
+)
+
+console.log("duracell",duracell)
 // Print the product names in ascending order of their prices.
 // Print only those products whose price is more than 14.99.
 // Print only those products whose price is less than 9.99.
