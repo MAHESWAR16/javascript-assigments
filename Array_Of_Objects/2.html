@@ -195,15 +195,95 @@ people.filter(
 // Print all the fullnames in the alphabetical order.
 
 people.sort(
+    function(a,b)
+    { 
+         var a = a.firstname.toLowerCase()
+         var b  = b.firstname.toLowerCase()
+          
+
+         if(a <b)
+         {
+            return -1
+         }
+         else
+         {
+            return 1
+         }
+    }
+).forEach(
     function(a)
     {
-        
+            console.log(a.firstname + ""+ a.lastname)
     }
 )
 // Print all the fullnames in the increasing order of their age.
+
+var ascending_order = people.sort(
+             function(a,b)
+             {
+                if(a.age < b.age)
+             {
+                return -1
+             }
+             else
+             {
+                return 1
+             }
+             }
+)
+console.log("ascending_order =",ascending_order)
+ascending_order.forEach(
+    function(a)
+    {
+        console.log(a.firstname+""+a.lastname+"="+a.age)
+    }
+)
+
+
 // Print all the fullnames in the reverse alphabetical order.
+people.forEach(
+    function(a)
+    {
+        var result = a.firstname.split("").reverse().join("") + " " + a.lastname.split("").reverse().join("")
+
+        console.log("result =",a.firstname,a.lastname,result)
+    }
+)
+
 // Print all the fullnames in the decreasing order of their salaries.
+people.sort(
+    function(a,b)
+    {
+        if(a.salary < b.salary)
+    {
+        return 1
+    }
+    else
+    {
+        return -1
+    }
+    }
+).forEach(
+    function(a)
+    {
+        console.log(a.firstname+""+a.lastname ,"=",a.salary)
+    }
+)
+
+
 // Print all the cities in which the people live. There should not be any duplicate cities.
+
+var cities = people.map(
+               function(a)
+               {
+            
+                 return a.city
+               }
+)
+
+console.log("cities =",cities)
+
+
 // Print all the male names whose age is greater than 25.
 // Print all names that starts with "p" and the firstname should be in UPPERCASE. e.g. PRAVEEN gubbala.
 
