@@ -284,7 +284,53 @@ var cities = people.map(
 console.log("cities =",cities)
 
 
+
+var uniquecities = cities.filter(
+      function(a,b)
+      {
+         if(cities.indexOf(a) === b)
+         {
+            return true
+         }
+      }
+)
+
+console.log('uniquecities =' ,uniquecities)
 // Print all the male names whose age is greater than 25.
+
+var age_more_than25 = people.filter(
+               function(a,b)
+               {
+                if(a.age >=25)
+               {
+                return true
+               }
+               }
+)
+
+console.log('age_more_than25 =', age_more_than25)
 // Print all names that starts with "p" and the firstname should be in UPPERCASE. e.g. PRAVEEN gubbala.
 
+
+var pnames = people.filter(
+    function(a)
+    {
+        if(a.firstname[0] === "p")
+    {
+        return true
+    }
+    }
+)
+
+console.log("pNmaes =" ,pnames)
+var uppercase = pnames.map(
+      function(a)
+      {
+        a.firstname = a.firstname.toUpperCase()
+
+        return a
+      }
+)
+
+console.log("uppercase = " , uppercase)
 </script>
