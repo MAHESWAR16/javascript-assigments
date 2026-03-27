@@ -1,0 +1,35 @@
+<script>
+
+    var a =  100 
+
+    console.log(" global = " ,a) 
+
+
+    function abc()
+    {  
+
+        var  a  =  895
+
+        console.log(" functional scope  = " , a)
+    } 
+
+    abc() 
+
+    console.log("global = " , a)  
+
+
+
+    function xyz()
+    {
+
+        var y =  789 
+
+
+        console.log(" y is functional decalred scope = " , y)
+    }
+
+xyz ()
+
+
+    console.log(" y is trying to  acessing globaly " , y)
+</script>
