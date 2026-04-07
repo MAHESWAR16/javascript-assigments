@@ -1,0 +1,34 @@
+<script>
+    //Write a program to print all the factors of a given number  
+
+     var  z = function (a)
+                      {
+                     
+                        var array = [] 
+
+                        var  dr = 1
+
+                        while(dr <= a)
+
+                        {
+
+                          if(a % dr === 0)
+                          {
+                            array.push(dr)
+                          }
+
+                         
+                           
+                          dr = dr + 1
+
+                        
+                        }
+
+                           return array 
+
+                       }
+
+      var result = z(9)      
+      
+      console.log("result =",result)
+</script>
