@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+
+    <ol>
+       
+
+
+    </ol>
+  
+    <h6>
+
+
+
+
+    <script>
+       var x = document.createElement("h1") 
+
+       x.innerHTML ="  this is h1 element created using javascript"
+
+       document.body.appendChild(x)  
+
+
+
+      var e = document.createElement("h1")
+
+      e.innerHTML = " this is h2 element created using javascript"
+
+      document.body.appendChild(e) 
+
+
+
+
+      var t = document.createElement("h3")
+   
+       t.innerHTML = " i am creating list items using javascript"
+
+       document.body.appendChild(t)
+
+
+
+       var array = ["mahesh","suresh","jackson","kiran", "nizeria"] 
+
+
+        var q = document.querySelector("ol")
+
+
+        console.log(" q= " , q)
+    
+       array.forEach(
+           function(a,b)
+           {
+              var o = document.createElement("li") 
+
+              o.innerText = a 
+
+
+           q.appendChild(o)
+           }
+       )
+    </script>
+</body>
+</html>
