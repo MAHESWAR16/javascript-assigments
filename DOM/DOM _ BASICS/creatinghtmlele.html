@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+
+    <style>
+        div
+        {
+            border: 2px solid;
+            width: 300px;
+            height: 190px;
+        }
+        table
+        {
+             border: 2px solid;
+            width: 300px;
+            height: 190px;
+        }
+        
+    </style>
 </head>
 <body>
      
@@ -14,7 +31,24 @@
 
     </ol>
   
-    <h6>
+
+    <div>
+          <ol></ol>
+
+    </div>
+
+    <h6> 
+
+
+
+
+        <table> 
+           
+             <tr>            </tr>
+             <tr>            </tr>
+             <tr>            </tr>
+             <tr>            </tr>
+            </table>
 
 
 
@@ -25,8 +59,6 @@
        x.innerHTML ="  this is h1 element created using javascript"
 
        document.body.appendChild(x)  
-
-
 
       var e = document.createElement("h1")
 
@@ -63,7 +95,63 @@
 
            q.appendChild(o)
            }
-       )
+       )  
+
+
+
+
+       var br = ["apple","banana","orange","mago","grapes","pineapple"] 
+
+
+           var n = document.querySelector(" div ol")
+
+
+
+           br.forEach(
+               function(a,b)
+               {
+                     var d = document.createElement("li")
+
+                    d.innerText = a  
+                    
+                    
+                   n.appendChild(d)
+
+               }
+           ) 
+
+
+
+
+
+
+           var employess = [
+
+                         {
+
+                            fullname : "mahesh devarakonda",
+                            location :"chirala",
+                            gender:"male" ,
+
+                               fullname : "mahe devara",
+                            location :"chi",
+                            gender:"female", 
+
+                              fullname : "surya",
+                            location :"chennai",
+                            gender:"female", 
+
+                            fullname : "nilesh",
+                            location :"lucknow",
+                            gender:"male",  
+
+
+                            fullname : "akkash",
+                            location :"mumbai",
+                            gender:"male",
+                         }
+             
+           ]
     </script>
 </body>
 </html>
