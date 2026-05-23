@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <style>
+        div
+        {
+            border:2px solid;
+
+            width: 250px;
+
+            height:120px
+        }
+
+  </style>
+<body>
+    
+    <div id="d1">
+
+    </div>
+
+    <br>
+
+    <button onclick="abc()"> Toogle </button>
+
+    <script>
+        var count = 0 
+
+        function abc()
+        {
+             if(count === 0)
+             {
+               var x = document.getElementById("d1")
+               x.style.backgroundColor ="yellow"
+               count = count + 1
+             }
+            
+            else
+            {
+                var x = document.getElementById("d1")
+               x.style.backgroundColor =""
+               count = 0
+
+
+            }
+            console.log("count =" , count)
+
+        }
+    </script>
+    
+</body>
+</html>
