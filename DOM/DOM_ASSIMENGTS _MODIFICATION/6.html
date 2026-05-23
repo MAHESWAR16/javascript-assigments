@@ -10,22 +10,26 @@
 </head>
 <body> 
     
-  <input type="url"  />
- 
-  
-  <button onclick="abc()"> ADD IMAGE </button>
 
-</body>
+   <input type="text" id="d1">
+
+<button onclick="abc()">Click here</button>
+
 <script>
 
-        function abc()
-        {
-                 
-            var x = document.createElement("img")
+function abc()
+{
+   var x = document.getElementById("d1")
 
-            x.appendChild("input")
+   var c = document.createElement("h1")
 
-        }
+   c.innerHTML = x.value
 
+   c.style.width = "200px"
+
+   document.body.appendChild(c)
+}
+
+</script>
 </script> 
 </html>
