@@ -12,10 +12,36 @@
 
     <script>
           
-          var x = document.querySelector("22")
+         
+          
+
+           var count = 0 
+
+              var x = document.createElement("h1")
+
        function toogle()
        {
-           
+        
+         
+          if( count === 0)
+          {
+          
+          x.innerHTML = "true"
+          document.body.appendChild(x)
+           count = count + 1
+          }
+          else
+          {
+            
+          x.innerHTML = "false"
+          document.body.appendChild(x)
+          count = 0
+                  
+          }
+
+
+          console.log(" count  = " , count)
+         
        }
 
     </script>
