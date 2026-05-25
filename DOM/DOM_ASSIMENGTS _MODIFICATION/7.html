@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+
+</style>
+<body>
+    
+
+    
+      
+
+
+
+
+
+<table cellspacing ="20px">
+ <tr>
+    <td>
+          <button onclick="ab()">Previous</button> 
+    </td>
+
+    <td>
+                <button onclick = "abc()"> Next</button>
+    </td>
+ </tr>
+</table>
+       
+
+    
+
+
+    
+
+
+    <script>
+
+        var array =["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4PlRwsXZ4yz2wRzhTrcwuZwPtWn9Rt3r4fA&s","https://png.pngtree.com/png-vector/20220119/ourmid/pngtree-business-card-vector-small-icon-phone-address-information-revenue-icon-png-image_4243416.png","https://53.fs1.hubspotusercontent-na1.net/hubfs/53/how-to-make-picture-into-link-2-20241023-9976550.webp","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3wtNgHnAU35FeUQ37jkeYLncA4ro5V1v-Dg&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdtZfGoqvOK_aXHtmBPKQJHXATTRObd4yxDA&s"]
+         
+
+        console.log(array.length-1)
+
+       
+              
+
+         var x = document.createElement("img")
+
+                x.src= array[0]
+                
+                x.style.width="270px"
+                x.style.height="200px"
+
+                document.body.appendChild(x)
+ 
+
+                 var count = 0 
+
+
+                function abc()
+                {      
+                         count = count + 1
+
+                         x.src = array[count]  
+                         console.log("count =" , count)
+
+                         if(count >= array.length)
+                         {
+                           x.src= array[0]
+
+                           count = 0
+                         }
+                }
+
+                 
+
+             function ab()
+             {
+
+                if( count !== 0)
+             {
+                 count = count - 1
+
+                 x.src= array[count]
+             }
+             }
+
+
+           
+            
+             
+    </script>
+</body>
+</html>
