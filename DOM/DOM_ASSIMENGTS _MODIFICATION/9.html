@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body
+        {
+            background-color: antiquewhite;
+        }
+        #d4
+        {
+            width: 250px;
+
+            height:30px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1> Add Students</h1>
+
+    <input type ="text"  id = "d4" />
+
+    <button  onclick="ab()" id = "d1"> Add Student</button>
+
+    <ul>
+
+    </ul>
+    
+
+  <script>
+  function ab()
+  {
+     var f = document.getElementById("d4") 
+
+  var b = document.createElement("li")
+
+  b.innerHTML = f.value
+   
+  var d  = document.querySelector("ul")
+   
+ d.appendChild(b)
+
+  }
+  </script>
+</body>
+</html>
