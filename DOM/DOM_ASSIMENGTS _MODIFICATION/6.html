@@ -4,32 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+</head>
+<style>
+    #d2
+    {
+        border: 2px solid;
+
+        width: 800px;
+
+        height : 400px
+    }
+</style>
+<body>
+     
+
+
+
+    <table c>
+        <tr>
+            <td>
+                   <input type ="url"  id="d1" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                      <button onclick="abc()"> Add image</button>
+            </td>
+        </tr>
+    </table>
+
+
+         
+          
+
+
+
+  
 
 
    
-</head>
-<body> 
+
     
+  
 
-   <input type="text" id="d1">
-
-<button onclick="abc()">Click here</button>
+    
+</body>
 
 <script>
+    
 
-function abc()
-{
-   var x = document.getElementById("d1")
+    function abc()
+    {
+               var f = document.createElement('img')    
+        
+        var t = document.getElementById("d1")
+          
+            f.src = t.value
+    
+           f.style.width="400px"
+           f.style.height="300px"
 
-   var c = document.createElement("h1")
+      
 
-   c.innerHTML = x.value
+            document.body.appendChild(f)
 
-   c.style.width = "200px"
+            
+            f.className="d2"
+    
 
-   document.body.appendChild(c)
-}
-
+       
+    } 
 </script>
-</script> 
 </html>
