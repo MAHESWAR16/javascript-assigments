@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+   <h1> Like and Dislike Button</h1>
+
+    
+ 
+              <button id = "d1" style="background-color: red; width: 80px; height: 100px;" onclick="a()"> Like</button>
+
+          
+          
+
+            
+    
+         
+
+            
+               <button id = "d" style="background-color:green; width: 180px; height: 100px;" onclick="b()">DisLike</button>
+            
+
+             
+
+
+
+
+    <script>
+          var t =   document.createElement("h1")
+
+          
+
+
+        var count = 0 
+           function a()
+           {
+              count = count + 1
+
+          
+            t.innerHTML = count 
+            
+
+            var f= document.getElementById("d1")
+            f.appendChild(t)
+
+           } 
+            
+ var r =   document.createElement("h1")
+           var gt = 0 
+           function b()
+           {
+              gt = gt + 1
+
+          
+            r.innerHTML = gt
+            
+
+            var o = document.getElementById("d")
+            o.appendChild(r)
+
+           } 
+           
+
+ 
+
+
+
+    </script>
+</body>
+</html>
