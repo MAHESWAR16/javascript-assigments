@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width:70px
+        }
+
+        </style>
+</head>
+<body>
+    <button onclick="abc(event)"> Add Text</button>
+
+    <script>
+        function abc()
+        {
+            var b= document.createElement("h1")
+           b.innerHTML="welcome to different world"
+
+           document.body.appendChild(b)
+        }
+    </script>
+</body>
+</html>
