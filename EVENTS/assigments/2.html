@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            border: 2px solid;
+            width: 425px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="d1">
+
+    </div>
+     
+    <br>
+    <button onclick="abc(event)">Red</button>
+    <button onclick="abc(event)">Blue</button>
+    <button onclick="abc(event)">Green</button>
+    <button onclick="abc(event)">Reset</button>
+
+<script>
+
+    function abc(a)
+    {
+ 
+      var box = document.getElementById("d1")
+
+
+        var color = a.target.innerHTML
+
+        console.log('color', color)
+
+        
+        
+        if(color === "Reset")
+    {
+                 box.style.backgroundColor = ""
+    }
+
+    else
+    {
+          box.style.backgroundColor = color
+    }
+
+    }
+</script>
+
+    
+</body>
+</html>
