@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+<div align="center">
+
+    <h1>Change Button Background Color</h1>
+
+    <button onclick="abc(event)">
+        OFF
+    </button>
+
+</div>
+
+
+<script>
+
+function abc(a)
+{
+    var btn = a.target
+
+
+    console.log("button =" , btn)
+    
+    if(btn.style.backgroundColor === "green")
+    {
+        btn.style.backgroundColor = ""
+
+        btn.innerHTML = "OFF"
+    }
+
+    else
+    {
+        btn.style.backgroundColor = "green"
+
+        btn.innerHTML = "ON"
+    }
+}
+
+</script>
+
+</body>
+</html>
