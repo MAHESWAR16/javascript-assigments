@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            border: 2px solid;
+           width: 180px;
+           height: 100px;
+           
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d1" onclick="abc(event)"></div>
+
+    <script>
+
+        var array = ["red" , "blue","green","yellow","orange"]
+
+        var count  = 0
+
+        function abc(a)
+        {
+          
+
+           
+            var f = a.target
+
+            console.log('f=', f)
+                    
+             f.style.backgroundColor = array[0]
+            if(count < array.length)
+        {
+
+             f.style.backgroundColor = array[count]
+               count = count + 1
+            
+
+               console.log(" count =" , count)
+          
+           
+        }
+
+        else
+        {
+            count = 0
+        }
+
+        }
+    </script>
+</body>
+</html>
