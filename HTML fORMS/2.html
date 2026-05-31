@@ -1,37 +1,45 @@
 <html>
     <head></head>
     <body>
-        <form>
-              <input type="text"  placeholder="enterfullname" name ="a"/> 
+        <form action="www.jafa.com" method="post">
+              <input type="text"  placeholder="enterfullname" name ="fullname"/> 
               <br>
 
-              <input type="email"  placeholder="enter email"/>
+              <input type="email"  placeholder="enter email" name="gmail"/>
               <br>
 
-              <input type="password" placeholder=" enter password" />
+              <input type="password" placeholder=" enter password" name="password" />
               <br>
 
               male:
-              <input type="radio" name="gender">
+              <input type="radio" name="gender" value="male">
               female:
-              <input type ="radio" name ="gender"/>
+              <input type ="radio" name ="gender" value="female"/>
               <br>
-              reactjs:
-              <input type="checkbox"  name="tech">
-              nodejs
-              <input type="checkbox" name="tech" >
-              express js 
-              <input type = "checkbox" name="tech"> 
-              mongo db : 
-              <input type ="checkbox" name="tech" > 
-              sql : 
-              <input type ="checkbox" name ="tech" >
+              <input type="checkbox" name ="skills" value ="nodejs" /> node js
+              <input type="checkbox" name="skills" value="reactjs" /> react js
+              <input type="checkbox" name="skills" value ="javascript" /> javascript
+              <input type="checkbox" name ="skills" value ="sql" /> sql
+              <input type="checkbox" name="skills" value ='express js' /> express js
+        
+              <br>
 
-              <br>
+              <select name ="counties" > 
+                <option > choose country  </option>
+                <option > india  </option>
+                <option > srilanka  </option>
+                <option > china  </option>
+                <option > delhi </option>
+              </select>
                
           <button> submit</button>
 
+
+       
+
         </form>
-        
+   
     </body>
+
+
 </html>
