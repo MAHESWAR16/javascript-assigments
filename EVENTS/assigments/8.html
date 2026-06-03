@@ -1,23 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Like Dislike</title>
 </head>
 <body>
-    <div>
 
-    
-    <button onclick="abc(event)"> Like</button>
-    <br>
-    <button onclick="abc(event)"> Dislike </button>
-  
+    <h1>Like and Dislike Button</h1>
 
-    </div>
+    <button onclick="likeCount()">Like</button>
+    <span id="like">0</span>
+
+    <br><br>
+
+    <button onclick="dislikeCount()">Dislike</button>
+    <span id="dislike">0</span>
 
     <script>
 
+        var like = 0;
+        var dislike = 0;
+
+        function likeCount()
+        {
+            like = like + 1;
+
+            document.getElementById("like").innerHTML = like;
+        }
+
+        function dislikeCount()
+        {
+            dislike = dislike + 1;
+
+            document.getElementById("dislike").innerHTML = dislike;
+        }
+
     </script>
+
 </body>
 </html>
