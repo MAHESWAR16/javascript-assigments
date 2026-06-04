@@ -1,21 +1,76 @@
 <html>
-  <head></head>
+  <head> 
+
+    <style>
+     
+    </style>
+
+  </head>
   <body>
+    <ol id="d3"></ol>
+
+    <ul id="d2">
+
+    </ul>
+
+    <h1 id="d1"> this is h1 </h1>
+    <h3> this is h3 -1 </h3>
+    <h3> this is h3 -2</h3>
+    <h3> this is h3 -3</h3>
+
+    <h4 class="g"> this is h4 -1</h4>
+    <h4 class="g"> this is h4 -2</h4>
+    <h4 class="g"> this is h4 -3</h4>
+
     <script>
-          
+         var x = document.getElementById("d1") 
 
-        
-        
-      var s1 ="Apraveen"
+         console.log("x=", x)
 
-     
-      console.log(s1.replaceAll("e","*"))
+         console.dir(x)
 
-      console.log(s1.indexOf("A"))
-     
-
-
+         var y = document.getElementsByTagName("h3")
+         console.log("y=", y)
          
+         var b = document.querySelectorAll(".g")
+
+        b.forEach(function(a)
+      {
+        a.style.color='red'
+        
+      })
+
+
+      var d = document.createElement("button")
+
+      d.innerHTML = "submit"
+
+      console.log("d=", d)
+
+      document.body.appendChild(d)
+     
+
+      var j = document.createElement("li")
+
+      j.innerHTML="india"
+
+      document.getElementById("d2").appendChild(j)
+
+
+      var array = ["mahesh","kiran","sursh","ankit","nemama","talakaya","namosh"]
+
+      array.forEach(
+         function(a)
+         {
+          var f = document.createElement("li")
+          f.innerHTML = a 
+
+          document.getElementById("d3").appendChild(f)
+         }
+      )
+      
+         
+
     </script>
   </body>
 </html>
