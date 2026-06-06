@@ -1,0 +1,66 @@
+<html>
+    <head> 
+        <style>
+            #d1{
+                border: 2px solid;
+                width:250px;
+                height:185px;
+                margin:auto;
+            }
+            button
+            {
+                display: block;
+                margin: auto;
+            }
+        </style>
+
+
+
+    </head>
+    <body> 
+         
+
+        <div id="d1">
+
+        </div>
+        <br> 
+        <button onclick="abc()" id="d2">OFF</button>
+ 
+
+        <script>
+              
+
+              var img = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQwNYRntjA236nu5EBbQWvsQ5AWz9Cgx6vOw&s","https://media.geeksforgeeks.org/wp-content/uploads/ONbulb.jpg"]
+
+            var f = document.createElement("img")
+
+           console.dir(f)
+
+           f.src= img[0]
+
+       
+
+           document.getElementById("d1").appendChild(f)
+         
+
+           function abc()
+           {
+            alert("hello")
+               if(document.getElementById("d2").innerHTML ==="OFF")
+               {
+                 document.getElementById("d2").innerHTML === "ON"
+                 // document.getElementById("d1").appendChild()
+               }
+           }
+
+          
+        </script>
+ 
+
+
+    </body>
+
+
+
+
+</html>

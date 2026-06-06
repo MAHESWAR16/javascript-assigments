@@ -1,0 +1,54 @@
+<html>
+    <head> 
+        <style>
+            #d1
+            { 
+             border: 2px solid;
+             width: 185px;
+             height: 205px;
+             margin: auto;
+            }
+
+           #d2
+           {
+            display: block;
+             margin: auto;
+
+             background-color: yellow;
+           }
+        </style>
+
+    </head>
+
+    <body> 
+  
+       
+
+          <div id="d1" > 
+
+          </div> <br>
+          
+  <button id="d2" onclick="abc()">Toogle</button>
+
+  <script>
+    function abc()
+    {
+      //  alert('hello')
+       var f = document.getElementById("d1")
+      
+
+       if(f.style.backgroundColor==="white")
+       {
+         f.style.backgroundColor="red"
+       }
+
+       else
+       {
+         f.style.backgroundColor="white"
+       }
+    }
+  </script>
+
+
+    </body>
+</html>
