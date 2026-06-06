@@ -13,27 +13,46 @@
     <br><br>
 
     <button onclick="dislikeCount()">Dislike</button>
-    <span id="dislike">0</span>
+    <span id="dislike">0</span> <br><br>
+
+
+    <button onclick="b()">Reset</button>
 
     <script>
 
         var like = 0;
         var dislike = 0;
 
-        function likeCount()
+       
+
+     function likeCount()
         {
             like = like + 1;
 
             document.getElementById("like").innerHTML = like;
+           
         }
 
+        
+          
         function dislikeCount()
         {
             dislike = dislike + 1;
 
             document.getElementById("dislike").innerHTML = dislike;
         }
+           
+    
 
+        function b()
+         {
+             document.getElementById("like").innerHTML = 0;
+
+             document.getElementById("dislike").innerHTML = 0;
+         }
+
+  
+       
     </script>
 
 </body>

@@ -1,0 +1,42 @@
+<html>
+    <head> 
+
+        <style>
+            #d1
+            {
+                border: 2px solid;
+                width:350px;
+                height:185px;
+                
+            }
+          
+        </style>
+
+    </head>
+    <body> 
+ 
+            <div id="d1" >
+            
+             
+            </div> <br>
+
+                 <button onclick="red(event)"> ON </button> 
+                 <button onclick="white(event)"> OFF </button>
+        </body>
+
+
+        <script>
+              function red(a)
+              { 
+                        var f  = document.getElementById("d1") 
+                        f.style.backgroundColor='red'
+              }
+
+              function white(e)
+              {
+                console.dir(e)
+                var g = document.getElementById("d1")
+                g.style.backgroundColor="white"
+              }
+        </script>
+</html>
