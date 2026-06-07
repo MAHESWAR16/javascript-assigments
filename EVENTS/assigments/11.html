@@ -4,14 +4,15 @@
             #d1{
                 border: 2px solid;
                 width:250px;
-                height:185px;
+                height:205px;
                 margin:auto;
             }
-            button
+            button , #bulb
             {
                 display: block;
                 margin: auto;
             }
+           
         </style>
 
 
@@ -21,6 +22,7 @@
          
 
         <div id="d1">
+            <img  id = "bulb" src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQwNYRntjA236nu5EBbQWvsQ5AWz9Cgx6vOw&s" />
 
         </div>
         <br> 
@@ -31,28 +33,39 @@
               
 
               var img = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQwNYRntjA236nu5EBbQWvsQ5AWz9Cgx6vOw&s","https://media.geeksforgeeks.org/wp-content/uploads/ONbulb.jpg"]
+ 
+              var b = document.getElementById("bulb")
+             
+              function abc()
+              {
 
-            var f = document.createElement("img")
 
-           console.dir(f)
+                console.log(" hello")
 
-           f.src= img[0]
+                
 
-       
+                if(document.getElementById("d2").innerHTML === "OFF")
+              {
+                 document.getElementById("d2").innerHTML = "ON"
 
-           document.getElementById("d1").appendChild(f)
-         
+              b.src= img[1]
 
-           function abc()
-           {
-            alert("hello")
-               if(document.getElementById("d2").innerHTML ==="OFF")
-               {
-                 document.getElementById("d2").innerHTML === "ON"
-                 // document.getElementById("d1").appendChild()
-               }
-           }
+            console.dir(f)
+ 
+            
 
+              }
+              else
+              {
+                document.getElementById("d2").innerHTML = "OFF"
+                          b.src = img[0]
+              }
+
+
+              }
+
+
+               
           
         </script>
  
