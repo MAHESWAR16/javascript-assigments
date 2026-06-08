@@ -1,0 +1,72 @@
+<html>
+    <head> 
+           
+       <style>
+        div 
+        {
+            
+
+             width: 150px;
+             height: 280px;
+
+            margin:auto;
+            display:block
+            
+        }
+
+        .ed
+        {
+          width: 250px;
+          height: 250px;
+        }
+        
+
+       </style>
+        
+    </head>
+    <body> 
+
+        
+             
+            
+           
+
+
+            <table align="center"> 
+                <tr> 
+                    <td>
+                        <img onmouseenter="abc(event)" class="ed" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVMGcU5PwtRRIPElKlgSS-XcOte7dCqNYR7A&s" /></td>
+                    <td>
+                        <img onmouseenter="abc(event)" class="ed" src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5B5Yd5EXkvue8f7jyR0ikK-fcfyDnX9MoKQ&s" />
+                    </td>
+                    <td>
+                         <img onmouseenter="abc(event)" class="ed" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR41Gr_fIEJSpsTQm01ODaTSL9kNcKupetjMA&s" />
+
+                    </td>
+                </tr>
+            </table>
+            <div id="d2">
+
+            </div>
+            <script>
+                var choose = document.querySelectorAll("img")
+                console.log("choose", choose)
+
+                  var n = document.createElement("img")
+
+                  function abc(a)
+                  {
+                   
+                   console.log("a =" , a)
+                    var select = document.getElementById("d2")
+                    console.dir(select)
+                      n.src = a.target.src
+
+                      select.appendChild(n)
+                  }
+            </script>
+       
+     
+        
+    </body>
+</html>
