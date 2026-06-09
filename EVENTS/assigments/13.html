@@ -1,0 +1,65 @@
+<html>
+    <head> 
+
+        <style>
+            table
+            {
+              border: 2px solid;
+              width: 150 px;
+              
+            }
+            h1{
+                
+                display: inline;
+                margin: auto;
+            }
+
+        </style>
+
+    </head>
+    
+    <body>
+
+        <table align="center"> 
+
+
+            <tr>
+                <td>
+                    <h1 onclick="abc(0)">☆</h1>
+                    <h1 onclick="abc(1)">☆</h1>
+                    <h1 onclick="abc(2)">☆</h1>
+                    <h1 onclick="abc(3)">☆</h1>
+                    <h1 onclick="abc(4)">☆</h1>
+                    <h1 onclick="abc(5)">☆</h1>
+                </td>
+
+            </tr>
+              <tr>
+                <td> 
+                    <h1 id="d1">Rating :</h1>
+                </td>
+              </tr>
+        </table>
+           
+
+         <script>
+            var x = document.querySelectorAll("h1")
+
+            console.log("x=",x)
+           function abc(r)
+           {
+                
+            x[r].innerHTML = "⭐"
+
+        
+            
+        
+          
+           }
+            
+
+
+         </script>
+
+    </body>
+</html>
