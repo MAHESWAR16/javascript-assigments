@@ -1,0 +1,41 @@
+<html> 
+       <head> 
+
+
+        </head>
+
+        <body> 
+  
+            <table align="center" >
+                <tr>
+                    <td><h1>Add students</h1>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text"  id="d1"/>
+                        <button onclick="abc()"> Add students </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="d2"></td>
+                </tr>
+           
+                </table>
+            
+
+                <script>
+                    function abc()
+                    {
+                    var li = document.createElement("li")
+                    li.innerHTML = document.getElementById("d1").value
+         
+
+                    document.getElementById("d2").appendChild(li)
+
+                    }
+                </script>
+     
+        </body> 
+
+  
+ </html>       
