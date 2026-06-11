@@ -1,0 +1,75 @@
+<html>
+    <head> 
+             
+        <style>
+            div 
+            {
+                border: 2px solid;
+                width: 452px;
+                height: 259px;
+                margin: auto;
+                      
+            }
+        </style>
+    </head>
+    <body> 
+    
+
+
+
+        <div onclick="abc()" id="d1">
+
+        </div>
+        
+
+        <script> 
+
+        var images =["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmDpXglAt0d12uwI8kvWsKKYHhLsImPb5vgg&s",
+        "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG8HUM1WWyrEOX4Et29dlm8aZ2N3M2fTEceg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpMmhqZJ3oTeBk-5TY1BWLOIcLJdtkHwpEPg&s"]
+ 
+
+        var pic = document.createElement("img")
+
+        pic.src = images[0]
+
+        pic.style.width ="453px"
+
+        pic.style.height ="259px"
+         
+        document.getElementById("d1").append(pic)
+
+        var  i = 1
+
+        
+        function abc()
+        {
+           
+             pic.src = images[i]
+
+        pic.style.width ="453px"
+
+        pic.style.height ="259px"
+         
+        document.getElementById("d1").append(pic) 
+
+         i = i+1 
+
+        console.log(" i = " , i)
+         
+          
+        if( i === images.length)
+        {
+            i = 0
+        }
+
+        }
+
+        
+
+        
+        </script>
+
+    </body>
+</html>
