@@ -1,0 +1,44 @@
+<html>
+    <head> 
+        <style>
+        div{
+            border:2px solid;
+            width:350px ;
+            height: 250px; 
+            
+
+        } 
+
+        </style>
+    </head>
+    <body> 
+
+        <div id ="d1"> 
+
+        </div>
+  <br>
+        <button onclick="abc(event)">Red</button> 
+        <button onclick="abc(event)">skyblue</button>
+        <button onclick="abc(event)">yellow</button>
+        <button onclick="abc(event)">green</button>
+        <button onclick="abc(event)">orange</button>
+        <button onclick="abc(event)">Reset</button>
+
+        <script>
+              
+              function abc(a)
+              {
+                console.dir(a)
+                if(a.target.innerHTML === "Reset")
+              {
+                  document.getElementById("d1").style.backgroundColor =""
+              }
+              else 
+              {
+                   document.getElementById("d1").style.backgroundColor = a.target.innerHTML
+              }
+              }
+              
+        </script>
+    </body>
+</html>
