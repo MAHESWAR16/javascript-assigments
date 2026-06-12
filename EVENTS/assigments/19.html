@@ -1,72 +1,66 @@
 <html> 
     <head>
-
         <style> 
-            .bb{
-                border:2px solid;
-                width: 285px;
-                height:300px
+        .dd
+        {
+            border:2px solid ;
+            width:320px;
+            height:220px;
+            display:inline-block;
+          
+        }
 
-            }
         </style>
 
     </head>
-
-    <body>
-
-       <form onsubmit="a(event)">
-
-        <table align="center" cellpadding="10px"> 
-            <tr>
-                <td>
-                    <h1>Add Contact Cards</h1>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Name :</label>
-                    <input type="text"/> 
-                </td>
-            </tr>
-            <tr> 
-                <td>
-                    <label>Number :</label>
-                    <input type="number"/>
-                </td>
-            </tr>
-            <tr> 
-                <td>
-                    <button onclick="abc(event)">Submit</button>
-                </td>
-            </tr>
-        </table>
-
-       </form>
-     
-
-       
-
-        <script>
-
-            function a(d)
-            { 
-                d.preventDefault()
-            }
+    <body> 
 
 
-            function abc(bg)
-            {
+        <form onsubmit="abc(event)"> 
                
+            <table align="center" cellspacing="15px">
+                <tr> 
+                    <td> 
+                        <label>Full Name :</label>
+                        <input type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Number : </label>
+                        <input type="number" /> 
+                    </td>
+                </tr>
+                 <tr> 
+                    <td>
+                        <label>ENTER image URL :</label>
+                        <input type="url" /> 
+                    </td>
+                 </tr>
+                 <tr> 
+                    <td>
+                        <button>Submit</button>
+                    </td>
+                 </tr>
+            </table>
+        </form>
+
+      
+
+        <script> 
+            function abc(e)
+            {
+                e.preventDefault()
+                console.log("hello")
+
                 var d = document.createElement("div")
 
-                d.classList ="bb"
+                d.classList = "dd"
 
                 document.body.appendChild(d)
-
-
+                
             }
         </script>
 
-
-    </body>
+        </body>
 </html>
