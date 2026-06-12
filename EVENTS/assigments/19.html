@@ -1,11 +1,72 @@
 <html> 
-    <head> 
+    <head>
+
         <style> 
-            
+            .bb{
+                border:2px solid;
+                width: 285px;
+                height:300px
+
+            }
         </style>
 
     </head>
-    <body> 
+
+    <body>
+
+       <form onsubmit="a(event)">
+
+        <table align="center" cellpadding="10px"> 
+            <tr>
+                <td>
+                    <h1>Add Contact Cards</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Name :</label>
+                    <input type="text"/> 
+                </td>
+            </tr>
+            <tr> 
+                <td>
+                    <label>Number :</label>
+                    <input type="number"/>
+                </td>
+            </tr>
+            <tr> 
+                <td>
+                    <button onclick="abc(event)">Submit</button>
+                </td>
+            </tr>
+        </table>
+
+       </form>
+     
+
+       
+
+        <script>
+
+            function a(d)
+            { 
+                d.preventDefault()
+            }
+
+
+            function abc(bg)
+            {
+               
+                var d = document.createElement("div")
+
+                d.classList ="bb"
+
+                document.body.appendChild(d)
+
+
+            }
+        </script>
+
 
     </body>
 </html>
