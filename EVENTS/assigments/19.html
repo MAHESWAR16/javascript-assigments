@@ -7,7 +7,14 @@
             width:320px;
             height:220px;
             display:inline-block;
-          
+            margin: 5px;
+            
+        }
+        .d4{
+            width: 80px;
+            border-radius:50px;
+            height: 84px;
+            margin-left: 105px;
         }
 
         </style>
@@ -22,19 +29,25 @@
                 <tr> 
                     <td> 
                         <label>Full Name :</label>
-                        <input type="text" />
+                        <input type="text" id="d1" name="Fullname"/>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label>Number : </label>
-                        <input type="number" /> 
+                        <input type="number" id ="d2" name="Number"/> 
+                    </td>
+                </tr>
+                <tr> 
+                    <td> 
+                        <label>Email id :</label>
+                        <input type="email" id="E" name="Email : "
                     </td>
                 </tr>
                  <tr> 
                     <td>
                         <label>ENTER image URL :</label>
-                        <input type="url" /> 
+                        <input type="url" id ="d3"/> 
                     </td>
                  </tr>
                  <tr> 
@@ -45,18 +58,54 @@
             </table>
         </form>
 
-      
-
         <script> 
             function abc(e)
             {
                 e.preventDefault()
-                console.log("hello")
+             
 
                 var d = document.createElement("div")
 
                 d.classList = "dd"
 
+               console.dir(d)
+            
+              var img  = document.createElement("img")
+
+              img.src = document.getElementById("d3").value
+             
+              img.classList ="d4"
+
+
+              d.append(img) 
+
+              var select = document.getElementById("d1")
+              
+            var fn = document.createElement("h3")
+            fn.innerHTML = select.name + " :" + select.value
+
+            d.appendChild(fn)
+            
+              
+
+            var select1 = document.getElementById("d2") 
+
+            var num = document.createElement("h3")
+            num.innerHTML = select1.name + " :" + select1.value
+        
+            d.appendChild(num)
+       
+
+            var select2 = document.getElementById("E")
+
+            var email = document.createElement("h3") 
+            
+            email.innerHTML = select2.name + " : " + select2.value
+  
+            d.appendChild(email)
+             
+             
+            
                 document.body.appendChild(d)
                 
             }
