@@ -1,68 +1,86 @@
 <html> 
+    <head>
+        <style>
+            label,button
+            {
+             margin-left: 35px  
 
- <head> 
-    <style>
-       
-     
-       
-     
-    </style>
+            }
+            input
+            {
+                margin-left: 25px;
+            }
+        </style> 
 
 
- </head> 
+    </head> 
 
- <body>
-    <h1 style="margin-bottom: 0px">Simple Event Registration</h1>
-        <h4 style="margin-top: 0px">Fill out the form to register to our event</h4>
+    <body> 
 
-       <hr style="margin-top: 35px;">
-    <form style="margin-top: 55px;">
-        <table>
+        <h1 style="margin:0;">Simple Event Registration </h1>
+        <h3 style="margin:0;">Fill out the form to register to our event </h3> 
+        <hr style="margin-top: 65px;">
+   
+        <form> 
+           <table>
+            <tr> 
+                <td>
+                    <label>Name</label> 
+                    <input type="text"/> 
+                     <input type="text" /><br>
+                    <label style="margin-left: 102px;">Firstname</label> 
+                    <label style="margin-left: 120px;">lastname</label>
+                </td>
+            </tr>
 
 
             <tr> 
-            <td> 
-                <label style="margin-left: 25px;">Name</label>
-            </td>
-            <td>
-                 
-                <input type="text" style="margin-left: 25px; width:110px; height: 22px;" />  <br> 
-                <sub style="padding-left: 25px;">First Name</sub>
-            </td>
-                
-                
-            <td>
-                <input type="text" style="margin-left: 15px; height: 22px; width: 180px;"/> <br> 
-                <sub style="padding-left: 14px;">Last Name</sub>
-              
-            </td>
-        </tr>
-            
-        <tr>
-           <td>
-            <label >Title</label>
-           </td>
-           <td> 
-            <input type="text"/>
-           </td>
-        </tr>
-        </table>
-        
-    </form>
-    
-       
+                <td style="padding-top: 53px;"> 
+                      <label>Title</label> 
+                      <input type="text" style="width: 289px; margin-left: 38px;"/>
+                </td>
+            </tr>
 
-    
-    
+            <tr> 
+                <td style="padding-top: 53px;">
+                    <label>Company</label>
+                    <input type="text" style="margin-left: 5px;"/>
+                </td>
+            </tr>
+
+            <tr> 
+                <td style="padding-top: 53px;"> 
+                    <label>Email</label>
+                    <input type="email" style="margin-left:32px;" placeholder="Enter Email id"
+                </td>
+            </tr> 
+
+            <tr> 
+                <td style="padding-top: 53px;">
+                    <label> Phone Number </label>
+                    <input type="number" style="width:40px;"> -
+                    <input type="number" style="margin-left: 0px;">
+                </td>
+            </tr>
+            <tr> 
+                <td style="padding-top: 53px;">
+                    <label>Are you an exexisitng customer </label>
+                    <input type="radio" name="execisting customer" /> Yes 
+                    <input type="radio" name="execisitng customer" /> No
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-top: 53px;"> 
+                    <button>Register</button>
+
+                </td>
+            </tr>
+           </table>
+          
+        </form>
 
 
 
 
-    
-
-
-
- </body>
-
-
+    </body>
 </html>
