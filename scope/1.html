@@ -13,32 +13,47 @@ function abc()
 {
     var  i = 100  
     
-    j = j+ 34
 
-    i = i+34 
+    function xyz()
+    {
+        i = i+34 
+        j = j+34 
 
-    console.log("i =" , i)   
+        console.log("i:", i)
 
-    console.log("j=",j)
+        console.log("j:",j) 
+
+
+    }
+     
+    return xyz
 }
+
+var p = abc()
   
-abc() 
-abc()
-abc()
+console.log("p",p)
+ 
+p()
+p()
 
+//   var  j = 100 
+// function abc()
+// {
+//     var  i = 100  
+    
+//     j = j+ 34
+
+//     i = i+34 
+
+//     console.log("i =" , i)   
+
+//     console.log("j=",j)
+// }
   
-
-           
-
-
-
-
-
-
-
-
-
-
+// abc() 
+// abc()
+// abc() 
+// abc() 
 
 
 
