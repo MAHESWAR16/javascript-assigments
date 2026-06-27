@@ -12,47 +12,28 @@
 
                   <body> 
                    
-                    <div  id ="d1" style="border: 2px solid red; height: 50px;">
-
-
+                    <div  id ="dd" style="border: 2px solid red; height: 50px;">
                     </div>
-
-
-
-
-                    
+            
                   <script> 
-                        
-
                         var array = ["vidi","anusha","sai","jaya"]
 
-                      
+                       var a = document.getElementById("dd")
                         array.forEach(
-                            function(a)
+                            function(x,i)
                             {
-                               var x = document.createElement("button") 
-                               x.innerHTML = a 
-                               x.style.margin= 10
+                               var y = document.createElement("button") 
+                               y.innerHTML = x
+                               y.style.margin= 10 
+                               y.onclick = function() 
+                                            {
+                                                alert(x)
+                                            }
 
-                            document.getElementById("d1").append(x)
+                            a.append(y)
                             }
                         )
                       
-                     
-
-                
-
-                   
-
-             
                   </script>
-
-
-                   
-
-
-
-
-                 
                  </body>
 </html>
