@@ -1,0 +1,39 @@
+<html> 
+
+    <head>
+
+        <style> 
+
+
+
+        </style>
+
+    </head>
+
+                  <body> 
+                   
+                    <div  id ="dd" style="border: 2px solid red; height: 50px;">
+                    </div>
+            
+                  <script> 
+                        var array = ["vidi","anusha","sai","jaya"]
+
+                       var a = document.getElementById("dd")
+                        array.forEach(
+                            function(x,i)
+                            {
+                               var y = document.createElement("button") 
+                               y.innerHTML = x
+                               y.style.margin= 10 
+                               y.onclick = function() 
+                                            {
+                                                alert(x)
+                                            }
+
+                            a.append(y)
+                            }
+                        )
+                      
+                  </script>
+                 </body>
+</html>
