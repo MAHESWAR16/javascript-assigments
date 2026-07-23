@@ -1,0 +1,83 @@
+<html> 
+    <head>     
+    <style> 
+    #dd,#dt
+    { 
+        border:2px solid ; 
+        padding:10px 
+    }
+    </style>
+</head>
+    <body> 
+        <div id ="dd">       </div>
+
+        <div id="dt">        </div>
+
+        <script> 
+            //    var ar = ["vidhi" ,"anusha","sai","jaya"] 
+
+            //   var d = document.getElementById("dd") 
+
+            //    ar.forEach( 
+            //     function(a,i,m)
+            //     {
+            //         var b = document.createElement("button")  
+
+            //         b.innerHTML = ar[i] 
+
+
+            //         b.onclick=function()
+            //          { 
+            //           alert(i)
+            //         }
+                   
+
+            //        d.appendChild(b)
+
+            //     }
+            //    ) 
+
+            //   var n = document.getElementById("dt")
+
+            //    for(var j = 0 ; j<=ar.length-1 ; j=j+1)
+            //    {
+                
+            //      var k = document.createElement("button")
+
+            //      k.innerHTML = ar[j]
+
+            //      k.onclick = function(){ 
+            //         alert(ar[j])
+            //      }
+
+            //      n.appendChild(k)
+            //    } 
+
+
+               var h
+               var array = [] 
+
+
+               for(var h = 1 ; h<=5 ; h=h+1) 
+               { 
+                array.push(function(){ 
+                    console.log(h)
+                }) 
+
+            
+                
+               }
+
+               console.log(array)
+
+               array[0]() 
+
+
+               console.log("h =" , h) 
+
+
+              
+              
+        </script>
+    </body> 
+</html>
