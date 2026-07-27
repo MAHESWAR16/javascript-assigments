@@ -1,30 +1,66 @@
 <html>
     <head> 
-        <style> 
-       
-        </style>
-    </head> 
-
+    </head>
         <body> 
-        </body> 
 
+              <input type="text" id="d1"> 
 
+            <button onclick="abc()"> Add Todo</button>
+        
+
+            <ul id="d2"> 
+
+            </ul>
+
+          </body>
         <script> 
-        var i = 1 
 
-        function inc() 
+        
+          var array = ["apple","banana","mango","orange"]
+
+         
+        function abc() 
         { 
-            var j = 1 
-            i++ 
-            j++ 
-            console.log("i",i)
-            console.log("j",j)
-        }
-       inc() 
 
-       inc()
+        var receive = document.getElementById("d1").value
+
+        console.log("receive",receive) 
+
+        array.push(receive)
+                 
+
+        genui()
+      
+        }
+          
+
+        function genui()
+        {
+            document.getElementById("d2").innerHTML=""
+            array.forEach(
+                function(a,i)
+                { 
+                    var newli = document.createElement("li")
+                    newli.innerHTML = a 
+
+                    var delbutton = document.createElement("button")
+                        delbutton.innerHTML ="Del"
+                    document.getElementById("d2").appendChild(newli)
+
+                    newli.appendChild(delbutton) 
+
+                    delbutton.onclick =function(){ 
+                      array.splice(i,1) 
+
+                      genui()
+                    }
+                }
+            )
+        }
         
-        
+     
+       
+      
 
         </script>
 </html>
