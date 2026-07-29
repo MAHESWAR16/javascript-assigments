@@ -1,66 +1,64 @@
 <html>
     <head> 
+        <style> 
+          #d1 li img
+          { 
+            width:200px ;
+            display: flex;
+        
+    
+          }
+
+        </style>
+
     </head>
-        <body> 
+    <body> 
+        <ul id="d1"> 
+            
+        </ul>
 
-              <input type="text" id="d1"> 
+        <script>
+ 
+              fetch("https://fakestoreapi.com/products")
 
-            <button onclick="abc()"> Add Todo</button>
-        
+              .then(function(res){
+                res.json().then(
+                    function(data)
+                    { 
+                        console.log("data = ", data) 
 
-            <ul id="d2"> 
-
-            </ul>
-
-          </body>
-        <script> 
-
-        
-          var array = ["apple","banana","mango","orange"]
-
-         
-        function abc() 
-        { 
-
-        var receive = document.getElementById("d1").value
-
-        console.log("receive",receive) 
-
-        array.push(receive)
-                 
-
-        genui()
-      
-        }
-          
-
-        function genui()
-        {
-            document.getElementById("d2").innerHTML=""
-            array.forEach(
-                function(a,i)
-                { 
-                    var newli = document.createElement("li")
-                    newli.innerHTML = a 
-
-                    var delbutton = document.createElement("button")
-                        delbutton.innerHTML ="Del"
-                    document.getElementById("d2").appendChild(newli)
-
-                    newli.appendChild(delbutton) 
-
-                    delbutton.onclick =function(){ 
-                      array.splice(i,1) 
-
-                      genui()
+                        data.forEach( 
+                            function(a)
+                            {
+                                var nli = document.createElement("li")
+                                nli.innerHTML = a.title 
+                                var img = document.createElement("img")
+                                img.src=a.image
+                                var price = document.createElement("h1")
+                                price.innerHTML = a.price
+                                nli.appendChild(img)
+                                nli.appendChild(price)
+                                document.getElementById("d1").appendChild(nli)
+                            }
+                        )
                     }
+                )
+              })      
+
+              .catch(
+                function()
+                {
+                    console.log("sar sare le eno eno anukuntam ")
                 }
-            )
-        }
-        
-     
+              ) 
+
+              console.log("last line")
+         
        
-      
+
+
 
         </script>
+
+    </body>
 </html>
