@@ -1,92 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <style> 
-   * 
-   { 
-    font-family:Arial, Helvetica, sans-serif
-   }
-   .header 
-   { 
-     /* border:2px solid ;   */
-    width:80% ;
-    margin: 0px auto;
+<html>
+    <head> 
+        <style> 
+          #d1 li img
+          { 
+            width:200px ;
+            display: flex;
+        
     
-   } 
-   .logo 
-   { 
-    /* border:1px solid ;  */
-    padding:5px ; 
-    width:50% ; 
-    display:inline-block  ;
-    box-sizing: border-box ;
-    margin-right: -4px;
-    vertical-align:middle; 
-    
-   } 
-   .menubar 
-   { 
-    /* border:1px solid ;  */
-    padding:5px ; 
-    width:50% ; 
-    display:inline-block ;
-    box-sizing: border-box;
-    margin-right:-4px;
+          }
 
-   } 
-   .logo i 
-   { 
-    font-size:2.6em;
-    
-   } 
-   .logo h1 
-   { 
-    display: inline-block;
-    font-weight: 1.5em; 
-    
-    
-   }
-   .menubar ul li 
-   { 
-        display: inline-block ; 
-        padding:10px 15px  ; 
-        color:blue ; 
-        border-radius: 5px;
-   } 
-   .menubar ul 
-   { 
-    text-align: center ;
-   }
-   .menubar ul li:first-child 
-   {
-    background-color:blue;
-    color:aliceblue
-   }
-    
-       
-    </style>
-</head>
-<body>
-    
-   <div class="header"> 
-    <div class="logo">
-        <i class="bi bi-bootstrap-fill"></i> 
-        <h1>SimpleHeader</h1>
-    </div>
-    <div class="menubar">
-        <ul> 
-            <li>Home</li> 
-            <li>Features</li> 
-            <li>Pricing</li>
-            <li>Faqs</li>
-            <li>About</li>
+        </style>
+
+    </head>
+    <body> 
+        <ul id="d1"> 
+            
         </ul>
-    </div>
-   </div>
+
+        <script>
+ 
+              fetch("https://fakestoreapi.com/products")
+
+              .then(function(res){
+                res.json().then(
+                    function(data)
+                    { 
+                        console.log("data = ", data) 
+
+                        data.forEach( 
+                            function(a)
+                            {
+                                var nli = document.createElement("li")
+                                nli.innerHTML = a.title 
+                                var img = document.createElement("img")
+                                img.src=a.image
+                                var price = document.createElement("h1")
+                                price.innerHTML = a.price
+                                nli.appendChild(img)
+                                nli.appendChild(price)
+                                document.getElementById("d1").appendChild(nli)
+                            }
+                        )
+                    }
+                )
+              })      
+
+              .catch(
+                function()
+                {
+                    console.log("sar sare le eno eno anukuntam ")
+                }
+              ) 
+
+              console.log("last line")
+         
        
-</body>
+
+
+
+        </script>
+
+    </body>
 </html>
