@@ -1,64 +1,99 @@
-<html>
-    <head> 
+<html> 
+    <head>
         <style> 
-          #d1 li img
-          { 
-            width:200px ;
-            display: flex;
-        
-    
-          }
+       .xyz b 
+       {
+        border:2px solid
+       } 
+
+       input[type="text"]
+       {
+        border:2px solid greenyellow
+       }
+
+       li:nth-child(3n+1)
+       {
+        background-color: burlywood;
+       }
 
         </style>
-
     </head>
-    <body> 
-        <ul id="d1"> 
+    <body>
+
+         <div> 
+            hello edupoly
+         </div>
+             
+
+         <b>Praveen</b>
+
+               <ul>
+                <li>DOSA</li>
+                <li>IDLY</li>
+                <li>Pongal</li>
+                <li>vada</li>
+                <li>sambar</li>
+                <li>Poori</li>
+                <li>Chapathi</li>
+                <li>Parota</li>
+               </ul>
+
+        <input type="text"> 
+        <input type="password">
+        
+        <div class="xyz">
+
+            <b> india </b> 
+
+            <ul>
+                <li>
+                    <b>Srilanka</b>
+                </li>
+            </ul>
+
+            <b>States</b>
+            <b>Countires</b>
             
-        </ul>
+            
+            </div>
 
-        <script>
- 
-              fetch("https://fakestoreapi.com/products")
+             <div class="xyz">
 
-              .then(function(res){
-                res.json().then(
-                    function(data)
-                    { 
-                        console.log("data = ", data) 
+            <b>usa</b> 
 
-                        data.forEach( 
-                            function(a)
-                            {
-                                var nli = document.createElement("li")
-                                nli.innerHTML = a.title 
-                                var img = document.createElement("img")
-                                img.src=a.image
-                                var price = document.createElement("h1")
-                                price.innerHTML = a.price
-                                nli.appendChild(img)
-                                nli.appendChild(price)
-                                document.getElementById("d1").appendChild(nli)
-                            }
-                        )
-                    }
-                )
-              })      
+            <ul>
+                <li>
+                    <b>mexico</b>
+                </li>
+            </ul>
 
-              .catch(
-                function()
-                {
-                    console.log("sar sare le eno eno anukuntam ")
-                }
-              ) 
+            <b>States</b>
+            <b>Countires</b>
+            
+            
+            </div>
+             
+            
+             <div>
 
-              console.log("last line")
-         
-       
+            <b>austrailia</b> 
+
+            <ul>
+                <li>
+                    <b>switzerland</b>
+                </li>
+            </ul>
+
+            <b>States</b>
+            <b>Countires</b>
+            
+            
+            </div>
 
 
-
-        </script>
-
+            <b>Srilanka</b>
+                   
+            
+        
     </body>
 </html>
