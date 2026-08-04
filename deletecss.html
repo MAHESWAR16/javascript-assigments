@@ -7,32 +7,26 @@
 </head>
 <body>
    <script> 
-           var ob1 = 
-           { 
-            firstname:"praveen" ,
-            lastname :"gubbala", 
-            gender:"male",
-            fullname:""
-           }
-
-             var ob2 = 
-           { 
-            firstname:"moksha" ,
-            lastname :"gubbala", 
-            gender:"female",
-            fullname:""
-           }
-
-
-           function fullname()
-           { 
-            ob.fullname = ( ob.gender === "male" ) ? `Mr.${ob.firstname} ${ob.lastname}` : `Miss.${ob.firstname}${ob.lastname}`
-           }
-
-           ob1.fullname()
+              
+              var ob1 = 
+              { 
+                firstname:"praveen",
+                lastname:"gubbala" , 
+                gender:"male"
+              }
+     
+         function abc(a,b,c,d)
+         { 
+            this.lastname ="G"
+            console.log("hello", this,a,b,c,d)
+         }
            
 
+           abc()
 
+           abc.call(ob1,10,20,30,40)
+
+           
 
    </script>
 </body>
