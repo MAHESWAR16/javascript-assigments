@@ -1,36 +1,39 @@
-<html> 
-    <head> 
-        <style> 
-        #d1 
-        { 
-            width:450px;
-            height:500px;
-            border:2px solid ;
-            border-radius: 10px;
-            text-align: center;
-            
-            
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script> 
+           var ob1 = 
+           { 
+            firstname:"praveen" ,
+            lastname :"gubbala", 
+            gender:"male",
+            fullname:""
+           }
 
-        }
-        #d2 
-        {
-            width:100px;
-            height:200px;
-            border:2px solid ;
-            border-radius: 10px;
-            display: inline-block;
-            position:absolute ;
-            left: 50%;
-            top:50% ;
-           transform: translate((-50%,-50%));
-            
-        }
+             var ob2 = 
+           { 
+            firstname:"moksha" ,
+            lastname :"gubbala", 
+            gender:"female",
+            fullname:""
+           }
 
-        </style>
-    </head>
-    <body> 
-        <div id="d1"> 
-            <div id="d2"></div>
-        </div>
-    </body>
+
+           function fullname()
+           { 
+            ob.fullname = ( ob.gender === "male" ) ? `Mr.${ob.firstname} ${ob.lastname}` : `Miss.${ob.firstname}${ob.lastname}`
+           }
+
+           ob1.fullname()
+           
+
+
+
+   </script>
+</body>
 </html>
