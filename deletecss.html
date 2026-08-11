@@ -4,37 +4,29 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
- <style>
-   #d1 
-   { 
-      border:2px solid ;
-      width:50% ;
-      height:50px
-   }
-
- </style>
-   
 </head>
 <body>
+   <script>
+      class fooditem
+      { 
+         itemname;
+         price;
+         qunatity;
+         preptime ;
+         constructor(im,p,q,pt)
+         {
+           this.itemname=im 
+           this.price=p 
+           this.qunatity = q 
+           this.preptime =pt 
+         }
 
-   
-      
+      }
 
-   
-
-   <script> 
-   var c = "hell0"
-
-      
+      var item1 = new fooditem("vegbirynai",250,"2kg","2hours")
+      var item2 = new fooditem("dhumbiryani",500,"2kg")
+      console.log(item1)
+      console.log(item2)
    </script>
- 
-
-
-
-        
-
-
-
-
 </body>
 </html>
