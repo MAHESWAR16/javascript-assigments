@@ -13,20 +13,33 @@
          price;
          qunatity;
          preptime ;
-         constructor(im,p,q,pt)
+         discount
+         constructor(im,p,q,pt,d)
          {
-           this.itemname=im 
-           this.price=p 
+           this.itemname = im 
+           this.price = p 
            this.qunatity = q 
-           this.preptime =pt 
+           this.preptime = pt 
+           this.discount = d 
+         } 
+
+         finalprice()
+         {
+            var totalprice = this.price-(this.price*40/100) 
+
+            return totalprice
+
+            
          }
 
       }
 
-      var item1 = new fooditem("vegbirynai",250,"2kg","2hours")
-      var item2 = new fooditem("dhumbiryani",500,"2kg")
+      var item1 = new fooditem("vegbirynai",250,"2kg","2hours",40)
+      var item2 = new fooditem("dhumbiryani",500,"3kg","3 hours",40)
       console.log(item1)
       console.log(item2)
+      console.log(item1.finalprice())
+      console.log(item2.finalprice())
    </script>
 </body>
 </html>
