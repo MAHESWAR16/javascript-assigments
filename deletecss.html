@@ -1,40 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
- <style>
-   #d1 
-   { 
-      border:2px solid ;
-      width:50% ;
-      height:50px
-   }
+<html>
+  <head>  </head> 
 
- </style>
-   
-</head>
-<body>
+    <body> 
 
-   
+      <script> 
+             
+             class fooditem
+             { 
+                      title ; 
+                      price ; 
+                      foodtype ; 
+                      quantity ; 
+                      preptime ;
+                      discount ; 
+
+                      constructor(t,p,type,q,time,d)
+                      {
+                       this.title = t ; 
+                       this.price = p ; 
+                       this.foodtype = type ; 
+                       this.quantity = q ; 
+                       this.preptime = time ;
+                       this.discount = d
+                      } ; 
+                
+
+                      getfinalprice()
+                      { 
+                        var finalPrice =this.price - this.price*0.01*this.discount 
+
+                        return finalPrice
+                      }
+
+
+
+             }
       
+      var item1 = new fooditem("biryani",340,"non-veg","1packet","2hours",10)
+       
+      var item2 = new fooditem("machuria",780,"veg","1packet","1 hours",20)
 
-   
-
-   <script> 
+      var item3 = new fooditem("tea",16,"veg","1 cup","10min",10)
 
 
       
-   </script>
- 
+      console.log(item1.getfinalprice())
+      
+      console.log(item3.getfinalprice())
+
+      console.log(item2.getfinalprice())
+      
+              
+
+      </script>
 
 
 
-        
+    </body>
 
-
-
-
-</body>
 </html>
