@@ -9,14 +9,33 @@
     table 
     {
         border:2px solid ; 
-        width:1000px ;
+        width: 100%;
+    
         border-collapse: collapse;
-        
     }
-    th 
+    th ,tr ,td
     { 
-        border:2px solid ;        
+        border:2px solid ;  
+        padding: 12px;      
     }
+          
+    td:nth-child(n+2)
+    { 
+      text-align: center;
+    }
+   tbody tr:nth-child(3n+1)
+   { 
+    background-color: rgb(137, 146, 200);
+   }
+   tbody tr:nth-child(even)
+   { 
+    background-color: rgba(137, 43, 226, 0.42);
+   }
+   tbody tr:nth-child(2n+3)
+   {
+    background-color: aqua;
+   }
+
     
     
 
@@ -45,6 +64,7 @@
             <td>Yes </td>
             <td>YES</td>
          </tr>
+
         <tr> 
             <td>BoX Shadow</td>
             <td>Yes </td>
