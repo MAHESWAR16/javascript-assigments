@@ -1,48 +1,68 @@
 <html>
+  <head> 
 
-  <head>    </head> 
+    <style> 
+    .ss 
+    {
+      width:70px ;
+      height:70px;
+      
+    }
 
-    <body> 
+    
 
-      <script> 
-           
-           
-        console.log(this)
+    </style>
+  </head>
+  <body> 
+    <ul id="products">
+
+    </ul>
+
+ 
+     <script>
+     var f = fetch('https://fakestoreapi.com/products').then(
+        function(products)
+        {
+          products.json().then(
+            function(data)
+            {
+               console.log("data =",data)
+               data.forEach(
+                function(a,i)
+                {
+                  console.log("i= ",i,"a=",a)
+                
+                  var nli = document.createElement("li")
+              nli.innerHTML= a.title 
+
+              var newimg = document.createElement("img")
+              newimg.src= a.image
+              newimg.className="ss"
 
 
-         function abc()
-         {
-          console.log(this)
-         }
-     
-         abc()
-
-         new abc()
-
-
-   
-
-
-
-
-
-
-
-
-             
-
-             
-
-                  
+              var price = document.createElement("li")
+              price.innerHTML = a.price
               
+            document.getElementById("products").appendChild(nli)
+            document.getElementById("products").appendChild(newimg)
+             document.getElementById("products").appendChild(price)
 
-      </script>
+              }
+              
+                
+               );
+            }
+          )
+        }
+      ).catch( 
+        function()
+        {
+          console.log("hello")
+        }
+      )
 
 
-
-
-
-
+      console.log("f=",f)
+     </script>
     </body>
-
 </html>
