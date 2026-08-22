@@ -1,0 +1,107 @@
+<script>
+//     function abc(a,b)
+// { 
+
+//    return  Promise.resolve(a+b) // here we converted synchronous function into asynchrnous function . 
+ 
+// }
+ 
+// var g = abc(10,20)
+// console.log("g=",g)
+
+// g.then(function(result)
+// { 
+//   console.log("result=",result)
+// })
+
+// console.log("hello")
+// console.log("hi") 
+
+
+
+function abc(a,b)
+{ 
+
+   return  Promise.resolve(a+b)
+ 
+}
+ 
+var g = abc(10,20)
+console.log("g=",g)
+
+g.then(function(result)
+{ 
+  console.log("result=",result) 
+
+  return "hello"
+})
+
+console.log("g=",g)
+console.log("india")
+
+
+
+// Then what does return "hello" do?
+
+// Thisis the important part.
+
+// .then() itself returns a new Promise.
+
+// So you can do:
+
+// var h = g.then(function(result) {
+//     console.log("result=", result);
+//     return "hello";
+// });
+
+// g                         h
+// ↓                         ↓
+// Promise                   Promise
+// ┌─────────────┐           ┌─────────────┐
+// │ value = 30  │           │ value =     │
+// └─────────────┘           │ "hello"     │
+//                           └─────────────┘
+
+
+// now g has 30 , h has hello  
+
+
+function abc(a, b) {
+    return Promise.resolve(a + b);
+}
+
+var g = abc(10, 20);
+
+console.log("g=", g);
+
+var h = g.then(function(result) {
+    console.log("result=", result);
+
+    return "india"
+});
+
+console.log("g=", g);
+console.log("h=", h);
+
+// g= Promise {<fulfilled>: 30}
+
+// g= Promise {<fulfilled>: 30}
+
+// h= Promise {<fulfilled>: "hello"}
+
+
+
+//     A Promise is not changed when you return another value from .then(); .then() creates and returns a new Promise containing that returned value.
+
+// This is the foundation of Promise chaining: 
+
+
+// example 
+// g
+// .then(...)
+// .then(...)
+// .then(...)
+
+// Each .then() can produce a new Promise.
+
+</script>
