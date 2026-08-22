@@ -1,26 +1,16 @@
 <html>
 
-  <head>    </head> 
+<head> 
+    <style> 
 
-    <body> 
-
-      <script> 
-           
-           
-        console.log(this)
-
-
-         function abc()
-         {
-          console.log(this)
-         }
-     
-         abc()
-
-         new abc()
-
-
-   
+    </style>
+</head>
+<body> 
+ <script>
+ 
+    var p = fetch('https://fakestoreai.com/products')
+ 
+     console.log("p=",p)
 
 
 
@@ -29,20 +19,117 @@
 
 
 
-             
-
-             
-
-                  
-              
-
-      </script>
 
 
 
 
+ 
+
+ 
+function abc(a,b)
+{ 
+
+   return  Promise.resolve(a+b)
+ 
+}
+ 
+var g = abc(10,20)
+console.log("g=",g)
+
+g.then(function(result)
+{ 
+  console.log("result=",result) 
+
+  return "hello"
+})
+
+console.log("g=",g)
+console.log("hello")
+console.log("hi")
 
 
-    </body>
+
+ 
+
+    
+  
+//    function getAllProducts()
+//    {
+//     fetch("https://fakestoreapi.com/products")
+
+//     .then(
+//       function(res)
+//       { 
+//         console.log("res= ", res)
+//       res.json().then(
+//         function(data)
+//       { 
+//        return Promise.resolve(data)
+//       }
+//     )
+//     }
+//   )
+//       .catch(
+//         function(err)
+//   { 
+//     console.log(err)
+//   }
+//   )
+//    } 
+ 
+
+//   getAllProducts().then(
+//     function(products)
+// {
+//   console.log(products)
+// }
+// )
+ 
+
+
+// function getAllProducts()
+//    {
+//     fetch("https://fakestoreapi.com/products")
+//     .then(function(res){ 
+//       res.json().then(function(data){ 
+//         return Promise.resolve(data)
+//       })
+//     })
+//       .catch(function(err)
+//   { 
+//     console.log(err)
+//   })
+//    } 
+ 
+//   getAllProducts().then(function(products)
+// {
+//   console.log(products)
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
 
 </html>
