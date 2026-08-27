@@ -1,113 +1,117 @@
-<html>
+<html> 
 
 <head> 
+ 
     <style> 
 
+
     </style>
+
 </head>
-<body> 
- <script>
+
+<body>   
+
+    <h1 id="d4">Welcome to Edupoly </h1> 
+
+    <button onclick="b()">Change the content </button>
+
+
+    <h1 id="d1"> hello pravven</h1>
+
+  <button onclick="abc()"> 
+    change the color
+  </button>  
+
+
+  <button onclick="xyz()">Change the color of paragraphs </button>
+
+
+  <p> 
+    It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+  </p>
+
+  <p> 
+  t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable 
+  </p>
+
+  <p> 
+    All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+  </p>
+
+
+   <script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var e = document.getElementById("d4")
+    function b()
+  { 
+
+    if(e.innerHTML === "Thank you")
+  { 
+    e.innerHTML = "Welcome To Edupoly"
+  } 
+   else 
+   { 
+            e.innerHTML = "Thank you"
+   }
+  } 
+
+  console.dir(e)
  
-    var p = fetch("https://fakestoreapi.com/products")
- 
-     console.log("p=", p)
-    
+   
+  
 
-    
 
-      console.log("hello")
-
-      console.log("india")
-
-      console.log("mew world")
 
 
   
-       class employee
-       { 
-        name;
-        phoneNumber;
-        Emailadress; 
 
-        constructor(a,b,c)
-        {
-            this.name =a ; 
-            this.phoneNumber = b 
-            this.Emailadress = c 
-
-
-          getAge()
-          {
-            alert("hello")
-          }
-        }
-
-
-       }
-        
-       var employee1 =new employee("mahesh","mahesh.ce94@gmail.com",9856478546)
-      
-      console.log("employee1",employee1)
-     
-     employee1.c(56)
-
-
- 
-
+   var  x = document.getElementById("d1")
+   
+   console.dir(x)
     
+   function abc()
+   { 
+    x.style.color ="red"
+   }
   
-//    function getAllProducts()
-//    {
-//     fetch("https://fakestoreapi.com/products")
+   var p = document.getElementsByTagName("p")
 
-//     .then(
-//       function(res)
-//       { 
-//         console.log("res= ", res)
-//       res.json().then(
-//         function(data)
-//       { 
-//        return Promise.resolve(data)
-//       }
-//     )
-//     }
-//   )
-//       .catch(
-//         function(err)
-//   { 
-//     console.log(err)
-//   }
-//   )
-//    } 
- 
+   console.dir(p)
 
-//   getAllProducts().then(
-//     function(products)
-// {
-//   console.log(products)
-// }
-// )
- 
+   var color =["red","blue","green"]
 
+ function xyz(e,i)
+ { 
+     for(var i = 0 ; i<=p.length-1 ; i=i+1)
+     { 
+        p[i].style.color=color[i]
+     } 
+ }
 
-// function getAllProducts()
-//    {
-//     fetch("https://fakestoreapi.com/products")
-//     .then(function(res){ 
-//       res.json().then(function(data){ 
-//         return Promise.resolve(data)
-//       })
-//     })
-//       .catch(function(err)
-//   { 
-//     console.log(err)
-//   })
-//    } 
- 
-//   getAllProducts().then(function(products)
-// {
-//   console.log(products)
-// })
+  
 
 
 
@@ -125,7 +129,12 @@
 
 
 
-    </script>
+
+   </script>
+
+
+
+
 
 
 
@@ -133,6 +142,4 @@
 
 
 </body>
-
-
 </html>
