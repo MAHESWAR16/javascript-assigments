@@ -5,123 +5,371 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-     
-    <ol id="d1">
+<body> 
 
-    </ol>
+
+  company:<input type ="text" id="c"> <br>
+  Experience:<input type ="text" id="E"> <br>
+  Salary:<input type ="text" id="s"> <br>
+
+  <button onclick="addexp()">Add Experience</button>
+
+
+ 
+    <table border="1px solid" width="50%" align="center"> 
+       
+        <thead> 
+            
+            <th>Sno</th>
+             <th onclick="sortByCompany()">Company</th>
+             <th onclick="sortByExp()">Experience</th>
+             <th onclick="sortBySalary()">Salary</th>
+            </thead>
+ 
+            <tbody id="g1"> 
+
+
+               
+            </tbody>
+
+
+    </table>
+
+
+
+
+
 
  
 
-    <button onclick="asc()">Sort by Ascending order </button>
-
-    <button onclick="des()"> Sort by Descending Order</button>
 
     <script> 
-  var students = ["bavani","anurag",'mahesh',"kiran","pritish","naresh"]
+
+           var myexp =[ 
+                         {
+                            company:"tcs",
+                            exp:2,
+                            salary:23499
+                         }   
+                         , 
+                         {
+                            company:"infosys",
+                            exp:5,
+                            salary:43299
+                         } 
+                         ,
+                         {
+                            company:"accenture",
+                            exp:3,
+                            salary:36000
+                         } 
+                         ,
+                         {
+                            company:"igate",
+                            exp:6,
+                            salary:35499
+                         }
+                         , 
+                         {
+                            company:"capgemini",
+                            exp:10,
+                            salary:85000
+                         }   
+                         ,
+                         {
+                            company:"whipro",
+                            exp:8,
+                            salary:75000
+                         }   
+                         ,
+                         {
+                            company:"apple",
+                            exp:2,
+                            salary:23499
+                         }   
+                         ,
+                         {
+                            company:"dell",
+                            exp:2,
+                            salary:75000
+                         }               
+                      ]
+ 
+      myexp.forEach
+      ( 
+           function(b,o)
+           { 
+
+            var  newtr = document.createElement("tr")
+
+            var slnotd= document.createElement("td")
+            slnotd.innerHTML = o+1
+             
+            var comptd = document.createElement("td")
+            comptd.innerHTML =b.company 
+
+            var exptd = document.createElement("td")
+            exptd.innerHTML = b.exp 
+
+            var salarytd = document.createElement("td")
+            salarytd.innerHTML = b.salary
+
+            newtr.appendChild(slnotd)
+            newtr.appendChild(comptd)
+            newtr.appendChild(exptd)
+            newtr.appendChild(salarytd)
       
-  students.forEach( 
-    function(a)
-    {
-        var nli = document.createElement("li")
-        nli.innerHTML = a 
-
-        document.getElementById("d1").appendChild(nli)
-    }
-  )
-
-  function des() 
-  { 
-
-   students.sort(function(a,b)
-
-    { 
-        if(a>b)
-    { 
-        return -1
-    }
-    else 
-     { 
-        return 1 
-     }
- 
-    }
-    )
+            document.getElementById("g1").appendChild(newtr)
+           }
+      )
   
-    console.log("students =",students) 
+
+      function sortByCompany()
+      { 
+
+          myexp.sort( 
+            function(a,b)
+            { 
+                 
+                if(a.company>b.company)
+            {
+                 return 1
+            }
+            else 
+            { 
+                return -1 
+            }
+
+            }
+          )
+
+          console.log(myexp)  
 
 
-    document.getElementById("d1").innerHTML =""
 
-   students.forEach( 
-    function(a)
-    {
-        var nli = document.createElement("li")
-        nli.innerHTML = a 
+          document.getElementById("g1").innerHTML=""
+          
 
-        document.getElementById("d1").appendChild(nli)
-    }
-  )
-    
+           myexp.forEach
+      ( 
+           function(b,o)
+           { 
 
-  }
+            var  newtr = document.createElement("tr")
+
+            var slnotd= document.createElement("td")
+            slnotd.innerHTML = o+1
+             
+            var comptd = document.createElement("td")
+            comptd.innerHTML =b.company 
+
+            var exptd = document.createElement("td")
+            exptd.innerHTML = b.exp 
+
+            var salarytd = document.createElement("td")
+            salarytd.innerHTML = b.salary
+
+            newtr.appendChild(slnotd)
+            newtr.appendChild(comptd)
+            newtr.appendChild(exptd)
+            newtr.appendChild(salarytd)
+      
+            document.getElementById("g1").appendChild(newtr)
+           }
+      )
+
+      } 
 
 
-   function asc() 
-  { 
+      function sortByExp() 
+      { 
 
-   students.sort(function(a,b)
+             myexp.sort( 
+            function(a,b)
+            { 
+                 
+                if(a.exp>b.exp)
+            {
+                 return 1
+            }
+            else 
+            { 
+                return -1 
+            }
 
-    { 
-        if(a>b)
-    { 
-        return 1
-    }
-    else 
-     { 
-        return -1 
-     }
- 
-    }
+            }
+          )
 
-    )
- 
-    console.log("students =", students)
+          console.log(myexp) 
+
+
+
+          document.getElementById("g1").innerHTML=""
+          
+
+           myexp.forEach
+      ( 
+           function(b,o)
+           { 
+
+            var  newtr = document.createElement("tr")
+
+            var slnotd= document.createElement("td")
+            slnotd.innerHTML = o+1
+             
+            var comptd = document.createElement("td")
+            comptd.innerHTML =b.company 
+
+            var exptd = document.createElement("td")
+            exptd.innerHTML = b.exp 
+
+            var salarytd = document.createElement("td")
+            salarytd.innerHTML = b.salary
+
+            newtr.appendChild(slnotd)
+            newtr.appendChild(comptd)
+            newtr.appendChild(exptd)
+            newtr.appendChild(salarytd)
+      
+            document.getElementById("g1").appendChild(newtr)
+           }
+      )
+      } 
+
+
+      function sortBySalary() 
+      { 
+        
+         myexp.sort( 
+            function(a,b)
+            { 
+                 
+                if(a.salary>b.salary)
+            {
+                 return 1
+            }
+            else 
+            { 
+                return -1 
+            }
+
+            }
+          )
+
+          console.log(myexp) 
+
+
+
+
+
+          document.getElementById("g1").innerHTML=""
+          
+
+           myexp.forEach
+      ( 
+           function(b,o)
+           { 
+
+            var  newtr = document.createElement("tr")
+
+            var slnotd= document.createElement("td")
+            slnotd.innerHTML = o+1
+             
+            var comptd = document.createElement("td")
+            comptd.innerHTML =b.company 
+
+            var exptd = document.createElement("td")
+            exptd.innerHTML = b.exp 
+
+            var salarytd = document.createElement("td")
+            salarytd.innerHTML = b.salary
+
+            newtr.appendChild(slnotd)
+            newtr.appendChild(comptd)
+            newtr.appendChild(exptd)
+            newtr.appendChild(salarytd)
+      
+            document.getElementById("g1").appendChild(newtr)
+           }
+      )
+      } 
+
+
+      function addexp() 
+
+      { 
+         
+        var newExperience = 
+        { 
+            company:"",
+            exp:"",
+            salary:""
+        }
+        
+        newExperience.company = document.getElementById("c").value
+         newExperience.exp = +document.getElementById("E").value
+        newExperience.salary = +document.getElementById("s").value
   
-  document.getElementById("d1").innerHTML =""
-
-     students.forEach( 
-    function(a)
-    {
-        var nli = document.createElement("li")
-        nli.innerHTML = a 
-
-        document.getElementById("d1").appendChild(nli)
-    }
-  )
-
- 
+         myexp.push(newExperience)
 
 
-  }
+         console.log(newExperience) 
+
+         console.log(myexp)
+
+          document.getElementById("g1").innerHTML=""
+
+     
+                myexp.forEach
+      ( 
+           function(b,o)
+           { 
+
+            var  newtr = document.createElement("tr")
+
+            var slnotd= document.createElement("td")
+            slnotd.innerHTML = o+1
+             
+            var comptd = document.createElement("td")
+            comptd.innerHTML =b.company 
+
+            var exptd = document.createElement("td")
+            exptd.innerHTML = b.exp 
+
+            var salarytd = document.createElement("td")
+            salarytd.innerHTML = b.salary
+
+            newtr.appendChild(slnotd)
+            newtr.appendChild(comptd)
+            newtr.appendChild(exptd)
+            newtr.appendChild(salarytd)
+      
+            document.getElementById("g1").appendChild(newtr)
+           }
+      )
 
 
 
+         
+
+
+
+
+         
+
+      } 
 
 
 
     </script>
- 
-  
- 
 
 
-
-</body>
 
 
 
 
 
 
+
+</body>
 </html>
