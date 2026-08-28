@@ -1,145 +1,127 @@
-<html> 
-
-<head> 
- 
-    <style> 
-
-
-    </style>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<body>
+     
+    <ol id="d1">
 
-<body>   
+    </ol>
 
-    <h1 id="d4">Welcome to Edupoly </h1> 
-
-    <button onclick="b()">Change the content </button>
-
-
-    <h1 id="d1"> hello pravven</h1>
-
-  <button onclick="abc()"> 
-    change the color
-  </button>  
-
-
-  <button onclick="xyz()">Change the color of paragraphs </button>
-
-
-  <p> 
-    It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
-  </p>
-
-  <p> 
-  t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable 
-  </p>
-
-  <p> 
-    All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-  </p>
-
-
-   <script> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    var e = document.getElementById("d4")
-    function b()
-  { 
-
-    if(e.innerHTML === "Thank you")
-  { 
-    e.innerHTML = "Welcome To Edupoly"
-  } 
-   else 
-   { 
-            e.innerHTML = "Thank you"
-   }
-  } 
-
-  console.dir(e)
  
-   
-  
 
+    <button onclick="asc()">Sort by Ascending order </button>
 
+    <button onclick="des()"> Sort by Descending Order</button>
 
+    <script> 
+  var students = ["bavani","anurag",'mahesh',"kiran","pritish","naresh"]
+      
+  students.forEach( 
+    function(a)
+    {
+        var nli = document.createElement("li")
+        nli.innerHTML = a 
 
-  
+        document.getElementById("d1").appendChild(nli)
+    }
+  )
 
-   var  x = document.getElementById("d1")
-   
-   console.dir(x)
-    
-   function abc()
-   { 
-    x.style.color ="red"
-   }
-  
-   var p = document.getElementsByTagName("p")
+  function des() 
+  { 
 
-   console.dir(p)
+   students.sort(function(a,b)
 
-   var color =["red","blue","green"]
-
- function xyz(e,i)
- { 
-     for(var i = 0 ; i<=p.length-1 ; i=i+1)
+    { 
+        if(a>b)
+    { 
+        return -1
+    }
+    else 
      { 
-        p[i].style.color=color[i]
-     } 
- }
-
+        return 1 
+     }
+ 
+    }
+    )
   
+    console.log("students =",students) 
+
+
+    document.getElementById("d1").innerHTML =""
+
+   students.forEach( 
+    function(a)
+    {
+        var nli = document.createElement("li")
+        nli.innerHTML = a 
+
+        document.getElementById("d1").appendChild(nli)
+    }
+  )
+    
+
+  }
+
+
+   function asc() 
+  { 
+
+   students.sort(function(a,b)
+
+    { 
+        if(a>b)
+    { 
+        return 1
+    }
+    else 
+     { 
+        return -1 
+     }
+ 
+    }
+
+    )
+ 
+    console.log("students =", students)
+  
+  document.getElementById("d1").innerHTML =""
+
+     students.forEach( 
+    function(a)
+    {
+        var nli = document.createElement("li")
+        nli.innerHTML = a 
+
+        document.getElementById("d1").appendChild(nli)
+    }
+  )
+
+ 
+
+
+  }
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-   </script>
-
-
-
-
-
-
-
+    </script>
+ 
+  
+ 
 
 
 
 </body>
+
+
+
+
+
+
 </html>
