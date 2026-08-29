@@ -1,375 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html>  
+<head> 
 </head>
 <body> 
+    <input type="radio"  name="gender" value ="male" onchange="abc(event)" >Male: &nbsp 
+    <input type="radio" name="gender" value="female" onchange="abc(event)" >Female: &nbsp 
+    <input type="radio" name="gender" value="others" onchange="abc(event)" >Others:
 
-
-  company:<input type ="text" id="c"> <br>
-  Experience:<input type ="text" id="E"> <br>
-  Salary:<input type ="text" id="s"> <br>
-
-  <button onclick="addexp()">Add Experience</button>
-
-
+    <h1>Select Gender :<span id="d1"> </span></h1>
  
-    <table border="1px solid" width="50%" align="center"> 
-       
-        <thead> 
-            
-            <th>Sno</th>
-             <th onclick="sortByCompany()">Company</th>
-             <th onclick="sortByExp()">Experience</th>
-             <th onclick="sortBySalary()">Salary</th>
-            </thead>
- 
-            <tbody id="g1"> 
+        <label for="">Games :</label>
+        
 
+        <br> 
 
-               
-            </tbody>
+         <input type="checkbox" name="games" value="cricket" onchange="xyz(event)">cricket:
+          <input type="checkbox"  name="games" value="shuttle" onchange="xyz(event)">shuttle:
+            <input type="checkbox"   name="games" value="hockey" onchange="xyz(event)">hockey:
+            <input type="checkbox"   name="games" value="chess" onchange="xyz(event)">chess:
+           <input type="checkbox"  name="games" value="Kabbadi" onchange="xyz(event)">Kabbadi 
 
-
-    </table>
-
-
-
-
-
-
- 
-
+  <h1>Selected Games :<span id="d2"></span></h1>
 
     <script> 
-
-           var myexp =[ 
-                         {
-                            company:"tcs",
-                            exp:2,
-                            salary:23499
-                         }   
-                         , 
-                         {
-                            company:"infosys",
-                            exp:5,
-                            salary:43299
-                         } 
-                         ,
-                         {
-                            company:"accenture",
-                            exp:3,
-                            salary:36000
-                         } 
-                         ,
-                         {
-                            company:"igate",
-                            exp:6,
-                            salary:35499
-                         }
-                         , 
-                         {
-                            company:"capgemini",
-                            exp:10,
-                            salary:85000
-                         }   
-                         ,
-                         {
-                            company:"whipro",
-                            exp:8,
-                            salary:75000
-                         }   
-                         ,
-                         {
-                            company:"apple",
-                            exp:2,
-                            salary:23499
-                         }   
-                         ,
-                         {
-                            company:"dell",
-                            exp:2,
-                            salary:75000
-                         }               
-                      ]
- 
-      myexp.forEach
-      ( 
-           function(b,o)
-           { 
-
-            var  newtr = document.createElement("tr")
-
-            var slnotd= document.createElement("td")
-            slnotd.innerHTML = o+1
-             
-            var comptd = document.createElement("td")
-            comptd.innerHTML =b.company 
-
-            var exptd = document.createElement("td")
-            exptd.innerHTML = b.exp 
-
-            var salarytd = document.createElement("td")
-            salarytd.innerHTML = b.salary
-
-            newtr.appendChild(slnotd)
-            newtr.appendChild(comptd)
-            newtr.appendChild(exptd)
-            newtr.appendChild(salarytd)
-      
-            document.getElementById("g1").appendChild(newtr)
-           }
-      )
-  
-
-      function sortByCompany()
-      { 
-
-          myexp.sort( 
-            function(a,b)
-            { 
-                 
-                if(a.company>b.company)
-            {
-                 return 1
-            }
-            else 
-            { 
-                return -1 
-            }
-
-            }
-          )
-
-          console.log(myexp)  
+      var selectedGames = [] 
 
 
-
-          document.getElementById("g1").innerHTML=""
-          
-
-           myexp.forEach
-      ( 
-           function(b,o)
-           { 
-
-            var  newtr = document.createElement("tr")
-
-            var slnotd= document.createElement("td")
-            slnotd.innerHTML = o+1
-             
-            var comptd = document.createElement("td")
-            comptd.innerHTML =b.company 
-
-            var exptd = document.createElement("td")
-            exptd.innerHTML = b.exp 
-
-            var salarytd = document.createElement("td")
-            salarytd.innerHTML = b.salary
-
-            newtr.appendChild(slnotd)
-            newtr.appendChild(comptd)
-            newtr.appendChild(exptd)
-            newtr.appendChild(salarytd)
-      
-            document.getElementById("g1").appendChild(newtr)
-           }
-      )
-
-      } 
-
-
-      function sortByExp() 
-      { 
-
-             myexp.sort( 
-            function(a,b)
-            { 
-                 
-                if(a.exp>b.exp)
-            {
-                 return 1
-            }
-            else 
-            { 
-                return -1 
-            }
-
-            }
-          )
-
-          console.log(myexp) 
-
-
-
-          document.getElementById("g1").innerHTML=""
-          
-
-           myexp.forEach
-      ( 
-           function(b,o)
-           { 
-
-            var  newtr = document.createElement("tr")
-
-            var slnotd= document.createElement("td")
-            slnotd.innerHTML = o+1
-             
-            var comptd = document.createElement("td")
-            comptd.innerHTML =b.company 
-
-            var exptd = document.createElement("td")
-            exptd.innerHTML = b.exp 
-
-            var salarytd = document.createElement("td")
-            salarytd.innerHTML = b.salary
-
-            newtr.appendChild(slnotd)
-            newtr.appendChild(comptd)
-            newtr.appendChild(exptd)
-            newtr.appendChild(salarytd)
-      
-            document.getElementById("g1").appendChild(newtr)
-           }
-      )
-      } 
-
-
-      function sortBySalary() 
-      { 
-        
-         myexp.sort( 
-            function(a,b)
-            { 
-                 
-                if(a.salary>b.salary)
-            {
-                 return 1
-            }
-            else 
-            { 
-                return -1 
-            }
-
-            }
-          )
-
-          console.log(myexp) 
-
-
-
-
-
-          document.getElementById("g1").innerHTML=""
-          
-
-           myexp.forEach
-      ( 
-           function(b,o)
-           { 
-
-            var  newtr = document.createElement("tr")
-
-            var slnotd= document.createElement("td")
-            slnotd.innerHTML = o+1
-             
-            var comptd = document.createElement("td")
-            comptd.innerHTML =b.company 
-
-            var exptd = document.createElement("td")
-            exptd.innerHTML = b.exp 
-
-            var salarytd = document.createElement("td")
-            salarytd.innerHTML = b.salary
-
-            newtr.appendChild(slnotd)
-            newtr.appendChild(comptd)
-            newtr.appendChild(exptd)
-            newtr.appendChild(salarytd)
-      
-            document.getElementById("g1").appendChild(newtr)
-           }
-      )
-      } 
-
-
-      function addexp() 
-
-      { 
-         
-        var newExperience = 
+        function xyz(t)
         { 
-            company:"",
-            exp:"",
-            salary:""
+           
+           
+              
+
+        //   console.log(t.target.value)
+
+        //  selectedGames.push(t.target.value)
+
+
+        //   console.log("selected games =",selectedGames)
+         
+        //   console.dir(t.target.checked)
+
+
+          if(t.target.checked === false)
+          { 
+    
+            var index = selectedGames.indexOf(t.target.value)
+            console.log("index = ", index)
+            selectedGames.splice(index,1)
+
+            console.log(selectedGames)
+          } 
+          else 
+          { 
+                  selectedGames.push(t.target.value)
+
+                  console.log(selectedGames)
+          }
         }
+           
         
-        newExperience.company = document.getElementById("c").value
-         newExperience.exp = +document.getElementById("E").value
-        newExperience.salary = +document.getElementById("s").value
-  
-         myexp.push(newExperience)
-
-
-         console.log(newExperience) 
-
-         console.log(myexp)
-
-          document.getElementById("g1").innerHTML=""
-
-     
-                myexp.forEach
-      ( 
-           function(b,o)
-           { 
-
-            var  newtr = document.createElement("tr")
-
-            var slnotd= document.createElement("td")
-            slnotd.innerHTML = o+1
-             
-            var comptd = document.createElement("td")
-            comptd.innerHTML =b.company 
-
-            var exptd = document.createElement("td")
-            exptd.innerHTML = b.exp 
-
-            var salarytd = document.createElement("td")
-            salarytd.innerHTML = b.salary
-
-            newtr.appendChild(slnotd)
-            newtr.appendChild(comptd)
-            newtr.appendChild(exptd)
-            newtr.appendChild(salarytd)
-      
-            document.getElementById("g1").appendChild(newtr)
-           }
-      )
-
-
-
-         
+        
+       
+ 
 
 
 
 
-         
 
-      } 
+
+         function abc(r)
+          { 
+               
+            console.log("r=",r)
+            document.getElementById("d1").innerHTML = r.target.value
+
+
+          }
+
+   
+
+
+
 
 
 
     </script>
 
 
-
-
-
-
-
-
-
 </body>
+
+
 </html>
