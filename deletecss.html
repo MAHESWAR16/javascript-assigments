@@ -1,93 +1,79 @@
-<html>  
-<head> 
-</head>
-<body> 
-    <input type="radio"  name="gender" value ="male" onchange="abc(event)" >Male: &nbsp 
-    <input type="radio" name="gender" value="female" onchange="abc(event)" >Female: &nbsp 
-    <input type="radio" name="gender" value="others" onchange="abc(event)" >Others:
+<html> 
+  <head> 
+    <style> 
 
-    <h1>Select Gender :<span id="d1"> </span></h1>
+    </style>
+  </head>
+  <body> 
  
-        <label for="">Games :</label>
-        
 
-        <br> 
-
-         <input type="checkbox" name="games" value="cricket" onchange="xyz(event)">cricket:
-          <input type="checkbox"  name="games" value="shuttle" onchange="xyz(event)">shuttle:
-            <input type="checkbox"   name="games" value="hockey" onchange="xyz(event)">hockey:
-            <input type="checkbox"   name="games" value="chess" onchange="xyz(event)">chess:
-           <input type="checkbox"  name="games" value="Kabbadi" onchange="xyz(event)">Kabbadi 
-
-  <h1>Selected Games :<span id="d2"></span></h1>
-
-    <script> 
-      var selectedGames = [] 
-
-
-        function xyz(t)
-        { 
-           
-           
-              
-
-        //   console.log(t.target.value)
-
-        //  selectedGames.push(t.target.value)
-
-
-        //   console.log("selected games =",selectedGames)
-         
-        //   console.dir(t.target.checked)
-
-
-          if(t.target.checked === false)
-          { 
     
-            var index = selectedGames.indexOf(t.target.value)
-            console.log("index = ", index)
-            selectedGames.splice(index,1)
+          <input type="text" placeholder="enter your name" id="d1"> <br>
+          <input type="email" placeholder="enter your email" id="d2" >  <br>
+          <input type = "number" id="d3"> <br>
 
-            console.log(selectedGames)
-          } 
-          else 
-          { 
-                  selectedGames.push(t.target.value)
+          <button onclick="abc()">Submit</button>
 
-                  console.log(selectedGames)
-          }
-        }
-           
         
-        
-       
+ 
+          <table border="1px solid" >
+            <thead > 
+              <th>Sl No</th>
+              <th>Name</th>
+              <th>Email</th>
+               <th>Number</th>
+            </thead>
+
+            <tbody id="d5">
+
+
+            </tbody>
+            
+
+
+          </table>
+
+
+
+
+          <script> 
+               
+               var slno = 0
+                
+                function abc()
+                { 
+                  
+                  console.log(slno)
+                  
+
+                  var newtr = document.createElement("tr") 
+
+                  var sltd = document.createElement("td")
+                  slno++
+                  sltd.innerHTML = slno
+                  newtr.appendChild(sltd)
+
+                  var nametd = document.createElement("td")
+                  nametd.innerHTML = document.getElementById("d1").value
+                  newtr.appendChild(nametd)
+
+              
+                  var emailtd = document.createElement("td") 
+                  emailtd.innerHTML = document.getElementById("d2").value
+                  newtr.appendChild(emailtd)
  
 
+                  var numtd = document.createElement("td")
+                  numtd.innerHTML = document.getElementById("d3").value
+                  newtr.appendChild(numtd)
+
+                  document.getElementById("d5").appendChild(newtr)
+
+                }
 
 
+                console.log(slno)
+         </script>
 
-
-
-         function abc(r)
-          { 
-               
-            console.log("r=",r)
-            document.getElementById("d1").innerHTML = r.target.value
-
-
-          }
-
-   
-
-
-
-
-
-
-    </script>
-
-
-</body>
-
-
+    </body>
 </html>
