@@ -4,7 +4,16 @@
 
     </style>
   </head>
-  <body> 
+  <body>  
+
+ 
+    <h1>Counter: <span id="ww"></span></h1>
+           
+    <button onclick="inc()">Increment</button>
+    <button onclick="dec()">Decrement</button>
+    <button onclick="reset()">Reset</button><br>
+
+     
  
 
     
@@ -23,20 +32,57 @@
               <th>Email</th>
                <th>Number</th>
             </thead>
-
             <tbody id="d5">
-
-
             </tbody>
-            
-
-
           </table>
 
-
-
-
           <script> 
+          
+           
+          var number = 0
+
+ 
+            
+
+            document.getElementById("ww").innerHTML = number
+
+            function inc()
+            { 
+                number++ 
+                document.getElementById("ww").innerHTML = number
+            } 
+
+            function dec()
+            {
+              number-- 
+
+              document.getElementById("ww").innerHTML = number  
+
+
+              if(number <= 0) 
+            { 
+              console.log("hello")
+              reset()
+            }
+
+            } 
+
+            function reset()
+            {
+              number = 0 
+              document.getElementById("ww").innerHTML = number
+            }
+
+
+
+
+
+
+
+
+
+
+
                
                var slno = 0
                 
@@ -72,7 +118,7 @@
                 }
 
 
-                console.log(slno)
+                
          </script>
 
     </body>
