@@ -7,9 +7,19 @@
              border:2px solid ; 
              display: inline-block;
              margin: 5px;
+             
 
              box-sizing: border-box;
-
+         }
+        .img 
+         { 
+            width: 50px;
+            height: 45px;
+            border-radius:30px ; 
+            
+            display: block;
+    margin: 0 auto;
+            
          }
 
 
@@ -20,8 +30,9 @@
 
 
     <body> 
+     
 
-
+        
     
 
 
@@ -63,6 +74,13 @@
             newdiv.className = "div" 
           
 
+            var img = document.createElement("img")
+            img.src = "https://m.media-amazon.com/images/M/MV5BM2JlNDMzZmYtNDg0YS00YTBlLTgzNjUtYjRiMGM4NWUzZGE4XkEyXkFqcGc@._V1_.jpg" 
+
+            img.className = "img"
+            newdiv.appendChild(img)
+
+
             var nameh1 = document.createElement("h1")
             nameh1.innerText = "name:"
            
@@ -96,6 +114,8 @@
 
             emailh1.appendChild(email)
             newdiv.appendChild(emailh1)
+
+
 
 
 
