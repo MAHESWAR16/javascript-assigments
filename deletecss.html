@@ -14,12 +14,49 @@
       <input type="radio" name="gender" value="others" onchange="abc(event)">:Others &nbsp;&nbsp;&nbsp 
 
       <h1 >Select Gender :<span id="d1" ></span></h1>
+      
+      <label>Choose Games : </label> 
+      <br> 
+      <input type ="checkbox" name ="games" value ="cricket" onchange="def(event)">cricket: 
+      <input type ="checkbox" name="games" value ="Hockey" onchange="def(event)">Hockey 
+      <input type="checkbox" name="games" value ="Football" onchange="def(event)">Football 
+      <input type="checkbox" name="games" value="Basketball"onchange="def(event)">BasketBall  
 
+      <h1 >Selected Games : <span id="d2"></span></h1>
 
 
 
 
     <script> 
+    var selectedGames = [] 
+
+    function def(f)
+    { 
+      
+
+
+      if(f.target.checked === false) 
+    {  
+      var index = selectedGames.indexOf(f.target.value)
+
+      selectedGames.splice(index,1)
+
+      console.log("selectedGames =",selectedGames)
+    } 
+
+    else 
+    { 
+       console.dir(f.target) 
+      selectedGames.push(f.target.value)
+       console.log("selectedGames =",selectedGames)
+      document.getElementById("d2").innerHTML = f.target.value 
+    }
+
+
+    } 
+
+    console.log("selectedGames =",selectedGames)
+
 
     function abc(e)
     { 
@@ -29,7 +66,7 @@
     }
                           
                           
-
+   
 
 
 
