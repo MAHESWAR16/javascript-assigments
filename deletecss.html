@@ -1,156 +1,43 @@
 <html> 
   <head> 
+     
     <style> 
 
     </style>
-  </head>
-  <body>  
 
- 
-    <h1>Counter: <span id="ww"></span></h1>
+  </head> 
+  <body> 
            
-    <button onclick="inc()">Increment</button>
-    <button onclick="dec()">Decrement</button>
-    <button onclick="reset()">Reset</button><br>
-
-     
- 
-
     
-          <input type="text" placeholder="enter your name" id="d1"> <br>
-          <input type="email" placeholder="enter your email" id="d2" >  <br>
-          <input type = "number" id="d3"> <br>
+      <input type ='radio' name="gender" value="male" onchange="abc(event)">:Male  &nbsp;&nbsp;&nbsp 
+      <input type="radio" name="gender" value="female" onchange="abc(event)">:Female &nbsp;&nbsp;&nbsp 
+      <input type="radio" name="gender" value="others" onchange="abc(event)">:Others &nbsp;&nbsp;&nbsp 
 
-          <button onclick="abc()">Submit</button>
-
-        
- 
-          <table border="1px solid" >
-            <thead > 
-              <th>Sl No</th>
-              <th>Name</th>
-              <th>Email</th>
-               <th>Number</th> 
-               <th>Operations</th>
-            </thead>
-            <tbody id="d5">
-            </tbody>
-          </table>
-
-          <script> 
-
-             var str = "ABCDE"
-
-             var result = ""
-
-             for(var i = 0 ;i<=str.length-1 ;i=i+1)
-             { 
-                  var randomIndex = Math.floor(Math.random() * str.length);
-
-console.log(str[randomIndex]); 
-
-                result = result + str[randomIndex]
-
-
-             } 
-
-             console.log("result",result)
-
-               
-
-
-
-
-          
-           
-          var number = 0
-
- 
-            
-
-            document.getElementById("ww").innerHTML = number
-
-            function inc()
-            { 
-                number++ 
-                document.getElementById("ww").innerHTML = number
-            } 
-
-            function dec()
-            {
-              number-- 
-
-              document.getElementById("ww").innerHTML = number  
-
-
-              if(number <= 0) 
-            { 
-              console.log("hello")
-              reset()
-            }
-
-            } 
-
-            function reset()
-            {
-              number = 0 
-              document.getElementById("ww").innerHTML = number
-            }
+      <h1 >Select Gender :<span id="d1" ></span></h1>
 
 
 
 
 
+    <script> 
+
+    function abc(e)
+    { 
+              console.log(e.target.value)
+
+              document.getElementById("d1").innerHTML = e.target.value
+    }
+                          
+                          
 
 
 
 
 
-
-               
-               var slno = 0
-                
-                function abc()
-                { 
-                  
-                  console.log(slno)
-                  
-
-                  var newtr = document.createElement("tr") 
-
-                  var sltd = document.createElement("td")
-                  slno++
-                  sltd.innerHTML = slno
-                  newtr.appendChild(sltd)
-
-                  var nametd = document.createElement("td")
-                  nametd.innerHTML = document.getElementById("d1").value
-                  newtr.appendChild(nametd)
-
-              
-                  var emailtd = document.createElement("td") 
-                  emailtd.innerHTML = document.getElementById("d2").value
-                  newtr.appendChild(emailtd)
- 
-
-                  var numtd = document.createElement("td")
-                  numtd.innerHTML = document.getElementById("d3").value
-                  newtr.appendChild(numtd)
-               
-
-                  var deltd = document.createElement("button")
-                  deltd.innerHTML = "Delete" 
-                  newtr.appendChild(deltd) 
-                  deltd.
+    </script>
 
 
-                  document.getElementById("d5").appendChild(newtr) 
-
-                }
 
 
-                
-         </script>
-
-    </body>
+  </body>
 </html>

@@ -1,114 +1,101 @@
 <html> 
     <head>
         <style> 
-        .dd
-        {
-            border:2px solid ;
-            width:320px;
-            height:220px;
-            display:inline-block;
-            margin: 5px;
+         
+         .div
+         { 
+             border:2px solid ; 
+             display: inline-block;
+             margin: 5px;
+             
+
+             box-sizing: border-box;
+         }
+        .img 
+         { 
+            width: 50px;
+            height: 45px;
+            border-radius:30px ; 
             
-        }
-        .d4{
-            width: 80px;
-            border-radius:50px;
-            height: 84px;
-            margin-left: 105px;
-        }
+            display: block;
+    margin: 0 auto;
+            
+         }
+
 
         </style>
 
-    </head>
+
+    </head> 
+
+
     <body> 
-
-
-        <form onsubmit="abc(event)"> 
-               
-            <table align="center" cellspacing="15px">
-                <tr> 
-                    <td> 
-                        <label>Full Name :</label>
-                        <input type="text" id="d1" name="Fullname"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Number : </label>
-                        <input type="number" id ="d2" name="Number"/> 
-                    </td>
-                </tr>
-                <tr> 
-                    <td> 
-                        <label>Email id :</label>
-                        <input type="email" id="E" name="Email : "
-                    </td>
-                </tr>
-                 <tr> 
-                    <td>
-                        <label>ENTER image URL :</label>
-                        <input type="url" id ="d3"/> 
-                    </td>
-                 </tr>
-                 <tr> 
-                    <td>
-                        <button>Submit</button>
-                    </td>
-                 </tr>
-            </table>
+        <form onsubmit="abc(event)">
+            <input type="text" placeholder="enter your name" id="d1"><br>
+            <input type="number" placeholder="number" id="d2"><br> 
+            <input type ="email" placeholder="email" id="d3"><br>
+            <input type="url" placeholder="enter image" id="d4 "><br>
+            <button onclick="def()">submit</button>
         </form>
 
         <script> 
-            function abc(e)
-            {
-                e.preventDefault()
-             
+        function abc()
+        { 
+            // alert(" submit hello")
+            event.preventDefault()
+        } 
+         
+        function def()
+        { 
+            alert("button hello")  
 
-                var d = document.createElement("div")
+            var newdiv = document.createElement("div")
+            newdiv.className = "div" 
+          
 
-                d.classList = "dd"
+            var img = document.createElement("img")
+            img.src = "https://m.media-amazon.com/images/M/MV5BM2JlNDMzZmYtNDg0YS00YTBlLTgzNjUtYjRiMGM4NWUzZGE4XkEyXkFqcGc@._V1_.jpg" 
 
-               console.dir(d)
+            img.className = "img"
+            newdiv.appendChild(img)
+
+
+            var nameh3 = document.createElement("h3")
+            nameh3.innerText = "name:"
+           
+
+             var name = document.createElement("span")
+            name.innerHTML = document.getElementById("d1").value
+
+            nameh3.appendChild(name) 
+            newdiv.appendChild(nameh3) 
+
+            var numberh3 = document.createElement("h3")
+            numberh3.innerText = "Number :" 
+
+            var number = document.createElement("span") 
+            number.innerHTML = document.getElementById("d2").value 
             
-              var img  = document.createElement("img")
+            numberh3.appendChild(number) 
+            newdiv.appendChild(numberh3)
 
-              img.src = document.getElementById("d3").value
-             
-              img.classList ="d4"
+            var emailh3 = document.createElement("h3") 
+            emailh3.innerText = "email id :" 
 
+            var email = document.createElement("span") 
+            email.innerHTML = document.getElementById("d3").value
 
-              d.append(img) 
+            emailh3.appendChild(email)
+            newdiv.appendChild(emailh3)
 
-              var select = document.getElementById("d1")
-              
-            var fn = document.createElement("h3")
-            fn.innerHTML = select.name + " :" + select.value
+            document.body.appendChild(newdiv) 
+        }
 
-            d.appendChild(fn)
-            
-              
+                
 
-            var select1 = document.getElementById("d2") 
+                  
 
-            var num = document.createElement("h3")
-            num.innerHTML = select1.name + " :" + select1.value
-        
-            d.appendChild(num)
-       
-
-            var select2 = document.getElementById("E")
-
-            var email = document.createElement("h3") 
-            
-            email.innerHTML = select2.name + " : " + select2.value
-  
-            d.appendChild(email)
-            
-                document.body.appendChild(d)
-        
-            }
 
         </script>
-
-        </body>
+    </body>
 </html>
