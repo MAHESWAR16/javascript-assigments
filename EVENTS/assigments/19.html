@@ -30,12 +30,6 @@
 
 
     <body> 
-     
-
-        
-    
-
-
         <form onsubmit="abc(event)">
             <input type="text" placeholder="enter your name" id="d1"><br>
             <input type="number" placeholder="number" id="d2"><br> 
@@ -44,31 +38,16 @@
             <button onclick="def()">submit</button>
         </form>
 
-        
-        
-
         <script> 
-
         function abc()
         { 
             // alert(" submit hello")
             event.preventDefault()
-
-            
         } 
          
-       
-
         function def()
         { 
             alert("button hello")  
-            
-
-
-                 
-
-
-            
 
             var newdiv = document.createElement("div")
             newdiv.className = "div" 
@@ -81,55 +60,35 @@
             newdiv.appendChild(img)
 
 
-            var nameh1 = document.createElement("h1")
-            nameh1.innerText = "name:"
+            var nameh3 = document.createElement("h3")
+            nameh3.innerText = "name:"
            
 
              var name = document.createElement("span")
             name.innerHTML = document.getElementById("d1").value
 
-            nameh1.appendChild(name) 
-            newdiv.appendChild(nameh1) 
+            nameh3.appendChild(name) 
+            newdiv.appendChild(nameh3) 
 
-           
-
-
-            var numberh1 = document.createElement("h1")
-            numberh1.innerText = "Number :" 
+            var numberh3 = document.createElement("h3")
+            numberh3.innerText = "Number :" 
 
             var number = document.createElement("span") 
             number.innerHTML = document.getElementById("d2").value 
             
-            numberh1.appendChild(number) 
-            newdiv.appendChild(numberh1)
+            numberh3.appendChild(number) 
+            newdiv.appendChild(numberh3)
 
-             
-
-
-            var emailh1 = document.createElement("h1") 
-            emailh1.innerText = "email id :" 
+            var emailh3 = document.createElement("h3") 
+            emailh3.innerText = "email id :" 
 
             var email = document.createElement("span") 
             email.innerHTML = document.getElementById("d3").value
 
-            emailh1.appendChild(email)
-            newdiv.appendChild(emailh1)
-
-
-
-
-
-
-
-
-
-
-
-
+            emailh3.appendChild(email)
+            newdiv.appendChild(emailh3)
 
             document.body.appendChild(newdiv) 
-
-         
         }
 
                 

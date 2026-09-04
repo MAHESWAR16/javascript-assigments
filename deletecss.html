@@ -3,26 +3,30 @@
      
     <style> 
 
-
-
-
-
-
-
-
     </style>
 
   </head> 
   <body> 
            
     
-   
+      <input type ='radio' name="gender" value="male" onchange="abc(event)">:Male  &nbsp;&nbsp;&nbsp 
+      <input type="radio" name="gender" value="female" onchange="abc(event)">:Female &nbsp;&nbsp;&nbsp 
+      <input type="radio" name="gender" value="others" onchange="abc(event)">:Others &nbsp;&nbsp;&nbsp 
+
+      <h1 >Select Gender :<span id="d1" ></span></h1>
 
 
 
 
 
     <script> 
+
+    function abc(e)
+    { 
+              console.log(e.target.value)
+
+              document.getElementById("d1").innerHTML = e.target.value
+    }
                           
                           
 
