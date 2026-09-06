@@ -1,80 +1,57 @@
 <html> 
+
   <head> 
      
     <style> 
+ 
 
     </style>
 
   </head> 
-  <body> 
-           
-    
-      <input type ='radio' name="gender" value="male" onchange="abc(event)">:Male  &nbsp;&nbsp;&nbsp 
-      <input type="radio" name="gender" value="female" onchange="abc(event)">:Female &nbsp;&nbsp;&nbsp 
-      <input type="radio" name="gender" value="others" onchange="abc(event)">:Others &nbsp;&nbsp;&nbsp 
 
-      <h1 >Select Gender :<span id="d1" ></span></h1>
-      
-      <label>Choose Games : </label> 
-      <br> 
-      <input type ="checkbox" name ="games" value ="cricket" onchange="def(event)">cricket: 
-      <input type ="checkbox" name="games" value ="Hockey" onchange="def(event)">Hockey 
-      <input type="checkbox" name="games" value ="Football" onchange="def(event)">Football 
-      <input type="checkbox" name="games" value="Basketball"onchange="def(event)">BasketBall  
+<body> 
+           <form onsubmit = "ed()"> 
+            <label for="">Firstname :</label>
+            <input type="text"> 
+            <br/>
+            <label for="">lastname :</label>
+            <input type="text">
+            <br/> 
+            <label for="">Mobile :</label>
+            <input type="number">
+            <br/>
+            <button onclick="abc()"> Add Student </button>
+           </form>
 
-      <h1 >Selected Games : <span id="d2"></span></h1>
-
-
-
+           <table border="2px solid">
+            <thead>
+              <th>SL.No</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Mobile Number</th>
+            </thead>
+            <tbody id="d1">   </tbody>
+           </table>
+  
 
     <script> 
-    var selectedGames = [] 
-
-    function def(f)
+    function ed()
     { 
-      
-
-
-      if(f.target.checked === false) 
-    {  
-      var index = selectedGames.indexOf(f.target.value)
-
-      selectedGames.splice(index,1)
-
-      console.log("selectedGames =",selectedGames)
-    } 
-
-    else 
-    { 
-       console.dir(f.target) 
-      selectedGames.push(f.target.value)
-       console.log("selectedGames =",selectedGames)
-      document.getElementById("d2").innerHTML = f.target.value 
+      alert("submit event happened ")
     }
 
-
-    } 
-
-    console.log("selectedGames =",selectedGames)
-
-
-    function abc(e)
-    { 
-              console.log(e.target.value)
-
-              document.getElementById("d1").innerHTML = e.target.value
-    }
-                          
-                          
+        function abc() 
+        { 
+          alert("click event happened")
+        } 
    
-
-
 
 
     </script>
 
 
 
+</body>
 
-  </body>
+
 </html>
