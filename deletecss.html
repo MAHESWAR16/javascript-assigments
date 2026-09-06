@@ -10,41 +10,71 @@
   </head> 
 
 <body> 
-           <form onsubmit = "ed()"> 
+           <form onsubmit = "ed(event)"> 
             <label for="">Firstname :</label>
-            <input type="text"> 
+            <input type="text" id="s1"> 
             <br/>
             <label for="">lastname :</label>
-            <input type="text">
+            <input type="text" id="s2">
             <br/> 
             <label for="">Mobile :</label>
-            <input type="number">
+            <input type="number" id="s3">
             <br/>
             <button onclick="abc()"> Add Student </button>
            </form>
 
            <table border="2px solid">
             <thead>
-              <th>SL.No</th>
+              <tr>
+                <th>SL.No</th>
               <th>First Name</th>
               <th>Last Name</th>
               <th>Mobile Number</th>
+              </tr> 
             </thead>
             <tbody id="d1">   </tbody>
            </table>
   
 
     <script> 
-    function ed()
-    { 
-      alert("submit event happened ")
-    }
+    function ed(e)
+    {  
+      e.preventDefault()
+    } 
 
-        function abc() 
-        { 
-          alert("click event happened")
-        } 
-   
+    var Slno = 1
+     
+    function abc()
+    { 
+         var newtr = document.createElement("tr")
+
+         var sltd = document.createElement('td')
+          sltd.innerHTML =  Slno 
+          newtr.appendChild(sltd) 
+
+          document.getElementById("d1").appendChild(newtr)
+          Slno = Slno + 1 
+
+          var fntd = document.createElement("td") 
+          fntd.innerHTML = document.getElementById("s1").value 
+          newtr.appendChild(fntd) 
+          document.getElementById("d1").appendChild(newtr) 
+
+          var lntd = document.createElement("td") 
+          lntd.innerHTML = document.getElementById('s2').value
+          newtr.appendChild(lntd) 
+          document.getElementById("d1").appendChild(newtr) 
+
+          var mobtd = document.createElement("td") 
+          mobtd.innerHTML = document.getElementById("s3").value 
+          newtr.appendChild(mobtd)
+          document.getElementById("d1").appendChild(newtr)
+
+
+
+
+    }
+        
 
 
     </script>
