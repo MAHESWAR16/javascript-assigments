@@ -1,80 +1,87 @@
 <html> 
+
   <head> 
      
     <style> 
+ 
 
     </style>
 
   </head> 
-  <body> 
-           
-    
-      <input type ='radio' name="gender" value="male" onchange="abc(event)">:Male  &nbsp;&nbsp;&nbsp 
-      <input type="radio" name="gender" value="female" onchange="abc(event)">:Female &nbsp;&nbsp;&nbsp 
-      <input type="radio" name="gender" value="others" onchange="abc(event)">:Others &nbsp;&nbsp;&nbsp 
 
-      <h1 >Select Gender :<span id="d1" ></span></h1>
-      
-      <label>Choose Games : </label> 
-      <br> 
-      <input type ="checkbox" name ="games" value ="cricket" onchange="def(event)">cricket: 
-      <input type ="checkbox" name="games" value ="Hockey" onchange="def(event)">Hockey 
-      <input type="checkbox" name="games" value ="Football" onchange="def(event)">Football 
-      <input type="checkbox" name="games" value="Basketball"onchange="def(event)">BasketBall  
+<body> 
+           <form onsubmit = "ed(event)"> 
+            <label for="">Firstname :</label>
+            <input type="text" id="s1"> 
+            <br/>
+            <label for="">lastname :</label>
+            <input type="text" id="s2">
+            <br/> 
+            <label for="">Mobile :</label>
+            <input type="number" id="s3">
+            <br/>
+            <button onclick="abc()"> Add Student </button>
+           </form>
 
-      <h1 >Selected Games : <span id="d2"></span></h1>
-
-
-
+           <table border="2px solid">
+            <thead>
+              <tr>
+                <th>SL.No</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Mobile Number</th>
+              </tr> 
+            </thead>
+            <tbody id="d1">   </tbody>
+           </table>
+  
 
     <script> 
-    var selectedGames = [] 
-
-    function def(f)
-    { 
-      
-
-
-      if(f.target.checked === false) 
+    function ed(e)
     {  
-      var index = selectedGames.indexOf(f.target.value)
-
-      selectedGames.splice(index,1)
-
-      console.log("selectedGames =",selectedGames)
+      e.preventDefault()
     } 
 
-    else 
+    var Slno = 1
+     
+    function abc()
     { 
-       console.dir(f.target) 
-      selectedGames.push(f.target.value)
-       console.log("selectedGames =",selectedGames)
-      document.getElementById("d2").innerHTML = f.target.value 
+         var newtr = document.createElement("tr")
+
+         var sltd = document.createElement('td')
+          sltd.innerHTML =  Slno 
+          newtr.appendChild(sltd) 
+
+          document.getElementById("d1").appendChild(newtr)
+          Slno = Slno + 1 
+
+          var fntd = document.createElement("td") 
+          fntd.innerHTML = document.getElementById("s1").value 
+          newtr.appendChild(fntd) 
+          document.getElementById("d1").appendChild(newtr) 
+
+          var lntd = document.createElement("td") 
+          lntd.innerHTML = document.getElementById('s2').value
+          newtr.appendChild(lntd) 
+          document.getElementById("d1").appendChild(newtr) 
+
+          var mobtd = document.createElement("td") 
+          mobtd.innerHTML = document.getElementById("s3").value 
+          newtr.appendChild(mobtd)
+          document.getElementById("d1").appendChild(newtr)
+
+
+
+
     }
-
-
-    } 
-
-    console.log("selectedGames =",selectedGames)
-
-
-    function abc(e)
-    { 
-              console.log(e.target.value)
-
-              document.getElementById("d1").innerHTML = e.target.value
-    }
-                          
-                          
-   
-
-
+        
 
 
     </script>
 
 
 
+</body>
 
-  </body>
+
 </html>
