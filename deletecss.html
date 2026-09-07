@@ -10,71 +10,87 @@
   </head> 
 
 <body> 
-           <form onsubmit = "ed(event)"> 
+           <form onsubmit = "ed(event)" name="Studentform"> 
+
             <label for="">Firstname :</label>
-            <input type="text" id="s1"> 
+            <input type="text" id="s1" name="firstname" onkeyup="updateStudent(event)"> 
             <br/>
             <label for="">lastname :</label>
-            <input type="text" id="s2">
+            <input type="text" id="s2" name="lastname" onkeyup="updateStudent(event)">
             <br/> 
             <label for="">Mobile :</label>
-            <input type="number" id="s3">
+            <input type="number" id="s3" name="mobile" onkeyup="updateStudent(event)">
             <br/>
             <button onclick="abc()"> Add Student </button>
+
            </form>
 
            <table border="2px solid">
             <thead>
               <tr>
-                <th>SL.No</th>
+              <th>SL.No</th>
               <th>First Name</th>
               <th>Last Name</th>
               <th>Mobile Number</th>
+
               </tr> 
             </thead>
-            <tbody id="d1">   </tbody>
+
+            <tbody id="d1"> 
+
+                </tbody>
            </table>
-  
 
     <script> 
+
+    var studentDetails = 
+    { 
+        firstname:"",
+        lastName:"" ,
+        Mobile:""
+     }
+ 
+
+
+     function updateStudent(r)
+     { 
+
+           if(r.target.name === "firstname")
+           { 
+          studentDetails.firstname = r.target.value
+           }
+
+
+           
+
+
+     }
+      
+
+      console.log(studentDetails)
+    
+
+
+
+
     function ed(e)
     {  
+      
       e.preventDefault()
+     
     } 
 
     var Slno = 1
      
     function abc()
-    { 
-         var newtr = document.createElement("tr")
-
-         var sltd = document.createElement('td')
-          sltd.innerHTML =  Slno 
-          newtr.appendChild(sltd) 
-
-          document.getElementById("d1").appendChild(newtr)
-          Slno = Slno + 1 
-
-          var fntd = document.createElement("td") 
-          fntd.innerHTML = document.getElementById("s1").value 
-          newtr.appendChild(fntd) 
-          document.getElementById("d1").appendChild(newtr) 
-
-          var lntd = document.createElement("td") 
-          lntd.innerHTML = document.getElementById('s2').value
-          newtr.appendChild(lntd) 
-          document.getElementById("d1").appendChild(newtr) 
-
-          var mobtd = document.createElement("td") 
-          mobtd.innerHTML = document.getElementById("s3").value 
-          newtr.appendChild(mobtd)
-          document.getElementById("d1").appendChild(newtr)
-
-
-
-
+    {  
+      //  alert("click event happened")
+         
     }
         
+
+
+
 
 
     </script>
