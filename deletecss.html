@@ -1,103 +1,127 @@
 <html> 
-
   <head> 
-     
     <style> 
- 
+
+
 
     </style>
-
   </head> 
 
-<body> 
-           <form onsubmit = "ed(event)" name="Studentform"> 
+  <body> 
+    <form onsubmit="abc(event)"> 
+         
+         <label>FirstName:</label>
+         <input type="text" name ="firstname" onkeyup="abc(event)"/> <br> <br>
 
-            <label for="">Firstname :</label>
-            <input type="text" id="s1" name="firstname" onkeyup="updateStudent(event)"> 
-            <br/>
-            <label for="">lastname :</label>
-            <input type="text" id="s2" name="lastname" onkeyup="updateStudent(event)">
-            <br/> 
-            <label for="">Mobile :</label>
-            <input type="number" id="s3" name="mobile" onkeyup="updateStudent(event)">
-            <br/>
-            <button onclick="abc()"> Add Student </button>
+         <label>LastName:</label>
+         <input type="text" name ="lastname" onkeyup ="updateinfo(event)"/> <br> <br>
 
-           </form>
+         <label>Mobile Number :</label>
+         <input type="number" name="mobilenumber"  onkeyup="updateinfo(event)"/> <br> <br>
 
-           <table border="2px solid">
-            <thead>
-              <tr>
-              <th>SL.No</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Mobile Number</th>
+         <label>Gender :</label>
+         
+         <input type="radio"  name="gender" value ="male" onchange="we(event)"/>
+         <label>Male</label>
 
-              </tr> 
-            </thead>
+         <input type="radio" name="gender" value="female" onchange="we(event)"/>
+         <label>Female</label>
 
-            <tbody id="d1"> 
+         <input type="radio" name="gender" value="others" onchange="we(event)"/>
+         <label>Others</label>  <br> <br>
 
-                </tbody>
-           </table>
+         <label>Select Technologies :</label>  
+          
+         <input type="checkbox"/>
+         <label> HTML5</label> 
 
-    <script> 
+         <input type="checkbox" />  
+         <label>CSS3</label>  
 
-    var studentDetails = 
-    { 
-        firstname:"",
-        lastName:"" ,
-        Mobile:""
-     }
+         <input type="checkbox" />
+         <label>JAVASCRIPT</label>
+
+         <input type="checkbox" /> 
+         <label>React js</label> <br> <br>
+
+
+         <label>Select countries :</label>
+         <select>
+          <option>Choose</option>
+          <option>India</option>
+          <option>srilanka</option>
+          <option>China</option>
+          <option>Japan</option>
+          <option>Russia</option>
+         </select>  <br> <br>
+
+
+         <label>Enter Adress :</label>
+         <textarea></textarea>   <br> <br>
+    
+         <button onclick="createdata(event)">Submit</button>
+    </form> 
+
+
+
+     <table border="2px solid">
+   
+        <thead>
+        <th>Sl.No</th> 
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>MobileNumber</th>
+        <th>Gender</th>
+        <th>Technologies</th>
+        <th>countries</th>
+        <th>Adress</th>
+      </thead>
+      <tbody> 
+
+
+      </tbody>
+    </table>
+
+          <script> 
+          var slno = 1 
+          
+               var studentinfo =  
+               { 
+                firstname:"",
+                lastname:"", 
+                mobilenumber:"",
+                gender:"",
+                tech:"",
+                countries:"",
+                adress:""
+               }
+     
+            function abc(e)
+            { 
+              e.preventDefault()
+            }
+             
+            function updateinfo(a)
+            { 
+              studentinfo[a.target.name] = a.target.value  
+            }
+
+          console.log(studentinfo)  
+
+             function we(a)
+          { 
+                studentinfo[a.target.name] = a.target.value
+          }
  
-
-
-     function updateStudent(r)
-     { 
-
-           if(r.target.name === "firstname")
-           { 
-          studentDetails.firstname = r.target.value
-           }
-
-
+          
+           
            
 
 
-     }
-      
-
-      console.log(studentDetails)
-    
+          </script>
 
 
-
-
-    function ed(e)
-    {  
-      
-      e.preventDefault()
-     
-    } 
-
-    var Slno = 1
-     
-    function abc()
-    {  
-      //  alert("click event happened")
-         
-    }
-        
-
-
-
-
-
-    </script>
-
-
-
-</body>
+  </body>
 
 
 </html>
