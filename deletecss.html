@@ -14,6 +14,7 @@
 
 
      <input type="textbox" placeholder="new country" id="d1"/>
+
      <button onclick="abc()" id="d5">Add</button>
 
      <table border="2px solid"> 
@@ -106,8 +107,11 @@
           <script> 
 
 
+
+                 var countries = []
+
              
-               function abc()
+               function abc(q)
                { 
                 
                   var newtr = document.createElement("tr")
@@ -115,7 +119,9 @@
                   var  newtd = document.createElement("td")
 
                   newtd.innerHTML = document.getElementById("d1").value 
-                    
+
+                  countries.push(newtd.innerHTML)
+
                   var optd = document.createElement('td') 
 
                   var edit = document.createElement("button")
@@ -125,29 +131,43 @@
                   edit.addEventListener("click",function()
                 {
                   
+                
+
+
+
+               
+
+               
+                  
+               if(edit.innerHTML === "edit")
+
+
+               { 
+
                   document.getElementById("d1").style.color="red" 
                    
                 
+              
+                  document.getElementById("d1").value = newtd.innerHTML 
+               
+                       
+                        edit.innerHTML = 'save'
+               }
+               else 
+               {   
+                     
+                 var newvalue = document.getElementById("d1").value 
+                     newtd.innerHTML = newvalue 
 
-                   newtd.innerHTML = document.getElementById("d1").value
+                     edit.innerHTML ="edit"
+               }
+               
+                
 
-                   if(edit.innerHTML === "edit")
-                   { 
-                    edit.innerHTML = "save"
-                   }
-                   else 
-                   { 
-                         edit.innerHTML = "edit"
+               
 
-                          document.getElementById("d1").style.color="" 
-
-                          document.getElementById("d1").value=""
-                   }
-                    
-
-                 
                   
-
+                    
                 }
                 
                 )
@@ -172,13 +192,10 @@
                   document.getElementById("d3").appendChild(newtr) 
 
 
-                 
-
-
                }
 
 
-
+           console.log("countries =" , countries)
 
 
 
