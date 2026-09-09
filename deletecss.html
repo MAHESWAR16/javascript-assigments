@@ -8,7 +8,29 @@
   </head> 
 
   <body> 
-    <form onsubmit="abc(event)"> 
+
+
+
+
+
+     <input type="textbox" placeholder="new country" id="d1"/>
+
+     <button onclick="abc()" id="d5">Add</button>
+
+     <table border="2px solid"> 
+          
+      <thead> 
+        <th> Name</th>
+      </thead>
+      <tbody id="d3"> 
+
+      </tbody>
+      
+     </table>
+
+
+
+    <!-- <form onsubmit="abc(event)"> 
          
          <label>FirstName:</label>
          <input type="text" name ="firstname" onkeyup="abc(event)"/> <br> <br>
@@ -80,40 +102,138 @@
 
 
       </tbody>
-    </table>
+    </table> -->
 
           <script> 
-          var slno = 1 
-          
-               var studentinfo =  
-               { 
-                firstname:"",
-                lastname:"", 
-                mobilenumber:"",
-                gender:"",
-                tech:"",
-                countries:"",
-                adress:""
-               }
-     
-            function abc(e)
-            { 
-              e.preventDefault()
-            }
+
+
+
+                 var countries = []
+
              
-            function updateinfo(a)
-            { 
-              studentinfo[a.target.name] = a.target.value  
-            }
+               function abc(q)
+               { 
+                
+                  var newtr = document.createElement("tr")
+                   
+                  var  newtd = document.createElement("td")
 
-          console.log(studentinfo)  
+                  newtd.innerHTML = document.getElementById("d1").value 
 
-             function we(a)
-          { 
-                studentinfo[a.target.name] = a.target.value
-          }
- 
+                  countries.push(newtd.innerHTML)
+
+                  var optd = document.createElement('td') 
+
+                  var edit = document.createElement("button")
+
+                  edit.innerHTML = "edit"
+
+                  edit.addEventListener("click",function()
+                {
+                  
+                
+
+
+
+               
+
+               
+                  
+               if(edit.innerHTML === "edit")
+
+
+               { 
+
+                  document.getElementById("d1").style.color="red" 
+                   
+                
+              
+                  document.getElementById("d1").value = newtd.innerHTML 
+               
+                       
+                        edit.innerHTML = 'save'
+               }
+               else 
+               {   
+                     
+                 var newvalue = document.getElementById("d1").value 
+                     newtd.innerHTML = newvalue 
+
+                     edit.innerHTML ="edit"
+               }
+               
+                
+
+               
+
+                  
+                    
+                }
+                
+                )
+
+
+                   
+                  optd.appendChild(edit)
+
+                  var del = document.createElement("button")
+                  del.innerHTML = "delete"
+                  del.addEventListener("click", 
+                     function ()
+                     {
+                      newtr.remove()
+                     }
+                  )
+                  optd.appendChild(del)
+
+                  newtr.appendChild(newtd) 
+                  newtr.appendChild(optd)
+
+                  document.getElementById("d3").appendChild(newtr) 
+
+
+               }
+
+
+           console.log("countries =" , countries)
+
+
+
+
+
+
+
+          // var slno = 1 
           
+          //      var studentinfo =  
+          //      { 
+          //       firstname:"",
+          //       lastname:"", 
+          //       mobilenumber:"",
+          //       gender:"",
+          //       tech:"",
+          //       countries:"",
+          //       adress:""
+          //      }
+     
+          //   function abc(e)
+          //   { 
+          //     e.preventDefault()
+          //   }
+             
+          //   function updateinfo(a)
+          //   { 
+          //     studentinfo[a.target.name] = a.target.value  
+          //   }
+
+          // console.log(studentinfo)  
+
+          //    function we(a)
+          // { 
+          //       studentinfo[a.target.name] = a.target.value
+          // }
+ 
+           
            
            
 
