@@ -4,6 +4,23 @@
     <head>
 
         <style>
+            .div
+            { 
+                border:2px solid ;
+                width:280px ;
+                height:280px ;
+                text-align: center;
+                box-sizing: border-box;
+            } 
+            .ig
+            { 
+               border-radius: 15px;
+                height:50px ;
+                width:50px 
+            }
+
+
+           
 
 
         </style>
@@ -12,6 +29,97 @@
     </head>
     
          <body> 
+
+           
+         
+            <form onsubmit="abc(event)"> 
+               
+                <label>Name : </label> 
+                <input type="text" id="d1" name="Name"/> <br> <br>
+
+                <label>Number :</label>
+                <input type="Number" id="d2" name="Number"/>  <br> <br>
+
+                <label>Email:</label>
+                <input type="email" id="d3" name="Email" />  <br> <br>
+
+                <label> Image Url :</label>
+                <input type="url"  name="IMAGE" id="i"/>  <br> <br>
+
+                <button onclick="dd()" id="w"> ADD CONTACT</button>
+
+            </form>
+
+            <script> 
+                   
+                   var details = { 
+                    name:"" ,
+                    number:"",
+                    email:"",
+                    image:""
+                   }
+
+
+           
+                  function dd()
+
+                  { 
+                    var newdiv = document.createElement("div") 
+                     
+                    newdiv.className = "div"  
+
+                    var img = document.createElement("img")
+                    img.src = document.getElementById("i").value
+                    img.className = "ig"
+                    newdiv.appendChild(img)
+                     
+            
+
+                    details.name = document.getElementById("d1").value 
+
+                    details.number = document.getElementById('d2').value 
+
+                    details.email = document.getElementById("d3").value
+                      
+                    
+                    var name = document.createElement("p") 
+                    name.innerHTML = "Name :" + details.name
+                    newdiv.appendChild(name) 
+
+                    var number = document.createElement("p")
+                    number.innerHTML = "Number :" + details.number
+                    newdiv.appendChild(number)
+
+                    var email = document.createElement("p")
+                    email.innerHTML = 'EMAIL :' + details.email
+                    newdiv.appendChild(email)
+
+                    var edtbutton = document.createElement('button')
+                    edtbutton.innerHTML ="EDIT"  
+                    edtbutton.addEventListener("click",function()
+                            { 
+                               
+              
+                     
+                                 }
+                    )
+                    newdiv.appendChild(edtbutton) 
+                    
+
+                     document.body.appendChild(newdiv)
+                  }
+
+             
+                function abc(e) 
+                { 
+                    e.preventDefault() 
+
+                   
+                }
+
+  
+                console.log("details =" ,details)
+            </script>
 
     
         </body>
