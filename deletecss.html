@@ -1,6 +1,7 @@
 <html> 
   <head> 
     <style> 
+    
 
 
 
@@ -17,7 +18,7 @@
 
      <button onclick="abc()" id="d5">Add</button>
 
-     <table border="2px solid"> 
+     <table border="2px solid" > 
           
       <thead> 
         <th> Name</th>
@@ -129,50 +130,30 @@
                   edit.innerHTML = "edit"
 
                   edit.addEventListener("click",function()
-                {
-                  
-                
-
-
-
-               
-
-               
-                  
+                        {
+      
                if(edit.innerHTML === "edit")
 
-
-               { 
+                          { 
 
                   document.getElementById("d1").style.color="red" 
-                   
-                
-              
+            
                   document.getElementById("d1").value = newtd.innerHTML 
                
-                       
                         edit.innerHTML = 'save'
-               }
+                            }
                else 
-               {   
-                     
+                          {   
+                      
                  var newvalue = document.getElementById("d1").value 
                      newtd.innerHTML = newvalue 
 
                      edit.innerHTML ="edit"
-               }
-               
-                
+                          }
 
-               
-
-                  
-                    
                 }
                 
                 )
-
-
                    
                   optd.appendChild(edit)
 
@@ -191,9 +172,7 @@
 
                   document.getElementById("d3").appendChild(newtr) 
 
-
                }
-
 
            console.log("countries =" , countries)
 
