@@ -32,7 +32,7 @@
 
            
          
-            <form onsubmit="abc(event)"> 
+            <form onsubmit="abc(event)" id="33"> 
                
                 <label>Name : </label> 
                 <input type="text" id="d1" name="Name"/> <br> <br>
@@ -64,6 +64,7 @@
                   function dd()
 
                   { 
+                    alert("india")
                     var newdiv = document.createElement("div") 
                      
                     newdiv.className = "div"  
@@ -95,18 +96,67 @@
                     newdiv.appendChild(email)
 
                     var edtbutton = document.createElement('button')
+
                     edtbutton.innerHTML ="EDIT"  
+
                     edtbutton.addEventListener("click",function()
                             { 
+                                  
+                                var newname = document.getElementById("d1") 
+                                newname.value = name.innerHTML.replace("Name :","")  
+
+                                document.getElementById("w").remove()
+
+                                var button = document.createElement("button") 
+                                button.innerHTML ="Save button" 
+
+                                button.addEventListener("click", function()
+                             {
+                                 name.innerHTML = "Name:" + newname.value
+                                   
+                                 button.innerHTML ="Add Conatcts" 
+
+
+                                 button.addEventListener("click", function()
+                                {
+                                                      dd()
+                                } 
+                                   )
+                             }
+                            )
+
+
+
+
+
+
+
+
+
+
+
+
+                           
+                               document.getElementById("33").appendChild(button)
+
+
+                            
+                             
+
+                                
                                
-              
-                     
-                                 }
+                                
+                                
+                            
+                             }
+                             
                     )
                     newdiv.appendChild(edtbutton) 
                     
 
-                     document.body.appendChild(newdiv)
+                     document.body.appendChild(newdiv) 
+
+                    
                   }
 
              
