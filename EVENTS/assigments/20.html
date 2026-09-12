@@ -1,177 +1,146 @@
 <html> 
+    <head> 
+        <style> 
 
-    
-    <head>
-
-        <style>
-            .div
-            { 
-                border:2px solid ;
-                width:280px ;
-                height:280px ;
-                text-align: center;
-                box-sizing: border-box;
-            } 
-            .ig
-            { 
-               border-radius: 15px;
-                height:50px ;
-                width:50px 
-            }
+        .d1 
+        { 
+            border:2px solid ;
+            width:40% ; 
+            text-align: center;
+        }
 
 
-           
 
 
         </style>
 
+        </head> 
 
-    </head>
-    
-         <body> 
+        <body> 
 
-           
+
+
+        <form onsubmit="abc(event)" id="ss"> 
+            <label> Full Name : </label> 
+            <input type="text" name="Full Name" id="b1"/> <br> <br>
+            <label>Emal:</label>
+            <input type="email" name="Email" id="b2"/> <br><br> 
+            <label>Number : </label> 
+            <input type="number" name="Number" id="b3"/> <br> <br>
+            <button onclick="add()" id="b4">Add Contacts</button>
+        </form> 
+                 
          
-            <form onsubmit="abc(event)" id="33"> 
-               
-                <label>Name : </label> 
-                <input type="text" id="d1" name="Name"/> <br> <br>
-
-                <label>Number :</label>
-                <input type="Number" id="d2" name="Number"/>  <br> <br>
-
-                <label>Email:</label>
-                <input type="email" id="d3" name="Email" />  <br> <br>
-
-                <label> Image Url :</label>
-                <input type="url"  name="IMAGE" id="i"/>  <br> <br>
-
-                <button onclick="dd()" id="w"> ADD CONTACT</button>
-
-            </form>
 
             <script> 
+               function abc(e)
+               { 
+                 e.preventDefault()
+               }
                    
-                   var details = { 
-                    name:"" ,
-                    number:"",
-                    email:"",
-                    image:""
-                   }
+               function add()
+               { 
 
+                alert("hello") 
 
-           
-                  function dd()
+                var div = document.createElement("div") 
+                 
+                div.className ="d1" 
 
-                  { 
-                    alert("india")
-                    var newdiv = document.createElement("div") 
-                     
-                    newdiv.className = "div"  
+                var Fullname = document.createElement("p") 
+                Fullname.innerHTML = "FULL NAME :"+ document.getElementById("b1").value 
 
-                    var img = document.createElement("img")
-                    img.src = document.getElementById("i").value
-                    img.className = "ig"
-                    newdiv.appendChild(img)
-                     
-            
+                div.appendChild(Fullname) 
 
-                    details.name = document.getElementById("d1").value 
+                var Email= document.createElement("p") 
+                Email.innerHTML = 'Email :' +  document.getElementById("b2").value 
+                div.appendChild(Email) 
 
-                    details.number = document.getElementById('d2').value 
-
-                    details.email = document.getElementById("d3").value
-                      
-                    
-                    var name = document.createElement("p") 
-                    name.innerHTML = "Name :" + details.name
-                    newdiv.appendChild(name) 
-
-                    var number = document.createElement("p")
-                    number.innerHTML = "Number :" + details.number
-                    newdiv.appendChild(number)
-
-                    var email = document.createElement("p")
-                    email.innerHTML = 'EMAIL :' + details.email
-                    newdiv.appendChild(email)
-
-                    var edtbutton = document.createElement('button')
-
-                    edtbutton.innerHTML ="EDIT"  
-
-                    edtbutton.addEventListener("click",function()
-                            { 
-                                  
-                                var newname = document.getElementById("d1") 
-                                newname.value = name.innerHTML.replace("Name :","")  
-
-                                document.getElementById("w").remove()
-
-                                var button = document.createElement("button") 
-                                button.innerHTML ="Save button" 
-
-                                button.addEventListener("click", function()
-                             {
-                                 name.innerHTML = "Name:" + newname.value
-                                   
-                                 button.innerHTML ="Add Conatcts" 
-
-
-                                 button.addEventListener("click", function()
-                                {
-                                                      dd()
-                                } 
-                                   )
-                             }
-                            )
-
-
-
-
-
-
-
-
-
-
-
-
-                           
-                               document.getElementById("33").appendChild(button)
-
-
-                            
-                             
-
-                                
-                               
-                                
-                                
-                            
-                             }
-                             
-                    )
-                    newdiv.appendChild(edtbutton) 
-                    
-
-                     document.body.appendChild(newdiv) 
-
-                    
-                  }
-
-             
-                function abc(e) 
+                var Number = document.createElement("p") 
+                Number.innerHTML = 'Number :' + document.getElementById("b3").value 
+                div.appendChild(Number)
+              
+                var button = document.createElement("button") 
+                button.innerHTML = "EDIT"  
+                button.addEventListener("click", function ()
                 { 
-                    e.preventDefault() 
+                      alert("you have clicked on edit button ") 
 
-                   
+                      
+                      document.getElementById("b1").value ="" 
+                      document.getElementById("b1").value = Fullname.innerHTML.replace("FULL NAME :","")
+
+
+                      document.getElementById("b4").remove() 
+                     
+                      //SAVE
+                      var s_button = document.createElement("button") 
+                      s_button.innerHTML = "SAVE" 
+                       s_button.addEventListener("click", function() 
+                    { 
+                       alert(" you have clicked save button ")
+                       Fullname.innerHTML = "FULL NAME :" +document.getElementById("b1").value 
+                        document.getElementById("b1").value =""
+
+                          s_button.remove() 
+
+                           // new add contact buton 
+                          var a_button = document.createElement("button")
+                          a_button.innerHTML = "Add Conatcts" 
+                          document.getElementById("ss").appendChild(a_button)
+                          a_button.addEventListener("click", function() 
+                           
+                          { 
+                            add()
+                          }
+                        
+                        )
+
+
+                    })
+                      document.getElementById("ss").append(s_button)
+
+
+
+
+                      
+
+
                 }
+             
+            )
 
-  
-                console.log("details =" ,details)
+
+                
+                
+                
+                
+               div.appendChild(button)
+               document.body.appendChild(div)
+               }
+
+
             </script>
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
         </body>
-        
 </html>
