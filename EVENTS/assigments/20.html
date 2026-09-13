@@ -1,126 +1,123 @@
 <html> 
     <head> 
-        <style> 
-
-        .d1 
-        { 
-            border:2px solid ;
-            width:40% ; 
-            text-align: center;
-        }
-
-
+        <style>
+            .div 
+            { 
+                border:2px solid ; 
+                width:30%;
+                display:inline-block
+            }
 
 
         </style>
 
-        </head> 
 
-        <body> 
+    </head>
+    <body> 
 
 
+        <form onsubmit="abc(event)" align="center" id="ff">
+            <label>Fullname:</label>
+            <input type="text" id="b1" />  <br> <br> 
+            <label>Mail id</label> 
+            <input type="email" id="b2" /> <br> <br>
+            <label>Number</label>
+            <input type ="number" id="b3"/><br> <br>
+             <button onclick="add()" id="s1">ADD CONTACT</button>
+        </form>
 
-        <form onsubmit="abc(event)" id="ss"> 
-            <label> Full Name : </label> 
-            <input type="text" name="Full Name" id="b1"/> <br> <br>
-            <label>Emal:</label>
-            <input type="email" name="Email" id="b2"/> <br><br> 
-            <label>Number : </label> 
-            <input type="number" name="Number" id="b3"/> <br> <br>
-            <button onclick="add()" id="b4">Add Contacts</button>
-        </form> 
-                 
+        
+
+       <script>
+            function abc(e) 
+           {
+               e.preventDefault()
+           } 
+             
          
 
-            <script> 
-               function abc(e)
-               { 
-                 e.preventDefault()
-               }
-                   
-               function add()
-               { 
-
-                alert("hello") 
-
-                var div = document.createElement("div") 
-                 
-                div.className ="d1" 
-
-                var Fullname = document.createElement("p") 
-                Fullname.innerHTML = "FULL NAME :"+ document.getElementById("b1").value 
-
-                div.appendChild(Fullname) 
-
-                var Email= document.createElement("p") 
-                Email.innerHTML = 'Email :' +  document.getElementById("b2").value 
-                div.appendChild(Email) 
-
-                var Number = document.createElement("p") 
-                Number.innerHTML = 'Number :' + document.getElementById("b3").value 
-                div.appendChild(Number)
-              
-                var button = document.createElement("button") 
-                button.innerHTML = "EDIT"  
-                button.addEventListener("click", function ()
-                { 
-                      alert("you have clicked on edit button ") 
-
-                      
-                      document.getElementById("b1").value ="" 
-                      document.getElementById("b1").value = Fullname.innerHTML.replace("FULL NAME :","")
-
-
-                      document.getElementById("b4").remove() 
-                     
-                      //SAVE
-                      var s_button = document.createElement("button") 
-                      s_button.innerHTML = "SAVE" 
-                       s_button.addEventListener("click", function() 
-                    { 
-                       alert(" you have clicked save button ")
-                       Fullname.innerHTML = "FULL NAME :" +document.getElementById("b1").value 
-                        document.getElementById("b1").value =""
-
-                          s_button.remove() 
-
-                           // new add contact buton 
-                          var a_button = document.createElement("button")
-                          a_button.innerHTML = "Add Conatcts" 
-                          document.getElementById("ss").appendChild(a_button)
-                          a_button.addEventListener("click", function() 
-                           
-                          { 
-                            add()
-                          }
-                        
-                        )
-
-
-                    })
-                      document.getElementById("ss").append(s_button)
-
-
-
-
-                      
-
-
-                }
              
-            )
+           function add() 
+           {
+             
+           
+            alert("hello")
+
+                 var div = document.createElement("div") 
+                 div.className = "div" 
+                 document.body.appendChild(div) 
+
+                 var name = document.createElement("p")
+                 name.innerHTML = "Fullname:"+ document.getElementById("b1").value
+                 div.appendChild(name)
+                 document.getElementById("b1").value ="" 
+
+                 var email = document.createElement("p") 
+                 email.innerHTML = 'Email:'+ document.getElementById("b2").value
+                 div.appendChild(email)
+                 document.getElementById("b2").value ="" 
+
+                 var number = document.createElement("p")
+                 number.innerHTML ="Number:"+document.getElementById("b3").value
+                 div.appendChild(number)
+                 document.getElementById("b3").value =""
+
+                   
+
+                   var save = document.createElement('button')
+                 save.innerHTML = 'SAVE'
+                  
 
 
-                
-                
-                
-                
-               div.appendChild(button)
-               document.body.appendChild(div)
-               }
+                 
+
+                 var edt_button = document.createElement("button") 
+                 edt_button.innerHTML ="EDIT" 
+                 div.appendChild(edt_button) 
+                 edt_button.addEventListener
+                 ("click", function(){
+                    document.getElementById("b1").value = name.innerHTML.replace("Fullname:","")
+                    document.getElementById("b2").value = email.innerHTML.replace("Email:","")
+                    document.getElementById("b3").value = number.innerHTML.replace("Number:","")
+                    document.getElementById("s1").style.visibility ="hidden"
+                    save.style.visibility ="visible" 
+                    div.appendChild(save)
+
+                 }
+                 )
+                    
+                 save.addEventListener("click", function()
+                 {  
+                    name.innerHTML = "Fullname:"+ document.getElementById("b1").value
+                    document.getElementById("b1").value =""
+                    email.innerHTML = 'Email:'+ document.getElementById("b2").value
+                    document.getElementById("b2").value =""
+                    number.innerHTML ="Number:"+document.getElementById("b3").value
+                    document.getElementById("b3").value =""
+                    save.style.visibility = "hidden"
+                    document.getElementById("s1").style.visibility ="visible"
+                 }
+                )
+                 
+                //   // DELETE BUTTON 
+                //   var button = document.createElement("button")
+                //   button.innerHTML = "DELETE" 
+                //   button.addEventListener("click", function() 
+                // {
+                //     div.remove()
+                // })
+                //   div.appendChild(button)
+            
 
 
-            </script>
+
+
+           }
+
+
+
+
+        </script>
 
 
 
@@ -141,6 +138,10 @@
 
 
 
-          
-        </body>
-</html>
+
+
+
+
+        
+    </body>
+    </html>
