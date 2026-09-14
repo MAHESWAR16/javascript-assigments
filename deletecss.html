@@ -1,180 +1,37 @@
 <html> 
   <head> 
     <style> 
-    
-
-
 
     </style>
-  </head> 
-
+  </head>
   <body> 
-
-
-
-
-
-     <input type="textbox" placeholder="new country" id="d1"/>
-
-     <button onclick="abc()" id="d5">Add</button>
-
-     <table border="2px solid" > 
-          
-      <thead> 
-        <th> Name</th>
-      </thead>
-      <tbody id="d3"> 
-
-      </tbody>
-      
-     </table>
-
-
-
-    <!-- <form onsubmit="abc(event)"> 
-         
-         <label>FirstName:</label>
-         <input type="text" name ="firstname" onkeyup="abc(event)"/> <br> <br>
-
-         <label>LastName:</label>
-         <input type="text" name ="lastname" onkeyup ="updateinfo(event)"/> <br> <br>
-
-         <label>Mobile Number :</label>
-         <input type="number" name="mobilenumber"  onkeyup="updateinfo(event)"/> <br> <br>
-
-         <label>Gender :</label>
-         
-         <input type="radio"  name="gender" value ="male" onchange="we(event)"/>
-         <label>Male</label>
-
-         <input type="radio" name="gender" value="female" onchange="we(event)"/>
-         <label>Female</label>
-
-         <input type="radio" name="gender" value="others" onchange="we(event)"/>
-         <label>Others</label>  <br> <br>
-
-         <label>Select Technologies :</label>  
-          
-         <input type="checkbox"/>
-         <label> HTML5</label> 
-
-         <input type="checkbox" />  
-         <label>CSS3</label>  
-
-         <input type="checkbox" />
-         <label>JAVASCRIPT</label>
-
-         <input type="checkbox" /> 
-         <label>React js</label> <br> <br>
-
-
-         <label>Select countries :</label>
-         <select>
-          <option>Choose</option>
-          <option>India</option>
-          <option>srilanka</option>
-          <option>China</option>
-          <option>Japan</option>
-          <option>Russia</option>
-         </select>  <br> <br>
-
-
-         <label>Enter Adress :</label>
-         <textarea></textarea>   <br> <br>
-    
-         <button onclick="createdata(event)">Submit</button>
-    </form> 
-
-
-
-     <table border="2px solid">
    
-        <thead>
-        <th>Sl.No</th> 
-        <th>FirstName</th>
-        <th>LastName</th>
-        <th>MobileNumber</th>
-        <th>Gender</th>
-        <th>Technologies</th>
-        <th>countries</th>
-        <th>Adress</th>
-      </thead>
-      <tbody> 
+    <h1 onclick="abc(event, this)">  welcome to edupoly </h1>
+  
+    <h1 id="d2"> This is another Element</h1>
+
+    <script> 
 
 
-      </tbody>
-    </table> -->
+            function Mobile(c,n,p,m,co)
 
-          <script> 
+            {
+              // this = {} 
+            this.color = c ;
+            this.name=n;
+            this.price = p;
+            this.model= m;
+            this.company = co
+            // return this
+            }
 
 
+       var mobile1 =  new Mobile("red","redminote","13000","note8 pro","Redmi")
 
-                 var countries = []
+       console.log(mobile1) 
 
-             
-               function abc(q)
-               { 
-                
-                  var newtr = document.createElement("tr")
-                   
-                  var  newtd = document.createElement("td")
-
-                  newtd.innerHTML = document.getElementById("d1").value 
-
-                  countries.push(newtd.innerHTML)
-
-                  var optd = document.createElement('td') 
-
-                  var edit = document.createElement("button")
-
-                  edit.innerHTML = "edit"
-
-                  edit.addEventListener("click",function()
-                        {
-      
-               if(edit.innerHTML === "edit")
-
-                          { 
-
-                  document.getElementById("d1").style.color="red" 
-            
-                  document.getElementById("d1").value = newtd.innerHTML 
-               
-                        edit.innerHTML = 'save'
-                            }
-               else 
-                          {   
-                      
-                 var newvalue = document.getElementById("d1").value 
-                     newtd.innerHTML = newvalue 
-
-                     edit.innerHTML ="edit"
-                          }
-
-                }
-                
-                )
-                   
-                  optd.appendChild(edit)
-
-                  var del = document.createElement("button")
-                  del.innerHTML = "delete"
-                  del.addEventListener("click", 
-                     function ()
-                     {
-                      newtr.remove()
-                     }
-                  )
-                  optd.appendChild(del)
-
-                  newtr.appendChild(newtd) 
-                  newtr.appendChild(optd)
-
-                  document.getElementById("d3").appendChild(newtr) 
-
-               }
-
-           console.log("countries =" , countries)
+       var mobile2  = new Mobile()
+       console.log(mobile2)
 
 
 
@@ -182,45 +39,50 @@
 
 
 
-          // var slno = 1 
-          
-          //      var studentinfo =  
-          //      { 
-          //       firstname:"",
-          //       lastname:"", 
-          //       mobilenumber:"",
-          //       gender:"",
-          //       tech:"",
-          //       countries:"",
-          //       adress:""
-          //      }
+
+    // var ar = [12,23]
+
+    // var obj = { 
+    //   firstname:"praveen"
+    // }
+
+
+    //  console.log(this)  // window object 
+
+    //  function abc(e,t)
+    //  {
+    //      console.log("e=",e) 
+    //      console.dir(t)  // this refers to current element 
+    //      console.log(t)
+         
+
+    //  }
+   
+    //  document.getElementById("d2").addEventListener("click", function(e)
+    // { 
+    //      console.log(e)
+    //      console.dir(this) // this refers to current element
+    //      console.log(this)
+    //      this.style.color="red"
+
+        
+    // })
      
-          //   function abc(e)
-          //   { 
-          //     e.preventDefault()
-          //   }
-             
-          //   function updateinfo(a)
-          //   { 
-          //     studentinfo[a.target.name] = a.target.value  
-          //   }
 
-          // console.log(studentinfo)  
-
-          //    function we(a)
-          // { 
-          //       studentinfo[a.target.name] = a.target.value
-          // }
+    // function ff()
+    // {
+    //   console.log(this) 
+    // }
  
-           
-           
-           
+    // ff()  // this refers to windows object .
 
 
-          </script>
+    // new ff()// this referes to empty object .
 
+    
 
+    </script>
+
+    
   </body>
-
-
-</html>
+</html> 
