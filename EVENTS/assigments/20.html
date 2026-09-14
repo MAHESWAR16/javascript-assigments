@@ -67,7 +67,7 @@
                    var save = document.createElement('button')
                  save.innerHTML = 'SAVE'
                   
-
+  
 
                  
 
@@ -100,13 +100,25 @@
                 )
                  
                 //   // DELETE BUTTON 
-                //   var button = document.createElement("button")
-                //   button.innerHTML = "DELETE" 
-                //   button.addEventListener("click", function() 
-                // {
-                //     div.remove()
-                // })
-                //   div.appendChild(button)
+                   
+                var del_button = document.createElement("button")
+                del_button.innerHTML = "Delete" 
+                del_button.addEventListener("click", function()
+                { 
+                var  result  = confirm("are you sure you want to delete") 
+                   
+                console.log("result =" , result)
+                if(result)
+                {
+                    div.remove()
+                }
+                }
+            
+            
+            )
+ 
+ 
+                  div.appendChild(del_button)
             
 
 
