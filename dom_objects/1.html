@@ -21,7 +21,21 @@
         </ul> 
 
 
-        <table id="ff" style="border: 2px solid;"> 
+        <table id="ff" border="2px solid"> 
+            <tr> 
+                <thead>
+                    <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Salary</th>
+                <th>Location</th> 
+
+            </thead>
+                
+            </tr>
+            <tbody> 
+               
+            </tbody>
 
         </table>
         <script> 
@@ -74,9 +88,13 @@ document.body.appendChild(newul)
 
 var numbers = [11,12,13,14,15,16,17,18,19,20]
 
-numbers.forEach(function(a)
-{
-     var newli = document.createElement("li")
+numbers.forEach(function(a,q,z)
+{ 
+    console.log("a =",a )      
+    console.log("q=",q)
+    console.log('z=',z)
+
+    var newli = document.createElement("li")
      newli.innerHTML = a 
      document.getElementById("dw").appendChild(newli)
 })
@@ -130,6 +148,8 @@ var array_of_objects = [
 array_of_objects.forEach(function(a,b,c)
 { 
     console.log("a=",a)
+    console.log("b=",b)
+    console.log("c=",c)
      var newtr = document.createElement("tr")
      var nametd = document.createElement("td") 
      nametd.innerHTML =a.name
