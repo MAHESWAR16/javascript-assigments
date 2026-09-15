@@ -1,0 +1,44 @@
+<html> 
+    <head> 
+        
+    </head>
+    <body> 
+        <script> 
+             const person = {
+
+name:"Alice",
+
+age:30,
+
+hobbies:["reading", "hiking","coding"],
+
+isStudent:false
+
+};
+
+// What is Alice's age? 
+console.log(person.age)
+// How would you change Alice's city to "Los Angeles"? 
+person.city ="Los Angels"
+// How would you add a new property called "occupation" with the value "Software Engineer"? 
+person.occupation = 'Software Engineer'
+// How would you loop through all of Alice's hobbies? 
+person.hobbies.forEach(function(x)
+{
+    console.log("x=",x)
+})
+// How would you check if the object has a property called "occupation"? 
+console.log(person)
+for(var x in person)
+{ 
+    if(x === "occupation")
+{
+    console.log("object has property occupation")
+}
+
+}
+// What is the data type of the isStudent property? 
+// boolean 
+        </script>
+    </body>
+</html>

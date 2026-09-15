@@ -1,0 +1,112 @@
+<script> 
+
+var person = {
+
+name:"Alice",
+
+age:30,
+
+city:"New York",
+
+hobbies: ["reading", "hiking", "coding"],
+
+isStudent:false
+
+};
+
+// Basic Level
+
+// 1. Accessing Properties: 
+
+// Write a JavaScript statement to print Alice's age from the person object. 
+console.log(person.age)
+console.log(person['age'])
+// How would you change Alice’s city to "San Francisco"?  
+person.city  = 'San Francison'
+console.log(person)
+
+// 2. Adding & Removing Properties: 
+
+// Add a new property occupationwith the value "Software Engineer". 
+person.occupation = "Software Engineer"
+// Remove the isStudent property from the person object. 
+delete person["isStudent"] // delete person.isStudent
+// 3. Array Operations: 
+
+// Add "swimming" to Alice’s hobbies list. 
+person.hobbies.push("Swiming")
+// Remove the last hobby from the array. 
+person.hobbies.pop('siwmming')
+// 4. Looping Through Object: 
+
+// Write a loop to print all properties and their values in the person object.
+
+for(var x in person)
+{ 
+    console.log(x,":",person[x])
+}
+// Intermediate Level
+
+// 5. Object Methods: 
+
+// Add a method greet() to person that returns "Hello,my name is Alice!". 
+var person = {
+
+name:"Alice",
+
+age:30,
+
+city:"New York",
+
+hobbies: ["reading", "hiking", "coding"],
+
+isStudent:false ,
+
+greet  : function() { 
+    return "Hello , My Name is Alice"
+}
+
+};
+
+console.log(person.greet())
+
+// Modify greet() to dynamically return "Hello,my name is [name] and I am [age] years old!". 
+var person = {
+
+name:"Alice",
+
+age:30,
+
+city:"New York",
+
+hobbies: ["reading", "hiking", "coding"],
+
+isStudent:false ,
+
+greet  : function() { 
+     
+    return "Hello , My Name is , " +this.name +"and i am"+ this.age +"years old"
+}
+
+};
+console.log(person.greet())
+
+// 6. Object Destructuring: 
+
+// Use object destructuring to extract name and age from person. 
+// 7. Using this in an Object Method: 
+
+// Add a method displayHobbies()that logs all hobbies in a formatted string. 
+// Advanced Level
+
+// 8. Object Copying & Spread Operator: 
+
+// Create a new object newPersonby copying person but changing the age to 35. 
+// 9. Checking Property Existence: 
+
+// Write a function that checks if a given property exists in the person object. 
+// 10. Merging Objects: 
+
+// Merge person with anotherobject { country:"USA", language: "English" }.
+
+</script>
