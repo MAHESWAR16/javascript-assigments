@@ -1,0 +1,162 @@
+<html> 
+    <head> 
+        <style> 
+
+        </style>
+    </head>
+    <body> 
+        <h1 id="d1"> Hello World </h1>
+        <h1 class="a">Hello</h1>
+        <h2 class="a">Edupoly</h2>
+        <p class ="b">Training</p> 
+
+        <ul> 
+            <li class ="dd">APPLE</li>
+            <li class ="dd">Mango</li>
+            <li class ="dd">Orange</li>
+        </ul>
+
+        <ul id="dw"> 
+
+        </ul> 
+
+
+        <table id="ff" style="border: 2px solid;"> 
+
+        </table>
+        <script> 
+          console.log( document.getElementById("d1").innerText )
+          console.log(typeof(document.getElementById("d1")).innerText)
+          console.log(document.getElementById("d1").innerText.toUpperCase())
+          console.log(document.getElementById("d1"))
+        //   var x = document.getElementById("d1")
+        //   x.innerHTML ="welcome to Edupoly"
+        //   console.log(x) 
+        var t = document.getElementsByClassName("a")
+        console.log('t=', t)
+        console.log('t=', t[0].innerText)
+        console.log("t =", t[1].innerText) 
+
+        var array = []
+        
+      var q = document.querySelectorAll(".dd")
+      q.forEach(function(a)
+    {  
+        // console.log('a=',a) 
+        array.push(a.innerText) 
+
+        
+    }) 
+    console.log(array) 
+
+    var text = document.createElement("h1")
+    text.innerHTML ="Hello DOM wORLD!"
+    document.body.appendChild(text)
+    
+    var text2 = document.createElement("p")
+    text2.innerHTML = "Hello Dom World!"
+    text2.style.color="red"
+    document.body.appendChild(text2) 
+
+    var array = ["mahesh","ramesh","suresh","gopi","sunil"]
+
+    var newul = document.createElement("ul")
+
+    array.forEach(function(x)
+{
+        console.log("x=",x) 
+        var newli = document.createElement("li")
+        newli.innerHTML =  x 
+        newul.appendChild(newli)
+}) 
+document.body.appendChild(newul) 
+
+
+var numbers = [11,12,13,14,15,16,17,18,19,20]
+
+numbers.forEach(function(a)
+{
+     var newli = document.createElement("li")
+     newli.innerHTML = a 
+     document.getElementById("dw").appendChild(newli)
+})
+          
+
+var array_of_objects = [
+          
+{
+    name:"praveen",
+    age:36, 
+    gender:"male",
+    salary:30000 ,
+    city:"hyderabad"
+} ,
+ 
+{
+    name:"suresh",
+    age:25, 
+    gender:"male",
+    salary:25000 ,
+    city:"chennai"
+} , 
+
+
+{
+    name:"varun sandesh",
+    age:25, 
+    gender:"male",
+    salary:25000 ,
+    city:"hyderabad"
+} , 
+
+{
+    name:"siddhaadth",
+    age:65, 
+    gender:"male",
+    salary:65000 ,
+    city:"hyderabad"
+} ,  
+
+
+{
+    name:"pavan kumar",
+    age:45, 
+    gender:"male",
+    salary:80000 ,
+    city:"hyderabad"
+} , 
+
+] 
+array_of_objects.forEach(function(a,b,c)
+{ 
+    console.log("a=",a)
+     var newtr = document.createElement("tr")
+     var nametd = document.createElement("td") 
+     nametd.innerHTML =a.name
+     newtr.appendChild(nametd)
+
+     var agetd = document.createElement("td")
+     agetd.innerHTML = a.age
+     newtr.appendChild(agetd) 
+
+     var gendertd = document.createElement("td")
+     gendertd.innerHTML = a.gender
+     newtr.appendChild(gendertd)
+
+     var salarytd = document.createElement("td")
+     salarytd.innerHTML = a.salary 
+     newtr.appendChild(salarytd)
+
+     var citytd = document.createElement("td")
+     citytd.innerHTML = a.city
+     newtr.appendChild(citytd) 
+
+     document.getElementById("ff").appendChild(newtr)
+}) 
+
+
+
+        
+        </script>
+    </body>
+</html>
