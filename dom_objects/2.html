@@ -2,6 +2,15 @@
     <head> 
         <style> 
 
+#d1 > li:nth-child(4n + 1),
+#d1 > li:nth-child(4n + 2) {
+    background-color: pink;
+}
+
+#d1 > li:nth-child(4n + 3),
+#d1 > li:nth-child(4n + 4) {
+    background-color: lightblue;
+}
         </style>
     </head>
     <body> 
@@ -95,7 +104,7 @@
 
                             ]
 
-                            var colors =["red","blue","orange","pink","yellow","green","skyblue"]
+                            var colors =["yellow","green"]
         
                             students.forEach(function(a,i)
                          
@@ -105,7 +114,7 @@
                              var newli =  document.createElement("li")
                              newli.innerHTML = a.name
                              document.getElementById("d1").appendChild(newli)
-                             newli.style.backgroundColor = colors[i]
+                             
                              
                                
                               var newul = document.createElement("ul")
