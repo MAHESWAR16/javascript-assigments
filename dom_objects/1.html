@@ -1,6 +1,15 @@
 <html> 
     <head> 
         <style> 
+        #r4
+        { 
+            border:2px solid ; 
+            width:120% ;
+            height:80% ;
+            display:inline-block ;
+            box-sizing: border-box;
+
+        }
 
         </style>
     </head>
@@ -38,6 +47,9 @@
             </tbody>
 
         </table>
+
+
+        <div id="r4"></div>
         <script> 
           console.log( document.getElementById("d1").innerText )
           console.log(typeof(document.getElementById("d1")).innerText)
@@ -174,8 +186,21 @@ array_of_objects.forEach(function(a,b,c)
      document.getElementById("ff").appendChild(newtr)
 }) 
 
+  var images = ["https://m.media-amazon.com/images/M/MV5BM2JlNDMzZmYtNDg0YS00YTBlLTgzNjUtYjRiMGM4NWUzZGE4XkEyXkFqcGc@._V1_.jpg","https://images.mubicdn.net/images/cast_member/305417/cache-261772-1506680577/image-w856.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqFtl6IEJ13mRZI3d5nfwpJ20IczNJPHZEhypmfkMhTQ&s=10"] 
 
+  images.forEach( 
+           function(a)
+           { 
+             
+            var newimg = document.createElement("img")
+            newimg.src = a 
+            newimg.className = "r4"
+            
+            document.getElementById("r4").appendChild(newimg)
+            
+           }
 
+  )
         
         </script>
     </body>
