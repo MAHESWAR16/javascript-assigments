@@ -22,10 +22,14 @@
             </tbody>
     </table> 
         
-    <label>salary</label>
-       <input type="checkbox"  onclick="ab()"/>
+    <label>Male</label>
+    <input type="checkbox" name="gender" value ="male" onchange ="abc(event)" />      
 
-    <script>
+    <script> 
+
+    
+        
+    
 
         var people = [
 
@@ -130,8 +134,9 @@
 
      people.forEach(function(a)
      {  
-        console.log('a=',a)
-            var newtr = document.createElement("tr")
+        console.log('a=',a) 
+    
+        var newtr = document.createElement("tr")
 
             var fntd = document.createElement("td")
             fntd.innerHTML = a.firstname
@@ -157,17 +162,14 @@
             salarytd.innerHTML = a.salary
             newtr.appendChild(salarytd)
 
-
-
             document.getElementById("d1").appendChild(newtr)
- 
-
-           
      }
-    ) 
-         
+    )  
 
+        
+ 
     
+
 
 
     
