@@ -1,0 +1,134 @@
+<html> 
+    <head> 
+        <style> 
+
+        </style>
+    </head>
+    <body> 
+        <ul id="d1">
+            
+               
+                
+            
+        </ul>
+
+           
+
+
+
+
+
+        <script> 
+            // 6.Generate List Elements using document object for the given Array of Objects
+
+                    var students = [
+
+                                {
+
+                                name:'jaya',
+
+                                gender:'female',
+
+                                place:'gachibowli',
+
+                                },
+
+                                {
+
+                                name:'dasu',
+
+                                gender:'male',
+
+                                place:'kphb'
+
+                                },
+
+                                {
+
+                                name:'swati',
+
+                                gender:'female',
+
+                                place:'pune'
+
+                                },
+
+                                {
+
+                                name:'pallavi',
+
+                                gender:'female',
+
+                                place:'assam'
+
+                                },
+
+                                {
+
+                                name:'kiran',
+
+                                gender:'male',
+
+                                place:'kondapur'
+
+                                },
+
+                                {
+
+                                name:'thirumala',
+
+                                gender:'male',
+
+                                place:'madhapur'
+
+                                },
+
+                                {
+
+                                name:'priya',
+
+                                gender:'female',
+
+                                place:'hitech'
+
+                                },
+
+                            ]
+
+                            var colors =["red","blue","orange","pink","yellow","green","skyblue"]
+        
+                            students.forEach(function(a,i)
+                         
+                        {    
+                            // console.log('a =' , a)     
+
+                             var newli =  document.createElement("li")
+                             newli.innerHTML = a.name
+                             document.getElementById("d1").appendChild(newli)
+                             newli.style.backgroundColor = colors[i]
+                             
+                               
+                              var newul = document.createElement("ul")
+
+                              var genderli = document.createElement("li")
+                              genderli.innerHTML = a.gender
+                              newul.appendChild(genderli)
+                              
+                              var placeli = document.createElement("li")
+                              placeli.innerHTML = a.place
+                              newul.appendChild(placeli)
+
+                              newli.appendChild(newul)
+
+                        }
+                    
+                    )
+ 
+
+
+
+
+
+        </script>
+        </body>
+</html>
