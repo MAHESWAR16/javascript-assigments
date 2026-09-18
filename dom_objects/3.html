@@ -14,6 +14,8 @@
             <th>Gender</th>
             <th>City</th>
             <th>Salary</th>
+            <th>Operations</th>
+
         </thead>
 
             <tbody id="d1"> 
@@ -23,9 +25,11 @@
     </table> 
         
     <label>Male</label>
-    <input type="checkbox" name="gender" value ="male" onclick ="male(event)" />   <br>
+    <input type="checkbox" name="gender" value ="male" onclick ="male(event)"  />   <br>
     <label>Female :</label>
-    <input type="checkbox" name="gender" value="female" onclick = "female(event)" />  
+    <input type="checkbox" name="gender" value="female" onclick = "female(event)" />  <br> 
+    <label>Delete</label>
+    <input type="checkbox" onclick="del(event)" />
 
     <script> 
 
@@ -166,15 +170,39 @@
 
             var salarytd = document.createElement("td")
             salarytd.innerHTML = a.salary
-            newtr.appendChild(salarytd)
+            newtr.appendChild(salarytd) 
+            
+          
+              var edit_td = document.createElement("button")
+            edit_td.innerHTML = "EDIT"
+            edit_td.addEventListener("click", function(e)
+           { 
+ 
+            fntd.innerHTML = ""
+            console.log("e=",e)
+
+                var fn_input = document.createElement("input")
+                fntd.innerHTML = fn_input.value
+                fntd.appendChild(fn_input)
+
+                
+
+
+
+
+
+           }
+        )
+            newtr.appendChild(edit_td)
+
+
 
             document.getElementById("d1").appendChild(newtr)
      }
     ) 
     }
     
-    display()
-       
+    display()       
  
   
     function male(e)
@@ -218,24 +246,24 @@
             salarytd.innerHTML = a.salary
             newtr.appendChild(salarytd)
 
+
+            
+
+
             document.getElementById("d1").appendChild(newtr)
         }
         
         }
-    
-    
     )
-
     } 
     else 
     {
         document.getElementById("d1").innerHTML = ""
         display ()
     }
-
     }
           
-    function female(e)
+   function female(e)
     { 
         // alert("hello")
          
@@ -276,6 +304,7 @@
             salarytd.innerHTML = a.salary
             newtr.appendChild(salarytd)
 
+            
             document.getElementById("d1").appendChild(newtr)
         }
         
@@ -293,7 +322,11 @@
 
     }
    
-        
+      function del(e)
+      {
+           document.getElementById("gg").remove()
+             
+      }
     </script>
 </body>
 </html>
