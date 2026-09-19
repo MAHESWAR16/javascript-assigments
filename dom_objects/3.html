@@ -6,7 +6,7 @@
 
 <body> 
 
-    <table border="2px solid" align="center" id="gg"> 
+    <table border="2px solid" align="center" id="all"> 
         <thead>
             <th>FirstName</th>
             <th>LastName</th>
@@ -15,21 +15,20 @@
             <th>City</th>
             <th>Salary</th>
             <th>Operations</th>
-
         </thead>
+            <tbody id="d1"> </tbody>
+            <tbody id="d2"> </tbody>
+    </table> 
 
-            <tbody id="d1"> 
-
-
-            </tbody>
+   
+            
     </table> 
         
     <label>Male</label>
     <input type="checkbox" name="gender" value ="male" onclick ="male(event)"  />   <br>
     <label>Female :</label>
     <input type="checkbox" name="gender" value="female" onclick = "female(event)" />  <br> 
-    <label>Delete</label>
-    <input type="checkbox" onclick="del(event)" />
+   
 
     <script> 
 
@@ -138,14 +137,92 @@
                         ];
 
 
+                        function createElement(a) 
+                        { 
+                              var newtr = document.createElement("tr")
+
+            var fntd = document.createElement("td")
+            fntd.innerHTML = a.firstname
+            newtr.appendChild(fntd)
+            
+            var lntd = document.createElement("td")
+            lntd.innerHTML = a.lastname 
+            newtr.appendChild(lntd) 
+
+            var agetd = document.createElement("td")
+            agetd.innerHTML = a.age
+            newtr.appendChild(agetd)
+           
+            var gendertd = document.createElement("td")
+            gendertd.innerHTML = a.gender
+            newtr.appendChild(gendertd) 
+
+            var citytd = document.createElement("td")
+            citytd.innerHTML = a.city
+            newtr.appendChild(citytd) 
+
+            var salarytd = document.createElement("td")
+            salarytd.innerHTML = a.salary
+            newtr.appendChild(salarytd)  
+          
+           var dele = document.createElement("button")
+           dele.innerHTML = "Delete"
+           newtr.appendChild(dele)
+           dele.addEventListener("click", function()
+           {
+            newtr.innerHTML = ""
+           }
+           )
+
+           document.getElementById("d1").appendChild(newtr)
+                             
+                      }
+
      
     function display()
 
     {
-         people.forEach(function(a)
+         people.forEach(function(b)
      {  
-        console.log('a=',a) 
+        console.log('b=',b) 
     
+            createElement(b)
+           
+     }
+    ) 
+    }
+    
+    display()       
+ 
+
+     function male (e)
+     { 
+             document.getElementById("d1").innerHTML = ""
+        if(e.target.checked)
+     {
+         var male_results = people.filter( 
+
+          function (x,i) 
+          { 
+            console.log('x=',x)
+            if(x.gender === "male") 
+          {
+            return x
+          } 
+          else
+           {
+            return false
+           }
+            
+          }
+
+         )
+               
+          console.log("male result",male_results) 
+
+          male_results.forEach( 
+            function(a) { 
+
         var newtr = document.createElement("tr")
 
             var fntd = document.createElement("td")
@@ -171,15 +248,77 @@
             var salarytd = document.createElement("td")
             salarytd.innerHTML = a.salary
             newtr.appendChild(salarytd)  
+          
+           var dele = document.createElement("button")
+           dele.innerHTML = "Delete"
+           newtr.appendChild(dele)
+           dele.addEventListener("click", function()
+           {
+            newtr.innerHTML = ""
+           } )
+           document.getElementById("d2").appendChild(newtr)
+          }
+        )
 
+     }
+     else 
+     { 
+        document.getElementById("d2").innerHTML = ""
+         document.getElementById("d1").appendChild(newtr)
+     }
+                 }
+    
+         
+       function female(e) 
+       { 
+         document.getElementById("d1").innerHTML = ""
 
+           var female_results = people.filter( 
+                    function(x,i) 
+                    { 
 
-            var ed_button = document.createElement("button")
-            ed_button.innerHTML ="EDIT"
+                        if(x.gender === "female") 
+                    { 
+                        return x 
+                    } 
+
+                    }
+           )
+
+              console.log(female_results) 
+
+             
+
+              if(e.target.checked) 
+              {
+                  female_results.forEach ( 
+                function(a) 
+                { 
+                     var newtr = document.createElement("tr")
+
+            var fntd = document.createElement("td")
+            fntd.innerHTML = a.firstname
+            newtr.appendChild(fntd)
+            
+            var lntd = document.createElement("td")
+            lntd.innerHTML = a.lastname 
+            newtr.appendChild(lntd) 
+
+            var agetd = document.createElement("td")
+            agetd.innerHTML = a.age
+            newtr.appendChild(agetd)
            
-            newtr.appendChild(ed_button)
-            
-            
+            var gendertd = document.createElement("td")
+            gendertd.innerHTML = a.gender
+            newtr.appendChild(gendertd) 
+
+            var citytd = document.createElement("td")
+            citytd.innerHTML = a.city
+            newtr.appendChild(citytd) 
+
+            var salarytd = document.createElement("td")
+            salarytd.innerHTML = a.salary
+            newtr.appendChild(salarytd)  
           
            var dele = document.createElement("button")
            dele.innerHTML = "Delete"
@@ -188,148 +327,28 @@
            {
             newtr.innerHTML = ""
            }
+           ) 
+             document.getElementById("d2").appendChild(newtr)
+                }
+
+              ) 
+
+              } 
+              else 
+              { 
+                    document.getElementById("d2").innerHTML = "" 
+                    display()
+              }
+              
+       }
         
-          
+      
        
 
-
-
-        
-        
-        )
-
-
-
-            document.getElementById("d1").appendChild(newtr)
-     }
-    ) 
-    }
     
-    display()       
+    
  
   
-    function male(e)
-    { 
-        // alert("hello")
-         
-        console.log("e=",e.target.checked)
-        if(e.target.checked)
-    {  
-        document.getElementById("d1").innerHTML = ""
-       
-
-        people.forEach(function(a)
-
-        {
-            if(a.gender === "male")
-        {
-             var newtr = document.createElement("tr")
-
-            var fntd = document.createElement("td")
-            fntd.innerHTML = a.firstname
-            newtr.appendChild(fntd)
-            
-            var lntd = document.createElement("td")
-            lntd.innerHTML = a.lastname 
-            newtr.appendChild(lntd) 
-
-            var agetd = document.createElement("td")
-            agetd.innerHTML = a.age
-            newtr.appendChild(agetd)
-           
-            var gendertd = document.createElement("td")
-            gendertd.innerHTML = a.gender
-            newtr.appendChild(gendertd) 
-
-            var citytd = document.createElement("td")
-            citytd.innerHTML = a.city
-            newtr.appendChild(citytd) 
-
-            var salarytd = document.createElement("td")
-            salarytd.innerHTML = a.salary
-            newtr.appendChild(salarytd)
-
-
-            
-
-
-            document.getElementById("d1").appendChild(newtr)
-        }
-        
-        }
-    )
-    } 
-    else 
-    {
-        document.getElementById("d1").innerHTML = ""
-        display ()
-    }
-    }
-          
-   function female(e)
-    { 
-        // alert("hello")
-         
-        console.log("e=",e.target.checked)
-        if(e.target.checked)
-    {  
-        document.getElementById("d1").innerHTML = ""
-       
-
-        people.forEach(function(a)
-
-        {
-            if(a.gender === "female")
-        {
-             var newtr = document.createElement("tr")
-
-            var fntd = document.createElement("td")
-            fntd.innerHTML = a.firstname
-            newtr.appendChild(fntd)
-            
-            var lntd = document.createElement("td")
-            lntd.innerHTML = a.lastname 
-            newtr.appendChild(lntd) 
-
-            var agetd = document.createElement("td")
-            agetd.innerHTML = a.age
-            newtr.appendChild(agetd)
-           
-            var gendertd = document.createElement("td")
-            gendertd.innerHTML = a.gender
-            newtr.appendChild(gendertd) 
-
-            var citytd = document.createElement("td")
-            citytd.innerHTML = a.city
-            newtr.appendChild(citytd) 
-
-            var salarytd = document.createElement("td")
-            salarytd.innerHTML = a.salary
-            newtr.appendChild(salarytd)
-
-            
-            document.getElementById("d1").appendChild(newtr)
-        }
-        
-        }
-    
-    
-    )
-
-    } 
-    else 
-    {
-        document.getElementById("d1").innerHTML = ""
-        display ()
-    }
-
-    }
-   
-      function del(e)
-      {
-           document.getElementById("gg").remove()
-             
-      }
-    </script>
+        </script>
 </body>
 </html>
