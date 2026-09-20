@@ -18,6 +18,7 @@
         </thead>
             <tbody id="d1"> </tbody>
             <tbody id="d2"> </tbody>
+            <tbody id="d3"> </tbody>
     </table> 
 
    
@@ -28,7 +29,11 @@
     <input type="checkbox" name="gender" value ="male" onclick ="male(event)"  />   <br>
     <label>Female :</label>
     <input type="checkbox" name="gender" value="female" onclick = "female(event)" />  <br> 
-   
+    <label>Salary greateer than 20000: </label>
+    <input type = "checkbox" name = "salary" onclick="salary(event)" />
+    <br> <br> 
+    <label> Age Above 25</label> 
+    <input type = "checkbox" onclick="age(event)" />
 
     <script> 
 
@@ -264,7 +269,7 @@
      else 
      { 
         document.getElementById("d2").innerHTML = ""
-         document.getElementById("d1").appendChild(newtr)
+        display()
      }
                  }
     
@@ -343,10 +348,112 @@
        }
         
       
-       
+        // salary  
 
-    
-    
+        function salary (e) 
+        { 
+            document.getElementById("d1").innerHTML = ""
+            if(e.target.checked)
+        {
+
+        
+            
+            var result = people.filter( 
+                function(a)
+                {
+                        if(a.salary > 20000)
+                          {
+                            var newtr = document.createElement("tr")
+
+            var fntd = document.createElement("td")
+            fntd.innerHTML = a.firstname
+            newtr.appendChild(fntd)
+            
+            var lntd = document.createElement("td")
+            lntd.innerHTML = a.lastname 
+            newtr.appendChild(lntd) 
+
+            var agetd = document.createElement("td")
+            agetd.innerHTML = a.age
+            newtr.appendChild(agetd)
+           
+            var gendertd = document.createElement("td")
+            gendertd.innerHTML = a.gender
+            newtr.appendChild(gendertd) 
+
+            var citytd = document.createElement("td")
+            citytd.innerHTML = a.city
+            newtr.appendChild(citytd) 
+
+            var salarytd = document.createElement("td")
+            salarytd.innerHTML = a.salary
+            newtr.appendChild(salarytd)  
+          
+           var dele = document.createElement("button")
+           dele.innerHTML = "Delete"
+           newtr.appendChild(dele)
+           dele.addEventListener("click", function()
+           {
+            newtr.innerHTML = ""
+           }
+           )
+
+           document.getElementById("d3").appendChild(newtr)
+                           }
+
+                }
+
+            )
+
+             console.log("rsults = ", result)
+
+        } 
+        else 
+        { 
+            document.getElementById("d3").innerHTML = ""
+            display()
+        }
+
+        }
+     
+
+        function age(e) 
+        { 
+
+              document.getElementById("d1").innerHTML = ""
+            if(e.target.checked)
+        {
+              
+            var result = people.filter( function(a) 
+                      
+            { 
+               if(a.age > 25) 
+               { 
+                return true
+               }
+
+            }
+         
+        )
+         console.log("result", result)
+        
+         result.forEach ( 
+            function(a)
+            {
+                createElement(a)
+            }
+         )
+
+        } 
+        else 
+        { 
+            display()
+        }
+           
+          
+
+        
+        }
  
   
         </script>
