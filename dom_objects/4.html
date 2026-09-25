@@ -28,11 +28,47 @@
             <label>Descending order</label>
             <input type="checkbox"  onchange=" des(event)" /> <br>
 
-        
-               
+         
+             <!-- Display the hardgoods and software in separate tables -->
+
+              <table border="2px solid"> 
+              <thead>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Manufacture</th>
+              </thead>
+
+                <tbody id="d3">   </tbody> 
+              
+                  <!-- <tbody id="d2"> </tbody> -->
+                  
+
+
+            </table> 
+
+            <!-- software goods -->
+             
+            <table border="2px solid"> 
+              <thead>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Manufacture</th>
+              </thead>
+
+                <tbody id="d4">   </tbody> 
+              
+                  <!-- <tbody id="d2"> </tbody> -->
+                  
+
+
+            </table> 
                    
                
-            </select>
+            
             <script> 
 
                  var products = [
@@ -380,10 +416,91 @@ else
 
 // 4. Display the hardgoods and software in separate tables
 
+ var hardgoods = products.filter(function(a,b) { 
+      console.log("a=",a,"b=",b) 
+      if(a.type === "HardGood") 
+      { 
+             return true
+      }
 
+ }) 
 
+ console.log("hardgoods =",hardgoods) 
 
+ hardgoods.forEach 
+ ( function(a) 
+      { 
+        console.log('a =' ,a)
  
+    var newtr = document.createElement("tr")
+
+    var nametd = document.createElement("td")
+    nametd.innerHTML = a.name 
+    newtr.appendChild(nametd) 
+
+
+    var typetd = document.createElement("td") 
+    typetd.innerHTML = a.type
+    newtr.appendChild(typetd)
+   
+    var pricetd = document.createElement("td")
+    pricetd.innerHTML = a.price
+    newtr.appendChild(pricetd) 
+  
+    var cat_td = document.createElement("td")
+    cat_td.innerHTML = a.category 
+    newtr.appendChild(cat_td) 
+
+    var manu_td = document.createElement("td")
+    manu_td.innerHTML = a.manufacturer
+    newtr.appendChild(manu_td)
+
+    document.getElementById("d3").appendChild(newtr)
+         }
+)
+
+ var software_goods = products.filter(
+    function(a,b) { 
+    console.log("a=",a) 
+    if(a.type === "Software") 
+ {
+    return true
+ }
+ })
+  
+ console.log("software_goods",software_goods) 
+ software_goods.forEach 
+ ( function(a) 
+      { 
+        console.log('a =' ,a)
+ 
+    var newtr = document.createElement("tr")
+
+    var nametd = document.createElement("td")
+    nametd.innerHTML = a.name 
+    newtr.appendChild(nametd) 
+
+
+    var typetd = document.createElement("td") 
+    typetd.innerHTML = a.type
+    newtr.appendChild(typetd)
+   
+    var pricetd = document.createElement("td")
+    pricetd.innerHTML = a.price
+    newtr.appendChild(pricetd) 
+  
+    var cat_td = document.createElement("td")
+    cat_td.innerHTML = a.category 
+    newtr.appendChild(cat_td) 
+
+    var manu_td = document.createElement("td")
+    manu_td.innerHTML = a.manufacturer
+    newtr.appendChild(manu_td)
+
+    document.getElementById("d4").appendChild(newtr)
+         }
+)
+
             </script>
        
             
