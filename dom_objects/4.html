@@ -4,6 +4,7 @@
       
 
             </style>
+            </head>
         <body> 
             <table border="2px solid"> 
               <thead>
@@ -15,11 +16,23 @@
               </thead>
 
                 <tbody id="d1">   </tbody> 
-                <!--  name and price -->
-                  <tbody id="d2"> </tbody>
+              
+                  <!-- <tbody id="d2"> </tbody> -->
+                  
+
+
             </table>
+           
+            <label>ASCENDING order</label>
+            <input type ="checkbox"  onchange=" asc(event)"/> <br> 
+            <label>Descending order</label>
+            <input type="checkbox"  onchange=" des(event)" /> <br>
 
-
+        
+               
+                   
+               
+            </select>
             <script> 
 
                  var products = [
@@ -113,6 +126,7 @@
 
 function all_items()
 { 
+    
  products.forEach 
  ( function(a) 
       { 
@@ -147,9 +161,9 @@ function all_items()
 
 }
 
-all_items() 
 
-  
+
+  all_items() 
 
 // function name_price() {
   
@@ -177,8 +191,202 @@ all_items()
 
 
 
-            </script>
-        </body>
+//  Display all the products in ascending order of their prices.
 
-    </head>
+
+
+
+
+
+//  var  array = [ 12,15,522,45,3,1]
+
+
+//                var g = array.slice()
+             
+
+//                console.log("g=",g) 
+
+//                array.sort(function(a,b) 
+//                { 
+//                 if(a<b) 
+//                {
+//                 return 1
+//                }
+//                else 
+//                {
+//                 return -1
+//                }
+//                }
+               
+//               ) 
+
+//               console.log(array)
+//    var copy = products.slice()
+
+//     console.log("copy=",copy) 
+
+
+
+function asc(e)
+{ 
+   if(e.target.checked)
+   { 
+      
+
+    alert("hello") 
+
+
+
+    var copy  = products.slice() 
+
+    copy.sort(function(a,b) { 
+
+        if(a.price > b.price) 
+    {
+        return 1
+    } 
+    else 
+    {
+        return -1
+    }
+    })  
+
+
+
+    console.log("copy =" , copy) 
+   console.log('products', products) 
+
+   document.getElementById("d1").innerHTML = ""
+
+   copy.forEach 
+ ( function(a) 
+      { 
+        console.log('a =' ,a)
+ 
+    var newtr = document.createElement("tr")
+
+    var nametd = document.createElement("td")
+    nametd.innerHTML = a.name 
+    newtr.appendChild(nametd) 
+
+
+    var typetd = document.createElement("td") 
+    typetd.innerHTML = a.type
+    newtr.appendChild(typetd)
+   
+    var pricetd = document.createElement("td")
+    pricetd.innerHTML = a.price
+    newtr.appendChild(pricetd) 
+  
+    var cat_td = document.createElement("td")
+    cat_td.innerHTML = a.category 
+    newtr.appendChild(cat_td) 
+
+    var manu_td = document.createElement("td")
+    manu_td.innerHTML = a.manufacturer
+    newtr.appendChild(manu_td)
+
+    document.getElementById("d1").appendChild(newtr)
+         }
+)
+
+   } 
+   else 
+   { 
+   
+    alert("india")  
+
+    document.getElementById("d1").innerHTML = ""
+
+    all_items()
+
+   }
+   
+}
+ 
+
+//descending order  
+function des(e) 
+{ 
+    if(e.target.checked) 
+{ 
+         var copy = products.slice() 
+
+    copy.sort(function(a,b) { 
+
+        if(a.price < b.price) 
+    {
+        return 1
+    }
+    else 
+    {
+        return -1
+    }
+    }) 
+ 
+    document.getElementById("d1").innerHTML = ""
+    copy.forEach 
+ ( function(a) 
+      { 
+        console.log('a =' ,a)
+ 
+    var newtr = document.createElement("tr")
+
+    var nametd = document.createElement("td")
+    nametd.innerHTML = a.name 
+    newtr.appendChild(nametd) 
+
+
+    var typetd = document.createElement("td") 
+    typetd.innerHTML = a.type
+    newtr.appendChild(typetd)
+   
+    var pricetd = document.createElement("td")
+    pricetd.innerHTML = a.price
+    newtr.appendChild(pricetd) 
+  
+    var cat_td = document.createElement("td")
+    cat_td.innerHTML = a.category 
+    newtr.appendChild(cat_td) 
+
+    var manu_td = document.createElement("td")
+    manu_td.innerHTML = a.manufacturer
+    newtr.appendChild(manu_td)
+
+    document.getElementById("d1").appendChild(newtr)
+         }
+)
+
+
+  
+    console.log("copy =", copy) 
+    console.log("products",products)
+
+}
+else 
+{ 
+    document.getElementById("d1").innerHTML = ""
+    all_items()
+}
+   
+}
+ 
+
+
+
+
+
+
+
+// 4. Display the hardgoods and software in separate tables
+
+
+
+
+ 
+            </script>
+       
+            
+        </body>
+   
 </html>
