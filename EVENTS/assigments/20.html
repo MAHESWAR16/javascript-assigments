@@ -1,147 +1,125 @@
 <html> 
     <head> 
-        <style>
-            .div 
-            { 
-                border:2px solid ; 
-                width:30%;
-                display:inline-block
-            }
-
+        <style> 
+        form{
+            text-align: center;
+        } 
+        .rf 
+        {
+            border: 2px solid;
+            width: 180px;
+            display: inline-block;
+        }
 
         </style>
-
-
     </head>
     <body> 
+        
+        <form onsubmit="ff(event)">
 
+            <label>Enter Name :</label>
+            <input type = "text" id="d1"/> <br> <br>
 
-        <form onsubmit="abc(event)" align="center" id="ff">
-            <label>Fullname:</label>
-            <input type="text" id="b1" />  <br> <br> 
-            <label>Mail id</label> 
-            <input type="email" id="b2" /> <br> <br>
-            <label>Number</label>
-            <input type ="number" id="b3"/><br> <br>
-             <button onclick="add()" id="s1">ADD CONTACT</button>
+            <label>Number :</label>
+            <input type ="number" id="d2"/> <br> <br>
+
+            <Label>Email :</Label>
+            <input type="email" id="d3"/> <br> <br>
+
+            <button onclick="abc(event)">Submit</button>
 
         </form>
-
         
+      
+          
+        <script>
 
-       <script>
-            function abc(e) 
-           {
-               e.preventDefault()
-           } 
+            var array = []
+        function ff(e) 
+        {
+          
+            e.preventDefault()
+        }
+        function abc(e)
+        { 
+            var store_name = document.getElementById("d1").value 
+            var store_Number = document.getElementById("d2").value
+            var store_Email = document.getElementById("d3").value
              
+            var div = document.createElement("div")
+             
+            div.className = "rf" 
+            
+             
+            var name = document.createElement("p") 
+            name.innerHTML = "Name :" + store_name
+            div.appendChild(name) 
          
 
-             
-           function add() 
-           {
-             
-           
-            alert("hello")
-
-                 var div = document.createElement("div") 
-                 div.className = "div" 
-                 document.body.appendChild(div) 
-
-                 var name = document.createElement("p")
-                 name.innerHTML = "Fullname:"+ document.getElementById("b1").value
-                 div.appendChild(name)
-                 document.getElementById("b1").value ="" 
-
-                 var email = document.createElement("p") 
-                 email.innerHTML = 'Email:'+ document.getElementById("b2").value
-                 div.appendChild(email)
-                 document.getElementById("b2").value ="" 
-
-                 var number = document.createElement("p")
-                 number.innerHTML ="Number:"+document.getElementById("b3").value
-                 div.appendChild(number)
-                 document.getElementById("b3").value =""
-
-                   var save = document.createElement('button')
-                   save.innerHTML = 'SAVE'
-
-                 var edt_button = document.createElement("button") 
-                 edt_button.innerHTML ="EDIT" 
-                 div.appendChild(edt_button) 
-                 edt_button.addEventListener
-                 ("click", function(){
-                    document.getElementById("b1").value = name.innerHTML.replace("Fullname:","")
-                    document.getElementById("b2").value = email.innerHTML.replace("Email:","")
-                    document.getElementById("b3").value = number.innerHTML.replace("Number:","")
-                    document.getElementById("s1").style.visibility ="hidden"
-                    save.style.visibility ="visible" 
-                    div.appendChild(save)
-
-                 }
-                 )
-                    
-                 save.addEventListener("click", function()
-                 {  
-                    name.innerHTML = "Fullname:"+ document.getElementById("b1").value
-                    document.getElementById("b1").value =""
-                    email.innerHTML = 'Email:'+ document.getElementById("b2").value
-                    document.getElementById("b2").value =""
-                    number.innerHTML ="Number:"+document.getElementById("b3").value
-                    document.getElementById("b3").value =""
-                    save.style.visibility = "hidden"
-                    document.getElementById("s1").style.visibility ="visible"
-                 }
-                )
-                 
-                //   // DELETE BUTTON 
-                   
-                var del_button = document.createElement("button")
-                del_button.innerHTML = "Delete" 
-                del_button.addEventListener("click", function()
-                { 
-                var  result  = confirm("are you sure you want to delete") 
-                   
-                console.log("result =" , result)
-                if(result)
-                {
-                    div.remove()
-                }
-                }
+            var number = document.createElement("p")
+            number.innerHTML = "Number :" + store_Number
+            div.appendChild(number) 
             
-            )
-                  div.appendChild(del_button)
+            var email = document.createElement("p")
+            email.innerHTML = "Email :" + store_Email
+            div.appendChild(email) 
+
+             console.log('e=', e)
+
+            document.getElementById("d1").value = ""
+            document.getElementById("d2").value = ""
+            document.getElementById("d3").value = ""
+
+            var ed_button = document.createElement("button")
+            ed_button.innerHTML ="EDIT"
+            ed_button.addEventListener("click", function(e) { 
+
+                console.log(this.innerHTML)
+
+                //e.target.innerHtml or this both are same . 
+
+             
+                 
+                if(e.target.innerHTML === "EDIT")
+            { 
+                document.getElementById("d1").value = store_name
+                document.getElementById("d2").value = store_Number
+                document.getElementById("d3").value = store_Email
+                this.innerHTML = 'SAVE'
+            }
+            else 
+            { 
+
+            console.log(e.target.innerHTML) 
+            name.innerHTML ="NAME :" + document.getElementById("d1").value 
+            number.innerHTML ="Number :" + document.getElementById("d2").value 
+            email.innerHTML ="Email:"+ document.getElementById("d3").value
+            e.target.innerHTML = 'EDIT'  
+            document.getElementById("d1").value = ""
+            document.getElementById("d2").value = ""
+            document.getElementById("d3").value = ""
+
+            }
     
-           }
+            })
+              
+            div.appendChild(ed_button)
+                
+            var del_button = document.createElement("button")
+            del_button.innerHTML = "Delete" 
+            del_button.addEventListener("click", function() { 
+               div.remove()
+            })
+              
+           div.appendChild(del_button) 
+         
+           array.push("div")
+           
+           document.body.appendChild(div)
 
 
-
-
+        } 
+    
         </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
     </body>
-    </html>
+</html>
