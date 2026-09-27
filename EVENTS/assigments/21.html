@@ -1,26 +1,47 @@
 <html> 
     <head> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
         <style> 
+        .ed 
+        {
+            border:2px solid ; 
+            width: 180px;
+        
+           
+            display:inline-block
+        
+          
+        }
+        form 
+        {
+            text-align: center;
+        }
+        i 
+        {
+            display: block;
+        }
 
         </style>
     </head>
     <body> 
         <form onsubmit="ff(event)">
-              <label>Firstname</label>
-        <input type ="text" id="d1"/> <br><br>
+              <label>Fullname:</label>
+        <input type ="text" id="d1"/> <br><br> 
+        <label>MobileNumber:</label>
+        <input type="number" id="d2"/> <br><br>
+        <label>Email:</label> 
+        <input type="email" id="d3" /> <br><br>
+        
         <button onclick="abc(event)">Submit</button>
 
         </form>
         
+      <i class="bi bi-sort-alpha-down" onclick="bb()"></i>
 
 
         <script> 
         var array = []
-             var obj = { 
-                firstname:"",
-                number:"",
-                email:""
-             }
+            
 
             
              function ff(e) 
@@ -29,14 +50,89 @@
              }
              function abc()
              {
+
+                 var obj = { 
+                fullname:"",
+                Mobilenumber:"",
+                email:""
+                         }
+
                      var name = document.getElementById("d1").value
-                     obj.firstname = name 
+                     obj.fullname = name 
+                     
+
+                     var number = document.getElementById("d2").value 
+                     obj.Mobilenumber = number
+
+                    
+                      var email = document.getElementById("d3").value 
+                      obj.email = email
 
                      array.push(obj)
+
+                     
+
+                    
+                     var div = document.createElement("div")
+                     div.className = "ed"
+                     div.innerHTML = "FullName:"+obj.fullname+"<br> Mobile Number :"+obj.Mobilenumber+"<br> Email :"+obj.email+"<br>"
+                    
+                     
+                     
+                 
+                     document.body.appendChild(div) 
+                    
+                     document.getElementById("d1").value ="" 
+                    document.getElementById("d2").value =""
+                    document.getElementById("d3").value =""
+                 
+             
+
              }
 
-             console.log(obj)
-             console.log(array)
+               console.log(array) 
+//       
+        
+                 function bb ()
+                 {
+                    
+                    alert("hello") 
+                
+                   array.sort( function(a,b) { 
+
+                    return a.fullname.localeCompare(b.fullname)
+                   } )
+
+                var remove_div = document.querySelectorAll(".ed")
+                console.log(remove_div)
+                remove_div.forEach(function(a) { 
+                    a.remove()
+                })
+
+                   
+                
+                array.forEach(function(a,b) {
+
+                    console.log("a=",a,"b=",b)  
+
+                    var new_div = document.createElement("div")
+                    new_div.innerHTML ="Fullname:" + a.fullname+"<br> MobileNumber :"+a.Mobilenumber+"<br> Email :"+a.email
+                   new_div.className ="ed"
+                   document.body.appendChild(new_div)
+                  
+                  
+                    
+                })
+
+
+
+
+
+                 }
+
+            
+
+              
         </script>
     </body>
 </html>
