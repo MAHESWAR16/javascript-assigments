@@ -36,7 +36,7 @@
 
         </form>
         
-      <i class="bi bi-sort-alpha-down" onclick="bb()"></i>
+      <i id ="icon" class="bi bi-sort-alpha-down" onclick="bb(event)"></i>
 
 
         <script> 
@@ -92,46 +92,62 @@
 
                console.log(array) 
 //       
-        
-                 function bb ()
+                   var clicked_filter = true
+                 function bb (e)
                  {
+                     console.log("e =" , e)
+
+
+                      var remove_div = document.querySelectorAll(".ed")
+                     remove_div.forEach(function(a) {
+                        a.remove()
+                     })
                     
-                    alert("hello") 
-                
-                   array.sort( function(a,b) { 
+                     if(clicked_filter)
+                     {
+                        
+                         array.sort(function(a,b)
+                         {
+                        return  a.fullname.localeCompare(b.fullname)
+                         }
+                            )
 
-                    return a.fullname.localeCompare(b.fullname)
-                   } )
+                            clicked_filter = false
 
-                var remove_div = document.querySelectorAll(".ed")
-                console.log(remove_div)
-                remove_div.forEach(function(a) { 
-                    a.remove()
-                })
+                     } 
+                     else 
+                     { 
+                        array.sort(function(a,b) {
+                            return b.fullname.localeCompare(a.fullname)
+                        })
+                        clicked_filter = true 
+                        
+                     }
+                 
+                     
+                     
+                     array.forEach(function(a) { 
+                              
+                         var new_div = document.createElement("div")
+                     new_div.className ="ed"
+                     new_div.innerHTML ="FullName :"+a.fullname+"<br> Mobilenumber :"+a.Mobilenumber+"<br> Email :"+a.email
 
-                   
-                
-                array.forEach(function(a,b) {
+                     document.body.appendChild(new_div)
+ 
+                     })
 
-                    console.log("a=",a,"b=",b)  
-
-                    var new_div = document.createElement("div")
-                    new_div.innerHTML ="Fullname:" + a.fullname+"<br> MobileNumber :"+a.Mobilenumber+"<br> Email :"+a.email
-                   new_div.className ="ed"
-                   document.body.appendChild(new_div)
-                  
-                  
                     
-                })
 
 
-
+                     var change_icon = document.getElementById("icon")
+                     change_icon.className = clicked_filter?"bi bi-sort-alpha-down":"bi bi-sort-alpha-up"
+                    
 
 
                  }
 
             
-
+                 console.log("sorted array ",array)
               
         </script>
     </body>
