@@ -1,0 +1,74 @@
+<html> 
+    <head> 
+        <style> 
+      
+        .div
+        {
+            border:2px solid ;
+            width: 250px;
+            height: 150px;
+            box-sizing: border-box;
+            text-align: center;
+            margin:5px 
+            
+        }
+        
+
+        </style>
+    </head>
+
+    <body>  
+
+
+        <form onsubmit="bb(event)">
+            <label>Full Name :</label>
+            <input type="text" id="d1"/> <br><br>
+            <label>Number :</label>
+            <input type="number" id="d2" /> <br><br>
+            <label>Email:</label>
+            <input type="email" id="d3" /> <br> <br>
+          
+            <button onclick="add_details()">Add Contact</button>
+        </form>
+
+
+
+
+             
+       
+        <script> 
+        function bb(e)
+        {
+            e.preventDefault()
+        } 
+
+        var array = []
+
+        function add_details()
+        {
+               
+                var obj={
+                    fullname:"",
+                    number:"",
+                    email:""
+                }
+ 
+              obj.fullname = document.getElementById("d1").value
+              obj.number = document.getElementById("d2").value
+              obj.email = document.getElementById("d3").value
+            
+ 
+
+
+             var new_div = document.createElement("div")
+             new_div.className = "div"
+             new_div.innerHTML
+
+             document.body.appendChild(new_div)
+        
+        }     
+
+
+        </script>
+    </body>
+</html>
