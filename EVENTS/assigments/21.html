@@ -8,7 +8,8 @@
             width: 180px;
         
            
-            display:inline-block
+            display:block ;
+            box-sizing: border-box;
         
           
         }
@@ -70,16 +71,83 @@
 
                      array.push(obj)
 
-                     
-
-                    
                      var div = document.createElement("div")
                      div.className = "ed"
                      div.innerHTML = "FullName:"+obj.fullname+"<br> Mobile Number :"+obj.Mobilenumber+"<br> Email :"+obj.email+"<br>"
-                    
+
+                     //edit button creation
+                     var ed_button = document.createElement("button")
+                     ed_button.innerHTML ='EDIT'
+                     ed_button.addEventListener("click", function(e) {
+                        console.log("e",e)
+                        if(e.target.innerHTML === "EDIT")
+                     {
+                    document.getElementById("d1").value =obj.fullname
+                    document.getElementById("d2").value =obj.Mobilenumber
+                    document.getElementById("d3").value =obj.email
+                         div.innerHTML = "FullName:"+""+"<br> Mobile Number :"+""+"<br> Email :"+""
+                         div.appendChild(ed_button)
+                    ed_button.innerHTML ="Save"
+                     }
+                     else 
+                     { 
+                     obj.fullname = document.getElementById("d1").value
+
+                    obj.Mobilenumber = document.getElementById("d2").value 
+                   
+                     obj.email = document.getElementById("d3").value 
+        
+                    document.getElementById("d1").value ="" 
+                    document.getElementById("d2").value =""
+                    document.getElementById("d3").value =""
+
+                     div.innerHTML =""
+                     div.innerHTML = "FullName:"+obj.fullname+"<br> Mobile Number :"+obj.Mobilenumber+"<br> Email :"+obj.email+"<br>"
+
+                      div.appendChild(ed_button)
+
+                         ed_button.innerHTML ="EDIT"
+                           
+                         // delete butoon after edit
+                          var d_button = document.createElement("button")
+                     d_button.innerHTML = "DEL" 
+                     d_button.addEventListener("click", function() {
+
+                        var index = array.indexOf(obj)
+                        if(index !== -1)
+                     {
+                        array.splice(index,1)
+                     }
+                        div.remove()
+                     })
                      
+                  div.appendChild(d_button)
+                     }
+
+                     })
+
+                     //del button 
+                     var button = document.createElement("button")
+                     button.innerHTML = "DEL" 
+                     button.addEventListener("click", function(e) {
+                        
+                        var index = array.indexOf(obj)
+                        console.log("index =",index)
+                       if(index !== -1)
+                       {
+                        array.splice(index,1)
+                        console.log("after deleting array becomes ", array)
+                       }
+                         
+                       div.remove()
+                        
+                     })
+
+
+                   
+                    div.appendChild(ed_button)
+                     div.appendChild(button)
                      
-                 
                      document.body.appendChild(div) 
                     
                      document.getElementById("d1").value ="" 
@@ -124,25 +192,100 @@
                         
                      }
                  
-                     
-                     
                      array.forEach(function(a) { 
+
+                        console.log("a=",a)
                               
                          var new_div = document.createElement("div")
                      new_div.className ="ed"
-                     new_div.innerHTML ="FullName :"+a.fullname+"<br> Mobilenumber :"+a.Mobilenumber+"<br> Email :"+a.email
+                     new_div.innerHTML ="FullName :"+a.fullname+"<br> Mobilenumber :"+a.Mobilenumber+"<br> Email :"+a.email+"<br>"
 
+                     var button = document.createElement("button")
+                     button.innerHTML = "EDIT"
+                     button.addEventListener("click", function(e) { 
+                        
+                        if(e.target.innerHTML === "EDIT")
+                     { 
+                             document.getElementById("d1").value = a.fullname
+                        document.getElementById("d2").value = a.Mobilenumber
+                        document.getElementById("d3").value = a.email
+
+                        new_div.innerHTML ="FullName :"+""+"<br> Mobilenumber :"+""+"<br> Email :"+""+"<br>"
+
+                        new_div.appendChild(button)
+                        button.innerHTML = "SAVE"
+
+                        var d_button = document.createElement("button")
+                        d_button.innerHTML ="DEL"
+                        new_div.appendChild(d_button)
+                        d_button.addEventListener("click",function(){
+                            var index = array.indexOf(a)
+                            if(index !== -1)
+                        {
+                        array.splice(index,1)
+                        }
+                            new_div.remove()
+                        })
+
+                     }
+                     else 
+                     {
+                        alert("hello") 
+                        a.fullname = document.getElementById("d1").value 
+                        a.Mobilenumber = document.getElementById("d2").value 
+                        a.email = document.getElementById("d3").value
+                        
+                        new_div.innerHTML ="FullName :"+a.fullname+"<br> Mobilenumber :"+a.Mobilenumber+"<br> Email :"+a.email+"<br>" 
+
+                        new_div.appendChild(button)
+                        button.innerHTML = "EDIT"
+
+                        var d_button = document.createElement("button")
+                        d_button.innerHTML ="DEL"
+                        new_div.appendChild(d_button)
+                        d_button.addEventListener("click",function(e){
+
+                             var index = array.indexOf(a)
+                            if(index !== -1)
+                        {
+                        array.splice(index,1)
+                        }
+                            new_div.remove()
+                        })
+
+                        document.getElementById("d1").value = ""
+                        document.getElementById("d2").value = ""
+                        document.getElementById("d3").value =""
+                     }
+
+                     })
+
+                     var d_button = document.createElement("button")
+                        d_button.innerHTML ="DEL"
+                        d_button.addEventListener("click", function(e){
+
+                            var index = array.indexOf(a)
+                            if(index !== -1)
+                        {
+                            array.splice(index,1)
+                        }
+                            new_div.remove()
+                        })
+                    
+
+                
+                    
+
+
+                     new_div.appendChild(button)
+                     new_div.appendChild(d_button)
+                    
                      document.body.appendChild(new_div)
  
                      })
 
-                    
-
-
                      var change_icon = document.getElementById("icon")
                      change_icon.className = clicked_filter?"bi bi-sort-alpha-down":"bi bi-sort-alpha-up"
-                    
-
 
                  }
 
