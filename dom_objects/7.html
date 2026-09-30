@@ -56,6 +56,7 @@ reset	Clears all inputs in the form back to their original values -->
         var array = []
 
         var currentDiv = null
+        var currentObj = null
 
         function handle_submit()
         {
@@ -74,24 +75,54 @@ reset	Clears all inputs in the form back to their original values -->
         {
             var new_name = document.getElementById("d1").value
             var new_number = document.getElementById("d2").value
-            var new_email = document.getElementById("d3").value
+            var new_email = document.getElementById("d3").value 
 
-            currentDiv.innerHTML = "FullName :"+new_name +"<br>Number :"+new_number+"<br>Email:"+new_email
+            // copy cuurentdiv and current obj from global to local
+             var cardDiv = currentDiv
+            var obj = currentObj
+
+
+            obj.fullname = new_name 
+            obj.number = new_number
+            obj.email  = new_email
+
+            console.log("currentDiv",cardDiv)
+            console.log("currentObj",obj)
+
+
+            cardDiv.innerHTML = "FullName :"+new_name +"<br>Number :"+new_number+"<br>Email:"+new_email
 
             var del_button = document.createElement("button")
             del_button.innerHTML ="DELETE"
-            currentDiv.appendChild(del_button) 
+            del_button.addEventListener("click",function(){
+
+                console.log("currentobj",obj)
+                var index = array.indexOf(obj)
+                console.log(" current index",index)
+
+                if(index !== -1)
+            {
+                array.splice(index,1)
+            }
+
+            console.log("ARRAY =",array)
+            console.log("currenObject",obj)
+            cardDiv.remove()
+            })
+            cardDiv.appendChild(del_button) 
+
+
 
             var edt_button = document.createElement("button")
             edt_button.innerHTML ="EDIT"
             edt_button.addEventListener("click",function(){
-                document.getElementById("d1").value = new_name
-                document.getElementById("d2").value = new_number
-                document.getElementById("d3").value = new_email
+                document.getElementById("d1").value = obj.name
+                document.getElementById("d2").value = obj.number
+                document.getElementById("d3").value = obj.email
                 document.getElementById("d4").innerHTML ='SAVE'
             })
                 
-            currentDiv.appendChild(edt_button)
+            cardDiv.appendChild(edt_button)
 
             document.getElementById("d1").value = ""
             document.getElementById("d2").value =""
@@ -100,10 +131,14 @@ reset	Clears all inputs in the form back to their original values -->
             document.getElementById("d4").innerHTML = "Add Contact"
 
             currentDiv = null
+            currentObj = null
+            
+             console.log("currentDiv",cardDiv)
+             console.log("currentObj",obj)
+         
 
         }
         
-
         function add_details()
         {
                
@@ -134,7 +169,7 @@ reset	Clears all inputs in the form back to their original values -->
 
                  if(index !== -1)
                  {
-                    array.splice("index",1)
+                    array.splice(index,1)
                  }
                  new_div.remove()
             })
@@ -151,8 +186,10 @@ reset	Clears all inputs in the form back to their original values -->
                 document.getElementById("d4").innerHTML ="SAVE"
 
                 currentDiv =  new_div
+                currentObj =  obj
 
                   console.log("currentDiv",currentDiv)
+                  console.log("currentObj",currentObj)
 
                })
                new_div.appendChild(ed_button)
