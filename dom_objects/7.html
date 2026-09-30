@@ -1,17 +1,17 @@
 <html> 
     <head> 
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
         <style> 
       
         .div
         {
             border:2px solid ;
             width: 250px;
-            height: 150px;
-            box-sizing: border-box;
-            text-align: center;
+            padding:6px;
             margin:5px 
-            
-        }
+        } 
+
+       
         
 
         </style>
@@ -27,9 +27,20 @@
             <input type="number" id="d2" /> <br><br>
             <label>Email:</label>
             <input type="email" id="d3" /> <br> <br>
+
+            <!-- The Three Button Types
+There are three possible values for type on a button:
+
+Type	What it does
+submit	(Default) Submits the form → reloads page or sends data to server
+button	Does nothing on its own. Just sits there, waiting for JavaScript.
+reset	Clears all inputs in the form back to their original values -->
           
-            <button onclick="add_details()">Add Contact</button>
+            <button type ="button" onclick="handle_submit()" id="d4">Add Contact</button>
         </form>
+         <i class="bi bi-sort-alpha-down" onclick="bb(event)"></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+         <input type="search" placeholder="Search a contact"/>
+
 
 
 
@@ -44,6 +55,55 @@
 
         var array = []
 
+        var currentDiv = null
+
+        function handle_submit()
+        {
+            var btn = document.getElementById("d4")
+            if(btn.innerHTML === "SAVE")
+        {
+            save_details()
+        }
+        else 
+        {
+            add_details()
+        }
+        }
+          
+        function save_details()
+        {
+            var new_name = document.getElementById("d1").value
+            var new_number = document.getElementById("d2").value
+            var new_email = document.getElementById("d3").value
+
+            currentDiv.innerHTML = "FullName :"+new_name +"<br>Number :"+new_number+"<br>Email:"+new_email
+
+            var del_button = document.createElement("button")
+            del_button.innerHTML ="DELETE"
+            currentDiv.appendChild(del_button) 
+
+            var edt_button = document.createElement("button")
+            edt_button.innerHTML ="EDIT"
+            edt_button.addEventListener("click",function(){
+                document.getElementById("d1").value = new_name
+                document.getElementById("d2").value = new_number
+                document.getElementById("d3").value = new_email
+                document.getElementById("d4").innerHTML ='SAVE'
+            })
+                
+            currentDiv.appendChild(edt_button)
+
+            document.getElementById("d1").value = ""
+            document.getElementById("d2").value =""
+            document.getElementById("d3").value =""
+
+            document.getElementById("d4").innerHTML = "Add Contact"
+
+            currentDiv = null
+
+        }
+        
+
         function add_details()
         {
                
@@ -56,19 +116,59 @@
               obj.fullname = document.getElementById("d1").value
               obj.number = document.getElementById("d2").value
               obj.email = document.getElementById("d3").value
-            
- 
 
+              array.push(obj)
 
              var new_div = document.createElement("div")
              new_div.className = "div"
-             new_div.innerHTML
+             new_div.innerHTML ="Fullname :"+obj.fullname+"<br>Number :"+obj.number+"<br>Email :"+obj.email+"<br><br>"
+             document.body.appendChild(new_div) 
 
-             document.body.appendChild(new_div)
-        
+             //delete element creation
+             var del_button = document.createElement("button")
+               del_button.innerHTML ="DELETE"
+               del_button.addEventListener("click",function(e)
+            {
+                var index = array.indexOf(obj)
+                 console.log("index",index) 
+
+                 if(index !== -1)
+                 {
+                    array.splice("index",1)
+                 }
+                 new_div.remove()
+            })
+               new_div.appendChild(del_button)
+
+               //edit button creation
+               var ed_button = document.createElement("button")
+               ed_button.innerHTML ="EDIT"
+               ed_button.addEventListener("click", function(){
+               
+                document.getElementById("d1").value = obj.fullname 
+                document.getElementById("d2").value = obj.number
+                document.getElementById("d3").value = obj.email 
+                document.getElementById("d4").innerHTML ="SAVE"
+
+                currentDiv =  new_div
+
+                  console.log("currentDiv",currentDiv)
+
+               })
+               new_div.appendChild(ed_button)
+
+             document.getElementById("d1").value =""
+             document.getElementById("d2").value =""
+             document.getElementById("d3").value =""
+
+
+           
+
+             
         }     
+    
 
-
+        console.log("array = ",array)
         </script>
     </body>
 </html>
