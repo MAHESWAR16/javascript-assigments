@@ -2,7 +2,6 @@
     <head> 
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
         <style> 
-      
         .div
         {
             border:2px solid ;
@@ -10,17 +9,10 @@
             padding:6px;
             margin:5px 
         } 
-
-       
-        
-
         </style>
     </head>
-
     <body>  
-
-
-        <form onsubmit="bb(event)">
+        <form onsubmit=bb(event)>
             <label>Full Name :</label>
             <input type="text" id="d1"/> <br><br>
             <label>Number :</label>
@@ -35,177 +27,159 @@ Type	What it does
 submit	(Default) Submits the form → reloads page or sends data to server
 button	Does nothing on its own. Just sits there, waiting for JavaScript.
 reset	Clears all inputs in the form back to their original values -->
-          
-            <button type ="button" onclick="handle_submit()" id="d4">Add Contact</button>
+        <button  onclick=choose() id="d4">Add Contact</button>
         </form>
-         <i class="bi bi-sort-alpha-down" onclick="bb(event)"></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+         <i class="bi bi-sort-alpha-down"></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          <input type="search" placeholder="Search a contact"/>
-
-
-
-
-
-             
        
         <script> 
-        function bb(e)
-        {
-            e.preventDefault()
-        } 
+  
+           var Contacts = []
+ 
+               function bb(e)
+               {
+                 e.preventDefault()
+               }
+             function choose()
+             {
+               if(document.getElementById("d4").innerHTML === "Add Contact")
+                  {
+                display_contacts()
+                   } 
+                   else 
+                   {
+                    save_contacts()
+                   }
+              }
+         
+            var Copy_Div = null
+            var Copy_Obj = null
 
-        var array = []
+            // display contacts function call .
+           function display_contacts()
+           {
+            alert("hello")
 
-        var currentDiv = null
-        var currentObj = null
+            var Person_Details ={
+                Fullname:"",
+                Number:'',
+                Email:""
+               }
+         
+              // store the input values in variables and send them into object and make input values as empty
+            var Display_Name = document.getElementById("d1").value 
+            Person_Details.Fullname = Display_Name 
+             
+            var Display_Number= document.getElementById("d2").value 
+            Person_Details.Number = Display_Number
 
-        function handle_submit()
-        {
-            var btn = document.getElementById("d4")
-            if(btn.innerHTML === "SAVE")
-        {
-            save_details()
-        }
-        else 
-        {
-            add_details()
-        }
-        }
-          
-        function save_details()
-        {
-            var new_name = document.getElementById("d1").value
-            var new_number = document.getElementById("d2").value
-            var new_email = document.getElementById("d3").value 
+            var Display_Email = document.getElementById("d3").value 
+            Person_Details.Email = Display_Email 
 
-            // copy cuurentdiv and current obj from global to local
-             var cardDiv = currentDiv
-            var obj = currentObj
-
-
-            obj.fullname = new_name 
-            obj.number = new_number
-            obj.email  = new_email
-
-            console.log("currentDiv",cardDiv)
-            console.log("currentObj",obj)
-
-
-            cardDiv.innerHTML = "FullName :"+new_name +"<br>Number :"+new_number+"<br>Email:"+new_email
-
-            var del_button = document.createElement("button")
-            del_button.innerHTML ="DELETE"
-            del_button.addEventListener("click",function(){
-
-                console.log("currentobj",obj)
-                var index = array.indexOf(obj)
-                console.log(" current index",index)
-
-                if(index !== -1)
-            {
-                array.splice(index,1)
-            }
-
-            console.log("ARRAY =",array)
-            console.log("currenObject",obj)
-            cardDiv.remove()
-            })
-            cardDiv.appendChild(del_button) 
-
-
-
-            var edt_button = document.createElement("button")
-            edt_button.innerHTML ="EDIT"
-            edt_button.addEventListener("click",function(){
-                document.getElementById("d1").value = obj.name
-                document.getElementById("d2").value = obj.number
-                document.getElementById("d3").value = obj.email
-                document.getElementById("d4").innerHTML ='SAVE'
-            })
-                
-            cardDiv.appendChild(edt_button)
-
-            document.getElementById("d1").value = ""
+            // making input values empty 
+            document.getElementById("d1").value =""
             document.getElementById("d2").value =""
             document.getElementById("d3").value =""
 
-            document.getElementById("d4").innerHTML = "Add Contact"
 
-            currentDiv = null
-            currentObj = null
+            // created div and inseted contacts details inside div and displayed    
+            var New_Div = document.createElement("div")
+            New_Div.className="div" 
+            New_Div.innerHTML = "FullName :"+Display_Name+"<br> Number :"+Display_Number+"<br> Email :"+Display_Email+"<br><br>"
+            document.body.appendChild(New_Div) 
+
+         // sedning contact details to array 
+            Contacts.push(Person_Details)
             
-             console.log("currentDiv",cardDiv)
-             console.log("currentObj",obj)
-         
 
-        }
+        //creating edit button and attaching to div  ND APPEDNIDNG INPUT VALUES  
         
-        function add_details()
-        {
+            var ed_button = document.createElement("button") 
+            ed_button.innerHTML = "EDIT" 
+            New_Div.appendChild(ed_button)
+            ed_button.addEventListener("click",function(){
+        
+                document.getElementById("d1").value = Display_Name 
+                document.getElementById("d2").value = Display_Number
+                document.getElementById("d3").value = Display_Email  
+                 document.getElementById("d4").innerHTML = "SAVE"
+
+                 Copy_Div = New_Div 
+                 console.log("copied div",Copy_Div) 
+
+                 Copy_Obj = Person_Details 
+                 console.log("copied obj",Copy_Obj)
+
+
+            }) 
+                
                
-                var obj={
-                    fullname:"",
-                    number:"",
-                    email:""
-                }
- 
-              obj.fullname = document.getElementById("d1").value
-              obj.number = document.getElementById("d2").value
-              obj.email = document.getElementById("d3").value
 
-              array.push(obj)
-
-             var new_div = document.createElement("div")
-             new_div.className = "div"
-             new_div.innerHTML ="Fullname :"+obj.fullname+"<br>Number :"+obj.number+"<br>Email :"+obj.email+"<br><br>"
-             document.body.appendChild(new_div) 
-
-             //delete element creation
-             var del_button = document.createElement("button")
-               del_button.innerHTML ="DELETE"
-               del_button.addEventListener("click",function(e)
-            {
-                var index = array.indexOf(obj)
-                 console.log("index",index) 
-
-                 if(index !== -1)
-                 {
-                    array.splice(index,1)
-                 }
-                 new_div.remove()
-            })
-               new_div.appendChild(del_button)
-
-               //edit button creation
-               var ed_button = document.createElement("button")
-               ed_button.innerHTML ="EDIT"
-               ed_button.addEventListener("click", function(){
-               
-                document.getElementById("d1").value = obj.fullname 
-                document.getElementById("d2").value = obj.number
-                document.getElementById("d3").value = obj.email 
-                document.getElementById("d4").innerHTML ="SAVE"
-
-                currentDiv =  new_div
-                currentObj =  obj
-
-                  console.log("currentDiv",currentDiv)
-                  console.log("currentObj",currentObj)
-
-               })
-               new_div.appendChild(ed_button)
-
-             document.getElementById("d1").value =""
-             document.getElementById("d2").value =""
-             document.getElementById("d3").value =""
-
-
+            console.log("contacts",Contacts)  
+            
+            
+           }    
+             
            
 
-             
-        }     
-    
+           
+              // save contacts function call .  
 
-        console.log("array = ",array)
+              function  save_contacts()
+              {  
+                  console.log(" after clicking on save button finally copied_div is" ,Copy_Div)
+                   console.log("after clicking on save button  finally copied_obj is ",Copy_Obj) 
+
+                   // after clikcing on save user will enter new values in the form and i am appending those values to copied div and 
+
+                   var  new_name = document.getElementById("d1").value 
+                   Copy_Obj.Fullname = new_name 
+        
+
+                   var new_number = document.getElementById("d2").value 
+                   Copy_Obj.Number = new_number 
+                    
+
+                    var new_email = document.getElementById("d3").value 
+                    Copy_Obj.Email = new_email  
+
+                    console.log("after clicking on save updated array is",Contacts) 
+
+
+
+                    // updated array elements are ataching inside copied_div
+                    Copy_Div.innerHTML ="FullName :"+new_name+"<br> Number :"+new_number+"<br> Email :"+new_email+"<br><br>"
+                     
+                    var ed_button = document.createElement("button") 
+                    ed_button.innerHTML ="Edit"
+                    ed_button.addEventListener("click", function(){ 
+                        document.getElementById("d1").value = new_name
+
+                        document.getElementById("d4").innerHTML = "SAVE"
+                        
+                    
+
+                    }) 
+                    Copy_Div.appendChild(ed_button) 
+
+                    document.getElementById("d1").value =""
+                    document.getElementById("d2").value =""
+                    document.getElementById("d3").value ="" 
+
+                    document.getElementById("d4").innerHTML = "Add Contact"
+
+
+              }
+
+
+             
+
+
+
+
+         
+           
         </script>
     </body>
 </html>
