@@ -31,158 +31,131 @@ reset	Clears all inputs in the form back to their original values -->
          <i class="bi bi-sort-alpha-down"></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
          <input type="search" placeholder="Search a contact"/>
        
+
+       
         <script> 
   
-           var Contacts = []
- 
-               function bb(e)
+           function bb(e)
                {
                  e.preventDefault()
                }
+ 
+               
+
              function choose()
              {
                if(document.getElementById("d4").innerHTML === "Add Contact")
                   {
                 display_contacts()
-                   } 
+                  } 
                    else 
                    {
                     save_contacts()
                    }
               }
-         
+          
+               var Contacts = [] 
+
+               var current_index = -1 
+               var current_obj = null 
+               var current_div = null
+
         
-            var Current_Obj = null 
-
-            var Current_Div = null 
-
-            var Current_index = -1
-
+           
             // display contacts function call .
            function display_contacts()
            {
-           var person_details ={ 
-            fullname:"",
-            number:"",
-            email:""
-           } 
+            var person_details ={
+                                    fullname:"",
+                                    number:'',
+                                    email:''
+                                 }  
+                                  
+                  person_details.fullname = document.getElementById("d1").value  
+                                 Contacts.push(person_details) 
+                                 console.log("array=",Contacts)   
+                                  
 
 
-         person_details.fullname = document.getElementById("d1").value 
+                   var div =   document.createElement("div")
+                   div.className ="div"
+                   div.innerHTML ="FULL NAME:"+ person_details.fullname+"<br><br>"
+                   document.body.appendChild(div) 
+                   
+                   // EDIT button creating
+                   var button = document.createElement("button")
+                   button.innerHTML ="EDIT" 
+                   div.appendChild(button) 
 
-         Contacts.push(person_details) 
+                   //adding event listener to button
+                   button.addEventListener("click",function(){
 
-         console.log("array =",Contacts) 
+                    document.getElementById("d1").value = person_details.fullname 
+                     
+                    current_obj = person_details 
+
+                    current_index = Contacts.indexOf(current_obj) 
+
+                    current_div = div
+
+                    console.log("current_index",current_index,"cuurent obj",current_obj,"current div=",current_div)
+             
+                    document.getElementById("d4").innerHTML ="SAVE"
 
 
-
-
-         var div = document.createElement("div")
-         div.className ="div"
-         div.innerHTML = "FullName :"+ person_details.fullname+"<br>"
-         document.body.appendChild(div) 
-         
-    
-
-
-         document.getElementById("d1").value =""
-
-         var edit = document.createElement("button")
-         edit.innerHTML ="EDIT" 
-         div.appendChild(edit) 
-
-         edit.addEventListener("click",function(){
-
-            document.getElementById("d1").value = person_details.fullname 
-
-            document.getElementById("d4").innerHTML = "SAVE" 
-                      
-
-            Current_Obj = person_details 
-
-              Current_index =  Contacts.indexOf(Current_Obj)
-
-                 Current_Div = div 
-
-            
-
-          
-
-       
-
-         })
+                   })
+                 
+              document.getElementById("d1").value =""
 
            }    
              
-              // save contacts function call .  
-                       function save_contacts()
-                        {    
-                                 
-                                 
-                              console.log("=== save_contacts just ran ===")
-
-                              
-                            console.log("current index =",Current_index) 
-
-                            console.log("Current obj",Current_Obj) 
-
-                            console.log("current div",Current_Div) 
-
-                            Current_Obj.fullname = document.getElementById("d1").value 
-                           
-
-                            // after pushig the input values to obj i am making form input values  as empty 
-                            document.getElementById("d1").value = ""
+             // save contacts function call .  
+                       function save_contacts() 
+                        {     
+                       current_obj.fullname = document.getElementById("d1").value 
 
 
-                            console.log("final array after editing " , Contacts)  
+                      console.log("Contacts = ",Contacts)  
+
+                      current_div.innerHTML = "full name :"+current_obj.fullname+"<br><br>"
+
+                      // insie save newly created edit button  is appende to current div .
+                      var new_button = document.createElement("button")
+                      new_button.innerHTML = "edit"
+                      current_div.appendChild(new_button)  
+
+                      document.getElementById("d1").value =""
 
 
-                            Current_Div.innerHTML = "FullName :"+Current_Obj.fullname+"<br>"
-
-                            var new_edit = document.createElement("button")
-                            new_edit.innerHTML ="edit" 
-                            Current_Div.appendChild(new_edit)   
-
-                             
-                            var saved_index = Current_index
-                          console.log("saved index",saved_index) 
-
-                          var saved_obj = Current_Obj 
-                          console.log("saved object",saved_obj)
-                    
-                          var saved_div = Current_Div
-                            
-                            
-
-                            new_edit.addEventListener("click", function(e){ 
-
-                               console.log("current index =", Current_index)  
-                                console.log("saved index",saved_index)   
-
-                                document.getElementById("d1").value =saved_obj.fullname 
-                    
-
-                                document.getElementById("d4").innerHTML = "save"
+                      document.getElementById("d4").innerHTML = "Add Contact"  
 
 
+                      var saved_index = current_index 
+                      var saved_object = current_obj 
+                      var saved_div = current_div
 
 
+                    console.log("global index =",current_index,"global object",current_obj)
 
-                        
+                      new_button.addEventListener("click",function()
+                    { 
+                      document.getElementById("d1").value = saved_object.fullname
 
-                            }) 
-                         
+                      console.log("saved_index =",saved_index,"saved object",saved_object,"saved_div",saved_div) 
 
-                            
-                                
-        
+                      current_index = saved_index 
+                      current_obj = saved_object 
+                      current_div= saved_div
+
+
+                    document.getElementById("d4").innerHTML = "SAVE"
+
 
                           
+                    })
 
 
-                            document.getElementById("d4").innerHTML = "Add Contact"
-
+                
 
                         }
              
