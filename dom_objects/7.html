@@ -56,108 +56,127 @@ reset	Clears all inputs in the form back to their original values -->
           
                var Contacts = [] 
 
-               var current_index = -1 
-               var current_obj = null 
-               var current_div = null
+               var global_index = -1 
+               var global_obj = null 
+               var global_div = null
 
         
            
             // display contacts function call .
            function display_contacts()
            {
-            var person_details ={
-                                    fullname:"",
-                                    number:'',
-                                    email:''
+               var current_obj ={
+                             fullname:"",
+                             number:'',
+                             email:''
                                  }  
-                                  
-                  person_details.fullname = document.getElementById("d1").value  
-                                 Contacts.push(person_details) 
-                                 console.log("array=",Contacts)   
-                                  
+               current_obj.fullname = document.getElementById('d1').value 
+               Contacts.push(current_obj)
+               console.log("contacts =",Contacts)
 
 
-                   var div =   document.createElement("div")
-                   div.className ="div"
-                   div.innerHTML ="FULL NAME:"+ person_details.fullname+"<br><br>"
-                   document.body.appendChild(div) 
-                   
-                   // EDIT button creating
-                   var button = document.createElement("button")
-                   button.innerHTML ="EDIT" 
-                   div.appendChild(button) 
-
-                   //adding event listener to button
-                   button.addEventListener("click",function(){
-
-                    document.getElementById("d1").value = person_details.fullname 
-                     
-                    current_obj = person_details 
-
-                    current_index = Contacts.indexOf(current_obj) 
-
-                    current_div = div
-
-                    console.log("current_index",current_index,"cuurent obj",current_obj,"current div=",current_div)
-             
-                    document.getElementById("d4").innerHTML ="SAVE"
+               var current_div = document.createElement("div")
+               current_div.className = "div"
+               current_div.innerHTML ="Full Name :"+ current_obj.fullname+"<br><br>"
+               document.body.appendChild(current_div) 
 
 
-                   })
-                 
-              document.getElementById("d1").value =""
+               var ed_button = document.createElement("button")
+               ed_button.innerHTML ="EDIT"
+               current_div.appendChild(ed_button)
+               ed_button.addEventListener("click",function(){
 
+                 document.getElementById("d1").value = current_obj.fullname 
+
+                var current_index = Contacts.indexOf(current_obj)  
+
+                console.log("current object =",current_obj,"current_inedx",current_index,"current_div",current_div)  
+       
+                // here i am ssingif current index and object and div to global because to acess in save function to edit 
+                global_index = current_index 
+                global_obj = current_obj 
+                global_div  = current_div
+
+                document.getElementById("d4").innerHTML ="SAVE"
+
+               }) 
+
+
+               var del_button = document.createElement("button")
+               del_button.innerHTML = "DELETE"
+               current_div.appendChild(del_button)
+               del_button.addEventListener("click", function()
+            { 
+               var real_index = Contacts.indexOf(current_obj) 
+               Contacts.splice(real_index,1)
+               console.log("after removing contacts array is",Contacts) 
+               current_div.remove()
+
+            })
+
+               document.getElementById("d1").value = ""
+                
            }    
+
+          
              
              // save contacts function call .  
-                       function save_contacts() 
+              function save_contacts() 
                         {     
-                       current_obj.fullname = document.getElementById("d1").value 
+                   
+                       global_obj.fullname = document.getElementById("d1").value  
+
+                       global_div.innerHTML = "FULL NAME:"+global_obj.fullname+"<br><br>"
 
 
-                      console.log("Contacts = ",Contacts)  
-
-                      current_div.innerHTML = "full name :"+current_obj.fullname+"<br><br>"
-
-                      // insie save newly created edit button  is appende to current div .
-                      var new_button = document.createElement("button")
-                      new_button.innerHTML = "edit"
-                      current_div.appendChild(new_button)  
-
-                      document.getElementById("d1").value =""
+                       console.log("globalindex =",global_index,"global object =",global_obj,"global div =",global_div)
 
 
-                      document.getElementById("d4").innerHTML = "Add Contact"  
+                       console.log("finally contacts array is = ",Contacts) 
+
+                       document.getElementById("d4").innerHTML ="Add Contact"
+
+                       // i am stoing global index global object and global div to re use in newly created edit button  
+                       var stored_index = global_index 
+                       var stored_obj = global_obj 
+                       var stored_div  = global_div
+
+                       //NEW EDIT BUTTON 
+
+                       var ed_button = document.createElement("button") 
+                       ed_button.innerHTML ="edit" 
+                       global_div.appendChild(ed_button)
+                 
+                       ed_button.addEventListener("click",function(){
+                         
+                        document.getElementById("d1").value = stored_obj.fullname
+
+                        global_index = stored_index 
+
+                        global_obj = stored_obj 
+
+                        global_div = stored_div 
+
+                        document.getElementById("d4").innerHTML = "SAVE"
 
 
-                      var saved_index = current_index 
-                      var saved_object = current_obj 
-                      var saved_div = current_div
+                       }) 
+                       //new del button 
 
+                       var del_button = document.createElement("button")
+                       del_button.innerHTML ="delete"
+                       global_div.appendChild(del_button)
+                       del_button.addEventListener("click", function()
+                    {
+                      var real_index = Contacts.indexOf(stored_obj)
+                      Contacts.splice(real_index,1)
+                      stored_div.remove()
 
-                    console.log("global index =",current_index,"global object",current_obj)
+                      console.log('after removing array is',Contacts)
 
-                      new_button.addEventListener("click",function()
-                    { 
-                      document.getElementById("d1").value = saved_object.fullname
-
-                      console.log("saved_index =",saved_index,"saved object",saved_object,"saved_div",saved_div) 
-
-                      current_index = saved_index 
-                      current_obj = saved_object 
-                      current_div= saved_div
-
-
-                    document.getElementById("d4").innerHTML = "SAVE"
-
-
-                          
                     })
-
-
-                
-
-                        }
+            
+                      }
              
 
 
