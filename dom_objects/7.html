@@ -28,7 +28,8 @@ reset	Clears all inputs in the form back to their original values -->
         <button  onclick=choose() id="d4">Add Contact</button>
         </form>
 
-         <i class="bi bi-sort-alpha-down"></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+         <i class="bi bi-sort-alpha-down" onclick="sort()"></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
          <input type="search" placeholder="Search a contact"/>
        
 
@@ -39,9 +40,6 @@ reset	Clears all inputs in the form back to their original values -->
                {
                  e.preventDefault()
                }
- 
-               
-
              function choose()
              {
                if(document.getElementById("d4").innerHTML === "Add Contact")
@@ -59,8 +57,6 @@ reset	Clears all inputs in the form back to their original values -->
                var global_index = -1 
                var global_obj = null 
                var global_div = null
-
-        
            
             // display contacts function call .
            function display_contacts()
@@ -74,12 +70,10 @@ reset	Clears all inputs in the form back to their original values -->
                Contacts.push(current_obj)
                console.log("contacts =",Contacts)
 
-
                var current_div = document.createElement("div")
                current_div.className = "div"
                current_div.innerHTML ="Full Name :"+ current_obj.fullname+"<br><br>"
                document.body.appendChild(current_div) 
-
 
                var ed_button = document.createElement("button")
                ed_button.innerHTML ="EDIT"
@@ -101,7 +95,6 @@ reset	Clears all inputs in the form back to their original values -->
 
                }) 
 
-
                var del_button = document.createElement("button")
                del_button.innerHTML = "DELETE"
                current_div.appendChild(del_button)
@@ -117,8 +110,6 @@ reset	Clears all inputs in the form back to their original values -->
                document.getElementById("d1").value = ""
                 
            }    
-
-          
              
              // save contacts function call .  
               function save_contacts() 
@@ -159,7 +150,6 @@ reset	Clears all inputs in the form back to their original values -->
 
                         document.getElementById("d4").innerHTML = "SAVE"
 
-
                        }) 
                        //new del button 
 
@@ -179,8 +169,36 @@ reset	Clears all inputs in the form back to their original values -->
                       }
              
 
+             function sort()
+             { 
+                Contacts.sort(function(a,b){
+                    return a.fullname.localeCompare(b.fullname)
+                })
+                     
+              document.querySelectorAll(".div").forEach(function(a){
+                a.remove()
+                })
+              
+                Contacts.forEach(function(a){
 
-             
+                var div =  document.createElement("div")
+                div.className = "div"
+                div.innerHTML = "FullName:"+a.fullname+"<br>"
+                document.body.appendChild(div) 
+
+
+                var button = document.createElement("button")
+                button.innerHTML = "EDIT"
+                div.appendChild(button)
+                button.addEventListener("click",function(){
+                    document.getElementById("d1").value = a.fullname 
+
+                })
+
+                })
+                
+
+             }
 
 
 
