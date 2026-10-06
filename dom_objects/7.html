@@ -28,9 +28,9 @@ reset	Clears all inputs in the form back to their original values -->
         <button  onclick=choose() id="d4">Add Contact</button>
         </form>
 
-         <i class="bi bi-sort-alpha-down" onclick="sort()"></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+         <i id ="sa" class= "bi bi-sort-alpha-down" onclick="sort()"></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
-         <input type="search" placeholder="Search a contact"/>
+         <input type="search" id="dq" onkeyup="dd()" placeholder="Search a contact"/>
        
 
        
@@ -170,12 +170,31 @@ reset	Clears all inputs in the form back to their original values -->
              
 
              function sort()
-             { 
+             {  
+                
+                var icon =  document.getElementById("sa") 
+
+                if(icon.className === "bi bi-sort-alpha-down")
+             {
                 Contacts.sort(function(a,b){
                     return a.fullname.localeCompare(b.fullname)
                 })
                      
-              document.querySelectorAll(".div").forEach(function(a){
+                icon.className ="bi bi-sort-alpha-up"
+             
+             } 
+             else 
+             { 
+                 Contacts.sort(function(a,b){
+                    return b.fullname.localeCompare(a.fullname)
+                })
+                     
+                 icon.className = "bi bi-sort-alpha-down"
+             
+
+             }
+
+                document.querySelectorAll(".div").forEach(function(a){
                 a.remove()
                 })
               
@@ -191,15 +210,53 @@ reset	Clears all inputs in the form back to their original values -->
                 button.innerHTML = "EDIT"
                 div.appendChild(button)
                 button.addEventListener("click",function(){
-                    document.getElementById("d1").value = a.fullname 
+                    document.getElementById("d1").value = a.fullname  
 
+                    global_obj = a 
+
+                    global_div = div 
+
+                    global_index =Contacts.indexOf(a)  
+
+                    document.getElementById("d4").innerHTML = "SAVE"
+
+                })
+                var del_button = document.createElement("button")
+                del_button.innerHTML= "DELETE"
+                div.appendChild(del_button)
+
+                del_button.addEventListener("click",function(){
+
+                    var index = Contacts.indexOf(a)
+                    Contacts.splice(index,1)
+                    console.log("contacts",Contacts)
+                div.remove()
                 })
 
                 })
-                
 
              }
+ 
+              function dd()
+              { 
+                var typed = document.getElementById("dq").value.toLowerCase() 
 
+                 var divs = document.querySelectorAll(".div")
+                 console.log("divs =",divs) 
+
+                 divs.forEach(function(a){
+                    if(a.innerText.toLowerCase().includes(typed))
+                 {
+                    a.style.display = ""
+                 }
+                   else 
+                   {
+                    a.style.display = "none"
+                   }
+
+
+                 })
+              }
 
 
 
