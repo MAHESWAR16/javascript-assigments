@@ -1,0 +1,182 @@
+<html> 
+    <head> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <style>
+
+            th,td {
+                border:1px solid
+            }
+
+        </style>
+    </head>
+    <body>
+        <form> 
+            <label>FullName:</label>
+            <input type="text"  id="d1"/> <br><br>
+            <label>Contacts No :</label>
+            <input type="number" id="d2" /> <br><br>
+            <label>Email :</label>
+            <input type="email"  id="d3" /> <br><br>
+            <button type="button" id="d4" onclick="check()">Add Details</button> 
+        </form> 
+        <i class="bi bi-sort-alpha-up"></i> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+        <i class="bi bi-sort-alpha-down"></i> <br>
+
+        <table style="border: 1px solid ">
+           <thead>
+            <tr>
+                <th>FULLNAME</th>
+                <th>NUMBER</th>
+                <th>EMAIL</th>
+                <th>MODIFY</th>
+                <th>REMOVE</th>
+            </tr>
+            </thead>
+            <tbody id="ee"> 
+
+            </tbody>
+
+        </table>
+
+        
+         <script> 
+         var contacts = []  
+
+         var copied_row = null
+         var copied_obj = null
+
+         function check()
+         {
+            if(document.getElementById("d4").innerHTML === "Add Details")
+         {
+            add_details()
+         } 
+         else 
+         {
+            save()
+         }
+         }
+
+         function add_details()
+         { 
+              var person_details = {
+                "fullname":"",
+                "number":"",
+                "email":""
+               } 
+                  
+               person_details.fullname = document.getElementById("d1").value 
+               person_details.number = document.getElementById("d2").value 
+               person_details.email = document.getElementById("d3").value 
+
+               contacts.push(person_details)
+               console.log("contacts =",contacts) 
+
+               var new_tr = document.createElement("tr")
+
+               var name_td = document.createElement("td")
+               name_td.innerHTML = person_details.fullname 
+               name_td.className ="name_cell"
+               new_tr.appendChild(name_td) 
+
+               var num_td = document.createElement("td")
+               num_td.innerHTML =person_details.number 
+               num_td.className = "num_cell"
+               new_tr.appendChild(num_td) 
+
+               var email_td = document.createElement("td")
+               email_td.innerHTML = person_details.email 
+               email_td.className = "email_cell"
+               new_tr.appendChild(email_td) 
+
+                 
+               var modify_td = document.createElement("td")
+               
+               var edit_button = document.createElement("button")
+               edit_button.innerHTML ="EDIT"
+             
+               edit_button.addEventListener("click",function(e){ 
+
+                document.getElementById("d1").value = person_details.fullname 
+                document.getElementById("d2").value = person_details.number 
+                document.getElementById("d3").value = person_details.email
+
+                copied_row = new_tr 
+                copied_obj = person_details
+                document.getElementById("d4").innerHTML = 'SAVE'
+               })
+                
+               modify_td.appendChild(edit_button) 
+               new_tr.appendChild(modify_td)
+
+              
+               var remove_td = document.createElement("td") 
+
+               var del_button = document.createElement("button")
+               del_button.innerHTML ="DELETE"
+               del_button.addEventListener("click",function(){
+                 var current_index = contacts.indexOf(person_details)
+                 contacts.splice(current_index,1)
+
+                 console.log("after removing element" ,contacts) 
+                 new_tr.remove()
+            
+               }) 
+               remove_td.appendChild(del_button)
+               new_tr.appendChild(remove_td)
+
+
+               
+               
+               document.getElementById("d1").value =""
+               document.getElementById("d2").value = ""
+               document.getElementById("d3").value = ""
+
+                
+               document.getElementById("ee").appendChild(new_tr)
+
+         }
+            
+        function save()
+        {  
+            console.log("after clicking save btuoon we are just seeing copied row and copied object from previous function call add_details() ")
+
+               console.log("copied _row" , copied_row) 
+
+               console.log("copied obj" ,copied_obj) 
+
+               copied_obj.fullname = document.getElementById("d1").value 
+               copied_obj.number = document.getElementById("d2").value 
+               copied_obj.email = document.getElementById("d3").value  
+
+               console.log("after saving the object in array is =",contacts) 
+
+               console.log(" we have editied the particular object now we have to display them") 
+              
+               copied_row.querySelector(".name_cell").innerHTML = copied_obj.fullname 
+               copied_row.querySelector(".num_cell").innerHTML  = copied_obj.number 
+               copied_row.querySelector(".email_cell").innerHTML = copied_obj.email  
+
+
+
+               document.getElementById("d1").value = ""
+               document.getElementById("d2").value = ""
+               document.getElementById("d3").value = ""
+
+               copied_row = null 
+               copied_obj = null
+          
+
+               document.getElementById("d4").innerHTML = "Add Details"
+
+        }
+
+
+
+
+
+ 
+         </script>
+    </body>
+</html>
