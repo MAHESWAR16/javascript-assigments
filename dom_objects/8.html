@@ -19,7 +19,7 @@
             <input type="email"  id="d3" /> <br><br>
             <button type="button" id="d4" onclick="check()">Add Details</button> 
         </form> 
-        <i class="bi bi-sort-alpha-up"></i> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <i class="bi bi-sort-alpha-up" onclick ="up()"></i> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
         <i class="bi bi-sort-alpha-down"></i> <br>
 
@@ -172,7 +172,62 @@
 
         }
 
+            function up()
+            {
+                contacts.sort(function(a,b)
+            {   
+              
+               return   a.fullname.localeCompare(b.fullname)
+                    
+            }) 
 
+             var tbody = document.getElementById("ee") 
+             tbody.innerHTML = ""  
+ 
+             contacts.forEach(function(a)
+            {
+
+            var new_tr = document.createElement("tr")
+
+             var name_td = document.createElement("td")
+             name_td.innerHTML = a.fullname 
+             new_tr.appendChild(name_td)
+
+             var number_td = document.createElement("td")
+             number_td.innerHTML = a.number 
+             new_tr.appendChild(number_td)
+
+             var email_td  = document.createElement("td")
+             email_td.innerHTML = a.email 
+             new_tr.appendChild(email_td) 
+
+
+            var modify_td = document.createElement("td")
+             
+            var edit_button = document.createElement("button")
+            edit_button.innerHTML = "EDIT"
+
+            modify_td.appendChild(edit_button)
+
+            edit_button.addEventListener("click",function(){
+                
+                document.getElementById("d1").value = a.fullname 
+                document.getElementById("d2").value = a.number 
+                document.getElementById("d3").value = a.email  
+
+            document.getElementById("d4").innerHTML ="Save"
+
+            })
+
+             new_tr.appendChild(modify_td)
+
+            document.getElementById("ee").appendChild(new_tr)
+
+            }
+        
+            )
+         
+            }
 
 
 
