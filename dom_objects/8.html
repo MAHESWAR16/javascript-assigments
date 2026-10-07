@@ -21,7 +21,7 @@
         </form> 
         <i class="bi bi-sort-alpha-up" onclick ="up()"></i> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
-        <i class="bi bi-sort-alpha-down"></i> <br>
+        <i class="bi bi-sort-alpha-down" onclick = "down()"></i> <br>
 
         <table style="border: 1px solid ">
            <thead>
@@ -69,11 +69,10 @@
                person_details.fullname = document.getElementById("d1").value 
                person_details.number = document.getElementById("d2").value 
                person_details.email = document.getElementById("d3").value 
-
-               contacts.push(person_details)
-               console.log("contacts =",contacts) 
-
-               var new_tr = document.createElement("tr")
+                  
+                contacts.push(person_details)
+               
+                var new_tr = document.createElement("tr")
 
                var name_td = document.createElement("td")
                name_td.innerHTML = person_details.fullname 
@@ -89,14 +88,15 @@
                email_td.innerHTML = person_details.email 
                email_td.className = "email_cell"
                new_tr.appendChild(email_td) 
-
+             
+              
                  
                var modify_td = document.createElement("td")
                
                var edit_button = document.createElement("button")
                edit_button.innerHTML ="EDIT"
              
-               edit_button.addEventListener("click",function(e){ 
+               edit_button.addEventListener("click",function(){ 
 
                 document.getElementById("d1").value = person_details.fullname 
                 document.getElementById("d2").value = person_details.number 
@@ -125,17 +125,13 @@
                }) 
                remove_td.appendChild(del_button)
                new_tr.appendChild(remove_td)
-
-
-               
                
                document.getElementById("d1").value =""
                document.getElementById("d2").value = ""
                document.getElementById("d3").value = ""
 
-                
                document.getElementById("ee").appendChild(new_tr)
-
+               
          }
             
         function save()
@@ -183,52 +179,90 @@
 
              var tbody = document.getElementById("ee") 
              tbody.innerHTML = ""  
- 
-             contacts.forEach(function(a)
+            
+             create_row()
+
+            } 
+
+            function down()
             {
+                contacts.sort(function(a,b){
+                    return b.fullname.localeCompare(a.fullname)
+                })
 
-            var new_tr = document.createElement("tr")
+                var tbody = document.getElementById("ee") 
+                tbody.innerHTML = ""
+            }
+              
 
-             var name_td = document.createElement("td")
-             name_td.innerHTML = a.fullname 
-             new_tr.appendChild(name_td)
+            //row create function call 
+            function create_row()
+            {
+            contacts.forEach(function(person_details){
 
-             var number_td = document.createElement("td")
-             number_td.innerHTML = a.number 
-             new_tr.appendChild(number_td)
-
-             var email_td  = document.createElement("td")
-             email_td.innerHTML = a.email 
-             new_tr.appendChild(email_td) 
-
-
-            var modify_td = document.createElement("td")
-             
-            var edit_button = document.createElement("button")
-            edit_button.innerHTML = "EDIT"
-
-            modify_td.appendChild(edit_button)
-
-            edit_button.addEventListener("click",function(){
                 
-                document.getElementById("d1").value = a.fullname 
-                document.getElementById("d2").value = a.number 
-                document.getElementById("d3").value = a.email  
+                var new_tr = document.createElement("tr")
 
-            document.getElementById("d4").innerHTML ="Save"
+               var name_td = document.createElement("td")
+               name_td.innerHTML = person_details.fullname 
+               name_td.className ="name_cell"
+               new_tr.appendChild(name_td) 
 
-            })
+               var num_td = document.createElement("td")
+               num_td.innerHTML =person_details.number 
+               num_td.className = "num_cell"
+               new_tr.appendChild(num_td) 
 
-             new_tr.appendChild(modify_td)
+               var email_td = document.createElement("td")
+               email_td.innerHTML = person_details.email 
+               email_td.className = "email_cell"
+               new_tr.appendChild(email_td) 
 
-            document.getElementById("ee").appendChild(new_tr)
+                 
+               var modify_td = document.createElement("td")
+               
+               var edit_button = document.createElement("button")
+               edit_button.innerHTML ="EDIT"
+             
+               edit_button.addEventListener("click",function(){ 
 
+                document.getElementById("d1").value = person_details.fullname 
+                document.getElementById("d2").value = person_details.number 
+                document.getElementById("d3").value = person_details.email
+
+                copied_row = new_tr 
+                copied_obj = person_details
+                document.getElementById("d4").innerHTML = 'SAVE'
+               })
+                
+               modify_td.appendChild(edit_button) 
+               new_tr.appendChild(modify_td)
+
+              
+               var remove_td = document.createElement("td") 
+
+               var del_button = document.createElement("button")
+               del_button.innerHTML ="DELETE"
+               del_button.addEventListener("click",function(){
+                 var current_index = contacts.indexOf(person_details)
+                 contacts.splice(current_index,1)
+
+                 console.log("after removing element" ,contacts) 
+                 new_tr.remove()
+            
+               }) 
+               remove_td.appendChild(del_button)
+               new_tr.appendChild(remove_td)
+               
+               document.getElementById("d1").value =""
+               document.getElementById("d2").value = ""
+               document.getElementById("d3").value = ""
+
+                
+               document.getElementById("ee").appendChild(new_tr)
+
+               })
             }
-        
-            )
-         
-            }
-
 
 
  
