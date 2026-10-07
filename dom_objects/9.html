@@ -1,0 +1,65 @@
+<html> 
+    <head> 
+        <style> 
+        .d1{
+            width:150px
+        }
+
+        </style>
+    </head>
+    <body>
+
+        <h1 > Occupied : <span id="d1"></span>  </h1>
+        <h2 > Available : <span id="d2"> </span> </h2>
+
+       
+
+
+       <script> 
+       var array = ["https://vjinterior.co.in/wp-content/uploads/2019/05/VJ-1532-8.jpeg","https://vjinterior.co.in/wp-content/uploads/2019/05/VJ-1532-8.jpeg","https://vjinterior.co.in/wp-content/uploads/2019/05/VJ-1532-8.jpeg","https://vjinterior.co.in/wp-content/uploads/2019/05/VJ-1532-8.jpeg","https://vjinterior.co.in/wp-content/uploads/2019/05/VJ-1532-8.jpeg","https://vjinterior.co.in/wp-content/uploads/2019/05/VJ-1532-8.jpeg"] 
+
+       var occ = 0 
+       var ava = array.length
+       document.getElementById("d1").innerText = occ
+       document.getElementById("d2").innerHTML = ava
+
+
+       array.forEach(function(a){
+        
+        var new_img = document.createElement("img")
+        new_img.className ="d1"
+        new_img.src= a 
+        new_img.addEventListener("click",function(){
+            
+            if(new_img.style.filter === "blur(5px)")
+            {
+                occ = occ-1 
+                   document.getElementById("d1").innerText = occ
+                new_img.style.filter = ""
+                ava = ava + 1
+                 document.getElementById("d2").innerText = ava
+            }         
+            
+            else 
+            { 
+              occ = occ+1
+            document.getElementById("d1").innerText = occ
+            new_img.style.filter="blur(5px)"
+            ava = ava -1
+            document.getElementById("d2").innerText = ava
+            }
+            
+        })
+
+        document.body.appendChild(new_img)
+
+       })
+          
+
+      </script>
+          
+
+        </body>
+
+        
+</html>

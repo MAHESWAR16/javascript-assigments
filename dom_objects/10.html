@@ -1,0 +1,50 @@
+<html> 
+    <head> 
+        <style> 
+
+        </style>
+    </head>
+
+    <body>
+        <ul id="d1" >
+
+        </ul>
+        
+        
+        <script> 
+        var array = ["praveen","rama","himesh","divya"]
+        
+        array.forEach(function(person,index)
+    { 
+       var new_li = document.createElement("li")
+       new_li.innerHTML = person 
+       document.getElementById("d1").appendChild(new_li)
+       
+       var del_button = document.createElement("button")
+       del_button.innerHTML ="DELETE"
+       new_li.appendChild(del_button)
+
+       console.log("original array is ",array)
+       del_button.addEventListener("click",function(){
+    
+    
+     
+        array.splice(index,1)
+        
+        console.log("after removing array is",array)
+         
+        new_li.remove()
+        
+       })
+      
+    } 
+  )
+   
+
+
+
+
+
+        </script>
+    </body>
+</html>
