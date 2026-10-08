@@ -6,39 +6,81 @@
     </head>
 
     <body>
-        <ul id="d1" >
 
-        </ul>
+           <form onsubmit = abc(event) name ="studentform">
+
+            <label>Firstname</label>
+            <input type="text" name ="fistname" onkeyup="updateStudent(event)">
+            <br>
+            <label>lastname</label>
+            <input type="text" name="lastname" onkeyup="updateStudent(event)">
+            <br>
+            <label>mobile</label>
+            <input type="number" name ="number" onkeyup ="updateStudent(event)">
+            <br><br>
+            <button  onclick="xyz()">Add student</button>
+
+           </form>
+
+        <table border="2px solid">
         
-        
+            <thead>
+                <th>SL.no</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Number</th>
+            </thead>
+            <tbody id="d1">
+
+            </tbody>
+        </table>
         <script> 
-        var array = ["praveen","rama","himesh","divya"]
-        
-        array.forEach(function(person,index)
-    { 
-       var new_li = document.createElement("li")
-       new_li.innerHTML = person 
-       document.getElementById("d1").appendChild(new_li)
-       
-       var del_button = document.createElement("button")
-       del_button.innerHTML ="DELETE"
-       new_li.appendChild(del_button)
+        var student_details ={ 
+            firstname:"",
+            lastname:"",
+            MobileNumber:""
 
-       console.log("original array is ",array)
-       del_button.addEventListener("click",function(){
-    
-    
-     
-        array.splice(index,1)
+        } 
+
+        function updateStudent(e)
+        { 
+
+        //   if(e.target.name === "firstname")
+        //   {
+        //     student_details.firstname = e.target.value
+        //   }
+        //   if(e.target.name === "lastname")
+        //   {
+        //     student_details.lastname = e.target.value
+        //   }
+        //   if(e.target.name === "Mobilenumber")
+        //   {
+        //     student_details.MobileNumber = e.target.value
+        //   }
+ 
+        //   console.log(student_details) 
+        student_details[e.target.name] = e.target.value 
+
+          console.log(student_details)
         
-        console.log("after removing array is",array)
-         
-        new_li.remove()
-        
-       })
+        }
+
       
-    } 
-  )
+        function abc(e)
+        { 
+            e.preventDefault()
+            // student_details.firstname = document.studentform.fistname.value 
+            // student_details.lastname = document.studentform.lastname.value 
+            // student_details.MobileNumber = document.studentform.number.value 
+
+        //    console.log(student_details)
+
+        }
+        function xyz()
+        {
+            alert("click event ocuurened on buton")
+        }
+
    
 
 
