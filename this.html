@@ -1,0 +1,43 @@
+<html> 
+    <head> 
+        <style> 
+
+        </style>
+    </head>
+    <body> 
+     
+        <h1 onclick="abc(event,this)"> Hello Eupoly</h1>
+
+        <h1 id="d1">HELLO</h1>
+
+
+        <script> 
+       
+       var t = document.getElementById("d1")
+       t.addEventListener("click",function(e)
+     {
+       
+        console.dir(this)
+
+        this.style.color="red"
+     }
+    )
+       
+       function abc(e,t)
+       {
+        
+        console.log(t)
+        console.dir(t)
+
+       }
+
+              function x()
+              {
+                 console.dir(this)
+              }
+
+       x()
+       new x()
+        </script>
+    </body>
+</html>
