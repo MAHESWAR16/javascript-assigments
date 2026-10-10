@@ -1,66 +1,48 @@
-<html> 
-   <head> 
-      <style> 
-
-      </style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise Example</title>
   </head>
+  <body>
+    <script>
 
-  <body> 
-     
-    <label>ENTER A number</label>
-    <input type =number id="d1" /> <br> 
-    <button onclick="ab()"> See the result</button>
-
-    <script> 
-
-             var array = [12,45,36,75,24,85]
-
-             
-
-             function ab()
-             { 
-                var result  =  + document.getElementById("d1").value
-
-             var display  =    array.filter(function(a,b){
-              console.log("a=",a,"b=",b) 
-              if(result === a) 
-             {
-              return  true
-             }
-             else 
-             {
-              return false
-             }
-             })  
-
-
-            console.log("dispplay =" , display) 
-
-            if(display.length > 0)
+      function div(a, b) {
+        var p = new Promise(
+          function (resolve, reject)
+           {
+          setTimeout(
+            function () 
             {
-              var p  = document.createElement("p")
-              p.innerHTML = " your umber is found"+ display
-             
+            if (b === 0) {
+              reject('Denominator cannot be zero');
+            } else {
+              resolve(a / b);
             }
-            else
-            {
-                  var p  = document.createElement("p")
-              p.innerHTML = " your umber is not  found" + result
-      
-            }
-                
-                document.body.appendChild(p)
-             }
+          }, 5000);
+          
+        });
+        return p;
+      }
 
-        
+      var x = div(12, 3);
+      x.then(function (result) {
+        console.log(result); // Should log 4
+      }).catch(function (error) {
+        console.log(error); // Will not be called in this case
+      });
 
-             
+      var y = div(33, 0);
+      y.then(function (result) {
+        console.log(result); // Will not be called in this case
+      }).catch(function (error) {
+        console.log(error); // Should log "Denominator cannot be zero"
+      });
 
-
-            
-              
+      // Example for calling the div function and handling Promise with .then and .catch:
+      // div(1123, 0).then(function (res) { console.log(res); }).catch(function (err) { console.log(err); });
+      // div(1123, 20).then(function (res) { console.log(res); }).catch(function (err) { console.log(err); });
     </script>
-
-    
   </body>
-</html> 
+</html>

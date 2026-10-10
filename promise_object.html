@@ -1,0 +1,59 @@
+<html> 
+    <head> 
+        <style> 
+
+        </style>
+    </head>
+    <body> 
+        <script> 
+           
+        //  promise is an object.
+
+        // we use promosie object to convert functions into asynchronous function . so that is does not block the next line .  it has two methods resolve and reject .
+
+        // some functions will return promise object with resolve () or reject() function call .
+        // if  return promise.resolve() we use then ()
+        //  if return promise.reject() we use catch()
+      
+
+        //the below object is used to create asynchronous function .
+
+        // PROMISE is an OBJECT 
+        //resolve 
+        //reject 
+
+        //the below promise obj  is oka promise based asynchronous function call chesinapudu return aye object edi .
+
+        //promise instance object
+        //staus:fullfilled/pending/rejected
+        //then 
+        //catch 
+
+          console.log( new Promise ())
+           function add(a,b)
+           {
+            return Promise.resolve(a+b)
+           }
+         
+           add(10,20).then(function(r){
+            console.log('result =',r)
+           }).catch(function(err){
+            console.log("error =",err)
+           })
+
+
+           console.log("hi") 
+
+            
+           var p = fetch("https://fakestoreapi.com/products") 
+           console.log("p=",p) 
+
+           p.then(function(res){
+            console.log("res=",res)
+            return res.json()
+           }).then(function(a){
+            console.log("a=",a)
+           })
+        </script>
+    </body>
+</html>
