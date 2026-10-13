@@ -1,0 +1,79 @@
+<html> 
+    <head> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+       
+        <style>
+            /* Remove default body margin so the header reaches the edges */
+            body {
+                margin: 0;
+                font-family: sans-serif;
+            }
+
+            #outer {
+                /* No red border needed for the final look */
+            }
+
+            /* 1. THE HEADER CONTAINER */
+            #inner_1 {
+                display: flex;                  /* Puts logo and menu side-by-side */
+                justify-content: space-between; /* Pushes logo to left, menu to right */
+                align-items: center;            /* Centers them vertically */
+                background-color: #212529;      /* Dark background like the reference */
+                color: white;                   /* White text */
+                padding: 10px 30px;             /* Space inside the header */
+            }
+
+            /* 2. THE MENU CONTAINER */
+            #d2 {
+                /* Removed max-width and border! */
+            }
+
+            /* 3. THE MENU LIST */
+            #d2 ul {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 25px;                      /* Adds space between the menu items */
+            }
+
+            #d2 ul li {
+                cursor: pointer;                /* Changes mouse to a pointer on hover */
+                font-size: 16px;                /* Adjust text size */
+            }
+
+            /* 4. LOGO ICON */
+            #d1 i {
+                font-size: 32px;                /* Adjust icon size */
+            }
+        </style>
+    </head>
+
+    <body> 
+        <div id="outer">
+            <div id="inner_1">
+                <!-- Logo -->
+                <div id="d1">
+                    <i class="bi bi-bootstrap"></i>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div id="d2">
+                    <ul>
+                        <!-- I removed the <sub> tags. They were breaking the layout. -->
+                        <li><i class="bi bi-house"></i> Home</li>
+                        <li><i class="bi bi-speedometer2"></i> Dashboard</li>
+                        <li><i class="bi bi-border-inner"></i> Orders</li>
+                        <li><i class="bi bi-building-fill-exclamation"></i> Products</li>
+                        <li><i class="bi bi-c-circle"></i> Customers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div id="inner_2">
+                <!-- Content goes here -->
+            </div>
+        </div>
+    </body>
+</html>
