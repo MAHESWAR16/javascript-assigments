@@ -1,0 +1,61 @@
+<html> 
+    <head> 
+        <style> 
+        .new_td
+        {
+            display: flex;
+            text-decoration: line-through;
+        }
+
+        </style>
+    </head>
+    <body> 
+         <h1>hello</h1>
+        <form>
+            <input type="text"  id="d1"> 
+            <button type="button" onclick="display()">Add Task</button>
+        </form>
+           
+        <table id="d2"> 
+
+        </table>
+
+        <script>
+
+           function display()
+           {
+            var new_tr= document.createElement("tr")
+
+            var new_td  = document.createElement("td")
+            new_td.innerHTML = document.getElementById("d1").value
+         
+
+            var button =document.createElement("button")
+            button.innerHTML = "Done"
+            button.addEventListener("click",function(){
+                new_td.classList ="new_td"
+                button.innerHTML ="Undo"
+            })
+            new_td.appendChild(button)
+        
+
+            var button1 = document.createElement("button")
+            button1.innerHTML = "DELETE"
+        
+            new_td.appendChild(button1)
+
+            new_tr.appendChild(new_td)
+              
+
+            document.getElementById("d1").value = ""
+             
+            document.getElementById("d2").appendChild(new_tr)
+
+           }
+           
+
+
+
+        </script>
+    </body>
+</html>
