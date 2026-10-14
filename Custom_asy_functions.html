@@ -1,0 +1,58 @@
+<html> 
+    <head> 
+        
+    </head>
+    <body> 
+        <script> 
+
+var p = fetch("https://fakestoreapi.com/products")
+
+console.log("p=",p)
+
+
+
+
+
+
+
+            function add(a,b)
+            {
+                   return Promise.resolve(a+b)
+            } 
+
+            var x = add(10,20)
+        
+
+            x.then(function(res){
+                console.log("esult=",res)
+            }).catch(function(err){
+                console.log("err",err)
+            })
+
+            console.log("hi")
+        </script>
+    </body>
+</html>
+<!-- 
+Promise is an Object [orginal]
+it has 2 methods 
+1 resole .
+2 reject .
+USE OF PROMISE OBJECT 
+1)it converts functions into asynchrnous function . 
+
+2) some functions like fetch() returns a promise object.
+now the promise object which  returns  has 2 functions .
+1) then .
+2) catch.
+It is also called as promise instance object. 
+
+Promise instance object
+status : fullfiled/pending/reject
+then
+catch 
+
+IT DOES NOT HAVE RESOLVE AND REJECT .
+
+
+-->
