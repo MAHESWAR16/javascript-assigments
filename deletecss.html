@@ -1,1 +1,98 @@
+<html>
+    <head> 
+        <style>
+            .img 
+            {
+                height:50px ;
 
+            }
+        </style>
+
+    </head>
+    <body>
+            <table border="2px solid"> 
+                <thead> 
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                     <th>Description</th>
+                    <th>Category</th>
+                    
+                    
+                    <th>Image</th>
+                   
+                    <th>Rating</th>
+                </thead>
+                <tbody id="d1">
+                    
+                
+                
+                </tbody>
+
+            </table>
+
+
+
+
+        <script> 
+
+                  fetch("https://fakestoreapi.com/products").then(
+                    function(result){
+                        console.log("result=" ,result)
+                        result.json().then(function(r){
+                            console.log("r =",r)
+                            r.forEach(function(a){
+                             
+                                console.log("a=",a)
+                                var new_tr = document.createElement("tr")
+                                
+                                var id_td = document.createElement("td")
+                                id_td.innerHTML = a.id 
+                                new_tr.appendChild(id_td)
+
+                                var title_td = document.createElement("td")
+                                title_td.innerHTML = a.title 
+                                new_tr.appendChild(title_td)
+
+                                var price_td = document.createElement("td")
+                                price_td.innerHTML = a.price
+                                new_tr.appendChild(price_td) 
+
+                                var des_td = document.createElement("td")
+                                des_td.innerHTML = a.description 
+                                new_tr.appendChild(des_td) 
+
+                                var cat_td = document.createElement("td")
+                                cat_td.innerHTML = a.category 
+                                new_tr.appendChild(cat_td)
+                                
+
+                                var img_td = document.createElement("td")
+                                 var img = document.createElement("img")
+                                 img.src = a.image
+                                 img.classList = "img"
+                                 img_td.appendChild(img)
+                                new_tr.appendChild(img_td) 
+
+                                
+                                var rat_td = document.createElement("td")
+                                rat_td.innerHTML = a.rating.rate
+                                new_tr.appendChild(rat_td)
+
+
+
+
+                            document.getElementById("d1").appendChild(new_tr)
+
+                            })
+                        })
+                    }
+                  ).catch(function(err){
+                    console.log("error =",err)
+                  })
+ 
+
+
+        </script>
+    </body>
+</html>
