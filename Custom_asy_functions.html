@@ -4,8 +4,13 @@
     </head>
     <body> 
         <script>  
-      
+     
 
+     
+
+     
+
+   
     function  getAllProducts()
     {
           var p = fetch("https://fakestoreapi.com/products")
@@ -13,7 +18,7 @@
           p.then(function(r)
           {
             console.log(r)
-            
+
             r.json().then(
                 function(res){
                 console.log(res)
@@ -23,13 +28,10 @@
           }
         
         )
-          
           .catch(function(e){
             console.log(e)
           })
-        
           return Promise.resolve(p)
-          
     }
  
 
