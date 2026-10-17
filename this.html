@@ -5,55 +5,51 @@
         </style>
     </head>
     <body> 
-     
-        <h1 onclick="abc(event,this)"> Hello Eupoly</h1>
+      
+        <h1 onclick="abc(event,this)">Welcome to edupoly</h1>
 
-        <h1 id="d1">HELLO</h1>
-
+        <h1 id="d2"> this is another h1 element</h1>
 
         <script> 
-       
-       var t = document.getElementById("d1")
-       t.addEventListener("click",function(e)
-     {
-       
-        console.dir(this)
+            
+            var array = [12,23]
 
-        this.style.color="red"
-     }
-    )
-       
-       function abc(e,t)
-       {
+            var obj = 
+            {
+                firstname:"maheswar"
+            }
+
+            console.log(this) //window
+ 
+          function abc(e ,t)
+          {
+            console.log(e) 
+
+            console.dir(t) // current element h1 in object form .
+          }
+  
+        document.getElementById("d2").addEventListener("click",function(e){
+            console.dir(e)
+            console.dir(this)
+            this.style.color = "red"
+        })
+
+             
+        function bb()
+        {
+            console.log(this)// window object.
+        }
+
+     
+        function xyz()
+        {
+            console.log(this)
+        }
+         new xyz()
+
         
-        console.log(t)
-        console.dir(t)
-
-       }
-
-              function x()
-              {
-                 console.dir(this)
-              }
-
-       x()
-       new x()
-
-
-
-       function mobile_details(n,c,p,m)
-       {
-           this.mobile_name = n;
-           this.color = c;
-           this.price =p;
-           this.model = m
-       }
-       var mobile_1 = new mobile_details("redmi","red",13000,"note4") 
-
-       console.log(mobile_1) 
-
-       var mobile_2 = new mobile_details("samsung","black",10000,"galaxy f25") 
-       console.log(mobie   )
-        </script> 
+        </script>
+        
+      
     </body>
 </html>
