@@ -1,21 +1,50 @@
 <script>
-//     function abc(a,b)
-// { 
+   
 
-//    return  Promise.resolve(a+b) // here we converted synchronous function into asynchrnous function . 
+   console.dir(Promise) 
+
+
+
+  function xy()
+  {
+    console.log("hello")
+    
+    return "hello"
+  } 
+
+console.log(xy) 
+
+console.log(xy ())
+
+console.log(Promise) 
+
+var b =  new Promise(function(){
+
+})
+console.log("b=",b)
+
+
+// console.log(Promise ())
+
+
+
+    function abc(a,b)
+{ 
+
+   return  Promise.resolve(a+b) // here we converted synchronous function into asynchrnous function . 
  
-// }
+}
  
-// var g = abc(10,20)
-// console.log("g=",g)
+var g = abc(10,20)
+console.log("g=",g)
 
-// g.then(function(result)
-// { 
-//   console.log("result=",result)
-// })
+g.then(function(result)
+{ 
+  console.log("result=",result)
+})
 
-// console.log("hello")
-// console.log("hi") 
+console.log("hello")
+console.log("hi") 
 
 
 

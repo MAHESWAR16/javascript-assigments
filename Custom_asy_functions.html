@@ -3,16 +3,71 @@
         
     </head>
     <body> 
-        <script> 
+        <script>  
+     
 
-var p = fetch("https://fakestoreapi.com/products")
+     
 
-console.log("p=",p)
+     
+
+   
+    function  getAllProducts()
+    {
+          var p = fetch("https://fakestoreapi.com/products")
+          console.log(p) 
+          p.then(function(r)
+          {
+            console.log(r)
+
+            r.json().then(
+                function(res){
+                console.log(res)
+            }
+        )
+
+          }
+        
+        )
+          .catch(function(e){
+            console.log(e)
+          })
+          return Promise.resolve(p)
+    }
+ 
+
+   
+    getAllProducts().then(function(products){
+        console.log(products)
+    })
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+       var p = fetch("https://fakestoreapi.com/products")
+
+         console.log("p=",p) 
+         
+         p.then(function(res){
+               console.log(res.json().then(function(r){
+                                     console.log(r)
+                              }))
+         }).catch(function(err){
+            console.log(err)
+         })
 
 
             function add(a,b)
@@ -38,6 +93,7 @@ Promise is an Object [orginal]
 it has 2 methods 
 1 resole .
 2 reject .
+
 USE OF PROMISE OBJECT 
 1)it converts functions into asynchrnous function . 
 

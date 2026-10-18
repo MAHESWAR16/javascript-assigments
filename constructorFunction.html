@@ -1,0 +1,49 @@
+<html> 
+    <head> 
+        <body> 
+
+
+            <script>  
+
+            // constructor functions: oka function ganaka oka new object ni create chesi return ivagaligte daani constructor function antam . 
+                  
+                  //when we want to create objects of same types we constructior function with this keyword .
+
+                function Mobile()
+                { 
+                    //      // this = {} automatically cretae {} 
+                    // this.color = '';
+                    // this.name = '';
+                    // this.price = "";
+                    // this.storage=""
+                    //  //  return this automatically return  
+                    console.log("this =",this)
+
+                    this.name = "";
+                    this.color="";
+                    this.price="";
+                    this.ram="";
+                    this.storage=""
+
+
+                }
+              
+                // new is the keyword used to create empty object inside the function .
+                // this referes to cuurent object which is empty object .
+   
+              var Mobile_1 =  new Mobile("redmi note 8 pro","blue",13000,"6gb","64gb") 
+
+              console.log(Mobile_1) 
+              
+              var Mobile_2 = new Mobile("samsung","red",25000,"8gb","128gb") 
+
+              console.log(Mobile_2)
+
+
+
+
+
+            </script>
+        </body>
+    </head>
+</html>

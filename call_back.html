@@ -1,0 +1,89 @@
+<html> 
+    <head> 
+
+
+    </head>
+    <body> 
+        <script>
+
+            console.log(Promise)
+
+var t = new Promise()
+
+console.dir(t)
+
+            function display(res)
+            {
+                console.log('result =',res)
+            }
+             
+             function add(a,b,cb)
+             {
+                console.log(cb)
+                cb(a+b)
+             } 
+
+             add(10,2,display) 
+
+        //    setTimeout(function(){
+        //     alert("hello")
+        //    },5000) 
+          
+             
+
+        function mul(a,b,cb)
+        {
+             if(isNaN(a) || isNaN(b))
+             { 
+                 cb("enter numbers only",null)
+             }
+             else 
+             {
+                cb(null,a*b)
+             }
+
+
+        }
+
+         
+        mul("hello",5,function(err,res){
+          if(err)
+          {
+            console.log(err)
+          }
+          else 
+          {
+            console.log(res)
+          }
+        })
+     
+        
+       
+        
+       
+        
+
+     function div(nr, dr, cb) {
+    if (dr === 0) {
+        // If there is an error, pass it as the FIRST argument
+        cb("Cannot divide by zero", null); 
+    } else {
+        var result = nr / dr;
+        console.log("result =", result);
+        // If success, pass null as the error, and the result as the SECOND argument
+        cb(null, result); 
+    }
+}
+
+// Call the function WITHOUT assigning it to a variable
+div(0,1, function(err, res) {
+    if (err) {
+        console.log("error =", err); // Handle the error
+    } else {
+        console.log("result =", res); // Handle the success (even if res is 0)
+    }
+});
+
+        </script>
+    </body>
+</html>
