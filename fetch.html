@@ -1,0 +1,37 @@
+<script> 
+               
+
+
+                function getAllProducts ()
+                 {
+
+                    var g = new Promise(function(resolve,reject)
+                    {
+
+                  fetch("https://fakestoreapi.com/products").then(function(res){
+                        resolve(res.json())
+                    }).catch(function(err){
+                        reject(err)
+                    })
+
+                    }  
+                   )
+                    
+                
+            
+                  return g
+
+
+
+                 }
+
+                  
+
+               var t =  getAllProducts()
+               t.then(function(data){
+                console.log(data)
+               }).catch(function(err){
+                console.log(err)
+               })
+
+</script>
