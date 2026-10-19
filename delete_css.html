@@ -1,41 +1,40 @@
 <html> 
     <head> 
-        <body>
-            <script>
- 
-                
-                 function getAllProducts ()
-                 {
+        <body> 
 
-                    var g = new Promise(function(resolve,reject)
-                    {
 
-                  fetch("https://fakestoreapi.com/products").then(function(res){
-                        resolve(res.json())
-                    }).catch(function(err){
-                        reject(err)
-                    })
 
-                    }  
-                   )
-                    
-                
+
             
-                  return g
+            <script>
+              
+        
+              function MobileDetails(n,c,s,p,d)
+              {
+                  this.name = n;
+                  this.color =c ;
+                  this.storage = s ;
+                  this.price = p ;
+                  this.discount = d
+
+                  this.finalPrice = function(){
+                     
+                    var result = this.price -this.price*this.discount/100
+                 console.log(result)
+
+                 return result
+                    
+                  }
+              }
+
+            
+
+              var mb1 = new MobileDetails("redmi note 8 pro","red","128gb",25000,30)
+              console.log("mb1 =",mb1)
+              console.log(mb1.finalPrice())
 
 
-
-                 }
-
-                  
-
-               var t =  getAllProducts()
-               t.then(function(data){
-                console.log(data)
-               }).catch(function(err){
-                console.log(err)
-               })
-                      
+ 
             </script>
         </body>
     </head>
