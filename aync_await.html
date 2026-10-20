@@ -1,0 +1,31 @@
+<html> 
+    <head> 
+        <style> 
+
+        </style>
+    </head>
+    <body> 
+
+        <script> 
+     
+
+
+    async function getAllpro()
+    {
+        var p = await fetch("https://fakestorapi.com/products")
+
+        return p
+    }
+   
+    getAllpro().then(
+        function(res){
+        console.log(res)
+    }).catch(
+        function(err){
+        console.log(err)
+    })
+
+
+        </script>
+    </body>
+</html>
