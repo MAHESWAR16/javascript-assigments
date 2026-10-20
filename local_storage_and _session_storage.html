@@ -1,0 +1,43 @@
+<html> 
+    <head> 
+
+    </head>
+
+     
+
+     
+    <body> 
+
+     <h1>Counter:<span id="d1"></span></h1>
+
+        <button onclick="inc()">INC</button>
+     <button onclick="dec()">DEC</button>
+
+
+        <script> 
+           var count = + window.localStorage.getItem("count")
+           document.getElementById("d1").innerHTML = count 
+
+           function inc()
+           {
+            count = count+1
+             
+              document.getElementById("d1").innerHTML = count 
+
+              window.localStorage.setItem("count",count)
+           
+           } 
+
+            function dec()
+           {
+            count = count - 1
+
+              document.getElementById("d1").innerHTML = count
+           
+           }
+
+
+
+        </script>
+    </body>
+</html>
