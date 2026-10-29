@@ -8,18 +8,84 @@
 
 
 <body> 
+ 
 
+    <h1 id="d1"></h1>
 
 
     <script> 
+           
+          //   console.log(new Date())   
+
+           var d1 = new Date() 
+
+           console.dir(d1)
+           
+           console.log(d1)  
+
+           console.log(d1.getDate()) 
+
+           console.log((d1.getFullYear())) 
+
+        //    console.log(getFullYear()) 
+
+        console.log(d1.getMonth()) 
+
+ 
+
+        //  var d2 = new Date() 
+        // console.dir(d2)
+           
+        // var hrs = d2.getHours() 
+        // console.log(hrs) 
+
+        // var min = d2.getMinutes()
+        // console.log(min) 
+
+        // var sec = d2.getSeconds()
+        // console.log(sec)
+
+                
+       
+
+           
+        // document.write(hrs+":"+min+":"+sec )
+ 
+    setInterval(function(){ 
+
+         var d2 = new Date() 
+    
+           
+        var hrs = d2.getHours() 
+        
+
+        var min = d2.getMinutes()
+
+
+        var sec = d2.getSeconds()
+
+         document.getElementById("d1").innerHTML = hrs+":"+min+":"+sec
+    },1000)
+
+
+
+          // age calcullator 
+
+        var t = new Date()
+        console.log(t.getTime())
+
+        
+        var birth_time_stamp = new Date("10-05-1994")
+        console.log(birth_time_stamp) 
+
+        var age = birth_time_stamp.getTime() - t.getTime() 
+        console.log(age/1000*60*60*24*365)
+
+
+
           
 
-        //   console.log(new Date())
-                    
-
-           var d1 = new Date()
-           
-           console.log(d1) 
+        
 
 
            
