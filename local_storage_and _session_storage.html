@@ -2,41 +2,54 @@
     <head> 
 
     </head>
-
-     
-
      
     <body> 
 
-     <h1>Counter:<span id="d1"></span></h1>
+       <h1>Counter:<span id="d1"></span></h1> 
 
-        <button onclick="inc()">INC</button>
-     <button onclick="dec()">DEC</button>
+       <button onclick="inc()"> Inc</button>
 
+       <button onclick="dec()">dec</button> 
+
+       <button onclick="reset()">reset</button>
 
         <script> 
-           var count = + window.localStorage.getItem("count")
-           document.getElementById("d1").innerHTML = count 
+                
+                var count = + window.sessionStorage.getItem("count")
 
-           function inc()
-           {
-            count = count+1
-             
-              document.getElementById("d1").innerHTML = count 
+                console.log(count)
 
-              window.localStorage.setItem("count",count)
-           
-           } 
+                document.getElementById("d1").append(count)
+ 
+                function inc()
+                { 
+                    count = count + 1 
+                    window.sessionStorage.setItem("count",count)
+                      document.getElementById("d1").innerHTML = count
+                      
+                } 
 
-            function dec()
-           {
-            count = count - 1
+                function dec()
+                {
+                   if(count === 0 )
+                {
+                    count = 0
+                }
+              else 
+                 { 
+                     count = count - 1 
+                    document.getElementById("d1").innerHTML = count 
 
-              document.getElementById("d1").innerHTML = count
-           
-           }
+                    window.sessionStorage.setItem("count",count)
+               }
 
-
+                }
+               
+                function reset() 
+                {
+                    count = 0 
+                    document.getElementById("d1").innerHTML = count 
+                }
 
         </script>
     </body>
