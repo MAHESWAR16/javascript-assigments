@@ -3,21 +3,48 @@
         <body> 
 
                    
-
+        <h1> hello edupoly</h1>
 
             
             <script> 
 
+                
+            function mobile(m,s,p,c,d)
+            {
+              
+                this.model_name = m;
 
-          
+                this.storage = s ;
+                this.price = p ;
+                this.color = c ;
+                this.discount = d ; 
+
+                this.final_price = function(){
+                    
+                    var fp = this.price - (this.price*this.discount/100) 
+                    return fp
+                   
+                }
+
+            }
 
          
               
 
 
 
+             var redmi_details = new mobile("note_8 pro","128gb",13000,"black",50) 
+             console.log(redmi_details) 
 
-    
+             var fp = redmi_details.final_price()
+              
+             console.log("final_price =",fp)
+
+
+             
+
+
+     
 
 
 
