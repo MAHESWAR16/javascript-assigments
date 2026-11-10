@@ -1,0 +1,59 @@
+<html> 
+    <head> 
+
+    </head>
+    <body> 
+        
+        
+        <input type="text" id="d2"/>
+        
+        <button onclick="search()">Search</button>
+
+        <ul id="d1"> 
+           
+        </ul>
+
+        <script> 
+        var my_products
+       fetch("https://fakestoreapi.com/products").then(function(r){
+        return r.json()
+       }).then(function(data){
+        
+        my_products =...data
+
+        console.log(my_products)
+        
+        my_products.forEach(
+            function(a){
+            
+            console.log(a)
+            var new_li = document.createElement("li")
+            new_li.innerHTML = a.title 
+            document.getElementById("d1").appendChild(new_li)
+
+
+             function search(){
+                var key = document.getElementById("d2")
+                my_products.forEach(function(a){
+
+                    var st = JSON.stringify(p)
+                    console.log(st)
+                })
+             }
+
+
+            
+        }
+    
+        )
+       }) .catch(function(e){
+        console.log(e)
+       })
+        
+    
+     
+       
+    
+        </script>
+    </body>
+</html>
