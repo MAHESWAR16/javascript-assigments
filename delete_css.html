@@ -6,7 +6,43 @@
         <h1> hello edupoly</h1>
 
             
-            <script> 
+                  <script>  
+                   
+
+                   
+                  
+
+
+                        
+                        function contacts()
+                        {
+                            this.mobile = m ;
+                            this.email = e
+                        }
+ 
+ 
+
+            
+ 
+                        function details(n,l)
+                        {
+                            this.firstname = n ; 
+                            this.lastname = l;
+                        }
+                     
+                        console.dir(details)
+                         
+                        details.prototype.company ="edupoly"
+
+                        var st1 = new details("mahesh","d")
+
+                     console.log(st1) 
+
+                     st1.__proto__.company ="vlr" 
+
+                     console.log(st1)
+
+                     
 
                 
             function mobile(m,s,p,c,d)

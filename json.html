@@ -1,0 +1,58 @@
+<html> 
+    <head> 
+
+    </head>
+    <body> 
+        
+        
+        <input type="text" id="d2"/>
+        
+        <button onclick="search()">Search</button>
+
+        <ul id="d1"> 
+           
+        </ul>
+
+        <script> 
+        var my_products 
+       fetch("https://fakestoreapi.com/products").then(function(r){
+        return r.json()
+       }).then(function(data){
+        
+        my_products =[...data] 
+
+
+        
+
+       }) .catch(function(e){
+        console.log(e)
+       })
+        
+
+      console.log()
+
+       function search()
+       {
+              var key = document.getElementById("d2").value 
+
+              my_products.forEach(
+                function(a,i){ 
+
+                var string = JSON.stringify(a) 
+                if(string.includes(key)) 
+              {
+                console.log(a)
+              } 
+              
+              }
+            )
+       }
+    
+            
+       
+     
+       
+    
+        </script>
+    </body>
+</html>
