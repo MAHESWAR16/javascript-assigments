@@ -1,0 +1,37 @@
+<html> 
+    <head> 
+
+    </head>
+    <body> 
+        <script> 
+            var add = function(a,b){
+               return a+b
+            } 
+
+            var sum = (a,b)=>{ 
+                return a+b
+            }
+            
+            var t = sum(10,20)
+            console.log("t= ",t) 
+
+
+            var ar = [12,45,15,32,65,42,18] 
+            var br = ar.filter(function(a){
+                if(a%2 === 0)
+            {
+                return true 
+            }
+            else 
+            {
+                return false
+            }
+            })
+
+            var cr = ar.filter((a)=>function(a){
+             return a%2 === 0 ?true:false
+            }) 
+            console.log("cr =",cr)
+        </script>
+    </body>
+</html>

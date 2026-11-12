@@ -1,0 +1,77 @@
+<html> 
+    <head> 
+      
+        
+        </head> 
+
+
+        <body> 
+
+            <script> 
+
+           var ar = [10,20,30]
+           var a = ar[0]
+           var b = ar[1]
+
+        //    var [x,y,z] = ar 
+        //    console.log(x,y,z) THIS IS CALLED DESCTRUCTING . 
+
+
+        //SPREAD OPERATOR 
+
+        var cr = [...ar]
+        console.log(cr)
+        cr[0] = "mahesh"
+        console.log(ar)
+        console.log("cr=",cr)
+
+  
+        var  p = [10,20,30]
+        var q = [11,22,33] 
+        var s = [...p,...q]
+        console.log("s=",s)
+        console.log(`s =  ${s}`)
+
+        var k = [15,16,17,18]
+
+        var w = 19 
+
+        var g = [...k,w]
+        console.log("g=",g)
+        
+
+        var d = [77,88]
+        var w = 74 
+        d = [...d,w]
+        console.log("d=",d)
+
+    //     var obj1 =  { 
+    //         firstname:"mahesh" , 
+    //         lastname :"devara" , 
+    //         age:15
+    //     } 
+
+    //    var { age ,lastname:ln} =obj1
+
+    //    console.log(ln) 
+
+
+    var obj1 =  { 
+            firstname:"mahesh" , 
+            lastname :"devara" , 
+            age:15 ,
+            adress:{
+                city:"hyderabad",
+                area:"kukatpally"
+            }
+        } 
+
+        
+        var {firstname,adress:{city}} = obj1
+         console.log(city) 
+         console.log(firstname)
+         
+
+            </script>
+        </body>
+</html>
